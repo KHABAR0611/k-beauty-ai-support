@@ -1,0 +1,14 @@
+{
+  "baseline_commit": "fe1676cd5969033d5562e7141220e7b98b460716",
+  "business_version": "1.1",
+  "frozen_development_labels_sha256": "d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd",
+  "selection_policy": "Choose the reranker from multilingual language coverage, license, official reproducible runtime and this machine's CPU/RAM before observing ranking results. Do not change qrels.",
+  "primary_configuration": {"candidate_pool":10,"final_k":5,"prefetch":20,"cpu_threads":2,"batch_size":1,"max_pair_tokens":512,"truncation":false},
+  "development_pools": [5,10,15],
+  "holdout_configuration": "Only primary pool=10; not used for tuning. Freeze the primary configuration before inference.",
+  "repetitions": 3,
+  "metrics": ["macro_recall_at_3","macro_recall_at_5","mrr_at_5","nearest_rank_latency_p50_p95_ms","retrieval_ms","rerank_ms","process_working_set_and_peak_bytes"],
+  "timing": "Warm both model sessions before measuring. No query/score cache; include encoding, Qdrant retrieval, payload and reranking in request timing. Report model loading separately. Stage durations are sequential. Rotate execution order. RAM includes both models in the process; do not attribute total process RAM solely to reranker.",
+  "fallback": "On reranker failure return the unchanged original Hybrid top-k with an explicit reason; no partial reranking. Retrieval failure remains an error.",
+  "limitations": "Small source-level binary relevance sets, not answer quality. Compound queries may need more sources than final_k allows. CPU/GPU timings for unselected models will not be invented."
+}
