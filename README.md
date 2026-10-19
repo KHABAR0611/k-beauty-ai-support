@@ -28,13 +28,17 @@ python -m venv .venv
 # PowerShell:
 .venv\Scripts\Activate.ps1
 python -m pip install -r requirements/ingestion-test.lock
-python -m pip install --no-deps --no-build-isolation -e .
+# PowerShell:
+$env:PYTHONPATH = "src"
+# Linux/macOS: export PYTHONPATH=src
 python -m pytest
-kbeauty-ingest --data-dir data --output-dir artifacts/ingestion --dry-run
-kbeauty-ingest --data-dir data --output-dir artifacts/ingestion
+python -m kbeauty_support.ingestion.cli --data-dir data --output-dir artifacts/ingestion --dry-run
+python -m kbeauty_support.ingestion.cli --data-dir data --output-dir artifacts/ingestion
 ```
 
-Без установки entry point после установки PyYAML: `python -m kbeauty_support.ingestion.cli` при PYTHONPATH=src. Старый `kbeauty-audit` сохраняется для совместимости; ingestion выполняет более строгую проверку metadata, JSON и файловой безопасности.
+Для установки entry points дополнительно выполните `python -m pip install -e .`: build backend закреплён в pyproject.toml и загружается отдельно. Основной запуск исходников выше не требует build backend. `kbeauty-ingest` эквивалентен модулю ingestion.cli; старый `kbeauty-audit` сохраняется для совместимости. Ingestion выполняет более строгую проверку metadata, JSON и файловой безопасности.
+
+При отсутствии доступа к PyPI допускается установка тех же версий из заранее полученного wheelhouse: `python -m pip install --no-index --find-links <WHEELHOUSE> -r requirements/ingestion-test.lock`. Wheelhouse должен соответствовать Python/ОС (в текущей проверке Windows x64, Python 3.12); он не включается в Git.
 
 ## Результат экспорта
 

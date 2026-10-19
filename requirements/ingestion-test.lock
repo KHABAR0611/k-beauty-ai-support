@@ -1,5 +1,4 @@
 # Python 3.12, source preparation and test tools; service/model extras excluded.
-setuptools==80.9.0
 PyYAML==6.0.2
 pytest==8.4.1
 iniconfig==2.3.1
