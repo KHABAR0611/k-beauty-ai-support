@@ -20,7 +20,7 @@ Python 3.12, PyYAML 6.0.2, Pytest 8.4.1, Qdrant client/server 1.15.1. Dense: о�
 
 ## Установка и запуск
 
-Требуются Python 3.12 и доступ к реестру пакетов. После `git clone <REPOSITORY_URL>` перейдите в каталог репозитория:
+Требуются Python 3.12 и доступ к реестру пакетов. После `git clone https://github.com/KHABAR0611/k-beauty-ai-support.git` перейдите в каталог репозитория:
 
 ```sh
 python -m venv .venv
