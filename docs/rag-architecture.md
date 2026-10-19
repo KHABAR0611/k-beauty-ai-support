@@ -1,6 +1,6 @@
 # Архитектура K-Beauty AI Support
 
-Статус: архитектура 0.3.0. Реализованы аудит и source preparation до локального generation export; encoders, Qdrant publishing и query pipeline ещё не реализованы.
+Статус: архитектура 0.3.1. Реализованы аудит и source preparation до локального generation export; encoders, Qdrant publishing и query pipeline ещё не реализованы.
 
 ## Indexing pipeline
 
@@ -66,3 +66,7 @@ Ingestion читает только allowlist трёх файлов, не про
 ## Развёртывание
 
 Сейчас Compose содержит Qdrant с persistent volume и одноразовый source-audit. Позже API — отдельный долгоживущий контейнер, ingestion — batch job с write-доступом. Dense/BM25/reranker adapters исполняются в процессе либо выносятся в model services после измерения ресурсов. LLM — внешний endpoint. Пока нет действующих моделей, отдельные фиктивные model/API контейнеры не добавляются.
+
+## Бизнес-база1.1
+
+По ADR-016 расчёт: promo → bonus (cap20% после promo) → delivery threshold после обоих. KB-004=1890, KB-005=1590. Pricing всё ещё будущий компонент; текущие tests проверяют source/expected consistency, не работающий API.

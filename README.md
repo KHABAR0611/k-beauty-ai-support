@@ -4,7 +4,7 @@
 
 ## Статус и возможности
 
-Версия 0.3.0 реализует Data Ingestion, Chunking & Metadata: безопасное чтение трёх источников, строгую валидацию, структуру смысловых разделов, отдельные товарные документы, UUIDv5, SHA-256, детерминированный JSONL и атомарную публикацию подготовленных поколений на диске.
+Версия 0.3.1 реализует Data Ingestion, Chunking & Metadata: безопасное чтение трёх источников, строгую валидацию, структуру смысловых разделов, отдельные товарные документы, UUIDv5, SHA-256, детерминированный JSONL и атомарную публикацию подготовленных поколений на диске.
 
 Текущий набор даёт **20 чанков: 11 разделов политик и 9 товаров**. Магазин, бренды и политики вымышлены; данные не являются подтверждёнными условиями действующего бизнеса. Цены — RUB за единицу.
 
@@ -74,7 +74,7 @@ docker compose up -d qdrant
 docker compose --profile tools run --rm --build source-audit
 ```
 
-Qdrant слушает loopback; данные в named volume qdrant_storage. Не используйте down -v для данных, которые нужно сохранить. Source-audit — отдельная офлайн-задача, не API и не model worker. Фактический статус Engine/health/persistence отдельно указан в [отчёте](docs/validation-report.md); валидная конфигурация не доказывает runtime.
+Qdrant слушает loopback; данные в named volume qdrant_storage. Не используйте down -v для данных, которые нужно сохранить. Source-audit — отдельная офлайн-задача, не API и не model worker. Фактический статус Engine/health/persistence отдельно указан в [отчёте](docs/business-review-results.md); валидная конфигурация не доказывает runtime.
 
 ## Структура, проверки и следующий этап
 
@@ -90,6 +90,8 @@ infrastructure/                 Dockerfile аудита
 docs/                           ADR, спецификации, отчёты, API, эксплуатация
 ```
 
-[Примеры чанков](docs/chunk-examples.md) · [Результаты проверки](docs/validation-report.md) · [Спецификация Блока 1](docs/block-1-spec.md) · [Roadmap](docs/roadmap.md) · [Публикация](docs/github-setup.md)
+[Примеры чанков](docs/chunk-examples.md) · [Результаты повторной проверки](docs/business-review-results.md) · [Спецификация Блока 1](docs/block-1-spec.md) · [Roadmap](docs/roadmap.md) · [Публикация](docs/github-setup.md)
 
 Блок 2 начинается только после приёмки Блока 1: выбрать model/tokenizer revisions, проверить token budgets, реализовать encoders и проверяемый publish в Qdrant. До этого экспорт не считается embedding-ready.
+
+Бизнес-данные версии1.1 пересмотрены по уточнению владельца: [аудит происхождения и зависимостей](docs/business-change-audit.md). Действующие правила определяются data/1.1 и ADR-016, а не историческим отчётом для1.0.

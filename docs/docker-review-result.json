@@ -1,0 +1,23 @@
+{
+  "project": "kbeauty-review-check",
+  "port": 6394,
+  "business_data_loaded": false,
+  "model_embeddings_created": false,
+  "engine_version": "29.8.0",
+  "compose_version": "Docker Compose version v5.5.1",
+  "compose_config_valid": true,
+  "failed_command": [
+    "docker",
+    "compose",
+    "-p",
+    "kbeauty-review-check",
+    "up",
+    "-d",
+    "qdrant"
+  ],
+  "diagnostic": " Image qdrant/qdrant:v1.15.1 Pulling \n 4f4fb700ef54 Pulling fs layer 0B\n 4c5e863cd1c7 Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n 34d10ac9af97 Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n be967389c82d Pulling fs layer 0B\n 59e22667830b Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n 3e5bd9a6d878 Pulling fs layer 0B\n 4f4fb700ef54 Pulling fs layer 0B\n bdeb1045e503 Pulling fs layer 0B\n 642422c7a320 Pulling fs layer 0B\nfailed to copy: httpReadSeeker: failed open: failed to do request: Get \"https://production.cloudfront.docker.com/registry-v2/docker/registry/v2/blobs/sha256/4c/4c5e863cd1c7166f5181e5b9feca43cd89cb5855ce5dc5e6d2c0cf5d73a64c33/data?[redacted]\": EOF\n",
+  "status": "failed",
+  "error_type": "RuntimeError",
+  "health_checks_performed": false,
+  "persistence_check_performed": false
+}

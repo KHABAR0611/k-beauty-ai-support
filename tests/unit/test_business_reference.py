@@ -19,18 +19,18 @@ def test_reference_baskets_t01_t06():
     assert sum(PRICES[p] for p in ["KB-001", "KB-006", "KB-009"]) == 2870
     basket = PRICES["KB-003"] + PRICES["KB-004"]
     net = basket * Decimal("0.90")
-    assert basket == 3380 and net == 3042 and net + 400 == 3442
-    assert (net * Decimal("0.05")).to_integral_value(rounding=ROUND_DOWN) == 152
+    assert basket == 3480 and net == 3132 and net + 400 == 3532
+    assert (net * Decimal("0.05")).to_integral_value(rounding=ROUND_DOWN) == 156
     basket = PRICES["KB-001"] + PRICES["KB-008"]
     spent = (basket * Decimal("0.20")).to_integral_value(rounding=ROUND_DOWN)
     assert spent == 444 and basket - spent + 250 == 2026
     assert ((basket - spent) * Decimal("0.05")).to_integral_value(rounding=ROUND_DOWN) == 88
     assert Decimal(2500) * Decimal("0.90") + 250 == 2500
-    assert Decimal(2500) - 500 == 2000
+    assert Decimal(2500) - 500 + 250 == 2250
     assert (Decimal(2250) * Decimal("0.05")).to_integral_value(rounding=ROUND_DOWN) == 112
     assert Decimal(2000) * Decimal("0.05") == 100
     assert Decimal(3500) * Decimal("0.20") == 700
-    assert Decimal(3500) - 700 == 2800 and Decimal(2800) * Decimal("0.05") == 140
+    assert Decimal(3500) - 700 + 350 == 3150 and Decimal(2800) * Decimal("0.05") == 140
 
 
 def test_t09_exact_product_constraints():
@@ -38,8 +38,9 @@ def test_t09_exact_product_constraints():
                and p["characteristics"]["category"] == "крем"
                and p["characteristics"]["fragrance_free"]
                and "сухая" in p["characteristics"]["skin_types"]]
-    assert [p["id"] for p in matches] == ["KB-004"]
-    assert matches[0]["characteristics"]["volume_ml"] == 50
+    assert matches == []
+    cream = next(p for p in CATALOG["products"] if p["id"] == "KB-004")
+    assert cream["price"] == 1890 and cream["characteristics"]["volume_ml"] == 50
 
 
 def test_acceptance_case_ids_and_sources_are_consistent():
@@ -50,10 +51,10 @@ def test_acceptance_case_ids_and_sources_are_consistent():
     assert set(re.findall(r"(?:DR|PL)-\d{2}", text)) <= defined
 
 
-def test_migration_preserves_commercial_terms():
+def test_owner_approved_commercial_terms():
     text = (ROOT / "data/payment_and_loyalty.md").read_text(encoding="utf-8")
-    assert "нельзя совмещать со списанием бонусов" in text
+    assert "можно совмещать со списанием бонусов" in text
     assert "округляется вниз" in text
     delivery = (ROOT / "data/delivery_and_returns.md").read_text(encoding="utf-8")
-    assert "после промокода, но до списания бонусов" in delivery
+    assert "после применения промокода и списания бонусов" in delivery
     assert "не автоматическое основание отказать позже" in delivery

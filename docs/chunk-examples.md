@@ -1,6 +1,6 @@
-# Реальные примеры source preparation
+# Реальные примеры source preparation — данные 1.1
 
-Получены CLI из данных 1.0. Fingerprint `9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853`. 7 из 20 чанков; полный manifest описывает все 20. Это metadata/source export без embeddings.
+Получены реальным CLI. Fingerprint `f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223`. 7 из 20 чанков; UUID сохранены, document_version и hashes обновлены. Никаких model embeddings и Qdrant business publishing.
 
 ## DR-02 — Способы, стоимость и сроки
 
@@ -8,26 +8,26 @@
 {
   "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
   "metadata": {
-    "chunk_sha256": "ab43a9d451cef5e2d42284eda933198f11f337137b1141d88d29b248711aa749",
+    "chunk_sha256": "3cdc34a35463f5f0de59b22c63b744bfca360cbaf52f4c7d360ad656af42ad18",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "delivery_returns",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-02|1.0|structure-v1",
     "parent_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "schema_version": "1.0",
     "section": "DR-02",
     "source": "data/delivery_and_returns.md",
-    "source_sha256": "6f05f5b604d88d1894b706941fb73aa59e5a8c6dd82ac9af9e6b97e480a85d1c",
+    "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
     "title": "Способы, стоимость и сроки",
     "token_count": null,
     "tokenizer_id": null,
     "type": "policy"
   },
-  "text": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после промокода, но до списания бонусов**, без стоимости доставки. Бонусы не меняют право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена."
+  "text": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки. Списание бонусов уменьшает сумму, по которой определяется право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена."
 }
 ```
 
@@ -41,16 +41,16 @@
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "delivery_returns",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-05|1.0|structure-v1",
     "parent_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "schema_version": "1.0",
     "section": "DR-05",
     "source": "data/delivery_and_returns.md",
-    "source_sha256": "6f05f5b604d88d1894b706941fb73aa59e5a8c6dd82ac9af9e6b97e480a85d1c",
+    "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
     "title": "Повреждение, брак или ошибка комплектации",
     "token_count": null,
     "tokenizer_id": null,
@@ -66,26 +66,26 @@
 {
   "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
   "metadata": {
-    "chunk_sha256": "72b4a9b27133dadeb14b7d22b7563e13b6b0f2b6e8655074308f4efb63d4e75c",
+    "chunk_sha256": "d71c1c5ab5624736a71651180afc12b3c10a6b2a64a80d9523ec77175fcb0701",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "payment_loyalty",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-02|1.0|structure-v1",
     "parent_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "schema_version": "1.0",
     "section": "PL-02",
     "source": "data/payment_and_loyalty.md",
-    "source_sha256": "2b6d3c743d1b75b95eadb296e9c9e9c35c3acd83b99595d65ff36fb72ef4e29e",
+    "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
     "title": "Промокод",
     "token_count": null,
     "tokenizer_id": null,
     "type": "policy"
   },
-  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-02. Промокод\n\nПромокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента. Минимальная стоимость товаров до скидки — 1 500 ₽ включительно. Он действует на весь каталог, один раз на клиента, не применяется к доставке. В текущем наборе данных даты окончания нет; реальная проверка права на промокод требует системы заказов.\n\nВ одном заказе можно применить один промокод. WELCOME10 нельзя совмещать со списанием бонусов. Можно отказаться от промокода и выбрать бонусы. Начисление бонусов при использовании промокода разрешено."
+  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-02. Промокод\n\nПромокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента. Минимальная стоимость товаров до скидки — 1 500 ₽ включительно. Он действует на весь каталог, один раз на клиента, не применяется к доставке. В текущем наборе данных даты окончания нет; реальная проверка права на промокод требует системы заказов.\n\nВ одном заказе можно применить один промокод. WELCOME10 можно совмещать со списанием бонусов. Сначала применяется промокод, затем списываются бонусы. Начисление бонусов при использовании промокода разрешено."
 }
 ```
 
@@ -95,26 +95,26 @@
 {
   "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
   "metadata": {
-    "chunk_sha256": "82dcc544adec67b8b1856a205a48431241a2de4034b443b28af43a4519b1cf5e",
+    "chunk_sha256": "078827164d9528a70e76bb94adc9539825810cdb01b244cf326c50c1323144d3",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "payment_loyalty",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-04|1.0|structure-v1",
     "parent_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "schema_version": "1.0",
     "section": "PL-04",
     "source": "data/payment_and_loyalty.md",
-    "source_sha256": "2b6d3c743d1b75b95eadb296e9c9e9c35c3acd83b99595d65ff36fb72ef4e29e",
+    "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
     "title": "Списание бонусов",
     "token_count": null,
     "tokenizer_id": null,
     "type": "policy"
   },
-  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-04. Списание бонусов\n\n1 бонус = 1 ₽. Можно списать целое количество бонусов в пределах доступного баланса и не более 20% стоимости товаров без промокода; предел округляется вниз до целого рубля. Доставку бонусами оплатить нельзя. Минимального количества для списания нет.\n\nПример: товары 2 220 ₽, баланс 600 бонусов — максимум списания 444 бонуса, денежная оплата товаров 1 776 ₽. Начислится 88 бонусов, если заказ получен и не возвращён. Право на бесплатную доставку считается до списания бонусов по DR-02."
+  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-04. Списание бонусов\n\n1 бонус = 1 ₽. Можно списать целое количество бонусов в пределах доступного баланса и не более 20% стоимости товаров после применения промокода (если он выбран); предел округляется вниз до целого рубля. Доставку бонусами оплатить нельзя. Минимального количества для списания нет.\n\nПример: товары 2 220 ₽, баланс 600 бонусов — максимум списания 444 бонуса, денежная оплата товаров 1 776 ₽. Начислится 88 бонусов, если заказ получен и не возвращён. Право на бесплатную доставку считается после списания бонусов по DR-02."
 }
 ```
 
@@ -124,26 +124,26 @@
 {
   "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
   "metadata": {
-    "chunk_sha256": "bfad041edca3101b6857d191ae00c7e300ab660364d0bbd21fb86d22c9420d1e",
+    "chunk_sha256": "62aa3877f02f3db4b543b3a1f3fd48cb6245c318322fbfedf5bd0be0ffd65785",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "payment_loyalty",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-05|1.0|structure-v1",
     "parent_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "schema_version": "1.0",
     "section": "PL-05",
     "source": "data/payment_and_loyalty.md",
-    "source_sha256": "2b6d3c743d1b75b95eadb296e9c9e9c35c3acd83b99595d65ff36fb72ef4e29e",
+    "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
     "title": "Порядок расчёта",
     "token_count": null,
     "tokenizer_id": null,
     "type": "policy"
   },
-  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-05. Порядок расчёта\n\n1. Сложить цену × количество товаров из актуального каталога.\n2. Если выбран и применим WELCOME10, уменьшить стоимость товаров на 10%, округлив скидку до копеек. Иначе скидка равна нулю.\n3. Определить стоимость доставки по зоне, способу и стоимости товаров после промокода, до бонусов (DR-02).\n4. При отсутствии промокода списать запрошенные целые бонусы в пределах баланса и лимита 20% стоимости товаров.\n5. Денежный итог = товары − скидка − списанные бонусы + доставка.\n6. Будущее начисление = округлённые вниз 5% денежной оплаты товаров; доставка не учитывается.\n\nАссистент может рассчитать расчётный пример по данным пользователя, но не подтверждает баланс, право на промокод, наличие товара или окончательную сумму реального заказа. Не хватает города, способа доставки, количества, статуса первого заказа или баланса — нужно уточнить соответствующие данные."
+  "text": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-05. Порядок расчёта\n\n1. Сложить цену × количество товаров из актуального каталога.\n2. Если выбран и применим WELCOME10, уменьшить стоимость товаров на 10%, округлив скидку до копеек. Иначе скидка равна нулю.\n3. Списать запрошенные целые бонусы в пределах баланса и лимита 20% стоимости товаров после промокода; предел округляется вниз до целого рубля. Промокод и списание совместимы.\n4. Определить стоимость доставки по зоне, способу и денежной стоимости товаров после промокода и списания бонусов (DR-02).\n5. Денежный итог = товары − скидка − списанные бонусы + доставка.\n6. Будущее начисление = округлённые вниз 5% денежной оплаты товаров; доставка не учитывается.\n\nАссистент может рассчитать расчётный пример по данным пользователя, но не подтверждает баланс, право на промокод, наличие товара или окончательную сумму реального заказа. Не хватает города, способа доставки, количества, статуса первого заказа или баланса — нужно уточнить соответствующие данные."
 }
 ```
 
@@ -154,27 +154,27 @@
   "currency": "RUB",
   "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
   "metadata": {
-    "chunk_sha256": "e61112eeff2d809261fef3e10e8a967633569c1fc2bc9aa7451ab0405918d999",
+    "chunk_sha256": "1f32d49a085fa278abb70ae4b92868b8644d5d4983235ac61042443300ae9745",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "kbeauty_demo",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/products.json|kbeauty_demo|KB-004|1.0|structure-v1",
     "parent_id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "product_id": "KB-004",
     "schema_version": "1.0",
     "section": "KB-004",
     "source": "data/products.json",
-    "source_sha256": "471bac949d3d7eb0c6f6fe3495e8bc5d57d55f784b48d46b1e70066c7b68e617",
+    "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
     "title": "Jeju Cloud Крем с керамидами",
     "token_count": null,
     "tokenizer_id": null,
     "type": "product"
   },
-  "price_kopecks": 179000,
+  "price_kopecks": 189000,
   "product": {
     "characteristics": {
       "category": "крем",
@@ -193,9 +193,9 @@
     "description": "Питательный крем для поддержания увлажнённости кожи.",
     "id": "KB-004",
     "name": "Jeju Cloud Крем с керамидами",
-    "price": 1790
+    "price": 1890
   },
-  "text": "# KB-004: Jeju Cloud Крем с керамидами\n\n{\"characteristics\":{\"category\":\"крем\",\"fragrance_free\":true,\"key_ingredients\":[\"керамиды\",\"сквалан\"],\"skin_types\":[\"сухая\",\"нормальная\"],\"usage\":\"Нанести завершающим этапом увлажняющего ухода.\",\"volume_ml\":50},\"currency\":\"RUB\",\"description\":\"Питательный крем для поддержания увлажнённости кожи.\",\"id\":\"KB-004\",\"name\":\"Jeju Cloud Крем с керамидами\",\"price\":1790}"
+  "text": "# KB-004: Jeju Cloud Крем с керамидами\n\n{\"characteristics\":{\"category\":\"крем\",\"fragrance_free\":true,\"key_ingredients\":[\"керамиды\",\"сквалан\"],\"skin_types\":[\"сухая\",\"нормальная\"],\"usage\":\"Нанести завершающим этапом увлажняющего ухода.\",\"volume_ml\":50},\"currency\":\"RUB\",\"description\":\"Питательный крем для поддержания увлажнённости кожи.\",\"id\":\"KB-004\",\"name\":\"Jeju Cloud Крем с керамидами\",\"price\":1890}"
 }
 ```
 
@@ -206,27 +206,27 @@
   "currency": "RUB",
   "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
   "metadata": {
-    "chunk_sha256": "fce7b2543694baac28e1b0fcb933fa3b15bd37e8fe66a4c35a0ed9b836657b41",
+    "chunk_sha256": "0e4ed7ae739e952c84d06dddd081d4b0d22e966e739c05f8e7530fa8d4472c6e",
     "chunker_version": "structure-v1",
     "data_origin": "fictional",
     "document_id": "kbeauty_demo",
-    "document_version": "1.0",
+    "document_version": "1.1",
     "effective_date": "2026-10-19",
     "language": "ru",
     "logical_id": "data/products.json|kbeauty_demo|KB-005|1.0|structure-v1",
     "parent_id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
-    "preparation_generation": "9badfe621f8ead8bb27be31138422446ac07491a391b96456fbb7ad38291a853",
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
     "product_id": "KB-005",
     "schema_version": "1.0",
     "section": "KB-005",
     "source": "data/products.json",
-    "source_sha256": "471bac949d3d7eb0c6f6fe3495e8bc5d57d55f784b48d46b1e70066c7b68e617",
+    "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
     "title": "Morning Seoul Солнцезащитный флюид",
     "token_count": null,
     "tokenizer_id": null,
     "type": "product"
   },
-  "price_kopecks": 149000,
+  "price_kopecks": 159000,
   "product": {
     "characteristics": {
       "category": "солнцезащита",
@@ -247,8 +247,8 @@
     "description": "Дневной солнцезащитный флюид с заявленной в описании вымышленного товара защитой SPF 50+ PA++++.",
     "id": "KB-005",
     "name": "Morning Seoul Солнцезащитный флюид",
-    "price": 1490
+    "price": 1590
   },
-  "text": "# KB-005: Morning Seoul Солнцезащитный флюид\n\n{\"characteristics\":{\"category\":\"солнцезащита\",\"fragrance_free\":true,\"key_ingredients\":[\"пантенол\",\"экстракт риса\"],\"pa\":\"++++\",\"skin_types\":[\"нормальная\",\"комбинированная\"],\"spf\":\"50+\",\"usage\":\"Использовать по инструкции на упаковке; сервис не подтверждает испытания SPF.\",\"volume_ml\":50},\"currency\":\"RUB\",\"description\":\"Дневной солнцезащитный флюид с заявленной в описании вымышленного товара защитой SPF 50+ PA++++.\",\"id\":\"KB-005\",\"name\":\"Morning Seoul Солнцезащитный флюид\",\"price\":1490}"
+  "text": "# KB-005: Morning Seoul Солнцезащитный флюид\n\n{\"characteristics\":{\"category\":\"солнцезащита\",\"fragrance_free\":true,\"key_ingredients\":[\"пантенол\",\"экстракт риса\"],\"pa\":\"++++\",\"skin_types\":[\"нормальная\",\"комбинированная\"],\"spf\":\"50+\",\"usage\":\"Использовать по инструкции на упаковке; сервис не подтверждает испытания SPF.\",\"volume_ml\":50},\"currency\":\"RUB\",\"description\":\"Дневной солнцезащитный флюид с заявленной в описании вымышленного товара защитой SPF 50+ PA++++.\",\"id\":\"KB-005\",\"name\":\"Morning Seoul Солнцезащитный флюид\",\"price\":1590}"
 }
 ```

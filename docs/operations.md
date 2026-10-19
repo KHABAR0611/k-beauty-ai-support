@@ -31,3 +31,7 @@ Prompt injection — отдельный набор атак на user и retriev
 ## Воспроизводимость
 
 Основные версии закреплены; полный transitive lock, image digests, model revisions и smoke на чистой машине — gate перед развёртыванием API. Текущий Dockerfile предназначен только для аудита; build и Qdrant startup должны иметь отдельное доказательство в validation report. Dependency/security scan не выполнялся.
+
+## Изолированная проверка Qdrant
+
+`python infrastructure/verify_qdrant.py` запускает только Compose project kbeauty-review-check на loopback6394, в отдельном named volume. Создаётся уникальная infra_smoke collection и один синтетический point с literal vector[1.0]/случайным marker, затем проверяются health/readiness и тот же point после restart. Источники data/ не читаются, модели не вызываются. Существующие контейнеры/образы/volumes и collections не удаляются. Результат в artifacts/docker-review/result.json, локальный test API key — в connection.env того же игнорируемого каталога; ключ не логируется и не коммитится. Не запускайте тот же project для других данных. Проверка не является backup/restore или промышленным SLA.

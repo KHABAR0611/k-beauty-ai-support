@@ -53,7 +53,7 @@ def test_all_chunks_have_stable_typed_metadata(bundle):
         assert UUID(chunk["id"]).version == 5
         meta = chunk["metadata"]
         assert meta["source"].startswith("data/") and not Path(meta["source"]).is_absolute()
-        assert meta["section"] and meta["document_version"] == "1.0"
+        assert meta["section"] and meta["document_version"] == "1.1"
         assert meta["type"] in {"policy", "product"}
         assert meta["language"] == "ru"
         assert meta["preparation_generation"] == prepared.fingerprint
@@ -72,9 +72,9 @@ def test_every_policy_body_survives_without_truncation(bundle):
         for section, _, body in sections:
             assert prepared[section]["text"] == preamble + "\n\n" + body
     assert "| Москва | Курьер | 350 ₽ | 3 500 ₽ |" in prepared["DR-02"]["text"]
-    assert "после промокода, но до списания бонусов" in prepared["DR-02"]["text"]
+    assert "после применения промокода и списания бонусов" in prepared["DR-02"]["text"]
     assert "не автоматическое основание отказать позже" in prepared["DR-05"]["text"]
-    assert "нельзя совмещать со списанием бонусов" in prepared["PL-02"]["text"]
+    assert "можно совмещать со списанием бонусов" in prepared["PL-02"]["text"]
     assert "Доставку бонусами оплатить нельзя" in prepared["PL-04"]["text"]
     assert "6. Будущее начисление" in prepared["PL-05"]["text"]
 
@@ -157,7 +157,7 @@ def test_invalid_schema_or_bundle_versions_fail(bundle, mutate):
 
 
 @pytest.mark.parametrize("change", [
-    lambda t: t.replace('version: "1.0"', 'version: "1.0"\nversion: "2.0"'),
+    lambda t: t.replace('version: "1.1"', 'version: "1.1"\nversion: "2.0"'),
     lambda t: t.replace("language: ru", "language: en"),
     lambda t: t.replace('effective_date: "2026-10-19"', 'effective_date: "not-a-date"'),
     lambda t: t.replace("## DR-02.", "## DR-99."),
