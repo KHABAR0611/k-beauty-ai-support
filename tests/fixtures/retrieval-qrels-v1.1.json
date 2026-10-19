@@ -1,0 +1,20 @@
+{
+  "version": "1.1",
+  "protocol": "Frozen before first model search. Binary relevance by source section, macro recall. No tuning on these queries.",
+  "excluded": {"T11": "Instruction handling and tool authorization require later stages, not similarity evaluation", "T12_catalog_absence_and_medical": "Absence requires exact full-catalog checks; medical safety is not a retrieval metric"},
+  "queries": [
+    {"id":"R01","scenario":"T01","query":"Сколько стоит курьер в Москве, если товары после скидки стоят 3 400 рублей? Сколько ждать?","relevant":["DR-01","DR-02"]},
+    {"id":"R02","scenario":"T02","query":"Заказываю в ПВЗ в Казань пенку KB-001, масло KB-006 и бальзам KB-009, по одной штуке без промокода. Сколько заплачу и сколько ждать?","relevant":["KB-001","KB-006","KB-009","DR-01","DR-02"]},
+    {"id":"R03","scenario":"T03","query":"Первый заказ, я зарегистрирован: сыворотка KB-003 и крем KB-004. WELCOME10, курьер в Санкт-Петербурге. Итог и бонусы?","relevant":["KB-003","KB-004","PL-02","PL-03","PL-05","DR-02"]},
+    {"id":"R04","scenario":"T04","query":"У меня 600 бонусов. Беру пенку KB-001 и ночную маску KB-008 в ПВЗ. Спишите максимум: сколько денег и сколько новых бонусов?","relevant":["KB-001","KB-008","PL-03","PL-04","PL-05","DR-02"]},
+    {"id":"R05","scenario":"T05","query":"Первый заказ зарегистрированного клиента. Корзина 2500 рублей, ПВЗ, баланс 500 бонусов. Можно совместить WELCOME10 и бонусы? Какой итог?","relevant":["PL-02","PL-03","PL-04","PL-05","DR-02"]},
+    {"id":"R06","scenario":"T06","query":"Москва, курьер. Товары ровно 3500 рублей до бонусов. У меня 700 бонусов, спишите все. Как считать итог и начисление?","relevant":["DR-02","PL-03","PL-04","PL-05"]},
+    {"id":"R07","scenario":"T07","query":"Получил крем пять дней назад. Пломба целая, брака нет. Можно вернуть и кто платит пересылку? Когда вернут деньги?","relevant":["DR-04","DR-06"]},
+    {"id":"R08","scenario":"T08","query":"Получила сыворотку три дня назад, вскрыла и обнаружила повреждение флакона. Уже прошло 48 часов. Мне откажут?","relevant":["DR-05"]},
+    {"id":"R09","scenario":"T09","query":"Подбери крем без отдушки для сухой кожи до 1800 рублей. Сколько мл и какие ключевые компоненты?","relevant":["KB-004","KB-008"]},
+    {"id":"R10","scenario":"T10","query":"Можно оплатить наличными при получении? И где заказ 12345, проверь трек.","relevant":["PL-01","DR-03"]},
+    {"id":"R12","scenario":"T12_payment_only","query":"Можно ли прислать CVV для оплаты?","relevant":["PL-01"]},
+    {"id":"R13","scenario":"paraphrase_T08","query":"Развернула посылку только на третий день, а баночка разбита. Срок жалобы уже вышел?","relevant":["DR-05"]},
+    {"id":"R14","scenario":"exact_sku","query":"KB-005","relevant":["KB-005"]}
+  ]
+}
