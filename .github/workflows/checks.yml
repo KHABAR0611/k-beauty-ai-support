@@ -1,0 +1,22 @@
+name: Source checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  source-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - run: python -m pip install -r requirements/ingestion-test.lock
+      - run: python -m pip install --no-deps --no-build-isolation -e .
+      - run: kbeauty-audit --data-dir data
+      - run: kbeauty-ingest --data-dir data --output-dir artifacts/ingestion --dry-run
+      - run: kbeauty-ingest --data-dir data --output-dir artifacts/ingestion
+      - run: python -m pytest
+      - name: Validate Compose configuration
+        env:
+          QDRANT_API_KEY: ci-config-validation-only
+        run: docker compose config --quiet

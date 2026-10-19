@@ -1,0 +1,12 @@
+.git
+.venv
+learning
+work
+artifacts
+__pycache__
+.pytest_cache
+pytest-cache-files-*
+.env
+.env.*
+*.key
+*.pem

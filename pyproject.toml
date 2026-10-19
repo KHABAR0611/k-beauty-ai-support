@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kbeauty-ai-support"
+version = "0.3.0"
+description = "Deterministic source preparation for K-Beauty AI Support"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+service = [
+  "fastapi==0.116.1",
+  "uvicorn==0.35.0",
+  "pydantic==2.11.7",
+  "qdrant-client==1.15.1",
+]
+test = ["pytest==8.4.1"]
+retrieval = ["fastembed==0.7.3"]
+
+[project.scripts]
+kbeauty-audit = "kbeauty_support.ingestion.audit:main"
+kbeauty-ingest = "kbeauty_support.ingestion.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit"]
+pythonpath = ["src"]
+addopts = "-ra"
