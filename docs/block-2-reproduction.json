@@ -1,0 +1,8 @@
+{
+  "clean_environment_embedding_recomputed": true,
+  "artifact_bytes_identical": true,
+  "artifact_sha256": "70f6251d209bb5977571ce509bdb52d52375da569c4765b1b668d4a11c2ac31c",
+  "embedding_elapsed_seconds": 91.094,
+  "standalone_cli_search_verified": true,
+  "sku_query_top1": "KB-005"
+}

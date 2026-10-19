@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kbeauty-ai-support"
-version = "0.3.1"
-description = "Deterministic source preparation for K-Beauty AI Support"
+version = "0.4.0"
+description = "Source preparation, dense retrieval and generation publishing for K-Beauty AI Support"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
@@ -21,13 +21,18 @@ service = [
 ]
 test = ["pytest==8.4.1"]
 retrieval = ["fastembed==0.7.3"]
+dense = ["qdrant-client==1.15.1", "onnxruntime==1.31.0", "tokenizers==0.23.3", "numpy==2.5.4"]
 
 [project.scripts]
 kbeauty-audit = "kbeauty_support.ingestion.audit:main"
 kbeauty-ingest = "kbeauty_support.ingestion.cli:main"
+kbeauty-dense = "kbeauty_support.retrieval.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"kbeauty_support.retrieval" = ["bge-m3.lock.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/unit"]

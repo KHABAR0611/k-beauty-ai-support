@@ -24,3 +24,7 @@ JSONL boundary: `id` → будущий point_id; metadata.source → source_pat
 | Evaluation | versioned cases + traces → metrics | различает retrieval/calculation/generation errors |
 
 Путь вне allowlist, невалидная версия или дубликат ID не пропускаются с warning. Подробные exception types, async-варианты и сериализация DTO уточняются при реализации соответствующего этапа; Protocol — синхронная доменная граница, API не должен блокировать event loop.
+
+## Реализованные контракты Блока2
+
+`load_prepared`: pin CURRENT → verify hashes →20 source records. `Encoder`: signature/token_counts/encode. `embed`: model gate → normalized dense vectors + copied exact payload → generation/content SHA-256. `save_artifact`: immutable JSON cache. `DenseIndex.publish`: single writer → staging → verify → atomic alias. `DenseIndex.search`: pin physical generation → compare model signature → dense top-k → texts/metadata/product. Dense metadata содержит реальные token_count/tokenizer_id; source export сохраняется неизменным. Эти контракты реализованы в retrieval/, остальные query/API контракты выше остаются проектируемыми.

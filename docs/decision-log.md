@@ -28,7 +28,7 @@ Markdown — правила, JSON — точные товарные поля. А
 
 ## ADR-007 — Partially superseded: платформа и модели
 
-Платформа закреплена ADR-008. Dense-модель, reranker и LLM пока открыты: оценить русский корпус, стоимость, latency, лицензии; зафиксировать revisions до публикации индекса.
+Платформа закреплена ADR-008. Dense-модель уточнена ADR-017; reranker и LLM пока открыты: оценить русский корпус, стоимость, latency, лицензии; зафиксировать revisions до публикации индекса.
 
 ## ADR-008 — Accepted: Python / FastAPI / Qdrant
 
@@ -67,3 +67,17 @@ Manifest fingerprint, staging collection, проверка целостност�
 ## ADR-016 — Accepted: бизнес-база 1.1 по уточнению владельца
 
 При приёмке 19.10.2026 владелец указал исходные требования: доставка после промокода и бонусов, совмещение WELCOME10 разрешено, KB-004=1890 и KB-005=1590. Отдельным ответом подтверждена база cap20% после промокода. В Git прежние значения существовали уже в первом доступном commit, поэтому поздняя смена в Блоке1 не доказана; история не переписывается. Версия всех трёх источников повышена до1.1. Обновлены T03/T05/T06/T09, все12 expected records, regression pins и примеры. Детерминизм ingestion не является свидетельством верности бизнес-требований; основание решения — owner clarification, не pass rate. Остальные цены/сроки сохранены.
+
+## ADR-017 — Accepted: официальный BAAI/bge-m3 dense ONNX
+
+Блок2 утверждает bge-m3 как основной кандидат. Многоязычный checkpoint пригоден для русских данных по назначению, что отдельно проверено на собственном корпусе. Pinned revision5617a9f61b028005a4858fdac845db406aefb181; все7 files SHA-256 закреплены. Выбраны официальный FP32 ONNX, CLS+L2,1024d, CPU batch1, без prefix, max8192. FastEmbed0.7.3 не поддерживает модель в своём registry; вместо неявного обновления зависимости добавлен прямой ONNX Runtime adapter. FastEmbed остаётся только для будущей sparse-стадии. Tokenizer не обрезает input. Нет смены модели или квантования. Альтернатива multilingual-e5-small существенно легче, но имеет384d/512 tokens, требует query/passage prefixes, новой коллекции и новой оценки; без согласования не используется. На8ГБ RAM текущий вариант выполняется, но дорог по памяти и CPU; latency/SLA не обещаются.
+
+## ADR-018 — Implemented: dense поколения и безопасная публикация
+
+Реализует ADR-010: immutable artifact → deterministic physical collection → batch upsert → full readback + smoke → atomic alias. Для изменённых/удалённых документов создаётся полное новое поколение, старые не удаляются. No-op проверяет payload и vectors, а не только количество. Query pin физической collection защищает от смешивания поколений. Local writer lock предполагает единственного publisher; multi-host concurrency не заявляется. Реальные Server tests подтверждают interrupted update и restart, но не hardware power loss или backup restore.
+
+## ADR-019 — Accepted: frozen source recall до оценки
+
+13 query relevance sets зафиксированы commit1003d53 до первого model search. Эталоны не меняются по результатам. Macro Recall@3/5 измеряет долю найденных источников, включая multi-source cases; отдельно публикуется достижимый ceiling для фиксированного k. T11 и частиT12 вне retrieval-границы не притворяются поисковыми тестами. Малый набор не доказывает обобщение, медицинскую безопасность или качество LLM. Dense-only baseline сохраняется для последующего сравнения; API, hybrid и генерация не входят в Блок2.
+
+Справка по предложенной, но не использованной альтернативе: [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small), 384 измерения, max512, query/passage prefixes. Модель требует отдельного согласования и сравнения на том же corpus; её качество здесь не измерялось.

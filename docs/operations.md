@@ -1,6 +1,6 @@
 # Надёжность, наблюдаемость и безопасность
 
-Статус: local source preparation и его JSON-события реализованы; остальные требования ниже относятся к последующим этапам, кроме существующей Compose-конфигурации. Конфигурация Qdrant одиночная, без HA и без SLA. Фактический runtime зависит от доступности образа и фиксируется в validation-report.md.
+Статус0.4.0: source preparation, dense model, Qdrant publishing и CLI поиска реализованы. Проверки ниже, не отмеченные результатами Блока2, остаются требованиями последующих этапов. Конфигурация Qdrant одиночная, без HA и без SLA. Фактический runtime зависит от доступности образа и фиксируется в validation-report.md.
 
 ## Compose и хранение
 
@@ -8,7 +8,7 @@ Qdrant 1.15.1 публикует REST только на 127.0.0.1 и пишет 
 
 У Qdrant контейнера пока нет встроенного Compose healthcheck, чтобы не предполагать наличие curl внутри image. Внешний probe (будущий монитор/CI) должен проверять `GET /readyz` на REST с `api-key`, ожидать 200 с ограниченным timeout и retries. Running container не равен готовому индексу; отдельный probe проверяет active alias и manifest. Перед остановкой убедиться, что job не публикует поколение. Не удалять volume ради исправления запуска.
 
-Backup: перед изменением server/schema создать snapshot collection через административный клиент, сохранить manifest/catalog и checksum вне volume. Restore в отдельную collection, проверить hashes/counts и затем переключить alias. Перезапуск/persistence и restore ещё не испытаны; до испытания не заявлять backup готовым.
+Backup: перед изменением server/schema создать snapshot collection через административный клиент, сохранить manifest/catalog и checksum вне volume. Restore в отдельную collection, проверить hashes/counts и затем переключить alias. Перезапуск/persistence испытан в Блоке2; restore ещё не испытан; до испытания не заявлять backup готовым.
 
 ## Ошибки и deadlines
 
@@ -35,3 +35,9 @@ Prompt injection — отдельный набор атак на user и retriev
 ## Изолированная проверка Qdrant
 
 `python infrastructure/verify_qdrant.py` запускает только Compose project kbeauty-review-check на loopback6394, в отдельном named volume. Создаётся уникальная infra_smoke collection и один синтетический point с literal vector[1.0]/случайным marker, затем проверяются health/readiness и тот же point после restart. Источники data/ не читаются, модели не вызываются. Существующие контейнеры/образы/volumes и collections не удаляются. Результат в artifacts/docker-review/result.json, локальный test API key — в connection.env того же игнорируемого каталога; ключ не логируется и не коммитится. Не запускайте тот же project для других данных. Проверка не является backup/restore или промышленным SLA.
+
+## Проверенный dense runtime
+
+Фактические проверки и ограничения: [Блок2](block-2-results.md), команды и recovery: [спецификация](block-2-spec.md). Native Docker pull обрывался через Engine CDN/proxy; официальный образ был загружен через прямой Registry API, SHA-256 каждого объекта проверен, затем docker load. Происхождение в block-2-image-provenance.json. Системные DNS/proxy и существующие Docker-данные не изменялись. Python probes Qdrant идут напрямую по loopback; модели скачиваются отдельным downloader с необязательным process-local --direct. Другие deployments должны подтвердить собственную сетевую конфигурацию.
+
+Dense CLI использует Qdrant request timeout30s, без автоматических повторных alias transactions; это отдельный batch CLI, не будущий HTTP deadline45s. JSON logs показывают прогресс encoding/publish и категорию ошибки. Пока нет monitoring service, read-only credentials, load tests и dependency security scan.

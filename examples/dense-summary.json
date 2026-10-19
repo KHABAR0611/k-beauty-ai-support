@@ -1,0 +1,108 @@
+{
+  "generation": "2876d48f2f3195816de340f42faa6c37ab24dd9d8fde1abc04eef4c1e9837670",
+  "descriptor": {
+    "catalog_sha256": "b4539538dec99ea3bb8befb676def851cf0387ccddcaca27081eea1320fd86dc",
+    "distance": "Cosine",
+    "model": {
+      "device": "cpu",
+      "dimension": 1024,
+      "files": {
+        "Constant_7_attr__value": {
+          "sha256": "cdf16f72c5d07b36484056e601ed9687f78477e5d85cee85a34f2406b7fb5906",
+          "size": 65552
+        },
+        "config.json": {
+          "sha256": "f24afd5de914fba8c668426c43d208a1a54022500c63b2c160be20891686fce8",
+          "size": 698
+        },
+        "model.onnx": {
+          "sha256": "f84251230831afb359ab26d9fd37d5936d4d9bb5d1d5410e66442f630f24435b",
+          "size": 724923
+        },
+        "model.onnx_data": {
+          "sha256": "1eebfb28493f67bba03ce0ef64bfdc7fc5a3bd9d7493f818bb1d78cd798416b4",
+          "size": 2266820608
+        },
+        "special_tokens_map.json": {
+          "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+          "size": 964
+        },
+        "tokenizer.json": {
+          "sha256": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790",
+          "size": 17082821
+        },
+        "tokenizer_config.json": {
+          "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+          "size": 1173
+        }
+      },
+      "format": "official-onnx-fp32",
+      "max_tokens": 8192,
+      "model_id": "BAAI/bge-m3",
+      "normalize": true,
+      "pooling": "cls",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "runtime": {
+        "numpy": "2.5.4",
+        "onnxruntime": "1.31.0",
+        "tokenizers": "0.23.3"
+      },
+      "threads": 2
+    },
+    "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+    "schema_version": "dense-v1",
+    "vector_name": "dense"
+  },
+  "content_sha256": "335116720ec52514431b2e9bc262555a210d9cd2eeda398e9ccfb23fbe416ab1",
+  "point_count": 20,
+  "samples": [
+    {
+      "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+      "section": "DR-01",
+      "token_count": 192,
+      "vector_dimension": 1024,
+      "vector_first_8": [
+        -0.033285174518823624,
+        0.030201004818081856,
+        0.003017902374267578,
+        -0.0011164735769852996,
+        -0.04727344587445259,
+        0.013003233820199966,
+        -0.040227897465229034,
+        0.014444427564740181
+      ]
+    },
+    {
+      "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+      "section": "DR-02",
+      "token_count": 268,
+      "vector_dimension": 1024,
+      "vector_first_8": [
+        -0.05810263007879257,
+        0.005780923645943403,
+        -0.002915182150900364,
+        0.008140455931425095,
+        -0.032066430896520615,
+        0.030186740681529045,
+        -0.006248782388865948,
+        0.004071809351444244
+      ]
+    },
+    {
+      "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+      "section": "DR-03",
+      "token_count": 140,
+      "vector_dimension": 1024,
+      "vector_first_8": [
+        -0.0035312948748469353,
+        -0.010537591762840748,
+        -0.02084159292280674,
+        0.007291831076145172,
+        -0.04172474890947342,
+        -0.019919395446777344,
+        0.02662249654531479,
+        -0.02852037362754345
+      ]
+    }
+  ]
+}

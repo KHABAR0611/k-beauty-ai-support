@@ -45,18 +45,29 @@ def main() -> int:
                     "persistence_check_performed": False}
 
     def run(args: list[str], timeout: int = 120) -> str:
-        p = subprocess.run(args, cwd=ROOT, env=env, capture_output=True, timeout=timeout)
+        p = subprocess.Popen(args, cwd=ROOT, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        try:
+            stdout, stderr = p.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            # Windows CLI plugins inherit pipes; terminate only this owned subprocess tree.
+            if os.name == "nt":
+                subprocess.run(["taskkill", "/PID", str(p.pid), "/T", "/F"], capture_output=True, timeout=10)
+            else:
+                p.kill()
+            p.communicate(timeout=10)
+            raise
         if p.returncode:
             result["failed_command"] = args
-            result["diagnostic"] = safe_diagnostic(p.stderr.decode("utf-8", errors="replace")[-1800:], key)
+            result["diagnostic"] = safe_diagnostic(stderr.decode("utf-8", errors="replace")[-1800:], key)
             raise RuntimeError("Docker command failed: " + args[1])
-        return p.stdout.decode("utf-8", errors="replace").strip()
+        return stdout.decode("utf-8", errors="replace").strip()
 
     def request(method: str, path: str, body: dict | None = None):
         data = None if body is None else json.dumps(body).encode("utf-8")
         req = urllib.request.Request(f"http://127.0.0.1:{PORT}" + path, data=data, method=method,
                                      headers={"api-key": key, "Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=5) as response:
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        with opener.open(req, timeout=5) as response:
             raw = response.read()
             return response.status, json.loads(raw) if raw.startswith(b"{") else raw.decode()
 

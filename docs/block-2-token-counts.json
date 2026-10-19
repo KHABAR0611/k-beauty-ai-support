@@ -1,0 +1,153 @@
+{
+  "all_fit": true,
+  "chunks": [
+    {
+      "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+      "section": "DR-01",
+      "tokens": 192
+    },
+    {
+      "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+      "section": "DR-02",
+      "tokens": 268
+    },
+    {
+      "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+      "section": "DR-03",
+      "tokens": 140
+    },
+    {
+      "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+      "section": "DR-04",
+      "tokens": 253
+    },
+    {
+      "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+      "section": "DR-05",
+      "tokens": 222
+    },
+    {
+      "id": "3b29902b-7c32-5329-a113-95a058386300",
+      "section": "DR-06",
+      "tokens": 246
+    },
+    {
+      "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+      "section": "PL-01",
+      "tokens": 174
+    },
+    {
+      "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+      "section": "PL-02",
+      "tokens": 162
+    },
+    {
+      "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+      "section": "PL-03",
+      "tokens": 192
+    },
+    {
+      "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+      "section": "PL-04",
+      "tokens": 167
+    },
+    {
+      "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+      "section": "PL-05",
+      "tokens": 258
+    },
+    {
+      "id": "acb50500-6dc0-5115-97ab-ec216c07be86",
+      "section": "KB-001",
+      "tokens": 185
+    },
+    {
+      "id": "39211bca-83ec-559f-a68f-ccbb3842b505",
+      "section": "KB-002",
+      "tokens": 184
+    },
+    {
+      "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+      "section": "KB-003",
+      "tokens": 206
+    },
+    {
+      "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+      "section": "KB-004",
+      "tokens": 178
+    },
+    {
+      "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+      "section": "KB-005",
+      "tokens": 226
+    },
+    {
+      "id": "eea4050a-fdb8-59bd-94c0-b2fe4c571fa9",
+      "section": "KB-006",
+      "tokens": 188
+    },
+    {
+      "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+      "section": "KB-007",
+      "tokens": 172
+    },
+    {
+      "id": "72126930-ce0b-57e6-b627-128182284766",
+      "section": "KB-008",
+      "tokens": 169
+    },
+    {
+      "id": "a17715b1-9978-5e4a-a973-d25113c1cb90",
+      "section": "KB-009",
+      "tokens": 169
+    }
+  ],
+  "model": {
+    "device": "cpu",
+    "dimension": 1024,
+    "files": {
+      "Constant_7_attr__value": {
+        "sha256": "cdf16f72c5d07b36484056e601ed9687f78477e5d85cee85a34f2406b7fb5906",
+        "size": 65552
+      },
+      "config.json": {
+        "sha256": "f24afd5de914fba8c668426c43d208a1a54022500c63b2c160be20891686fce8",
+        "size": 698
+      },
+      "model.onnx": {
+        "sha256": "f84251230831afb359ab26d9fd37d5936d4d9bb5d1d5410e66442f630f24435b",
+        "size": 724923
+      },
+      "model.onnx_data": {
+        "sha256": "1eebfb28493f67bba03ce0ef64bfdc7fc5a3bd9d7493f818bb1d78cd798416b4",
+        "size": 2266820608
+      },
+      "special_tokens_map.json": {
+        "sha256": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+        "size": 964
+      },
+      "tokenizer.json": {
+        "sha256": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790",
+        "size": 17082821
+      },
+      "tokenizer_config.json": {
+        "sha256": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+        "size": 1173
+      }
+    },
+    "format": "official-onnx-fp32",
+    "max_tokens": 8192,
+    "model_id": "BAAI/bge-m3",
+    "normalize": true,
+    "pooling": "cls",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "runtime": {
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "tokenizers": "0.23.3"
+    },
+    "threads": 2
+  },
+  "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+  "token_limit": 8192
+}

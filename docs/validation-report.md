@@ -1,5 +1,7 @@
 # Исторический отчёт для данных1.0
 
+Актуальные dense/Server проверки версии0.4.0 — [block-2-results.md](block-2-results.md).
+
 Ниже сохранены результаты предыдущей поставки. Действующая версия данных1.1 и результаты повторной приёмки — в [business-review-results.md](business-review-results.md). Старые денежные значения и fingerprint ниже не являются текущим эталоном.
 
 # Проверка Data Ingestion, Chunking & Metadata 0.3.0

@@ -1,6 +1,6 @@
 # Архитектура K-Beauty AI Support
 
-Статус: архитектура 0.3.1. Реализованы аудит и source preparation до локального generation export; encoders, Qdrant publishing и query pipeline ещё не реализованы.
+Статус: архитектура 0.4.0. Реализованы source preparation, dense BAAI/bge-m3, generation publishing и dense query с источниками в Qdrant Server. BM25/RRF/reranking, LLM и API на схемах ниже относятся к последующим этапам. Текущий индекс содержит только named vector dense; sparse vector ещё не создаётся.
 
 ## Indexing pipeline
 
@@ -70,3 +70,21 @@ Ingestion читает только allowlist трёх файлов, не про
 ## Бизнес-база1.1
 
 По ADR-016 расчёт: promo → bonus (cap20% после promo) → delivery threshold после обоих. KB-004=1890, KB-005=1590. Pricing всё ещё будущий компонент; текущие tests проверяют source/expected consistency, не работающий API.
+
+## Реализованная dense-граница 0.4.0
+
+```mermaid
+flowchart LR
+  P[Verified preparation generation] --> T[Pinned tokenizer; no truncation]
+  T --> E[Official bge-m3 ONNX; CLS + L2]
+  E --> F[Immutable dense artifact]
+  F --> S[Staging Qdrant collection]
+  S --> V[Readback: IDs, payload, vectors + search smoke]
+  V --> A[Atomic alias transaction]
+  Q[Query] --> R[Resolve alias once]
+  R --> M[Same pinned encoder]
+  M --> D[Dense search in physical generation]
+  D --> O[Sources + product fields]
+```
+
+Model/tokenizer/runtime fingerprints и catalog hash входят в descriptor каждого point. UUIDv5 Блока1 сохраняется; source text, structured product и price_kopecks не смешиваются между товарами. Полный verify предшествует переключению. Source CURRENT и Qdrant alias — разные границы публикации: локальный source export сам по себе не меняет индекс. [Контракт и эксплуатация](block-2-spec.md), [результаты](block-2-results.md). Метрики относятся только к dense retrieval, без LLM.

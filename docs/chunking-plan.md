@@ -13,3 +13,5 @@ Metadata: source, section, type, document_id, document_version, effective_date, 
 Manifest stage=source_preparation, status=validated означает успешную структурную проверку. embedding_ready=false до выбранного model tokenizer, проверки max length и закреплённых revisions в Блоке 2. Старые ориентиры 250–500 токенов не выдаются за выполненный замер; новый ADR-013 фиксирует эту границу.
 
 DR-02, PL-02/03/04/05 потребуются совместно для расчётных запросов; DR-04/05 связаны с DR-06. Retrieval/context expansion остаются следующими этапами и не смешиваются с source chunking. Тесты и инженерная документация не входят в allowlist.
+
+Замер Блока2 по фактическому tokenizer bge-m3 с special tokens:20 chunks,140–268 tokens, лимит8192. Исходный export сохраняет прежний gate как историческое состояние; отдельный dense artifact содержит реальные token_count и tokenizer_id. Разделы не дробились и не обрезались. [Полная таблица](block-2-token-counts.json).

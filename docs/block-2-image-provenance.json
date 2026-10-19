@@ -1,0 +1,11 @@
+{
+  "registry": "registry-1.docker.io/qdrant/qdrant",
+  "tag": "v1.15.1",
+  "index_digest": "sha256:d122138f76868edba68d36cb0833139c1d1761f00f09e48e61f8314196e6a4c6",
+  "manifest_digest": "sha256:2bd6b052a39abc720f219158ec7b71533fa3204b8aa3c10a2e2f6e0bf80ee6ff",
+  "config_digest": "sha256:da4c45d5134bc5acad75fb885a46edb432734ed07aae836e4f93d603af28c380",
+  "all_blobs_sha256_verified": true,
+  "image": "qdrant/qdrant:v1.15.1",
+  "loaded_image_id": "sha256:6f0e328b0d155bf167201e32816ecce9e023802a0a2ede7b0a648c6abbc42ea3",
+  "rootfs_and_runtime_config_verified": true
+}

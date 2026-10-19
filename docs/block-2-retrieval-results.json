@@ -1,0 +1,739 @@
+{
+  "ceiling_at_3": 0.8423076923076922,
+  "ceiling_at_5": 0.9743589743589743,
+  "generation": "2876d48f2f3195816de340f42faa6c37ab24dd9d8fde1abc04eef4c1e9837670",
+  "labels_sha256": "d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd",
+  "metric": "macro source recall",
+  "query_count": 13,
+  "recall_at_3": 0.7346153846153847,
+  "recall_at_5": 0.8205128205128205,
+  "results": [
+    {
+      "hits": [
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.6165397,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.48825797,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.4863707,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "score": 0.48427787,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-01",
+          "document_version": "1.1"
+        },
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "score": 0.48377103,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-02",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R01",
+      "query": "Сколько стоит курьер в Москве, если товары после скидки стоят 3 400 рублей? Сколько ждать?",
+      "recall_at_3": 0.5,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "DR-01",
+        "DR-02"
+      ],
+      "retrieved": [
+        "DR-02",
+        "PL-03",
+        "PL-05",
+        "DR-01",
+        "PL-02"
+      ],
+      "scenario": "T01"
+    },
+    {
+      "hits": [
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.5996071,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "score": 0.5699826,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-01",
+          "document_version": "1.1"
+        },
+        {
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "score": 0.565775,
+          "source": "data/products.json",
+          "section": "KB-007",
+          "document_version": "1.1"
+        },
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "score": 0.56485385,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.5618368,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R02",
+      "query": "Заказываю в ПВЗ в Казань пенку KB-001, масло KB-006 и бальзам KB-009, по одной штуке без промокода. Сколько заплачу и сколько ждать?",
+      "recall_at_3": 0.2,
+      "recall_at_5": 0.2,
+      "relevant": [
+        "KB-001",
+        "KB-006",
+        "KB-009",
+        "DR-01",
+        "DR-02"
+      ],
+      "retrieved": [
+        "DR-02",
+        "PL-01",
+        "KB-007",
+        "PL-02",
+        "PL-03"
+      ],
+      "scenario": "T02"
+    },
+    {
+      "hits": [
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "score": 0.6560005,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.62701654,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.6067475,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.5733206,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "score": 0.5660912,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-01",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R03",
+      "query": "Первый заказ, я зарегистрирован: сыворотка KB-003 и крем KB-004. WELCOME10, курьер в Санкт-Петербурге. Итог и бонусы?",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.6666666666666666,
+      "relevant": [
+        "KB-003",
+        "KB-004",
+        "PL-02",
+        "PL-03",
+        "PL-05",
+        "DR-02"
+      ],
+      "retrieved": [
+        "PL-02",
+        "PL-05",
+        "DR-02",
+        "PL-03",
+        "DR-01"
+      ],
+      "scenario": "T03"
+    },
+    {
+      "hits": [
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "score": 0.6235553,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.58327514,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.556914,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "score": 0.54459226,
+          "source": "data/products.json",
+          "section": "KB-007",
+          "document_version": "1.1"
+        },
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "score": 0.52884275,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-02",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R04",
+      "query": "У меня 600 бонусов. Беру пенку KB-001 и ночную маску KB-008 в ПВЗ. Спишите максимум: сколько денег и сколько новых бонусов?",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "relevant": [
+        "KB-001",
+        "KB-008",
+        "PL-03",
+        "PL-04",
+        "PL-05",
+        "DR-02"
+      ],
+      "retrieved": [
+        "PL-04",
+        "PL-03",
+        "PL-05",
+        "KB-007",
+        "PL-02"
+      ],
+      "scenario": "T04"
+    },
+    {
+      "hits": [
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "score": 0.69014204,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.648075,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.56299603,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "score": 0.56154335,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "score": 0.52496177,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-01",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R05",
+      "query": "Первый заказ зарегистрированного клиента. Корзина 2500 рублей, ПВЗ, баланс 500 бонусов. Можно совместить WELCOME10 и бонусы? Какой итог?",
+      "recall_at_3": 0.6,
+      "recall_at_5": 0.8,
+      "relevant": [
+        "PL-02",
+        "PL-03",
+        "PL-04",
+        "PL-05",
+        "DR-02"
+      ],
+      "retrieved": [
+        "PL-02",
+        "PL-05",
+        "PL-03",
+        "PL-04",
+        "PL-01"
+      ],
+      "scenario": "T05"
+    },
+    {
+      "hits": [
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.63496035,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.6170718,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "score": 0.61160696,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.5710749,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "score": 0.5208342,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-06",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R06",
+      "query": "Москва, курьер. Товары ровно 3500 рублей до бонусов. У меня 700 бонусов, спишите все. Как считать итог и начисление?",
+      "recall_at_3": 0.75,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "DR-02",
+        "PL-03",
+        "PL-04",
+        "PL-05"
+      ],
+      "retrieved": [
+        "PL-03",
+        "PL-05",
+        "PL-04",
+        "DR-02",
+        "DR-06"
+      ],
+      "scenario": "T06"
+    },
+    {
+      "hits": [
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "score": 0.6180648,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "score": 0.6077466,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-06",
+          "document_version": "1.1"
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "score": 0.60071063,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.5775059,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "score": 0.56764007,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-01",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R07",
+      "query": "Получил крем пять дней назад. Пломба целая, брака нет. Можно вернуть и кто платит пересылку? Когда вернут деньги?",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "DR-04",
+        "DR-06"
+      ],
+      "retrieved": [
+        "DR-05",
+        "DR-06",
+        "DR-04",
+        "DR-02",
+        "PL-01"
+      ],
+      "scenario": "T07"
+    },
+    {
+      "hits": [
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "score": 0.56393456,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "score": 0.52632105,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "score": 0.50726247,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-06",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+          "score": 0.4912579,
+          "source": "data/products.json",
+          "section": "KB-003",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+          "score": 0.47710836,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-03",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R08",
+      "query": "Получила сыворотку три дня назад, вскрыла и обнаружила повреждение флакона. Уже прошло 48 часов. Мне откажут?",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "DR-05"
+      ],
+      "retrieved": [
+        "DR-05",
+        "DR-04",
+        "DR-06",
+        "KB-003",
+        "DR-03"
+      ],
+      "scenario": "T08"
+    },
+    {
+      "hits": [
+        {
+          "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+          "score": 0.5998074,
+          "source": "data/products.json",
+          "section": "KB-004",
+          "document_version": "1.1"
+        },
+        {
+          "id": "72126930-ce0b-57e6-b627-128182284766",
+          "score": 0.5471368,
+          "source": "data/products.json",
+          "section": "KB-008",
+          "document_version": "1.1"
+        },
+        {
+          "id": "eea4050a-fdb8-59bd-94c0-b2fe4c571fa9",
+          "score": 0.5429376,
+          "source": "data/products.json",
+          "section": "KB-006",
+          "document_version": "1.1"
+        },
+        {
+          "id": "a17715b1-9978-5e4a-a973-d25113c1cb90",
+          "score": 0.5229373,
+          "source": "data/products.json",
+          "section": "KB-009",
+          "document_version": "1.1"
+        },
+        {
+          "id": "acb50500-6dc0-5115-97ab-ec216c07be86",
+          "score": 0.51774883,
+          "source": "data/products.json",
+          "section": "KB-001",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R09",
+      "query": "Подбери крем без отдушки для сухой кожи до 1800 рублей. Сколько мл и какие ключевые компоненты?",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "KB-004",
+        "KB-008"
+      ],
+      "retrieved": [
+        "KB-004",
+        "KB-008",
+        "KB-006",
+        "KB-009",
+        "KB-001"
+      ],
+      "scenario": "T09"
+    },
+    {
+      "hits": [
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "score": 0.61610603,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-01",
+          "document_version": "1.1"
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "score": 0.5401354,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-01",
+          "document_version": "1.1"
+        },
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.540016,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.5171695,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "score": 0.515783,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-05",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R10",
+      "query": "Можно оплатить наличными при получении? И где заказ 12345, проверь трек.",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "relevant": [
+        "PL-01",
+        "DR-03"
+      ],
+      "retrieved": [
+        "PL-01",
+        "DR-01",
+        "DR-02",
+        "PL-05",
+        "DR-05"
+      ],
+      "scenario": "T10"
+    },
+    {
+      "hits": [
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "score": 0.5649744,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-01",
+          "document_version": "1.1"
+        },
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "score": 0.5282806,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-02",
+          "document_version": "1.1"
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "score": 0.50606537,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "score": 0.5023443,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "score": 0.49231315,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-04",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R12",
+      "query": "Можно ли прислать CVV для оплаты?",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "PL-01"
+      ],
+      "retrieved": [
+        "PL-01",
+        "DR-02",
+        "PL-05",
+        "DR-04",
+        "PL-04"
+      ],
+      "scenario": "T12_payment_only"
+    },
+    {
+      "hits": [
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "score": 0.52274686,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-05",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "score": 0.49292824,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-06",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+          "score": 0.48730308,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-03",
+          "document_version": "1.1"
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "score": 0.47766638,
+          "source": "data/delivery_and_returns.md",
+          "section": "DR-04",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "score": 0.45817637,
+          "source": "data/payment_and_loyalty.md",
+          "section": "PL-03",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R13",
+      "query": "Развернула посылку только на третий день, а баночка разбита. Срок жалобы уже вышел?",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "DR-05"
+      ],
+      "retrieved": [
+        "DR-05",
+        "DR-06",
+        "DR-03",
+        "DR-04",
+        "PL-03"
+      ],
+      "scenario": "paraphrase_T08"
+    },
+    {
+      "hits": [
+        {
+          "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+          "score": 0.46273255,
+          "source": "data/products.json",
+          "section": "KB-005",
+          "document_version": "1.1"
+        },
+        {
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "score": 0.4398134,
+          "source": "data/products.json",
+          "section": "KB-007",
+          "document_version": "1.1"
+        },
+        {
+          "id": "39211bca-83ec-559f-a68f-ccbb3842b505",
+          "score": 0.43815073,
+          "source": "data/products.json",
+          "section": "KB-002",
+          "document_version": "1.1"
+        },
+        {
+          "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+          "score": 0.4304744,
+          "source": "data/products.json",
+          "section": "KB-004",
+          "document_version": "1.1"
+        },
+        {
+          "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+          "score": 0.42942947,
+          "source": "data/products.json",
+          "section": "KB-003",
+          "document_version": "1.1"
+        }
+      ],
+      "id": "R14",
+      "query": "KB-005",
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "relevant": [
+        "KB-005"
+      ],
+      "retrieved": [
+        "KB-005",
+        "KB-007",
+        "KB-002",
+        "KB-004",
+        "KB-003"
+      ],
+      "scenario": "exact_sku"
+    }
+  ]
+}

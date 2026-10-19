@@ -1,0 +1,21 @@
+{
+  "project": "kbeauty-review-check",
+  "port": 6394,
+  "business_data_loaded": false,
+  "model_embeddings_created": false,
+  "health_checks_performed": true,
+  "persistence_check_performed": true,
+  "engine_version": "29.8.0",
+  "compose_version": "Docker Compose version v5.5.1",
+  "compose_config_valid": true,
+  "readiness_before_restart": 200,
+  "health_before_restart": 200,
+  "qdrant_version": "1.15.1",
+  "collection": "infra_smoke_a1ab905fa47747e3b7fe3603f945cffe",
+  "volume": "kbeauty-review-check_qdrant_storage",
+  "readiness_after_restart": 200,
+  "health_after_restart": 200,
+  "synthetic_point_preserved": true,
+  "point_id": 1,
+  "status": "passed"
+}
