@@ -22,8 +22,12 @@ class JsonFormatter(logging.Formatter):
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Dense embedding, generation publishing and source search")
-    parser.add_argument("command", choices=("tokens", "embed", "hybrid-build", "index", "search", "evaluate", "compare"))
-    parser.add_argument("--mode", choices=("dense", "bm25", "hybrid"), default="dense")
+    parser.add_argument("command", choices=("tokens", "embed", "hybrid-build", "index", "search", "evaluate", "compare", "rerank-compare"))
+    parser.add_argument("--pools", default="5,10,15", help="Candidate pool sizes for rerank-compare")
+    parser.add_argument("--mode", choices=("dense", "bm25", "hybrid", "rerank"), default="dense")
+    parser.add_argument("--candidate-pool", type=int, default=10)
+    parser.add_argument("--disable-rerank", action="store_true")
+    parser.add_argument("--reranker-dir", type=Path, default=Path("model-cache/mmarco-minilm/1427fd652930e4ba29e8149678df786c240d8825"))
     parser.add_argument("--prefetch", type=int, default=20)
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--prepared", type=Path, default=Path("artifacts/ingestion"))
@@ -88,11 +92,39 @@ def main(argv: list[str] | None = None) -> int:
                 elif args.command == "search":
                     if not args.query:
                         raise RetrievalError("--query is required")
-                    if args.mode != "dense":
+                    if args.mode == "rerank":
+                        from .hybrid import HybridIndex
+                        from .rerank import MiniLMCrossEncoder, RerankConfig, RerankedSearch
+                        result = RerankedSearch(HybridIndex(client, alias=index.alias), encoder,
+                                               lambda: MiniLMCrossEncoder(args.reranker_dir),
+                                               RerankConfig(args.candidate_pool, args.limit, args.prefetch,
+                                                            not args.disable_rerank)).search(args.query)
+                    elif args.mode != "dense":
                         from .hybrid import HybridIndex
                         result = HybridIndex(client, alias=index.alias).search(args.query, encoder, mode=args.mode, limit=args.limit, prefetch=args.prefetch)
                     else:
                         result = index.search(args.query, encoder, limit=args.limit)
+                elif args.command == "rerank-compare":
+                    from .hybrid import HybridIndex
+                    from .rerank import MiniLMCrossEncoder
+                    from .rerank_evaluation import compare_reranked, process_memory
+                    import time
+                    milestones = {"before_model_sessions": process_memory()}
+                    started = time.perf_counter()
+                    encoder.encode(["Разогрев поиска"])
+                    dense_warmup = time.perf_counter() - started
+                    milestones["dense_warmed"] = process_memory()
+                    started = time.perf_counter()
+                    scorer = MiniLMCrossEncoder(args.reranker_dir)
+                    scorer.score("Вопрос", ["Текст документа"])
+                    reranker_warmup = time.perf_counter() - started
+                    milestones["both_warmed"] = process_memory()
+                    raw_labels = args.labels.read_bytes()
+                    result = compare_reranked(HybridIndex(client, alias=index.alias), encoder, scorer,
+                                              json.loads(raw_labels), pools=tuple(int(p) for p in args.pools.split(",")),
+                                              repetitions=args.repetitions, prefetch=args.prefetch)
+                    result.update(labels_sha256=digest(raw_labels), model=encoder.signature, reranker=scorer.signature,
+                                  memory_milestones=milestones, warmup_seconds={"dense": dense_warmup, "reranker": reranker_warmup})
                 elif args.command == "compare":
                     from .hybrid import HybridIndex
                     raw_labels = args.labels.read_bytes()

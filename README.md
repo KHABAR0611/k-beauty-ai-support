@@ -4,11 +4,11 @@
 
 ## Статус и возможности
 
-Версия0.5.0 реализует ingestion, dense embeddings, BM25 и hybrid retrieval через RRF в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
+Версия0.6.0 реализует ingestion, dense embeddings, BM25, hybrid retrieval через RRF и optional multilingual reranking в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
 
 Данные1.1 относятся к вымышленному магазину. Публикация поколения атомарна после проверки всех ID, payload и обоих векторов. Доступны независимые режимы dense-only, BM25-only и hybrid. [Отчёт Блока3](docs/block-3-results.md) содержит baseline, все13 запросов, метрики, latency и регрессии.
 
-Reranker, LLM и HTTP API не реализованы. Retrieval recall не является качеством ответов. Готовность к промышленной эксплуатации не заявляется. Блок2 принят, Блок3 представлен на приёмку.
+Reranker доступен как явно включаемый режим. LLM и HTTP API не реализованы. Retrieval recall не является качеством ответов. Готовность к промышленной эксплуатации не заявляется. Блоки2/3 приняты; результаты Блока4 представлены для инженерной приёмки. Primary rerank pool10 ухудшает полноту@5 на исходном наборе, поэтому рекомендуется сохранять Hybrid до отдельного решения о конфигурации.
 
 ## Архитектура и стек
 
@@ -137,3 +137,27 @@ python -m kbeauty_support.retrieval.cli compare --repetitions 3 --prefetch 20
 BM25: k1=1.2,b=0.75,avg_len=69.9 для текущего корпуса, IDF только на сервере. Русские словоформы обрабатывает stemming, а не лемматизация/перевод. NFKC, casefold, ё/е и KB-004/KB004 нормализуются одинаково при indexing/query. Подробности, лицензия assets и ограничения: [русский BM25](docs/bm25-russian.md).
 
 Hybrid использует равные ветви с prefetch20 и серверный RRF Qdrant1.15.1. При равных итоговых scores применяется стабильный UUID tie-break до top-k. Hybrid увеличивает полноту@5 на текущем наборе, но имеет регрессии раннего ранжирования; победители и проигравшие опубликованы без изменения эталонов. Полное сравнение и результаты каждого запроса: [block-3-comparison.json](docs/block-3-comparison.json).
+
+## Cross-encoder reranking
+
+Используется `cross-encoder/mmarco-mMiniLMv2-L12-H384-v1`, revision `1427fd652930e4ba29e8149678df786c240d8825`, Apache-2.0, официальный FP32 ONNX. Query и каждый полный документ кодируются совместно; raw logit задаёт порядок, а не вероятность ответа. Дополнительные runtime-пакеты не требуются: `requirements/rerank-test.lock` включает закреплённый hybrid lock. [Сравнение моделей](docs/reranker-model-selection.md), [результаты](docs/block-4-results.md), [все запросы](docs/block-4-query-results.md).
+
+После подготовки и публикации hybrid artifact по предыдущим разделам:
+
+```powershell
+python -m pip install -r requirements/rerank-test.lock
+python infrastructure/download_reranker.py
+# При проблеме текущего прокси: --direct действует только на этот процесс.
+python -m kbeauty_support.retrieval.cli search --mode rerank --candidate-pool 10 --limit 5 --query "Развернула посылку на третий день, баночка разбита"
+python -m kbeauty_support.retrieval.cli search --mode rerank --disable-rerank --query "KB-005"
+python -m kbeauty_support.retrieval.cli rerank-compare --pools 5,10,15 --repetitions 3
+# Независимый holdout: только заранее выбранный pool10, не для настройки.
+python -m kbeauty_support.retrieval.cli rerank-compare --pools 10 --labels tests/fixtures/retrieval-holdout-v1.1.json --repetitions 3
+python -m pytest
+```
+
+Candidate pool1–20, final_k не больше pool, prefetch не меньше pool. По умолчанию pool10/final5/prefetch20; старые dense/BM25/hybrid команды сохранены, default CLI mode=dense не изменён. Режим rerank надо указать явно. Отключение не загружает cross-encoder и сохраняет исходный Hybrid top-k. Ошибка модели или пара больше512 токенов даёт тот же Hybrid top-k с `reranking.applied=false` и категорией fallback; неполная пересортировка не публикуется. Ошибка Qdrant остаётся ошибкой запроса. В stdout — UTF-8 JSON с timings, scores, sources и before/after positions; журналы в stderr не содержат query text.
+
+Веса reranker занимают ещё около471 МБ на диске. CLI search загружает модели заново при каждом процессе; опубликованная warm latency относится к повторным запросам в одном процессе. Отдельный HTTP-процесс и warm readiness пока не реализованы. Память, стоимость rerank и случаи регрессии приведены в отчёте; GPU и конкурентная нагрузка не проверены. Pool5 улучшает ранние позиции на 13 запросах без изменения их состава top5, но не проверен на независимом holdout и не заменяет primary задним числом.
+
+Unit/regression tests не скачивают модели. Real Server tests требуют явных opt-in переменных и подготовленных pinned caches, описанных в [проверках Блока4](docs/block-4-testing.md). CI проверяет contracts и источники; результаты реальных моделей/Server опубликованы отдельно.

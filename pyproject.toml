@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kbeauty-ai-support"
-version = "0.5.0"
-description = "Source preparation, dense/BM25 retrieval and verified Qdrant publishing for K-Beauty AI Support"
+version = "0.6.0"
+description = "Source preparation, hybrid retrieval and optional cross-encoder ranking for K-Beauty AI Support"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
@@ -34,7 +34,7 @@ kbeauty-retrieval = "kbeauty_support.retrieval.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"kbeauty_support.retrieval" = ["bge-m3.lock.json", "assets/*"]
+"kbeauty_support.retrieval" = ["bge-m3.lock.json", "reranker.lock.json", "assets/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/unit"]

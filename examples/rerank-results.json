@@ -1,0 +1,1584 @@
+{
+  "generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+  "candidate_pool": 10,
+  "final_k": 5,
+  "cases": [
+    {
+      "query_id": "R01",
+      "query": "Сколько стоит курьер в Москве, если товары после скидки стоят 3 400 рублей? Сколько ждать?",
+      "relevant": [
+        "DR-01",
+        "DR-02"
+      ],
+      "hybrid": [
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "metadata": {
+            "chunk_sha256": "3cdc34a35463f5f0de59b22c63b744bfca360cbaf52f4c7d360ad656af42ad18",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-02|1.0|structure-v1",
+            "parent_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-02",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Способы, стоимость и сроки",
+            "token_count": 268,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 1.0
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "metadata": {
+            "chunk_sha256": "62aa3877f02f3db4b543b3a1f3fd48cb6245c318322fbfedf5bd0be0ffd65785",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-05|1.0|structure-v1",
+            "parent_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-05",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Порядок расчёта",
+            "token_count": 258,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.5833334
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "metadata": {
+            "chunk_sha256": "978d2090b1c4c67193507678e94a95844e7bf619084c27aad73e902d017f983d",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-03|1.0|structure-v1",
+            "parent_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-03",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Начисление бонусов",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.45833334
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "metadata": {
+            "chunk_sha256": "6a0d808a83353e0fa5e8476d5d1d2a0c814967cd6246e63e37a0439097899d00",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-01|1.0|structure-v1",
+            "parent_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-01",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "География и обработка",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.45
+        },
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "metadata": {
+            "chunk_sha256": "d71c1c5ab5624736a71651180afc12b3c10a6b2a64a80d9523ec77175fcb0701",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-02|1.0|structure-v1",
+            "parent_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-02",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Промокод",
+            "token_count": 162,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.36666667
+        }
+      ],
+      "reranked": [
+        {
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "metadata": {
+            "chunk_sha256": "3cdc34a35463f5f0de59b22c63b744bfca360cbaf52f4c7d360ad656af42ad18",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-02|1.0|structure-v1",
+            "parent_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-02",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Способы, стоимость и сроки",
+            "token_count": 268,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 1,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": 1.2278940677642822,
+          "score": 1.0
+        },
+        {
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "metadata": {
+            "chunk_sha256": "d71c1c5ab5624736a71651180afc12b3c10a6b2a64a80d9523ec77175fcb0701",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-02|1.0|structure-v1",
+            "parent_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-02",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Промокод",
+            "token_count": 162,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 5,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -4.814374923706055,
+          "score": 0.36666667
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "metadata": {
+            "chunk_sha256": "978d2090b1c4c67193507678e94a95844e7bf619084c27aad73e902d017f983d",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-03|1.0|structure-v1",
+            "parent_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-03",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Начисление бонусов",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 3,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -5.929496765136719,
+          "score": 0.45833334
+        },
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "metadata": {
+            "chunk_sha256": "078827164d9528a70e76bb94adc9539825810cdb01b244cf326c50c1323144d3",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-04|1.0|structure-v1",
+            "parent_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-04",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Списание бонусов",
+            "token_count": 167,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 6,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -6.392938613891602,
+          "score": 0.2916667
+        },
+        {
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "metadata": {
+            "chunk_sha256": "62aa3877f02f3db4b543b3a1f3fd48cb6245c318322fbfedf5bd0be0ffd65785",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-05|1.0|structure-v1",
+            "parent_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-05",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Порядок расчёта",
+            "token_count": 258,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 2,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -7.620362281799316,
+          "score": 0.5833334
+        }
+      ],
+      "positions": [
+        {
+          "after": 1,
+          "before": 1,
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "rerank_score": 1.2278940677642822
+        },
+        {
+          "after": 5,
+          "before": 2,
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "rerank_score": -7.620362281799316
+        },
+        {
+          "after": 3,
+          "before": 3,
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "rerank_score": -5.929496765136719
+        },
+        {
+          "after": 7,
+          "before": 4,
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "rerank_score": -8.434627532958984
+        },
+        {
+          "after": 2,
+          "before": 5,
+          "id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+          "rerank_score": -4.814374923706055
+        },
+        {
+          "after": 4,
+          "before": 6,
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "rerank_score": -6.392938613891602
+        },
+        {
+          "after": 6,
+          "before": 7,
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "rerank_score": -8.338886260986328
+        },
+        {
+          "after": 9,
+          "before": 8,
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "rerank_score": -9.399945259094238
+        },
+        {
+          "after": 8,
+          "before": 9,
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "rerank_score": -9.343439102172852
+        },
+        {
+          "after": 10,
+          "before": 10,
+          "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+          "rerank_score": -10.07194995880127
+        }
+      ]
+    },
+    {
+      "query_id": "R07",
+      "query": "Получил крем пять дней назад. Пломба целая, брака нет. Можно вернуть и кто платит пересылку? Когда вернут деньги?",
+      "relevant": [
+        "DR-04",
+        "DR-06"
+      ],
+      "hybrid": [
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "metadata": {
+            "chunk_sha256": "8feaec6debb778de14f93b942f0c5030a2d03910db326ca4ffe90a63282cfb66",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-05|1.0|structure-v1",
+            "parent_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-05",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Повреждение, брак или ошибка комплектации",
+            "token_count": 222,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 1.0
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "metadata": {
+            "chunk_sha256": "dc771b2689a59766376416fb7b0365ad182b885e8935390135b8c676375aa74c",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-04|1.0|structure-v1",
+            "parent_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-04",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Отмена и возврат товара надлежащего качества",
+            "token_count": 253,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.5833334
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "metadata": {
+            "chunk_sha256": "8f6bcec0bc71911efe4ec9e5bcf8ce72c90beb4162087e933c4c6221921c3a79",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-06|1.0|structure-v1",
+            "parent_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-06",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Сумма и сроки возврата",
+            "token_count": 246,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.45833334
+        },
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "metadata": {
+            "chunk_sha256": "978d2090b1c4c67193507678e94a95844e7bf619084c27aad73e902d017f983d",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-03|1.0|structure-v1",
+            "parent_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-03",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Начисление бонусов",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.34285715
+        },
+        {
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "metadata": {
+            "chunk_sha256": "078827164d9528a70e76bb94adc9539825810cdb01b244cf326c50c1323144d3",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-04|1.0|structure-v1",
+            "parent_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-04",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Списание бонусов",
+            "token_count": 167,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.32692307
+        }
+      ],
+      "reranked": [
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "metadata": {
+            "chunk_sha256": "dc771b2689a59766376416fb7b0365ad182b885e8935390135b8c676375aa74c",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-04|1.0|structure-v1",
+            "parent_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-04",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Отмена и возврат товара надлежащего качества",
+            "token_count": 253,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 2,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -3.0566511154174805,
+          "score": 0.5833334
+        },
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "metadata": {
+            "chunk_sha256": "8feaec6debb778de14f93b942f0c5030a2d03910db326ca4ffe90a63282cfb66",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-05|1.0|structure-v1",
+            "parent_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-05",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Повреждение, брак или ошибка комплектации",
+            "token_count": 222,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 1,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -4.424335956573486,
+          "score": 1.0
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "metadata": {
+            "chunk_sha256": "8f6bcec0bc71911efe4ec9e5bcf8ce72c90beb4162087e933c4c6221921c3a79",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-06|1.0|structure-v1",
+            "parent_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-06",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Сумма и сроки возврата",
+            "token_count": 246,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 3,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -5.585667133331299,
+          "score": 0.45833334
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "metadata": {
+            "chunk_sha256": "6a0d808a83353e0fa5e8476d5d1d2a0c814967cd6246e63e37a0439097899d00",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-01|1.0|structure-v1",
+            "parent_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-01",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "География и обработка",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 9,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -6.774918556213379,
+          "score": 0.2159091
+        },
+        {
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "metadata": {
+            "chunk_sha256": "55f97fd2f194eb9355ed45caaf939e1e2e0f2523c9ccfb64afeef675909f8447",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-01|1.0|structure-v1",
+            "parent_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-01",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Оплата",
+            "token_count": 174,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 6,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -7.047351837158203,
+          "score": 0.30952382
+        }
+      ],
+      "positions": [
+        {
+          "after": 2,
+          "before": 1,
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "rerank_score": -4.424335956573486
+        },
+        {
+          "after": 1,
+          "before": 2,
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "rerank_score": -3.0566511154174805
+        },
+        {
+          "after": 3,
+          "before": 3,
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "rerank_score": -5.585667133331299
+        },
+        {
+          "after": 7,
+          "before": 4,
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "rerank_score": -8.101476669311523
+        },
+        {
+          "after": 10,
+          "before": 5,
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "rerank_score": -9.284708023071289
+        },
+        {
+          "after": 5,
+          "before": 6,
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "rerank_score": -7.047351837158203
+        },
+        {
+          "after": 6,
+          "before": 7,
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "rerank_score": -7.539052486419678
+        },
+        {
+          "after": 8,
+          "before": 8,
+          "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+          "rerank_score": -8.80301570892334
+        },
+        {
+          "after": 4,
+          "before": 9,
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "rerank_score": -6.774918556213379
+        },
+        {
+          "after": 9,
+          "before": 10,
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "rerank_score": -9.074516296386719
+        }
+      ]
+    },
+    {
+      "query_id": "R13",
+      "query": "Развернула посылку только на третий день, а баночка разбита. Срок жалобы уже вышел?",
+      "relevant": [
+        "DR-05"
+      ],
+      "hybrid": [
+        {
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "metadata": {
+            "chunk_sha256": "978d2090b1c4c67193507678e94a95844e7bf619084c27aad73e902d017f983d",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "payment_loyalty",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/payment_and_loyalty.md|payment_loyalty|PL-03|1.0|structure-v1",
+            "parent_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "PL-03",
+            "source": "data/payment_and_loyalty.md",
+            "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+            "title": "Начисление бонусов",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.6666667
+        },
+        {
+          "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+          "metadata": {
+            "chunk_sha256": "f106f33794730b5a33acc5f70ae5bc5545398f12628a061f77fce9e358b7ed34",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-03|1.0|structure-v1",
+            "parent_id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-03",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Хранение и отслеживание",
+            "token_count": 140,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.5833334
+        },
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "metadata": {
+            "chunk_sha256": "8f6bcec0bc71911efe4ec9e5bcf8ce72c90beb4162087e933c4c6221921c3a79",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-06|1.0|structure-v1",
+            "parent_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-06",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Сумма и сроки возврата",
+            "token_count": 246,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.53333336
+        },
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "metadata": {
+            "chunk_sha256": "8feaec6debb778de14f93b942f0c5030a2d03910db326ca4ffe90a63282cfb66",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-05|1.0|structure-v1",
+            "parent_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-05",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Повреждение, брак или ошибка комплектации",
+            "token_count": 222,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.5
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "metadata": {
+            "chunk_sha256": "6a0d808a83353e0fa5e8476d5d1d2a0c814967cd6246e63e37a0439097899d00",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-01|1.0|structure-v1",
+            "parent_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-01",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "География и обработка",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "price_kopecks": null,
+          "product": null,
+          "score": 0.39285713
+        }
+      ],
+      "reranked": [
+        {
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "metadata": {
+            "chunk_sha256": "8f6bcec0bc71911efe4ec9e5bcf8ce72c90beb4162087e933c4c6221921c3a79",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-06|1.0|structure-v1",
+            "parent_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-06",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Сумма и сроки возврата",
+            "token_count": 246,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 3,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -6.192514419555664,
+          "score": 0.53333336
+        },
+        {
+          "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+          "metadata": {
+            "chunk_sha256": "f106f33794730b5a33acc5f70ae5bc5545398f12628a061f77fce9e358b7ed34",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-03|1.0|structure-v1",
+            "parent_id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-03",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Хранение и отслеживание",
+            "token_count": 140,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 2,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -6.489918231964111,
+          "score": 0.5833334
+        },
+        {
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "metadata": {
+            "chunk_sha256": "8feaec6debb778de14f93b942f0c5030a2d03910db326ca4ffe90a63282cfb66",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-05|1.0|structure-v1",
+            "parent_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-05",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Повреждение, брак или ошибка комплектации",
+            "token_count": 222,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 4,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -6.9916486740112305,
+          "score": 0.5
+        },
+        {
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "metadata": {
+            "chunk_sha256": "dc771b2689a59766376416fb7b0365ad182b885e8935390135b8c676375aa74c",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-04|1.0|structure-v1",
+            "parent_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-04",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "Отмена и возврат товара надлежащего качества",
+            "token_count": 253,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 6,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -7.691370487213135,
+          "score": 0.36666667
+        },
+        {
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "metadata": {
+            "chunk_sha256": "6a0d808a83353e0fa5e8476d5d1d2a0c814967cd6246e63e37a0439097899d00",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "delivery_returns",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/delivery_and_returns.md|delivery_returns|DR-01|1.0|structure-v1",
+            "parent_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "schema_version": "1.0",
+            "section": "DR-01",
+            "source": "data/delivery_and_returns.md",
+            "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+            "title": "География и обработка",
+            "token_count": 192,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "policy"
+          },
+          "original_rank": 5,
+          "price_kopecks": null,
+          "product": null,
+          "rerank_score": -8.341525077819824,
+          "score": 0.39285713
+        }
+      ],
+      "positions": [
+        {
+          "after": 6,
+          "before": 1,
+          "id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+          "rerank_score": -8.994722366333008
+        },
+        {
+          "after": 2,
+          "before": 2,
+          "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+          "rerank_score": -6.489918231964111
+        },
+        {
+          "after": 1,
+          "before": 3,
+          "id": "3b29902b-7c32-5329-a113-95a058386300",
+          "rerank_score": -6.192514419555664
+        },
+        {
+          "after": 3,
+          "before": 4,
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "rerank_score": -6.9916486740112305
+        },
+        {
+          "after": 5,
+          "before": 5,
+          "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+          "rerank_score": -8.341525077819824
+        },
+        {
+          "after": 4,
+          "before": 6,
+          "id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+          "rerank_score": -7.691370487213135
+        },
+        {
+          "after": 7,
+          "before": 7,
+          "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+          "rerank_score": -9.307230949401855
+        },
+        {
+          "after": 9,
+          "before": 8,
+          "id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+          "rerank_score": -9.49944019317627
+        },
+        {
+          "after": 10,
+          "before": 9,
+          "id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+          "rerank_score": -10.00639533996582
+        },
+        {
+          "after": 8,
+          "before": 10,
+          "id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+          "rerank_score": -9.44941234588623
+        }
+      ]
+    },
+    {
+      "query_id": "R14",
+      "query": "KB-005",
+      "relevant": [
+        "KB-005"
+      ],
+      "hybrid": [
+        {
+          "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+          "metadata": {
+            "chunk_sha256": "0e4ed7ae739e952c84d06dddd081d4b0d22e966e739c05f8e7530fa8d4472c6e",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-005|1.0|structure-v1",
+            "parent_id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-005",
+            "schema_version": "1.0",
+            "section": "KB-005",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Morning Seoul Солнцезащитный флюид",
+            "token_count": 226,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "price_kopecks": 159000,
+          "product": {
+            "characteristics": {
+              "category": "солнцезащита",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "пантенол",
+                "экстракт риса"
+              ],
+              "pa": "++++",
+              "skin_types": [
+                "нормальная",
+                "комбинированная"
+              ],
+              "spf": "50+",
+              "usage": "Использовать по инструкции на упаковке; сервис не подтверждает испытания SPF.",
+              "volume_ml": 50
+            },
+            "description": "Дневной солнцезащитный флюид с заявленной в описании вымышленного товара защитой SPF 50+ PA++++.",
+            "id": "KB-005",
+            "name": "Morning Seoul Солнцезащитный флюид",
+            "price": 1590
+          },
+          "score": 1.0
+        },
+        {
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "metadata": {
+            "chunk_sha256": "9802c0d180424174de0ae4e8d3d12298191b5a091683723299e7ade8caaa3bd7",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-007|1.0|structure-v1",
+            "parent_id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-007",
+            "schema_version": "1.0",
+            "section": "KB-007",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Peach Garden Тканевая маска",
+            "token_count": 172,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "price_kopecks": 19000,
+          "product": {
+            "characteristics": {
+              "category": "маска",
+              "fragrance_free": false,
+              "key_ingredients": [
+                "глицерин",
+                "экстракт персика"
+              ],
+              "pieces": 1,
+              "skin_types": [
+                "нормальная",
+                "сухая"
+              ],
+              "usage": "Держать 10–15 минут, не использовать повторно."
+            },
+            "description": "Одноразовая маска для дополнительного увлажнения.",
+            "id": "KB-007",
+            "name": "Peach Garden Тканевая маска",
+            "price": 190
+          },
+          "score": 0.33333334
+        },
+        {
+          "id": "39211bca-83ec-559f-a68f-ccbb3842b505",
+          "metadata": {
+            "chunk_sha256": "a1d14b431f80ff5adb996db817b80f180d8a9ae654809543117e29f8920c1e88",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-002|1.0|structure-v1",
+            "parent_id": "39211bca-83ec-559f-a68f-ccbb3842b505",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-002",
+            "schema_version": "1.0",
+            "section": "KB-002",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Han River Увлажняющий тонер",
+            "token_count": 184,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "price_kopecks": 129000,
+          "product": {
+            "characteristics": {
+              "category": "тонер",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "гиалуронат натрия",
+                "пантенол"
+              ],
+              "skin_types": [
+                "сухая",
+                "нормальная"
+              ],
+              "usage": "Нанести на чистую кожу перед сывороткой.",
+              "volume_ml": 200
+            },
+            "description": "Лёгкий тонер для дополнительного увлажнения после умывания.",
+            "id": "KB-002",
+            "name": "Han River Увлажняющий тонер",
+            "price": 1290
+          },
+          "score": 0.25
+        },
+        {
+          "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+          "metadata": {
+            "chunk_sha256": "1f32d49a085fa278abb70ae4b92868b8644d5d4983235ac61042443300ae9745",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-004|1.0|structure-v1",
+            "parent_id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-004",
+            "schema_version": "1.0",
+            "section": "KB-004",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Jeju Cloud Крем с керамидами",
+            "token_count": 178,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "price_kopecks": 189000,
+          "product": {
+            "characteristics": {
+              "category": "крем",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "керамиды",
+                "сквалан"
+              ],
+              "skin_types": [
+                "сухая",
+                "нормальная"
+              ],
+              "usage": "Нанести завершающим этапом увлажняющего ухода.",
+              "volume_ml": 50
+            },
+            "description": "Питательный крем для поддержания увлажнённости кожи.",
+            "id": "KB-004",
+            "name": "Jeju Cloud Крем с керамидами",
+            "price": 1890
+          },
+          "score": 0.2
+        },
+        {
+          "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+          "metadata": {
+            "chunk_sha256": "3c3f89cb8ed5942bfc23ee87484146ca680315faf007d3cc267f996161a6c96c",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-003|1.0|structure-v1",
+            "parent_id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-003",
+            "schema_version": "1.0",
+            "section": "KB-003",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Bomi Lab Сыворотка с ниацинамидом",
+            "token_count": 206,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "price_kopecks": 159000,
+          "product": {
+            "characteristics": {
+              "category": "сыворотка",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "ниацинамид 5%",
+                "пантенол"
+              ],
+              "skin_types": [
+                "комбинированная",
+                "жирная"
+              ],
+              "usage": "Нанести небольшое количество перед кремом; при раздражении прекратить использование.",
+              "volume_ml": 30
+            },
+            "description": "Сыворотка для ухода за кожей с неровным тоном; лечебный эффект не заявлен.",
+            "id": "KB-003",
+            "name": "Bomi Lab Сыворотка с ниацинамидом",
+            "price": 1590
+          },
+          "score": 0.16666667
+        }
+      ],
+      "reranked": [
+        {
+          "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+          "metadata": {
+            "chunk_sha256": "0e4ed7ae739e952c84d06dddd081d4b0d22e966e739c05f8e7530fa8d4472c6e",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-005|1.0|structure-v1",
+            "parent_id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-005",
+            "schema_version": "1.0",
+            "section": "KB-005",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Morning Seoul Солнцезащитный флюид",
+            "token_count": 226,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "original_rank": 1,
+          "price_kopecks": 159000,
+          "product": {
+            "characteristics": {
+              "category": "солнцезащита",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "пантенол",
+                "экстракт риса"
+              ],
+              "pa": "++++",
+              "skin_types": [
+                "нормальная",
+                "комбинированная"
+              ],
+              "spf": "50+",
+              "usage": "Использовать по инструкции на упаковке; сервис не подтверждает испытания SPF.",
+              "volume_ml": 50
+            },
+            "description": "Дневной солнцезащитный флюид с заявленной в описании вымышленного товара защитой SPF 50+ PA++++.",
+            "id": "KB-005",
+            "name": "Morning Seoul Солнцезащитный флюид",
+            "price": 1590
+          },
+          "rerank_score": 8.000955581665039,
+          "score": 1.0
+        },
+        {
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "metadata": {
+            "chunk_sha256": "9802c0d180424174de0ae4e8d3d12298191b5a091683723299e7ade8caaa3bd7",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-007|1.0|structure-v1",
+            "parent_id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-007",
+            "schema_version": "1.0",
+            "section": "KB-007",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Peach Garden Тканевая маска",
+            "token_count": 172,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "original_rank": 2,
+          "price_kopecks": 19000,
+          "product": {
+            "characteristics": {
+              "category": "маска",
+              "fragrance_free": false,
+              "key_ingredients": [
+                "глицерин",
+                "экстракт персика"
+              ],
+              "pieces": 1,
+              "skin_types": [
+                "нормальная",
+                "сухая"
+              ],
+              "usage": "Держать 10–15 минут, не использовать повторно."
+            },
+            "description": "Одноразовая маска для дополнительного увлажнения.",
+            "id": "KB-007",
+            "name": "Peach Garden Тканевая маска",
+            "price": 190
+          },
+          "rerank_score": 5.304686069488525,
+          "score": 0.33333334
+        },
+        {
+          "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+          "metadata": {
+            "chunk_sha256": "3c3f89cb8ed5942bfc23ee87484146ca680315faf007d3cc267f996161a6c96c",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-003|1.0|structure-v1",
+            "parent_id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-003",
+            "schema_version": "1.0",
+            "section": "KB-003",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Bomi Lab Сыворотка с ниацинамидом",
+            "token_count": 206,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "original_rank": 5,
+          "price_kopecks": 159000,
+          "product": {
+            "characteristics": {
+              "category": "сыворотка",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "ниацинамид 5%",
+                "пантенол"
+              ],
+              "skin_types": [
+                "комбинированная",
+                "жирная"
+              ],
+              "usage": "Нанести небольшое количество перед кремом; при раздражении прекратить использование.",
+              "volume_ml": 30
+            },
+            "description": "Сыворотка для ухода за кожей с неровным тоном; лечебный эффект не заявлен.",
+            "id": "KB-003",
+            "name": "Bomi Lab Сыворотка с ниацинамидом",
+            "price": 1590
+          },
+          "rerank_score": 4.052573204040527,
+          "score": 0.16666667
+        },
+        {
+          "id": "eea4050a-fdb8-59bd-94c0-b2fe4c571fa9",
+          "metadata": {
+            "chunk_sha256": "94dc0c24792cc04cb340db49292187fe6c686ddf0d5d78751e9c0ed31d2642a8",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-006|1.0|structure-v1",
+            "parent_id": "eea4050a-fdb8-59bd-94c0-b2fe4c571fa9",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-006",
+            "schema_version": "1.0",
+            "section": "KB-006",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Rice Moon Гидрофильное масло",
+            "token_count": 188,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "original_rank": 9,
+          "price_kopecks": 139000,
+          "product": {
+            "characteristics": {
+              "category": "очищение",
+              "fragrance_free": false,
+              "key_ingredients": [
+                "масло рисовых отрубей"
+              ],
+              "skin_types": [
+                "сухая",
+                "нормальная",
+                "комбинированная"
+              ],
+              "usage": "Нанести на сухую кожу, эмульгировать водой и смыть.",
+              "volume_ml": 200
+            },
+            "description": "Масло для первого этапа очищения и удаления макияжа.",
+            "id": "KB-006",
+            "name": "Rice Moon Гидрофильное масло",
+            "price": 1390
+          },
+          "rerank_score": 3.3121089935302734,
+          "score": 0.1
+        },
+        {
+          "id": "a17715b1-9978-5e4a-a973-d25113c1cb90",
+          "metadata": {
+            "chunk_sha256": "40d2de6f73baacfce912a5176df742934ef2daf177a27784ec1e92f94a05f5d5",
+            "chunker_version": "structure-v1",
+            "data_origin": "fictional",
+            "document_id": "kbeauty_demo",
+            "document_version": "1.1",
+            "effective_date": "2026-10-19",
+            "language": "ru",
+            "logical_id": "data/products.json|kbeauty_demo|KB-009|1.0|structure-v1",
+            "parent_id": "a17715b1-9978-5e4a-a973-d25113c1cb90",
+            "preparation_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+            "product_id": "KB-009",
+            "schema_version": "1.0",
+            "section": "KB-009",
+            "source": "data/products.json",
+            "source_sha256": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+            "title": "Soft Bamboo Бальзам для губ",
+            "token_count": 169,
+            "tokenizer_id": "BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181",
+            "type": "product"
+          },
+          "original_rank": 8,
+          "price_kopecks": 59000,
+          "product": {
+            "characteristics": {
+              "category": "уход за губами",
+              "fragrance_free": true,
+              "key_ingredients": [
+                "масло ши",
+                "воск"
+              ],
+              "skin_types": [
+                "все типы"
+              ],
+              "usage": "Наносить на губы по необходимости.",
+              "weight_g": 10
+            },
+            "description": "Бальзам без отдушки для ежедневного ухода за губами.",
+            "id": "KB-009",
+            "name": "Soft Bamboo Бальзам для губ",
+            "price": 590
+          },
+          "rerank_score": 2.793776512145996,
+          "score": 0.11111111
+        }
+      ],
+      "positions": [
+        {
+          "after": 1,
+          "before": 1,
+          "id": "8c6e0976-f69c-5e16-8412-fa9888fb71d1",
+          "rerank_score": 8.000955581665039
+        },
+        {
+          "after": 2,
+          "before": 2,
+          "id": "acdbf30e-3430-558b-b103-b14ec0d4b0d6",
+          "rerank_score": 5.304686069488525
+        },
+        {
+          "after": 6,
+          "before": 3,
+          "id": "39211bca-83ec-559f-a68f-ccbb3842b505",
+          "rerank_score": 1.733464241027832
+        },
+        {
+          "after": 7,
+          "before": 4,
+          "id": "3f82f2d0-1298-5752-9534-ea56e6bcd15e",
+          "rerank_score": 1.2266669273376465
+        },
+        {
+          "after": 3,
+          "before": 5,
+          "id": "8c07ba28-458a-5413-93f5-6c86b9f48257",
+          "rerank_score": 4.052573204040527
+        },
+        {
+          "after": 9,
+          "before": 6,
+          "id": "acb50500-6dc0-5115-97ab-ec216c07be86",
+          "rerank_score": -0.29312464594841003
+        },
+        {
+          "after": 8,
+          "before": 7,
+          "id": "72126930-ce0b-57e6-b627-128182284766",
+          "rerank_score": 1.1090385913848877
+        },
+        {
+          "after": 5,
+          "before": 8,
+          "id": "a17715b1-9978-5e4a-a973-d25113c1cb90",
+          "rerank_score": 2.793776512145996
+        },
+        {
+          "after": 4,
+          "before": 9,
+          "id": "eea4050a-fdb8-59bd-94c0-b2fe4c571fa9",
+          "rerank_score": 3.3121089935302734
+        },
+        {
+          "after": 10,
+          "before": 10,
+          "id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+          "rerank_score": -4.150565147399902
+        }
+      ]
+    }
+  ]
+}

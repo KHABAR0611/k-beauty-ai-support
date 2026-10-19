@@ -1,4 +1,4 @@
-name: Source and dense contract checks
+name: Source and retrieval contract checks
 on: [push, pull_request]
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12.10'
-      - run: python -m pip install -r requirements/hybrid-test.lock
+      - run: python -m pip install -r requirements/rerank-test.lock
       - run: python -m pip check
       - run: python -m pytest
       # Real model and Server checks are explicit; this job does not claim either.

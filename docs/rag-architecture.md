@@ -1,6 +1,6 @@
 # Архитектура K-Beauty AI Support
 
-Статус0.5.0: реализованы ingestion, dense BGE-M3, BM25, три режима query и server-side RRF. В одном point находятся named vectors dense и bm25 от одного текста. Reranking, LLM и API на полной схеме ниже — последующие этапы, не текущая реализация.
+Статус0.6.0: реализованы ingestion, dense BGE-M3, BM25, server-side RRF и optional multilingual cross-encoder reranking. В одном point находятся named vectors dense и bm25 от одного текста. LLM и API на полной схеме ниже — последующие этапы, не текущая реализация.
 
 ## Indexing pipeline
 
@@ -111,3 +111,26 @@ flowchart LR
 ```
 
 Dense-only и BM25-only обходят fusion; BM25-only не загружает BGE-M3. Prefetch и RRF не меняют сохранённые dense values. Descriptor включает исходный dense artifact hash и sparse analyzer signature/asset/runtime/avg_len. Любая смена representation требует нового поколения; validation заново вычисляет sparse от payload text. Изменение/удаление документов пересчитывает corpus average и sparse vectors, затем переключает alias только после full readback. Запрос сохраняет physical collection на всю операцию. [Контракт](component-contracts.md), [анализатор](bm25-russian.md), [проверки](block-3-results.md).
+
+## Reranking boundary 0.6.0
+
+```mermaid
+flowchart LR
+  Q[Russian query] --> H[Dense + BM25; pinned physical collection]
+  H --> RRF[Server RRF; stable fused ties]
+  RRF --> P[Candidate pool; default 10]
+  P --> CE[MiniLM cross-encoder; full query-document pairs]
+  CE --> V[Validate complete finite logits]
+  V --> S[Sort by logit; stable original-rank ties]
+  S --> O[Final top 5; sources and product fields]
+  P --> OFF[Disabled]
+  CE --> E[Model load, token limit or inference failure]
+  E --> F[Original Hybrid top 5; explicit fallback category]
+  OFF --> F
+```
+
+Reranking не меняет коллекцию или её generation. Уже извлечённые тексты и метаданные передаются целиком; дополнительных чтений через alias между scoring и ответом нет. Original RRF score сохраняется отдельно от raw rerank_score. Positions journal содержит только ID, before/after и scores; запросы, тексты и exception messages не логируются. Измеряются retrieval/rerank/total duration. Ошибки сети Qdrant и несовпадение fingerprints остаются ошибками retrieval, не маскируются reranker fallback.
+
+FP32 ONNX выполняется локально через тот же Runtime, CPU2 threads, batch1, без remote code. Hash/size/revision gate предшествует session creation. Предел512 относится к паре query/document вместе со special tokens; silent truncation отсутствует. Неполный набор scores никогда не становится частично отсортированным ответом. Модель не получает qrels или ID ожидаемых источников. [Выбор модели](reranker-model-selection.md), [план](block-4-experiment-plan.json), [результаты](block-4-results.md).
+
+Текущая реализация синхронная и не имеет жёсткого прерывания зависшего native inference. Конкурентная нагрузка, отдельный worker, circuit breaker, request deadline и warm readiness требуют следующего инженерного решения перед HTTP-эксплуатацией. Наличие fallback не доказывает latency SLO. Reranker нельзя применить к источнику, отсутствующему в candidate pool; полнота составного вопроса ограничена final_k.

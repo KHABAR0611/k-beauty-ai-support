@@ -1,0 +1,2 @@
+# Reranker reuses the exact ONNX/tokenizers/NumPy stack; no additional packages.
+-r hybrid-test.lock

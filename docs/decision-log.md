@@ -93,3 +93,15 @@ Manifest fingerprint, staging collection, проверка целостност�
 ## ADR-022 — Accepted: честное многокритериальное сравнение
 
 До изменений dense baseline зафиксирован896cbb0, план эксперимента8669485. Измеряются macro source Recall@3/5, MRR@5 по первому relevant source и warm latency p50/p95 nearest-rank. Три повтора, порядок modes циклически меняется; без query-vector cache. MRR не измеряет полноту multi-source ответа. Общий прирост Recall@5 не скрывает регрессии Recall@3/MRR и отдельных перефразировок. Stemming-off/prefetch5 публикуются как diagnostics, без замены primary конфигурации по известным13 вопросам. Для promotion другой настройки нужен независимый набор; reranker/LLM не реализуются без приёмки.
+
+## ADR-023 — Implemented: компактный multilingual cross-encoder
+
+После приёмки Блока 3 добавлен optional reranker mMARCO MiniLMv2, официальный FP32 ONNX с immutable revision и SHA-256. CPU/RAM бюджет, Apache-2.0, русский mMARCO и отсутствие новых тяжёлых зависимостей определили выбор до оценки результатов. [Сравнение трёх кандидатов](reranker-model-selection.md) отделяет опубликованные характеристики, оценки веса и реально измеренную память/latency. BGE-M3 и business1.1 не заменяются. Прямой pair inference с Identity logit, без silent truncation. Коллекция, ID, dense/sparse представления и правила публикации остаются прежними.
+
+## ADR-024 — Implemented: optional rerank и атомарный fallback
+
+Hybrid RRF выдаёт единый pinned candidate pool. Primary10, final5; размер и отключение доступны через CLI. Cross-encoder ранжирует только полученные тексты; source labels не доступны ranking adapter. Равные logits сохраняют RRF order. Исходный score сохранён отдельно от rerank_score; ответ содержит before/after positions, model signature и времена стадий. Исключение загрузки/инференса, неконечный или неполный score batch возвращает исходный Hybrid top-k целиком с категорией fallback. Ошибки retrieval не маскируются, частичные оценки не публикуются. Фабрика модели вызывается лениво; при выключенном rerank модель не открывается. Детали ошибок/тексты запросов не пишутся в журнал.
+
+## ADR-025 — Accepted: независимый holdout и стоимость дополнительного ранжирования
+
+План и десять новых query/source qrels закоммичены `a82a9ee` до первого cross-encoder inference. Исходные 13 labels и результаты Блока3 сохраняются. На development сравниваются pool5/10/15; holdout оценивается только с заранее выбранным pool10. Метрики macro source recall и MRR, а не точность LLM. Warm latency включает encoding/Server/payload/rerank без cache; времена стадий показаны раздельно. Process working set и peak измеряются средствами ОС, размер checkpoint не выдаётся за runtime RAM. Небольшой holdout не доказывает переносимость на другие магазины. Rerank остаётся явно включаемым режимом до продуктового решения о качестве и latency.
