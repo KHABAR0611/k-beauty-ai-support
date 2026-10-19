@@ -1,0 +1,15 @@
+{
+  "tested_commit": "3f5cad6bb3e454c0596db24a383d2278546ca4a0",
+  "clone": "local git clone --no-hardlinks",
+  "fresh_venv": true,
+  "pinned_runtime_install": true,
+  "ingestion_generation_identical": true,
+  "hybrid_artifact_bytes_identical": true,
+  "real_server_index_noop": true,
+  "unit_tests": 150,
+  "unit_failures": 0,
+  "reranker_cli_applied": true,
+  "exact_sku_product_price_and_spf_preserved": true,
+  "model_cache_policy": "Explicit external SHA-verified official caches reused; no fresh model download in clone check.",
+  "clone_tracked_tree_clean": true
+}

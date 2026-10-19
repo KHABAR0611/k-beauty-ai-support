@@ -614,5 +614,44 @@
     "numpy": "2.5.4",
     "fastembed": "0.7.3",
     "pytest": "8.4.1"
-  }
+  },
+  "hardware": {
+    "ram_kib": {
+      "TotalVisibleMemorySize": 8325792,
+      "FreePhysicalMemory": 2215844
+    },
+    "gpu_inference_verified": false,
+    "cpu": {
+      "Name": "Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz",
+      "NumberOfCores": 4,
+      "NumberOfLogicalProcessors": 4
+    },
+    "gpu_wmi": {
+      "Name": "NVIDIA GeForce GTX 660M",
+      "AdapterRAM": 536870912
+    }
+  },
+  "gpu_adapter_ram_caveat": "WMI-reported AdapterRAM, not verified physical VRAM or supported inference capacity",
+  "pair_section_order": [
+    "DR-01",
+    "DR-02",
+    "DR-03",
+    "DR-04",
+    "DR-05",
+    "DR-06",
+    "PL-01",
+    "PL-02",
+    "PL-03",
+    "PL-04",
+    "PL-05",
+    "KB-001",
+    "KB-002",
+    "KB-003",
+    "KB-004",
+    "KB-005",
+    "KB-006",
+    "KB-007",
+    "KB-008",
+    "KB-009"
+  ]
 }

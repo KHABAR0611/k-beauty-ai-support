@@ -65,3 +65,15 @@ Fallback атомарно сохраняет Hybrid top-k при ошибке з
 Нет LLM, API, hard timeout для native inference, HA, load test, backup restore и полноценного security/dependency scan. Hash manifest подтверждает целостность выбранных файлов, не безопасность всех зависимостей. Длинные новые документы потребуют другой стратегии при превышении pair512; сейчас truncation запрещена. Точный SKU и multi-source completeness требуют отдельного контроля: улучшение MRR не гарантирует полноту.
 
 [Результаты каждого запроса](block-4-query-results.md), [raw development](block-4-development.json), [проверки](block-4-test-results.json). Блок5 не реализован и требует отдельной приёмки.
+
+## Фактические проверки
+
+150 unit/regression и18 real Server integration tests прошли. Проверены actual ONNX logits, disabled/failure эквивалентность Hybrid, воспроизводимость rerank order, metadata/product preservation и полный payload/dense/sparse/alias после restart. Старые interrupted-update/idempotency/delete-generation tests также выполнены. Полные имена и counts доступны в test-results; raw JUnit не публикуется из-за локальных путей и hostname.
+
+Docker Engine29.8.0, Compose5.5.1, Qdrant Server1.15.1: после тестов healthz/readyz200, active collection20 points, dense1024/Cosine + BM25/IDF, OOMKilled=false, прежний named volume сохранён. Runtime audit подтвердил неизменность37 файлов исходного архива и исходного archive HEAD, data1.1 и frozen baseline. Все460 пар для23 запросов/20 документов имеют145–314 токенов при пределе512. [Runtime evidence](block-4-runtime-check.json).
+
+Три SDK предупреждения связаны с ключом на локальном HTTP loopback. Один compatibility probe во время suite не получил версию; финальный явный запрос подтвердил1.15.1 и readiness200. Причина отдельного неуспешного probe не изолирована; предупреждение не скрыто и не отключено. Remote URL по-прежнему требует HTTPS.
+
+Среда CPU: Intel i5-3470S,4 cores/threads, видимая RAM около7,94GiB. GPU inference не проверен. Peak working set процесса в основном опыте2,37GiB; добавление reranker увеличило private commit после warmup примерно на718MiB. Это не общий расход RAM Docker/ОС. Существующий drift package.__version__0.3.1 против pyproject0.5.0 исправлен: оба значения0.6.0. Новое изолированное окружение установлено из закреплённых43 wheels, pip check ошибок не нашёл.
+
+Чистый локальный `git clone --no-hardlinks` коммита3f5cad6 проверен в новом окружении:150 тестов, source audit, идентичный ingestion generation и hybrid artifact, реальный Server no-op index и rerank CLI. Артикул KB-005, цена159000 копеек и SPF50+ сохранены. Веса повторно использованы из явно указанного SHA-проверенного cache; повторное скачивание моделей в clone check не выполнялось. [Доказательство](block-4-clone-check.json). После этого изменена только документация проверки, код совпадает с проверенным коммитом.
