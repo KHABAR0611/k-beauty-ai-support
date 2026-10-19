@@ -28,3 +28,7 @@ JSONL boundary: `id` → будущий point_id; metadata.source → source_pat
 ## Реализованные контракты Блока2
 
 `load_prepared`: pin CURRENT → verify hashes →20 source records. `Encoder`: signature/token_counts/encode. `embed`: model gate → normalized dense vectors + copied exact payload → generation/content SHA-256. `save_artifact`: immutable JSON cache. `DenseIndex.publish`: single writer → staging → verify → atomic alias. `DenseIndex.search`: pin physical generation → compare model signature → dense top-k → texts/metadata/product. Dense metadata содержит реальные token_count/tokenizer_id; source export сохраняется неизменным. Эти контракты реализованы в retrieval/, остальные query/API контракты выше остаются проектируемыми.
+
+## Контракты Блока3
+
+RussianBm25.signature/tokens/document/query задают единый versioned analyzer. build_hybrid принимает проверенный dense artifact, вычисляет corpus avg_len и sparse vectors, сохраняет dense/text/product без изменения. validate_hybrid проверяет outer hash, identity, analyzer, corpus mean и заново вычисляет sparse values. HybridIndex наследует generation publisher; full readback проверяет обе named vectors и IDF config. Три independent modes возвращают один generation/physical collection; BM25-only принимает encoder=None. Compare использует неизменные qrels, фиксирует все повторы/latency/перестановки; unstable ranks не скрываются усреднением. Legacy dense CLI и формат dense-v1 сохранены.

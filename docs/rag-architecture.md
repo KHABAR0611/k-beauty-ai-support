@@ -1,6 +1,6 @@
 # Архитектура K-Beauty AI Support
 
-Статус: архитектура 0.4.0. Реализованы source preparation, dense BAAI/bge-m3, generation publishing и dense query с источниками в Qdrant Server. BM25/RRF/reranking, LLM и API на схемах ниже относятся к последующим этапам. Текущий индекс содержит только named vector dense; sparse vector ещё не создаётся.
+Статус0.5.0: реализованы ingestion, dense BGE-M3, BM25, три режима query и server-side RRF. В одном point находятся named vectors dense и bm25 от одного текста. Reranking, LLM и API на полной схеме ниже — последующие этапы, не текущая реализация.
 
 ## Indexing pipeline
 
@@ -88,3 +88,26 @@ flowchart LR
 ```
 
 Model/tokenizer/runtime fingerprints и catalog hash входят в descriptor каждого point. UUIDv5 Блока1 сохраняется; source text, structured product и price_kopecks не смешиваются между товарами. Полный verify предшествует переключению. Source CURRENT и Qdrant alias — разные границы публикации: локальный source export сам по себе не меняет индекс. [Контракт и эксплуатация](block-2-spec.md), [результаты](block-2-results.md). Метрики относятся только к dense retrieval, без LLM.
+
+## Реализованная hybrid-граница0.5.0
+
+```mermaid
+flowchart LR
+  P[Verified dense artifact + source text] --> A[Versioned Russian analyzer]
+  A --> S[BM25 sparse TF + measured avg_len]
+  P --> D[Reused verified dense vectors]
+  S --> G[New generation: one point, two vectors]
+  D --> G
+  G --> V[Verify dense, sparse, text, metadata; three search smokes]
+  V --> AL[Atomic alias publication]
+  Q[Query] --> PIN[Resolve physical generation once]
+  PIN --> DM[Dense encode]
+  PIN --> BM[Same Russian BM25 analyzer]
+  DM --> DP[Dense prefetch20]
+  BM --> BP[Sparse prefetch20; server IDF]
+  DP --> RRF[Qdrant1.15.1 RRF]
+  BP --> RRF
+  RRF --> T[Full candidate union; score ties by UUID; top-k]
+```
+
+Dense-only и BM25-only обходят fusion; BM25-only не загружает BGE-M3. Prefetch и RRF не меняют сохранённые dense values. Descriptor включает исходный dense artifact hash и sparse analyzer signature/asset/runtime/avg_len. Любая смена representation требует нового поколения; validation заново вычисляет sparse от payload text. Изменение/удаление документов пересчитывает corpus average и sparse vectors, затем переключает alias только после full readback. Запрос сохраняет physical collection на всю операцию. [Контракт](component-contracts.md), [анализатор](bm25-russian.md), [проверки](block-3-results.md).

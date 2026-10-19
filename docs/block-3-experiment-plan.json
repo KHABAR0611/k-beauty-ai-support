@@ -1,8 +1,39 @@
 {
-  "frozen_labels_sha256":"d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd",
-  "primary":{"modes":["dense","bm25","hybrid"],"top_k":5,"prefetch_per_branch":20,"fusion":"Qdrant1.15.1 default RRF; equal branch contributions","stemming":true,"k1":1.2,"b":0.75,"avg_len":"measured using the same analyzer across all20 source texts"},
-  "latency":{"repetitions":3,"warmup":1,"cache":"no query vector cache","timed":"alias resolution + descriptor validation + query encoding + Qdrant + payload","percentile":"nearest rank","order":"rotate mode order by repetition; query order fixed"},
-  "metrics":["macro Recall@3","macro Recall@5","MRR@5 with first relevant section","warm p50/p95 over39 samples per mode"],
-  "diagnostics":["BM25 stemming off with the same stopword policy on all13 queries","hybrid prefetch5 versus20 on all13 queries","Russian analyzer morphology,SKU,Latin brands,ingredients,yo/e","server-side RRF ranks/scores compared with the fixed1.15.1 formula"],
-  "promotion":"Primary settings are selected before hybrid results; diagnostic configurations are not silently promoted based on this small known set. No reranker,LLM,query decomposition or custom boosts."
+  "frozen_labels_sha256": "d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd",
+  "primary": {
+    "modes": [
+      "dense",
+      "bm25",
+      "hybrid"
+    ],
+    "top_k": 5,
+    "prefetch_per_branch": 20,
+    "fusion": "Qdrant1.15.1 default RRF; equal branch contributions",
+    "stemming": true,
+    "k1": 1.2,
+    "b": 0.75,
+    "avg_len": "measured using the same analyzer across all20 source texts"
+  },
+  "latency": {
+    "repetitions": 3,
+    "warmup": 1,
+    "cache": "no query vector cache",
+    "timed": "alias resolution + descriptor validation + query encoding + Qdrant + payload",
+    "percentile": "nearest rank",
+    "order": "rotate mode order by repetition; query order fixed"
+  },
+  "metrics": [
+    "macro Recall@3",
+    "macro Recall@5",
+    "MRR@5 with first relevant section",
+    "warm p50/p95 over39 samples per mode"
+  ],
+  "diagnostics": [
+    "BM25 stemming off with the same stopword policy on all13 queries",
+    "hybrid prefetch5 versus20 on all13 queries",
+    "Russian analyzer morphology,SKU,Latin brands,ingredients,yo/e",
+    "server-side RRF ranks/scores compared with the fixed1.15.1 formula"
+  ],
+  "promotion": "Primary settings are selected before hybrid results; diagnostic configurations are not silently promoted based on this small known set. No reranker,LLM,query decomposition or custom boosts.",
+  "engineering_correction": "After observed equal-score permutations in initial server RRF, request the full prefetch union and break equal final fusion scores by UUID ascending before visible top-k; no weight/depth/relevance changes. Initial run retained separately."
 }

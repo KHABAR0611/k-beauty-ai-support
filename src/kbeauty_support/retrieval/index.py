@@ -32,6 +32,9 @@ def writer_lock(root: Path) -> Iterator[None]:
 
 
 class DenseIndex:
+    collection_prefix = "kbeauty_dense_"
+    validator = staticmethod(validate_artifact)
+
     def __init__(self, client, *, alias: str = "kbeauty_active"):
         if not re.fullmatch(r"kbeauty_[a-zA-Z0-9_]+", alias):
             raise RetrievalError("Alias must use the kbeauty_ namespace")
@@ -42,12 +45,33 @@ class DenseIndex:
         aliases = self.client.get_aliases().aliases
         return next((a.collection_name for a in aliases if a.alias_name == self.alias), None)
 
-    def _verify(self, name: str, artifact: dict) -> None:
-        info = self.client.get_collection(name)
+    def _verify_config(self, info, artifact: dict) -> None:
         config = info.config.params.vectors
         dimension = artifact["descriptor"]["model"]["dimension"]
         if not isinstance(config, dict) or set(config) != {"dense"} or config["dense"].size != dimension or config["dense"].distance.value != "Cosine":
             raise RetrievalError("Collection vector configuration mismatch")
+
+    def _verify_vector(self, vector, record: dict, dimension: int) -> None:
+        dense = vector.get("dense", []) if isinstance(vector, dict) else []
+        if len(dense) != dimension or not all(math.isclose(a, b, rel_tol=1e-4, abs_tol=1e-6) for a, b in zip(dense, record["vector"], strict=True)):
+            raise RetrievalError("Qdrant vector readback mismatch")
+
+    def _create(self, name: str, artifact: dict) -> None:
+        from qdrant_client import models as m
+        self.client.create_collection(name, vectors_config={"dense": m.VectorParams(
+            size=artifact["descriptor"]["model"]["dimension"], distance=m.Distance.COSINE)}, on_disk_payload=True)
+
+    def _vectors(self, record: dict) -> dict:
+        return {"dense": record["vector"]}
+
+    def _smoke(self, name: str, artifact: dict) -> None:
+        hits = self.client.query_points(name, query=artifact["records"][0]["vector"], using="dense", limit=1).points
+        if not hits:
+            raise RetrievalError("Staging search smoke returned no points")
+
+    def _verify(self, name: str, artifact: dict) -> None:
+        self._verify_config(self.client.get_collection(name), artifact)
+        dimension = artifact["descriptor"]["model"]["dimension"]
         expected = {r["id"]: r for r in artifact["records"]}
         actual = {}
         offset = None
@@ -63,18 +87,16 @@ class DenseIndex:
             point = actual[identity]
             if point.payload != record["payload"]:
                 raise RetrievalError("Qdrant payload integrity failure")
-            vector = point.vector.get("dense", []) if isinstance(point.vector, dict) else []
-            if len(vector) != dimension or not all(math.isclose(a, b, rel_tol=1e-4, abs_tol=1e-6) for a, b in zip(vector, record["vector"], strict=True)):
-                raise RetrievalError("Qdrant vector readback mismatch")
+            self._verify_vector(point.vector, record, dimension)
 
     def publish(self, artifact: dict, lock_dir: Path, *, batch_size: int = 4) -> dict:
         from qdrant_client import models as m
 
-        validate_artifact(artifact)
+        self.validator(artifact)
         if isinstance(batch_size, bool) or not isinstance(batch_size, int) or batch_size < 1:
             raise RetrievalError("Invalid indexing batch size")
         generation = artifact["generation"]
-        name = "kbeauty_dense_" + generation
+        name = self.collection_prefix + generation
         with writer_lock(lock_dir):
             current = self.resolve()
             if current == name:
@@ -82,9 +104,7 @@ class DenseIndex:
                 LOG.info("index_verified_noop generation=%s", generation)
                 return {"collection": name, "points": len(artifact["records"]), "status": "noop"}
             if not self.client.collection_exists(name):
-                self.client.create_collection(name, vectors_config={"dense": m.VectorParams(
-                    size=artifact["descriptor"]["model"]["dimension"], distance=m.Distance.COSINE)},
-                    on_disk_payload=True)
+                self._create(name, artifact)
             else:
                 # Resume only our deterministic generation. Never write to an active collection.
                 if any(a.collection_name == name for a in self.client.get_aliases().aliases):
@@ -95,13 +115,11 @@ class DenseIndex:
                     raise RetrievalError("Staging collection ownership mismatch")
             for start in range(0, len(artifact["records"]), batch_size):
                 batch = artifact["records"][start:start + batch_size]
-                self.client.upsert(name, points=[m.PointStruct(id=r["id"], vector={"dense": r["vector"]}, payload=r["payload"]) for r in batch], wait=True)
+                self.client.upsert(name, points=[m.PointStruct(id=r["id"], vector=self._vectors(r), payload=r["payload"]) for r in batch], wait=True)
                 LOG.info("index_batch generation=%s completed=%d", generation, start + len(batch))
             self._verify(name, artifact)
             # A real search smoke must also succeed before publication.
-            hits = self.client.query_points(name, query=artifact["records"][0]["vector"], using="dense", limit=1).points
-            if not hits:
-                raise RetrievalError("Staging search smoke returned no points")
+            self._smoke(name, artifact)
             return self._switch(name, current, artifact)
 
     def _switch(self, name: str, previous: str | None, artifact: dict) -> dict:

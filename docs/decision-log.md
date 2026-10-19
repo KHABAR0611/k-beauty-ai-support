@@ -81,3 +81,15 @@ Manifest fingerprint, staging collection, проверка целостност�
 13 query relevance sets зафиксированы commit1003d53 до первого model search. Эталоны не меняются по результатам. Macro Recall@3/5 измеряет долю найденных источников, включая multi-source cases; отдельно публикуется достижимый ceiling для фиксированного k. T11 и частиT12 вне retrieval-границы не притворяются поисковыми тестами. Малый набор не доказывает обобщение, медицинскую безопасность или качество LLM. Dense-only baseline сохраняется для последующего сравнения; API, hybrid и генерация не входят в Блок2.
 
 Справка по предложенной, но не использованной альтернативе: [multilingual-e5-small](https://huggingface.co/intfloat/multilingual-e5-small), 384 измерения, max512, query/passage prefixes. Модель требует отдельного согласования и сравнения на том же corpus; её качество здесь не измерялось.
+
+## ADR-020 — Implemented: BM25 Russian и единый corpus generation
+
+Выбран утверждённый FastEmbed0.7.3 Qdrant/bm25 без обновления Server1.15.1. Client вычисляет TF/length factors, server применяет IDF один раз. k1=1.2,b=0.75; avg_len измеряется тем же analyzer по полным source texts. UTF-8 asset закреплён SHA/revision/license; исправлен platform-dependent open и разделены stemming/stopword toggles. NFKC/casefold/ё-е/каноническийSKU применяются одинаково к document/query. Частицыне/нет/без сохранены; перевод, synonyms и exact catalog filters не симулируются. Альтернатива source-specific boosts/синонимический словарь отклонена на этом этапе для честного baseline без query tuning. Sparse и dense одной identity находятся в одном point; один descriptor и alias исключают публикацию половины representation.
+
+## ADR-021 — Implemented: native RRF и детерминированный visible cutoff
+
+Реальный Server1.15.1 принимает named sparse/idf и FusionQuery RRF. Используется default k=2 при rank0, равные ветви, prefetch20. Независимая сумма обратных рангов сверена с фактическими Server scores. Weighted/configurable RRF из новых версий не переносится. Первый прогон обнаружил перестановки равных fused scores, в том числе на границеtop5: вместо сортировки уже усечённой пятёрки запрашивается полный union, затем UUID tie-break до top-k. Исходный прогон сохранён, labels/weights/depth не менялись. Это детерминированное разрешение равенств, а не reranker. Порядок внутренних branch ties зависит от выбранного Server; проверяется на corpus, не обещается для всех будущих datasets.
+
+## ADR-022 — Accepted: честное многокритериальное сравнение
+
+До изменений dense baseline зафиксирован896cbb0, план эксперимента8669485. Измеряются macro source Recall@3/5, MRR@5 по первому relevant source и warm latency p50/p95 nearest-rank. Три повтора, порядок modes циклически меняется; без query-vector cache. MRR не измеряет полноту multi-source ответа. Общий прирост Recall@5 не скрывает регрессии Recall@3/MRR и отдельных перефразировок. Stemming-off/prefetch5 публикуются как diagnostics, без замены primary конфигурации по известным13 вопросам. Для promotion другой настройки нужен независимый набор; reranker/LLM не реализуются без приёмки.

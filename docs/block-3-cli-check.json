@@ -1,0 +1,33 @@
+{
+  "clean_environment": true,
+  "hybrid_build_and_verified_noop": true,
+  "bm25_without_dense_model_files": true,
+  "all_three_cli_modes": {
+    "dense": {
+      "generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+      "top5": [
+        "KB-005",
+        "KB-007",
+        "KB-002",
+        "KB-004",
+        "KB-003"
+      ]
+    },
+    "bm25": {
+      "generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+      "top5": [
+        "KB-005"
+      ]
+    },
+    "hybrid": {
+      "generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+      "top5": [
+        "KB-005",
+        "KB-007",
+        "KB-002",
+        "KB-004",
+        "KB-003"
+      ]
+    }
+  }
+}

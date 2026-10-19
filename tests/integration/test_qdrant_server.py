@@ -121,7 +121,8 @@ def test_restart_preserves_real_vectors_payload_and_alias(server, tmp_path):
     before = index.resolve()
     env = dict(os.environ, QDRANT_HTTP_PORT="6394")
     subprocess.run(["docker", "compose", "-p", "kbeauty-review-check", "restart", "qdrant"], cwd=ROOT, env=env, check=True, capture_output=True, timeout=60)
-    for _ in range(30):
+    deadline = time.monotonic() + 180
+    while time.monotonic() < deadline:
         try:
             if health("/readyz") == 200:
                 break

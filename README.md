@@ -4,17 +4,17 @@
 
 ## Статус и возможности
 
-Версия 0.4.0 реализует подготовку источников, dense embeddings BAAI/bge-m3 и семантический поиск с источниками в Qdrant Server. Индекс содержит 20 векторов: 11 разделов политик и 9 товаров; точные характеристики и цены сохраняются в payload. Данные версии 1.1 относятся к вымышленному магазину, а не к подтверждённым условиям действующего бизнеса.
+Версия0.5.0 реализует ingestion, dense embeddings, BM25 и hybrid retrieval через RRF в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
 
-Публикация нового поколения атомарно переключает alias после проверки всех ID, payload и векторов. Повторная загрузка проверяется как no-op. Проверены настоящий Qdrant Server, частичная загрузка, повтор, сохранность после restart и поиск. [Отчёт Блока 2](docs/block-2-results.md).
+Данные1.1 относятся к вымышленному магазину. Публикация поколения атомарна после проверки всех ID, payload и обоих векторов. Доступны независимые режимы dense-only, BM25-only и hybrid. [Отчёт Блока3](docs/block-3-results.md) содержит baseline, все13 запросов, метрики, latency и регрессии.
 
-BM25, RRF, reranking, LLM и HTTP API остаются следующими этапами. Качество ответов ассистента пока не оценивалось. Готовность к промышленной эксплуатации не заявляется.
+Reranker, LLM и HTTP API не реализованы. Retrieval recall не является качеством ответов. Готовность к промышленной эксплуатации не заявляется. Блок2 принят, Блок3 представлен на приёмку.
 
 ## Архитектура и стек
 
-Текущий indexing: sources → validation → chunks → tokenizer gate → dense → staging Qdrant → readback → atomic alias. Query: resolve alias once → dense query → Qdrant search → texts, scores, sources и точные product fields.
+Текущий indexing: sources → validation → chunks → tokenizer gate → dense+BM25 → staging Qdrant → readback → atomic alias. Query: resolve alias once → dense/BM25 query → Qdrant search или RRF → texts, scores, sources и точные product fields.
 
-Python 3.12, PyYAML 6.0.2, Pytest 8.4.1, Qdrant client/server 1.15.1. Dense: официальный FP32 ONNX-export BAAI/bge-m3, revision `5617a9f61b028005a4858fdac845db406aefb181`, 1024 измерения, CLS + L2, Cosine, CPU, batch=1. ONNX Runtime 1.31.0, tokenizers 0.23.3, NumPy 2.5.4; проверенные SHA-256 файлов в `src/kbeauty_support/retrieval/bge-m3.lock.json`. FastEmbed 0.7.3 остаётся зависимостью будущей sparse-стадии: эта версия не содержит bge-m3 в реестре. FastAPI/LLM пока не запускаются.
+Python 3.12, PyYAML 6.0.2, Pytest 8.4.1, Qdrant client/server 1.15.1. Dense: официальный FP32 ONNX-export BAAI/bge-m3, revision `5617a9f61b028005a4858fdac845db406aefb181`, 1024 измерения, CLS + L2, Cosine, CPU, batch=1. ONNX Runtime 1.31.0, tokenizers 0.23.3, NumPy 2.5.4; проверенные SHA-256 файлов в `src/kbeauty_support/retrieval/bge-m3.lock.json`. FastEmbed0.7.3 реализует Qdrant/bm25 с русским Snowball stemmer и закреплённым UTF-8 stopword asset. BGE-M3 по-прежнему использует отдельный официальный ONNX adapter. FastAPI/LLM пока не запускаются.
 
 [Архитектура](docs/rag-architecture.md) · [ADR](docs/decision-log.md) · [Контракты](docs/component-contracts.md) · [Эксплуатация](docs/operations.md)
 
@@ -92,7 +92,7 @@ docs/                           ADR, спецификации, отчёты, API
 
 [Примеры чанков](docs/chunk-examples.md) · [Результаты повторной проверки](docs/business-review-results.md) · [Спецификация Блока 1](docs/block-1-spec.md) · [Roadmap](docs/roadmap.md) · [Публикация](docs/github-setup.md)
 
-Блок 1 принят. Реализация и проверки Блока 2 представлены на приёмку; Блок 3 не начат. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
+Блоки1–2 приняты. Dense/BM25/RRF реализованы; переход к reranking и LLM требует приёмки Блока3. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
 
 Бизнес-данные версии1.1 пересмотрены по уточнению владельца: [аудит происхождения и зависимостей](docs/business-change-audit.md). Действующие правила определяются data/1.1 и ADR-016, а не историческим отчётом для1.0.
 
@@ -117,4 +117,23 @@ python -m kbeauty_support.retrieval.cli evaluate
 
 Загрузка модели требует около 2,3 ГБ на диске. На 8 ГБ RAM CPU-запуск возможен, но тяжёлый и медленный; держите batch=1 и не запускайте несколько encoder-процессов одновременно. Обязательный token gate измерил 140–268 токенов на chunk с special tokens при лимите 8192. Обрезание запрещено. Для другой модели, квантования или GPU требуется новый manifest и отдельная оценка.
 
-Recall@3=0,734615; Recall@5=0,820513 на 13 замороженных запросах. Это macro recall источников, а не точность денежных расчётов или ответов LLM. Составные вопросы с несколькими товарами теряют источники: dense baseline требует дальнейшей работы. [Полные результаты](docs/block-2-retrieval-results.json).
+Dense-only baseline: Recall@3=0,734615; Recall@5=0,820513 на13 замороженных запросах. Это macro recall источников, а не точность денежных расчётов или ответов LLM. Составные вопросы с несколькими товарами теряют источники: dense baseline требует дальнейшей работы. [Полные результаты](docs/block-2-retrieval-results.json).
+
+## BM25 и Hybrid Search
+
+Установите проверенный Windows/Python3.12 набор `requirements/hybrid-test.lock` (43 пакета). В editable installation также доступен extra `[hybrid,test]`. Модель BGE-M3, исходный ingestion export и dense artifact должны быть подготовлены по инструкции выше. Для BM25-only запроса веса BGE-M3 не загружаются.
+
+```powershell
+python -m pip install -r requirements/hybrid-test.lock
+$env:PYTHONPATH = "src"
+python -m kbeauty_support.retrieval.cli hybrid-build --artifact artifacts/dense/<DENSE_GENERATION>.json
+python -m kbeauty_support.retrieval.cli index --artifact artifacts/hybrid/<HYBRID_GENERATION>.json
+python -m kbeauty_support.retrieval.cli search --mode dense --query "KB-004"
+python -m kbeauty_support.retrieval.cli search --mode bm25 --query "KB004"
+python -m kbeauty_support.retrieval.cli search --mode hybrid --query "Первый заказ, WELCOME10 и бонусы, доставка в ПВЗ"
+python -m kbeauty_support.retrieval.cli compare --repetitions 3 --prefetch 20
+```
+
+BM25: k1=1.2,b=0.75,avg_len=69.9 для текущего корпуса, IDF только на сервере. Русские словоформы обрабатывает stemming, а не лемматизация/перевод. NFKC, casefold, ё/е и KB-004/KB004 нормализуются одинаково при indexing/query. Подробности, лицензия assets и ограничения: [русский BM25](docs/bm25-russian.md).
+
+Hybrid использует равные ветви с prefetch20 и серверный RRF Qdrant1.15.1. При равных итоговых scores применяется стабильный UUID tie-break до top-k. Hybrid увеличивает полноту@5 на текущем наборе, но имеет регрессии раннего ранжирования; победители и проигравшие опубликованы без изменения эталонов. Полное сравнение и результаты каждого запроса: [block-3-comparison.json](docs/block-3-comparison.json).

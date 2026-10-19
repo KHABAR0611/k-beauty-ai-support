@@ -1,0 +1,123 @@
+{
+  "generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+  "point_count": 20,
+  "dense_dimensions": 1024,
+  "sparse_model": {
+    "analyzer_version": "ru-bm25-v1",
+    "avg_len": 69.9,
+    "b": 0.75,
+    "k": 1.2,
+    "keep_stopwords": [
+      "без",
+      "не",
+      "нет"
+    ],
+    "language": "russian",
+    "model_id": "Qdrant/bm25",
+    "modifier": "idf",
+    "normalization": "NFKC+casefold+yo-e+sku-kbNNN",
+    "revision": "22b8d2af71a76161e18dd432d2cee0eefa66e412",
+    "runtime": {
+      "fastembed": "0.7.3",
+      "mmh3": "5.3.1",
+      "py-rust-stemmers": "0.1.8"
+    },
+    "russian_sha256": "1743191192b4a4f77fcc216499455dc00c1b8626fdd407076a8deefff80e3d59",
+    "stemming": true,
+    "text_view": "full-source-text",
+    "token_max_length": 40,
+    "unicode_version": "15.0.0"
+  },
+  "samples": [
+    {
+      "id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+      "section": "DR-01",
+      "dense_first4": [
+        -0.033285174518823624,
+        0.030201004818081856,
+        0.003017902374267578,
+        -0.0011164735769852996
+      ],
+      "sparse_terms": 71,
+      "sparse_first4": [
+        [
+          3617882,
+          0.8854724477457248
+        ],
+        [
+          19522071,
+          0.8854724477457248
+        ],
+        [
+          50240749,
+          0.8854724477457248
+        ],
+        [
+          86263621,
+          0.8854724477457248
+        ]
+      ],
+      "sparse_sha256": "c2b3767f96570e4cdabee45a124af27c0ea6d519b6b0571d15d5f3643ae55428"
+    },
+    {
+      "id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+      "section": "DR-02",
+      "dense_first4": [
+        -0.05810263007879257,
+        0.005780923645943403,
+        -0.002915182150900364,
+        0.008140455931425095
+      ],
+      "sparse_terms": 58,
+      "sparse_first4": [
+        [
+          19522071,
+          1.5822208503742574
+        ],
+        [
+          36444946,
+          0.8587703132853075
+        ],
+        [
+          50166835,
+          1.2353295577780457
+        ],
+        [
+          86263621,
+          0.8587703132853075
+        ]
+      ],
+      "sparse_sha256": "d757500deeb218e23b46c2eb933dd51eff8063c7689f460621ffb8357bffbc49"
+    },
+    {
+      "id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+      "section": "DR-03",
+      "dense_first4": [
+        -0.0035312948748469353,
+        -0.010537591762840748,
+        -0.02084159292280674,
+        0.007291831076145172
+      ],
+      "sparse_terms": 52,
+      "sparse_first4": [
+        [
+          46094857,
+          1.0549495781024902
+        ],
+        [
+          86263621,
+          1.0549495781024902
+        ],
+        [
+          127116202,
+          1.0549495781024902
+        ],
+        [
+          132641523,
+          1.0549495781024902
+        ]
+      ],
+      "sparse_sha256": "4b7456e15b7f92283be40c561f2101ad124b111057cbd0c1c33d0ea65cb66708"
+    }
+  ]
+}

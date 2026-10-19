@@ -179,11 +179,13 @@ def embed(chunks: list[dict], source_manifest: dict, encoder: Encoder) -> dict:
     return artifact
 
 
-def validate_artifact(artifact: dict) -> None:
+def validate_artifact(artifact: dict, *, expected_schema: str = "dense-v1") -> None:
     body = {k: v for k, v in artifact.items() if k != "content_sha256"}
     if digest(encoded(body)) != artifact.get("content_sha256"):
         raise RetrievalError("Embedding artifact integrity failure")
     descriptor = artifact["descriptor"]
+    if descriptor.get("schema_version") != expected_schema:
+        raise RetrievalError("Unexpected embedding artifact schema")
     if digest(encoded(descriptor)) != artifact["generation"] or descriptor.get("distance") != "Cosine" or descriptor.get("vector_name") != "dense":
         raise RetrievalError("Embedding generation mismatch")
     records = artifact["records"]
@@ -198,8 +200,8 @@ def validate_artifact(artifact: dict) -> None:
             raise RetrievalError("Payload text hash mismatch")
 
 
-def save_artifact(artifact: dict, output: Path) -> Path:
-    validate_artifact(artifact)
+def save_artifact(artifact: dict, output: Path, *, validator=validate_artifact) -> Path:
+    validator(artifact)
     reject_links(output)
     output.mkdir(parents=True, exist_ok=True)
     dest = output / (artifact["generation"] + ".json")

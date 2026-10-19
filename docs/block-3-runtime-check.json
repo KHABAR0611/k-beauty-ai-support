@@ -1,0 +1,25 @@
+{
+  "engine": "29.8.0",
+  "compose": "5.5.1",
+  "server": "1.15.1",
+  "readyz": 200,
+  "healthz": 200,
+  "collection": "kbeauty_hybrid_c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+  "points": 20,
+  "vectors_config": {
+    "dense": {
+      "size": 1024,
+      "distance": "Cosine"
+    }
+  },
+  "sparse_config": {
+    "bm25": {
+      "modifier": "idf"
+    }
+  },
+  "port": 6394,
+  "persistence_suite_passed": true,
+  "container_running": true,
+  "oom_killed": false,
+  "volume": "kbeauty-review-check_qdrant_storage"
+}
