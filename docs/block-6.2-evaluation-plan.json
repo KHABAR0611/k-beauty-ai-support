@@ -1,0 +1,14 @@
+{
+  "baseline": "48a5f04",
+  "holdout_sha256": "e51b8fac238700afd396ca2210f83c0426b7a6b74d8da4435f6ae665dcb1c576",
+  "holdout_count": 24,
+  "gates": {
+    "independent_scenario_min": 0.85,
+    "false_answered_max": 0,
+    "math_accuracy": 1,
+    "previously_passing_regression_loss_max": 2
+  },
+  "refusal_guard": "Report answered expected cases separately; no success by blanket abstention. Missing/unsupported/external/human statuses evaluated individually.",
+  "rubric": "Unchanged fact/source/status grading; report quote integrity separately from task adequacy. No labels or settings changed after single frozen final pass.",
+  "resource_policy": "Same pinned models, CPU2, one API worker, reranker off, sequential model checks and unload after tests."
+}

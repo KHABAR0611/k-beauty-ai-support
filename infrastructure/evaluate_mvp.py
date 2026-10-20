@@ -62,19 +62,20 @@ def grade(case: dict, response: dict, snapshot, *, http_status: int, secret: str
             'scope':'Deterministic source/fact/contract checks, not blind human evaluation or universal entailment'}
 
 
-def main(*, corrective: bool = False) -> int:
+def main(*, corrective: bool = False, generalization: bool = False) -> int:
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase',choices=['answers','retrieval'],required=True)
-    parser.add_argument('--split',choices=['development','regression','holdout'] if corrective else ['development','final'],required=True)
+    parser.add_argument('--split',choices=['development','regression','known24','holdout'] if generalization else ['development','regression','holdout'] if corrective else ['development','final'],required=True)
     parser.add_argument('--url',default='http://127.0.0.1:8090')
     parser.add_argument('--allow-local-inference',action='store_true')
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
-    fixture=(ROOT/'tests/fixtures/block61/holdout.json' if corrective and args.split=='holdout'
+    fixture=(ROOT/'tests/fixtures/block62/holdout.json' if generalization and args.split=='holdout'
+             else ROOT/'tests/fixtures/block61/holdout.json' if args.split=='known24' or (corrective and args.split=='holdout')
              else ROOT/'tests/fixtures/block6'/('final.json' if args.split=='regression' else f'{args.split}.json'))
     raw=fixture.read_bytes();cases=json.loads(raw)['cases']
-    holdout=corrective and args.split=='holdout'
-    plan=json.loads((ROOT/('docs/block-6.1-evaluation-plan.json' if holdout else 'docs/block-6-evaluation-plan.json')).read_bytes())
+    holdout=corrective and args.split in ('holdout','known24')
+    plan=json.loads((ROOT/('docs/block-6.2-evaluation-plan.json' if generalization and args.split=='holdout' else 'docs/block-6.1-evaluation-plan.json' if holdout else 'docs/block-6-evaluation-plan.json')).read_bytes())
     expected=plan['holdout_sha256'] if holdout else plan['fixture_sha256'][fixture.name]
     if not frozen_fixture_matches(raw,expected):
         raise ValueError('Frozen evaluation fixture changed')
@@ -130,7 +131,7 @@ def main(*, corrective: bool = False) -> int:
                 start=time.perf_counter();r=client.post('/chat',json=case['request'],headers={'Authorization':'Bearer '+token})
                 response=r.json()
                 row={'id':case['id'],'request':case['request'],'conversation':case.get('conversation'),'turn':case.get('turn'),
-                     'expected_status':case['expected_status'],'required_sources':case['relevant_sections'],'response':response,
+                     'expected_status':case['expected_status'],'group':case.get('group'),'required_sources':case['relevant_sections'],'response':response,
                      'http_status':r.status_code,'http_latency_ms':(time.perf_counter()-start)*1000,
                      'grade':grade(case,response,snapshot,http_status=r.status_code,secret=token)}
                 records.append(row);save()

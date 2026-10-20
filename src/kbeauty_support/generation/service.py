@@ -14,11 +14,12 @@ from .intent import analyze, verify_coverage
 
 
 class ChatService(OutcomeMetrics):
-    def __init__(self, snapshot, retriever, provider, *, max_sources: int = 14, max_context_bytes: int = 24000):
+    def __init__(self, snapshot, retriever, provider, *, max_sources: int = 14, max_context_bytes: int = 24000, semantic=None):
         super().__init__()
         self.snapshot,self.retriever,self.provider=snapshot,retriever,provider
         self.max_sources,self.max_context_bytes=max_sources,max_context_bytes
         self.control=AnswerControl()
+        self.semantic=semantic
 
     def ready(self) -> dict:
         try:
@@ -33,6 +34,9 @@ class ChatService(OutcomeMetrics):
         timings={"preparation":0.0,"retrieval":0.0,"context":0.0,"tools":0.0,"llm":0.0,"answer_control":0.0}
         intent=analyze(request.question)
         trace={"intent_facets":list(intent.facets),"required_sections":[],"retrieved_sections":[],"context_sections":[],"selected_sections":[],"llm_attempted":False}
+        semantic=None
+        sections_override=None
+        deferred_catalog=False
         generation=None
         llm_attempted=False
         def result(status, answer, *, http=200, sources=None, **kwargs):
@@ -47,10 +51,26 @@ class ChatService(OutcomeMetrics):
                               handoff=self.control.handoff(pre.reason,request_id),diagnostics={"generation_performed":False})
             if re.search(r"(?:cvv|cvc|одноразов\w* код)\s*[:=]?\s*\d{3,}|\b(?:\d[ -]?){13,19}\b",request.question,re.I):
                 raise ServiceError("payment_secrets_not_accepted",422)
+            if self.semantic is not None and request.pricing is None and request.catalog_query is None:
+                phase=time.perf_counter();semantic=self.semantic.classify(request.question)
+                timings['semantic_routing']=(time.perf_counter()-phase)*1000
+                trace.update(semantic=semantic,operation='information')
+                mode=semantic['mode'];strong=semantic['margin']>=.10
+                if strong and mode=='calculate':
+                    trace['operation']='calculate'
+                    raise InsufficientContext(['pricing'])
+                if strong and mode=='recommend':
+                    trace['operation']='recommend'
+                    raise InsufficientContext(['catalog_query'])
+                if strong and mode=='human':
+                    return result('handoff_required','Нужна проверка сотрудником; обращение ещё не передано.',
+                        handoff=self.control.handoff('semantic_human_request',request_id),diagnostics=trace)
             if request.pricing is None and re.search(r"итог|заплачу|спиш[иу]|спишите|рассчита",request.question,re.I):
                 raise InsufficientContext(["pricing"])
             if request.catalog_query is None and request.pricing is None and (intent.clarification or re.search(r"подбери|порекомендуй",request.question,re.I)):
-                raise InsufficientContext([intent.clarification or "catalog_query"])
+                if semantic and semantic['topic'] in {'delivery','tracking','quality_return','defect','refund_money','payment'}:
+                    deferred_catalog=True
+                else:raise InsufficientContext([intent.clarification or "catalog_query"])
             if request.pricing is None and request.catalog_query is None and not self.provider.ready()["ready"]:
                 if pre.status=="handoff_required":
                     return result(pre.status,"Нужна проверка сотрудником; обращение не передано, операторская система не подключена.",
@@ -70,7 +90,11 @@ class ChatService(OutcomeMetrics):
             hits=self.snapshot.validate(retrieved["hits"])
             trace["retrieved_sections"]=[h["metadata"]["section"] for h in hits]
             phase=time.perf_counter()
-            context=assemble(request,hits,max_sources=self.max_sources,max_bytes=self.max_context_bytes)
+            if semantic:
+                from .planning import override_sections
+                sections_override=override_sections(request,hits,semantic)
+            if deferred_catalog and sections_override is None:raise InsufficientContext([intent.clarification or 'catalog_query'])
+            context=assemble(request,hits,max_sources=self.max_sources,max_bytes=self.max_context_bytes,sections=sections_override)
             trace.update(required_sections=sorted(context.required_sections),context_sections=[h["metadata"]["section"] for h in context.records])
             if not context.records:
                 return result("insufficient_context","В базе нет достаточных сведений для такого вопроса.")
@@ -79,6 +103,10 @@ class ChatService(OutcomeMetrics):
             calculation=pricing_options(request.pricing,self.snapshot.products) if request.pricing else None
             catalog=catalog_search(request.catalog_query,self.snapshot.products) if request.catalog_query else None
             timings["tools"]=(time.perf_counter()-phase)*1000
+            bindings=[];bundle=None
+            if semantic and context.records:
+                from .planning import bind_claims,support_bundle
+                bindings=bind_claims(context.records,self.snapshot);bundle=support_bundle(context.records,bindings)
             phase=time.perf_counter()
             selected={}
             usage=None;generation_performed=False;abstain=False
@@ -89,12 +117,33 @@ class ChatService(OutcomeMetrics):
             else:
                 llm_attempted=True
                 trace["llm_attempted"]=True
+                trace['llm_calls_attempted']=1
+                trace['llm_calls_completed']=0
                 try:
-                    generated=self.provider.generate(request.question,list(context.evidence.values()),{"calculation":calculation,"catalog":catalog})
+                    generated=self.provider.generate(request.question,[bundle] if bundle else list(context.evidence.values()),
+                        {'calculation':calculation,'catalog':catalog})
+                    trace['llm_calls_completed']=1
+                    if bundle and context.required_sections.intersection({'DR-01','DR-02'}) and hasattr(self.provider,'extract_delivery'):
+                        slot_start=time.perf_counter()
+                        trace['llm_calls_attempted']=2
+                        slot=self.provider.extract_delivery(request.question,self.provider.timeout-(slot_start-phase))
+                        trace['llm_calls_completed']=2
+                        timings['parameter_extraction']=(time.perf_counter()-slot_start)*1000
+                        generated.attributes.update(slot.attributes)
+                        generated.usage['parameter_extraction']=slot.usage
+                        trace['request_parameters']=slot.attributes
                 finally:
                     timings["llm"]=(time.perf_counter()-phase)*1000
                 generation_performed=True;usage=generated.usage;abstain=generated.draft.abstain
+                if bundle and generated.attributes.get('delivery_method')=='другой':
+                    return result('insufficient_context','Правила не подтверждают запрошенный способ доставки.',usage=usage,
+                                  diagnostics={'reason':'unsupported_delivery_parameter','generation_performed':True,'delivery_method':'другой'})
                 for claim in generated.draft.selections:
+                    if bundle:
+                        if claim.source_id!=bundle['source_id'] or claim.evidence_id!=bundle['evidence_id']:
+                            raise ServiceError('ungrounded_llm_output',502)
+                        selected.update({e['source_id']:e for e in context.evidence.values()})
+                        continue
                     evidence=context.evidence.get(claim.evidence_id)
                     if evidence is None or evidence["source_id"]!=claim.source_id:
                         raise ServiceError("ungrounded_llm_output",502)
@@ -102,7 +151,7 @@ class ChatService(OutcomeMetrics):
             phase=time.perf_counter()
             covered={e["section"] for e in selected.values()}
             semantic_ok,missing=verify_coverage(request.question,covered,tool=bool(calculation or catalog))
-            enough=context.required_sections.issubset(covered) and semantic_ok
+            enough=context.required_sections.issubset(covered) and (semantic_ok or sections_override is not None)
             trace.update(selected_sections=sorted(covered),model_abstained=abstain,missing_obligation_sections=missing,coverage_verified=semantic_ok)
             decision=self.control.decide(question=request.question,grounded=bool(selected) and not abstain,enough=enough)
             timings["answer_control"]=(time.perf_counter()-phase)*1000
@@ -142,7 +191,10 @@ class ChatService(OutcomeMetrics):
                                        "required_sections":sorted(context.required_sections),"context_bytes":context.bytes_used,
                                        "retrieved_sources":len(hits),"context_sources":len(context.records),
                                        "reranker_applied":retrieved.get("reranking",{}).get("applied",False),
-                                       "score_is_probability":False,"reason":decision.reason})
+                                       "score_is_probability":False,"reason":decision.reason,"semantic":semantic,"claim_bindings":bindings,"support_bundle":bool(bundle),
+                                       "llm_context_kind":"registered_support_descriptors" if bundle else "whole_source_units",
+                                       "llm_role":"source_support_selection" if bundle else "whole_evidence_selection",
+                                       "context_sections_override":sorted(sections_override) if sections_override else None})
         except SourceConflict as exc:
             handoff=self.control.handoff("conflicting_sources",request_id)
             handoff["source_ids"]=exc.source_ids

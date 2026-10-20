@@ -75,8 +75,8 @@ def required_sections(request) -> set[str]:
 
 
 
-def assemble(request, hits: list[dict], *, max_sources: int = 14, max_bytes: int = 24000) -> Context:
-    required=required_sections(request)
+def assemble(request, hits: list[dict], *, max_sources: int = 14, max_bytes: int = 24000, sections: set[str] | None = None) -> Context:
+    required=required_sections(request) if sections is None else sections
     found={h["metadata"]["section"]:h for h in hits}
     if not required.issubset(found) or len(required)>max_sources:
         raise InsufficientContext(["required_source_coverage"])

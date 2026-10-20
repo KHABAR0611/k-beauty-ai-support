@@ -116,4 +116,6 @@ def build_service(settings: Settings) -> ChatService:
     if isinstance(provider,OllamaProvider):
         provider.warm()
         retriever.warm()
-    return ChatService(snapshot,retriever,provider)
+    from kbeauty_support.generation.planning import SemanticRouter
+    semantic=SemanticRouter(retriever.encoder) if isinstance(provider,OllamaProvider) else None
+    return ChatService(snapshot,retriever,provider,semantic=semantic)

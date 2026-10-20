@@ -1,0 +1,280 @@
+{
+  "provider_doubles": false,
+  "scope": "Actual Qwen component probe on known data; no Qdrant/BGE, not E2E or independent evaluation",
+  "cases": [
+    {
+      "id": "N01",
+      "capabilities": [
+        "defect",
+        "delivery",
+        "payment",
+        "reference",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 566,
+        "output_tokens": 42,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 991,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 15169.206,
+          "load_duration": 3.001,
+          "prompt_eval_duration": 12462.513,
+          "eval_duration": 2691.822
+        }
+      },
+      "seconds": 15.183353699976578
+    },
+    {
+      "id": "N02",
+      "capabilities": [
+        "defect",
+        "human",
+        "payment",
+        "product",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 571,
+        "output_tokens": 41,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 996,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3558.747,
+          "load_duration": 2.515,
+          "prompt_eval_duration": 984.275,
+          "eval_duration": 2558.468
+        }
+      },
+      "seconds": 3.569966800045222
+    },
+    {
+      "id": "N05",
+      "capabilities": [
+        "defect",
+        "product",
+        "reference",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 583,
+        "output_tokens": 39,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 1008,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3715.537,
+          "load_duration": 2.104,
+          "prompt_eval_duration": 1353.027,
+          "eval_duration": 2338.609
+        }
+      },
+      "seconds": 3.723595399991609
+    },
+    {
+      "id": "N12",
+      "capabilities": [
+        "product",
+        "reference"
+      ],
+      "usage": {
+        "input_tokens": 573,
+        "output_tokens": 31,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 998,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3038.652,
+          "load_duration": 2.826,
+          "prompt_eval_duration": 1135.377,
+          "eval_duration": 1890.843
+        }
+      },
+      "seconds": 3.0478982999920845
+    },
+    {
+      "id": "N14",
+      "capabilities": [
+        "defect",
+        "human",
+        "product",
+        "quality_return",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 570,
+        "output_tokens": 42,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 995,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3500.437,
+          "load_duration": 2.093,
+          "prompt_eval_duration": 944.575,
+          "eval_duration": 2545.844
+        }
+      },
+      "seconds": 3.509212499950081
+    },
+    {
+      "id": "N20",
+      "capabilities": [
+        "defect",
+        "human",
+        "payment",
+        "product",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 570,
+        "output_tokens": 41,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 995,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3606.934,
+          "load_duration": 2.228,
+          "prompt_eval_duration": 939.963,
+          "eval_duration": 2655.636
+        }
+      },
+      "seconds": 3.628607499995269
+    },
+    {
+      "id": "N21",
+      "capabilities": [
+        "defect",
+        "delivery",
+        "payment",
+        "reference",
+        "refund_money"
+      ],
+      "usage": {
+        "input_tokens": 565,
+        "output_tokens": 42,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 990,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 3505.962,
+          "load_duration": 2.229,
+          "prompt_eval_duration": 908.829,
+          "eval_duration": 2585.719
+        }
+      },
+      "seconds": 3.5140666000079364
+    },
+    {
+      "id": "N23",
+      "capabilities": [
+        "product",
+        "recommend"
+      ],
+      "usage": {
+        "input_tokens": 568,
+        "output_tokens": 30,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 4096,
+        "output_limit": 128,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 994,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 2763.303,
+          "load_duration": 12.082,
+          "prompt_eval_duration": 882.094,
+          "eval_duration": 1860.426
+        }
+      },
+      "seconds": 2.7722730999812484
+    }
+  ],
+  "decision": "Rejected: Qwen general intent classification selected unrelated topics/actions"
+}
