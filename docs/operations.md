@@ -40,7 +40,7 @@ Prompt injection — отдельный набор атак на user и retriev
 
 Фактические проверки и ограничения: [Блок2](block-2-results.md), команды и recovery: [спецификация](block-2-spec.md). Native Docker pull обрывался через Engine CDN/proxy; официальный образ был загружен через прямой Registry API, SHA-256 каждого объекта проверен, затем docker load. Происхождение в block-2-image-provenance.json. Системные DNS/proxy и существующие Docker-данные не изменялись. Python probes Qdrant идут напрямую по loopback; модели скачиваются отдельным downloader с необязательным process-local --direct. Другие deployments должны подтвердить собственную сетевую конфигурацию.
 
-Dense CLI использует Qdrant request timeout30s, без автоматических повторных alias transactions; это отдельный batch CLI, не API deadline90s. JSON logs показывают прогресс encoding/publish и категорию ошибки. Пока нет monitoring service, read-only credentials, load tests и dependency security scan.
+Dense CLI использует Qdrant request timeout30s, без автоматических повторных alias transactions; это отдельный batch CLI, не API deadline40s. JSON logs показывают прогресс encoding/publish и категорию ошибки. Пока нет monitoring service, read-only credentials, load tests и dependency security scan.
 
 ## Hybrid runtime0.5.0
 
@@ -56,4 +56,4 @@ Dense CLI использует Qdrant request timeout30s, без автомат�
 
 ## API/Ollama0.7
 
-API проверен нативным Uvicorn на loopback, Qdrant в Compose; API image не собирался. Запуск/секреты/ready описаны в api.md. Один API worker, CPU2 threads; reranker=false, provider=disabled до конфигурации. Qwen8192/output512 с pinned tokenizer/digest. keep_alive=-1 удерживает RAM; после остановки API владелец может явно unload только эту модель. Не завершать чужие процессы/не удалять volumes. Счётчики process-local, не customer-resolution rate. HA/load SLO не заявлены.
+API проверен нативным Uvicorn на loopback, Qdrant в Compose; API image не собирался. Запуск/секреты/ready описаны в api.md. Один API worker, CPU2 threads; reranker=false, provider=disabled до конфигурации. Текущий Qwen4096/output128 с pinned tokenizer/digest, LLM25s/API40s. keep_alive=-1 удерживает RAM; после остановки API владелец может явно unload только эту модель. Не завершать чужие процессы/не удалять volumes. Счётчики process-local, не customer-resolution rate. HA/load SLO не заявлены. На8GB избегать параллельных BGE/LLM-процессов; ограничения собственного процесса не гарантируют свободную RAM при работе других приложений. Общую память ОС и actual worker RAM нужно измерять отдельно от venv launcher.

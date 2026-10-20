@@ -136,3 +136,13 @@ Citations и source integrity не гарантируют ответ на воп
 ## ADR-032 — Verified scope: actual deployment checks and resources
 
 Новая clone/venv47packages:212unit,13real Server contracts(FAQ double),3real HTTP включая Qwen,7actual boundary/dependency probes. Pause Qdrant/unload Qwen даютhealth200/ready503/chat503. Stop/start CLI превысили40s, фактическое восстановление и сохранность20points/full payload/dense/sparse/alias подтверждены отдельно. Windows venv launcher не выдаётся за Uvicorn RAM: actual PID взят из своего server log. Host memory load до96%, HTTP p95≈61s. GPU/HA/load/API container/security scan не заявлены. После тестов API останавливается, Qwen выгружается; один worker/reranker off сохранены.
+
+## ADR-033 — Implemented: bounded corrective intent and evidence obligations
+
+42 final вопроса Блока6 стали regression. Новые24 вопроса/факты/ожидаемые статусы и gates зафиксированы до изменения runtime; SHA проверяется evaluator. Диагностика всех42 сохранена отдельно, включая13 неуспехов и пересекающиеся с ними9 неполных ответов. До независимого запуска выполнен development12/12 и первый regression40/42. Ошибки падежа «денег» и лишнего accrual-раздела в вопросе redemption исправлены на regression, не на holdout. Runtime зафиксирован `d897630` до независимой проверки; последующие изменения результатов не являются настройкой.
+
+Конечная доменная онтология задаёт facets и source obligations вместо одного списка общих ключевых слов. Роль оплаты пересылки отличается от checkout; общий tracking FAQ отличается от личного статуса; местоименный товар без ID вызывает уточнение. Answer Control проверяет реально выбранные разделы по вопросу, а не только declared context coverage. Общая онтология остаётся общей точкой отказа, не универсальным доказательством entailment. Источники по-прежнему целые и сверены с неизменным снимком1.1. Scores не являются вероятностью. Diagnostic trace показывает retrieved/context/selected sections, abstain и missing obligations без записи пользовательских текстов в runtime log.
+
+## ADR-034 — Implemented: smaller CPU budget and reusable evidence prefix
+
+Модель и её digest не меняются. API использует ctx4096/output128 вместо8192/512; LLM25s/API40s, один worker/CPU2, reranker off. Полные units сортируются по section, затем в prompt идут evidence/tools и только потом вопрос, чтобы неизменная часть могла использовать prompt cache. Нет обрезания source text и повторов после read timeout. Целые UUID остаются в публичном контракте, внутренний prompt передаёт компактные aliases/section вместо UUID. Уменьшение timeout не считается успехом без проверки качества и числа ошибок. Небольшой prefix experiment и RAM/latency публикуются отдельно; host RAM может зависеть от чужих приложений, load/SLA не заявлены.

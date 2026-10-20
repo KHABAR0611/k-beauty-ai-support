@@ -27,11 +27,11 @@ $env:LLM_PROVIDER = "ollama"
 $env:OLLAMA_URL = "http://127.0.0.1:11434"
 $env:LLM_MODEL = "qwen3:0.6b"
 $env:LLM_MODEL_DIGEST = "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435"
-$env:LLM_TIMEOUT_SECONDS = "60"
+$env:LLM_TIMEOUT_SECONDS = "25"
 # Повторно запустить API после изменения окружения.
 ```
 
-LLM имеет request timeout60s; первоначальный30s диагностический предел оказался недостаточным. Общий API deadline90s. Отдельный startup warmup LLM ограничен120s. Health доступен во время background initialization, readiness503 до завершения прогрева BGE/LLM и проверки всех20 source payload. Qwen context8192/output512, temperature0/seed42, CPU2 threads/GPU0. Модель закрепляется keep_alive=-1: это занимает RAM до явного unload, а не бесплатное хранение вычислений. После потери/выгрузки модели readiness падает; восстановление через повторный startup. Автоматическое HA/перезапуск не заявлены.
+Текущие defaults после corrective sprint: LLM timeout25s, общий API deadline40s. Отдельный startup warmup LLM ограничен120s. Health доступен во время background initialization, readiness503 до завершения прогрева BGE/LLM и проверки всех20 source payload. Qwen context4096/output128, temperature0/seed42, CPU2 threads/GPU0. Модель закрепляется keep_alive=-1: это занимает RAM до явного unload. После потери/выгрузки модели readiness падает; восстановление через повторный startup. Автоматическое HA/перезапуск не заявлены. Старые измерения8192/512/60s/90s сохранены в исторических отчётах; они не являются текущими defaults. При большем контексте provider отклоняет запрос, не обрезая условия. Read timeout не повторяется и не становится `answered`.
 
 ## POST /chat
 

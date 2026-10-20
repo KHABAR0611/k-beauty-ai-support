@@ -45,3 +45,11 @@ def test_false_external_action_is_critical_even_with_expected_status():
     response={'status':'requires_external_data','answer':'Готово','external_data':{'action_performed':True}}
     grade=evaluation.grade(case,response,snapshot,http_status=200,secret='private-test-only-value')
     assert grade['critical_failure'] and not grade['scenario_passed']
+
+
+def test_frozen_fixture_tolerates_git_line_endings_but_rejects_changed_expectation():
+    import hashlib
+    original=b'{\r\n  "expected_status": "answered"\r\n}\r\n'
+    digest=hashlib.sha256(original).hexdigest()
+    assert evaluation.frozen_fixture_matches(original.replace(b'\r\n',b'\n'),digest)
+    assert not evaluation.frozen_fixture_matches(original.replace(b'answered',b'system_error'),digest)

@@ -28,6 +28,12 @@ def has_fact(answer: str, fact: str) -> bool:
     return normalized(fact) in normalized(answer)
 
 
+def frozen_fixture_matches(raw: bytes, expected_sha256: str) -> bool:
+    """Git may normalize JSON line endings; tolerate only LF/CRLF conversion."""
+    lf=raw.replace(b'\r\n',b'\n')
+    return expected_sha256 in {hashlib.sha256(value).hexdigest() for value in (raw,lf,lf.replace(b'\n',b'\r\n'))}
+
+
 def grade(case: dict, response: dict, snapshot, *, http_status: int, secret: str) -> dict:
     expected=case['expected_status'];status=response.get('status')
     sources=response.get('sources',[]);sections={s.get('section') for s in sources}
@@ -70,12 +76,13 @@ def main(*, corrective: bool = False) -> int:
     holdout=corrective and args.split=='holdout'
     plan=json.loads((ROOT/('docs/block-6.1-evaluation-plan.json' if holdout else 'docs/block-6-evaluation-plan.json')).read_bytes())
     expected=plan['holdout_sha256'] if holdout else plan['fixture_sha256'][fixture.name]
-    if hashlib.sha256(raw).hexdigest()!=expected:
+    if not frozen_fixture_matches(raw,expected):
         raise ValueError('Frozen evaluation fixture changed')
     from kbeauty_support.generation.context import Snapshot
     from kbeauty_support.retrieval.evaluation import percentile,recall
     snapshot=Snapshot(ROOT/'data');records=[]
     meta={'phase':args.phase,'split':args.split,'fixture_sha256':hashlib.sha256(raw).hexdigest(),
+          'fixture_lf_sha256':hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest(),
           'business_generation':snapshot.generation,'provider_doubles':False,
           'runtime_source_hashes':{p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'src').rglob('*.py'))}}
     args.output.parent.mkdir(parents=True,exist_ok=True)

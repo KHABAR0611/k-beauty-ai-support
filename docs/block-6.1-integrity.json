@@ -1,0 +1,16 @@
+{
+  "original_archive_files_unchanged": 37,
+  "original_archive_head": "fa83298684ab5a21ef844308ed58d30abb5fa8a8",
+  "business_and_original_labels_unchanged": {
+    "data/delivery_and_returns.md": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+    "data/payment_and_loyalty.md": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+    "data/products.json": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+    "tests/fixtures/block6/development.json": "7c0b51a1e7631d23fbbf06bd66a945880ac2e9a9abba831ff6bad158014fc026",
+    "tests/fixtures/block6/final.json": "dfa8ccb6201c8d5e7b2c514b8304d0d10bd5bf9b0c37f5906fd9b8f6cb018b79",
+    "tests/fixtures/business-acceptance-v1.1.json": "14bbc155d6f34eb0345a6dcfa22648f5aa427c7dfdc9dbd731cfafb08d50965d",
+    "tests/fixtures/retrieval-qrels-v1.1.json": "d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd"
+  },
+  "holdout_sha256": "a5e21b2796c45793ce8f96c976a336e18765ec8a6b7bae5e2c73103530ffcd63",
+  "runtime_frozen_commit": "d89763081787127e7d985fff0ab34823747715a4",
+  "runtime_modified_after_freeze": false
+}
