@@ -1,0 +1,60 @@
+{
+  "engine_version": "29.8.0",
+  "compose_version": "5.5.1",
+  "server_version": "1.15.1",
+  "container": "kbeauty-review-check-qdrant-1",
+  "restart_command": {
+    "success": true,
+    "exit_code": 0
+  },
+  "started_at_before": "2026-10-20T10:32:06.590058394Z",
+  "started_at_after": "2026-10-20T16:01:23.933213219Z",
+  "oom_killed": false,
+  "readiness_observations": [
+    {
+      "elapsed_seconds": 10.792297100008,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 13.819252500019502,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 16.840940699970815,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 19.86922130000312,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 22.889334800012875,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 25.89399080001749,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 28.906121400010306,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 31.92118359997403,
+      "transport_available": false
+    },
+    {
+      "elapsed_seconds": 35.00717250001617,
+      "health": 200,
+      "ready": 200
+    }
+  ],
+  "elapsed_restart_and_verified_ready_seconds": 36.25722849997692,
+  "active_alias": "kbeauty_active",
+  "collection_before_and_after": "kbeauty_hybrid_c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+  "points_verified": 20,
+  "full_payload_dense_sparse_readback_before_and_after": true,
+  "deleted_data": false,
+  "business_data_written": false,
+  "scope": "Actual existing Server container restart; reused named volume, no image/container/volume deletion; not backup/restore or total downtime measurement."
+}

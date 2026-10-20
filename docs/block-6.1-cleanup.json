@@ -1,0 +1,24 @@
+{
+  "own_api_workers": [
+    {
+      "own_api": "development",
+      "stopped": true
+    },
+    {
+      "own_api": "regression",
+      "stopped": true
+    },
+    {
+      "own_api": "holdout",
+      "stopped": true
+    },
+    {
+      "own_api": "clone",
+      "stopped": true
+    }
+  ],
+  "own_qwen_unloaded": true,
+  "ollama_version": "0.33.2",
+  "fresh_clone_fixture_checksums": true,
+  "scope": "Actual recorded worker PIDs checked with Windows process exit state; no unrelated processes terminated. Existing Docker/idle Ollama preserved."
+}

@@ -44,13 +44,13 @@ Invoke-RestMethod -Uri http://127.0.0.1:8090/chat -Method Post -Headers $headers
 
 Покажите отдельно FAQ через настоящую LLM, точный расчёт без LLM, структурированный подбор, неизвестный заказ и pending handoff. Не скрывайте `diagnostics.generation_performed`, `usage`, `status`, sources и ограничения. Текстовые запросы подбора могут требовать структурированных параметров; stateless API не обещает память между сообщениями. Не утверждать, что справочная выдержка всегда достаточно отвечает вопросу.
 
-Для полного независимого прогона, а не только удачных примеров:
+Для воспроизведения известной regression, а не только удачных примеров:
 
 ```powershell
-python infrastructure/evaluate_mvp.py --phase answers --split final --allow-local-inference --url http://127.0.0.1:8090 --output artifacts/final-evaluation.json
+python infrastructure/evaluate_corrective.py --phase answers --split regression --allow-local-inference --url http://127.0.0.1:8090 --output artifacts/regression-evaluation.json
 ```
 
-Результаты не отправляются в runtime как hints. Разметку после результата менять нельзя. Нельзя называть этот набор real customer resolution rate. Для отдельного retrieval прогона `--phase retrieval`; не держать второй BGE процесс одновременно с API на8GB.
+Результаты не отправляются в runtime как hints. Разметку после результата менять нельзя.24 новых вопроса corrective sprint уже оценены один раз; `--split holdout` воспроизводит их, но не создаёт новую независимую проверку после знакомства с результатами. Нельзя называть этот набор real customer resolution rate. Для отдельного retrieval прогона `--phase retrieval`; не держать второй BGE процесс одновременно с API на8GB. Текущие бюджеты Qwen4096/output128, LLM25s/API40s; исторические8192/512/60s/90s не копировать как defaults. Текущий итог: [PARTIAL, все ограничения](block-6.1-results.md).
 
 ## Нужен ли web chat
 

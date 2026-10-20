@@ -1,0 +1,98 @@
+{
+  "development": {
+    "startup_seconds": 99.62110039999243,
+    "max_host_memory_load_percent": 96,
+    "min_host_available_bytes": 324579328,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1658286080,
+        "peak_working_set_bytes": 1667403776,
+        "max_private_commit_bytes": 1742786560,
+        "observed_seconds": 145.2000023999717,
+        "cpu_seconds_delta": 8.671875,
+        "mean_percent_one_core": 5.972365603763715
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1305444352,
+        "peak_working_set_bytes": 1350930432,
+        "max_private_commit_bytes": 1741795328,
+        "observed_seconds": 145.2000023999717,
+        "cpu_seconds_delta": 248.09375,
+        "mean_percent_one_core": 170.86346136317167
+      },
+      "ollama": {
+        "max_working_set_bytes": 45412352,
+        "peak_working_set_bytes": 49201152,
+        "max_private_commit_bytes": 73650176,
+        "observed_seconds": 145.2000023999717,
+        "cpu_seconds_delta": 0.515625,
+        "mean_percent_one_core": 0.3551136304940588
+      }
+    },
+    "scope": "Actual worker PID from own Uvicorn log; exclude api_bge venv launcher. Process CPU deltas start after readiness, host samples include startup. Shared pages/Docker not added to process totals; OS cache not flushed."
+  },
+  "regression": {
+    "startup_seconds": 68.11372490000213,
+    "max_host_memory_load_percent": 94,
+    "min_host_available_bytes": 501952512,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1659039744,
+        "peak_working_set_bytes": 1666809856,
+        "max_private_commit_bytes": 1743704064,
+        "observed_seconds": 205.371638600016,
+        "cpu_seconds_delta": 27.34375,
+        "mean_percent_one_core": 13.31427756354176
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1572282368,
+        "peak_working_set_bytes": 1636438016,
+        "max_private_commit_bytes": 1755484160,
+        "observed_seconds": 205.371638600016,
+        "cpu_seconds_delta": 352.078125,
+        "mean_percent_one_core": 171.4346379081637
+      },
+      "ollama": {
+        "max_working_set_bytes": 48533504,
+        "peak_working_set_bytes": 49201152,
+        "max_private_commit_bytes": 76201984,
+        "observed_seconds": 205.371638600016,
+        "cpu_seconds_delta": 1.03125,
+        "mean_percent_one_core": 0.5021384681107178
+      }
+    },
+    "scope": "Actual worker PID from own Uvicorn log; exclude api_bge venv launcher. Process CPU deltas start after readiness, host samples include startup. Shared pages/Docker not added to process totals; OS cache not flushed."
+  },
+  "holdout": {
+    "startup_seconds": 61.165949999995064,
+    "max_host_memory_load_percent": 93,
+    "min_host_available_bytes": 546463744,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1658359808,
+        "peak_working_set_bytes": 1668112384,
+        "max_private_commit_bytes": 1744211968,
+        "observed_seconds": 195.31036520004272,
+        "cpu_seconds_delta": 16.09375,
+        "mean_percent_one_core": 8.240090065632872
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1779789824,
+        "peak_working_set_bytes": 1810710528,
+        "max_private_commit_bytes": 1833619456,
+        "observed_seconds": 195.31036520004272,
+        "cpu_seconds_delta": 323.859375,
+        "mean_percent_one_core": 165.8178124178374
+      },
+      "ollama": {
+        "max_working_set_bytes": 47927296,
+        "peak_working_set_bytes": 49201152,
+        "max_private_commit_bytes": 75735040,
+        "observed_seconds": 195.31036520004272,
+        "cpu_seconds_delta": 0.703125,
+        "mean_percent_one_core": 0.36000393490629046
+      }
+    },
+    "scope": "Actual worker PID from own Uvicorn log; exclude api_bge venv launcher. Process CPU deltas start after readiness, host samples include startup. Shared pages/Docker not added to process totals; OS cache not flushed."
+  }
+}

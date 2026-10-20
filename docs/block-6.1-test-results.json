@@ -1,0 +1,46 @@
+{
+  "unit": {
+    "passed": 232,
+    "failures": 0,
+    "scope": "Main checkout and separate fresh clone/47-package environment"
+  },
+  "real_qdrant_api_contracts": {
+    "passed": 13,
+    "provider": "explicit double for FAQ; actual Qdrant/BGE"
+  },
+  "real_evaluation": {
+    "regression_requests": 42,
+    "independent_requests": 24,
+    "completed_qwen": 37,
+    "attempted_qwen": 39,
+    "timeouts": 2,
+    "provider_doubles": false
+  },
+  "clean_clone_http": {
+    "passed": 3,
+    "real_qwen": 1,
+    "typed_calculator": 1,
+    "external_data_control": 1,
+    "provider_doubles": false
+  },
+  "real_boundary_and_outages": {
+    "passed": 7,
+    "details": "block-6.1-holdout-operations.json"
+  },
+  "six_statuses": {
+    "answered": "N02",
+    "clarification_needed": "N17",
+    "insufficient_context": "N01",
+    "requires_external_data": "N19",
+    "handoff_required": "F36",
+    "system_error": "N12"
+  },
+  "actual_server_restart": {
+    "verified": true,
+    "points": 20,
+    "business_data_written": false,
+    "data_deleted": false
+  },
+  "ci_evidence_url": "https://github.com/KHABAR0611/k-beauty-ai-support/actions/workflows/checks.yml",
+  "scope": "CI is checked for publication SHA separately; local actual models/Server are not claimed as CI E2E. No GPU/load/HA/API-image/security-vulnerability audit."
+}

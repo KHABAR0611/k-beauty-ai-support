@@ -1,0 +1,230 @@
+{
+  "status": "PARTIAL",
+  "runtime_commit": "d89763081787127e7d985fff0ab34823747715a4",
+  "business_version": "1.1",
+  "regression": {
+    "scenario_pass_count": 42,
+    "scenario_total": 42,
+    "scenario_pass_rate": 1,
+    "answer_completeness": 1,
+    "expected_answer_denominator": 29,
+    "actual_answered": 29,
+    "source_fact_integrity": 1,
+    "refusal_status_accuracy": 1,
+    "refusal_denominator": 13,
+    "calculation_accuracy": 1,
+    "calculation_denominator": 5,
+    "routing_accuracy": 1,
+    "real_llm_completed": 24,
+    "critical_failures": 0,
+    "http_latency": {
+      "p50_ms": 3323.896899993997,
+      "p95_ms": 21380.170199961867
+    },
+    "stage_latency": {
+      "retrieval": {
+        "p50_ms": 659.8129000049084,
+        "p95_ms": 878.8702000165358
+      },
+      "llm": {
+        "p50_ms": 2547.79070004588,
+        "p95_ms": 20620.282599993516
+      }
+    },
+    "answer_latency_by_route": {
+      "capability_control": {
+        "samples": 3,
+        "p50_ms": 614.2277999897487,
+        "p95_ms": 639.3924999865703
+      },
+      "deterministic_calculator": {
+        "samples": 5,
+        "p50_ms": 683.7602999876253,
+        "p95_ms": 1033.119700034149
+      },
+      "unreported": {
+        "samples": 10,
+        "p50_ms": 2.9233000241219997,
+        "p95_ms": 547.7124000317417
+      },
+      "validated_extractive": {
+        "samples": 24,
+        "p50_ms": 4940.290900005493,
+        "p95_ms": 21469.724000024144
+      }
+    },
+    "false_answered_ids": [],
+    "llm_attempts": 24,
+    "real_timeouts": [],
+    "llm_attempt_latency": {
+      "p50_ms": 4940.290900005493,
+      "p95_ms": 21469.724000024144
+    },
+    "category_counts": {
+      "answered": 29,
+      "clarification_needed": 6,
+      "insufficient_context": 2,
+      "requires_external_data": 3,
+      "handoff_required": 2
+    }
+  },
+  "independent": {
+    "scenario_pass_count": 15,
+    "scenario_total": 24,
+    "scenario_pass_rate": 0.625,
+    "answer_completeness": 0.6666666666666666,
+    "expected_answer_denominator": 18,
+    "actual_answered": 14,
+    "source_fact_integrity": 1,
+    "refusal_status_accuracy": 0.5,
+    "refusal_denominator": 6,
+    "calculation_accuracy": 1,
+    "calculation_denominator": 1,
+    "routing_accuracy": 0.625,
+    "real_llm_completed": 13,
+    "critical_failures": 0,
+    "http_latency": {
+      "p50_ms": 5553.692099987529,
+      "p95_ms": 25574.77960002143
+    },
+    "stage_latency": {
+      "retrieval": {
+        "p50_ms": 685.9518999699503,
+        "p95_ms": 1348.6320999800228
+      },
+      "llm": {
+        "p50_ms": 4220.929900009651,
+        "p95_ms": 25012.994999997318
+      }
+    },
+    "answer_latency_by_route": {
+      "capability_control": {
+        "samples": 1,
+        "p50_ms": 632.0745999692008,
+        "p95_ms": 632.0745999692008
+      },
+      "deterministic_calculator": {
+        "samples": 1,
+        "p50_ms": 607.1127000031993,
+        "p95_ms": 607.1127000031993
+      },
+      "unreported": {
+        "samples": 9,
+        "p50_ms": 731.558799976483,
+        "p95_ms": 25722.60360000655
+      },
+      "validated_extractive": {
+        "samples": 13,
+        "p50_ms": 8536.805099982303,
+        "p95_ms": 23294.845599972177
+      }
+    },
+    "false_answered_ids": [
+      "N21",
+      "N23"
+    ],
+    "llm_attempts": 15,
+    "real_timeouts": [
+      "N12",
+      "N14"
+    ],
+    "llm_attempt_latency": {
+      "p50_ms": 8966.898299986497,
+      "p95_ms": 25722.60360000655
+    },
+    "category_counts": {
+      "insufficient_context": 4,
+      "answered": 14,
+      "clarification_needed": 3,
+      "system_error": 2,
+      "requires_external_data": 1
+    }
+  },
+  "baseline": {
+    "scenario_pass_count": 29,
+    "scenario_total": 42,
+    "scenario_pass_rate": 0.6904761904761905,
+    "answer_completeness": 0.6896551724137931,
+    "expected_answer_denominator": 29,
+    "actual_answered": 21,
+    "source_fact_integrity": 1,
+    "refusal_status_accuracy": 0.6923076923076923,
+    "refusal_denominator": 13,
+    "calculation_accuracy": 1,
+    "calculation_denominator": 5,
+    "routing_accuracy": 0.7619047619047619,
+    "real_llm_completed": 18,
+    "critical_failures": 0,
+    "http_latency": {
+      "p50_ms": 1450.6145000341348,
+      "p95_ms": 60927.49669996556
+    },
+    "stage_latency": {
+      "retrieval": {
+        "p50_ms": 831.3226999598555,
+        "p95_ms": 4888.664100028109
+      },
+      "llm": {
+        "p50_ms": 0.0,
+        "p95_ms": 60050.0017000013
+      }
+    },
+    "answer_latency_by_route": {
+      "capability_control": {
+        "samples": 3,
+        "p50_ms": 810.4095000308007,
+        "p95_ms": 900.9833000018261
+      },
+      "deterministic_calculator": {
+        "samples": 5,
+        "p50_ms": 1015.2676000143401,
+        "p95_ms": 1450.6145000341348
+      },
+      "unreported": {
+        "samples": 18,
+        "p50_ms": 862.1836000238545,
+        "p95_ms": 63498.580000014044
+      },
+      "validated_extractive": {
+        "samples": 16,
+        "p50_ms": 17167.054699966684,
+        "p95_ms": 45878.39530000929
+      }
+    },
+    "false_answered_ids": [
+      "F10"
+    ],
+    "llm_attempts": 21,
+    "real_timeouts": [
+      "F11",
+      "F15",
+      "F21"
+    ],
+    "llm_attempt_latency": {
+      "p50_ms": 22264.25950002158,
+      "p95_ms": 62867.388500017114
+    },
+    "category_counts": {
+      "insufficient_context": 10,
+      "requires_external_data": 3,
+      "answered": 21,
+      "system_error": 3,
+      "clarification_needed": 3,
+      "handoff_required": 2
+    }
+  },
+  "previously_passing_regressions": [],
+  "gates": {
+    "regression_quality_85pct": true,
+    "independent_quality_85pct": false,
+    "independent_complete_85pct": false,
+    "no_false_answered": false,
+    "unchanged_exact_calculations": true,
+    "no_previous_pass_regressions": true,
+    "successful_llm_p95_under30s": true
+  },
+  "rubric": "Original deterministic fact/source/status rubric; source quote integrity is not semantic task adequacy. Critical_failures in old grader only covers secrets/external actions/arithmetic; false_answered counted separately here.",
+  "frozen_holdout_not_used_for_tuning": true,
+  "models_swapped": false,
+  "paid_api_used": false
+}
