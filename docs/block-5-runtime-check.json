@@ -75,5 +75,15 @@
   },
   "api_container_build_tested": false,
   "deployment_tested": "native Uvicorn + actual Docker Qdrant, not an API container",
-  "restart_scope": "Block5 does not rerun persistence restart; earlier verified Block4 evidence retained unchanged"
+  "restart_scope": "Block5 does not rerun persistence restart; earlier verified Block4 evidence retained unchanged",
+  "post_test_cleanup": {
+    "model_unloaded": true,
+    "loaded_models_after": {
+      "models": []
+    },
+    "cached_weights_preserved": true,
+    "ollama_loopback_server_left_running": true,
+    "qdrant_left_running": true,
+    "api_test_processes_stopped": true
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "code_commit": "4e6176961096d7e787ee28fb7721c4e2c0903de7",
+  "clone": "git clone --no-hardlinks from active repository",
+  "environment": "fresh47-package service-test.lock environment reused, no weights required for unit/source smoke",
+  "unit_regression_passed": 197,
+  "real_http_disabled_provider_smoke_passed": 8,
+  "ingestion_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+  "working_tree_clean_after_checks": true,
+  "live_llm_in_clone_tested": false,
+  "scope": "Reproducible code/ingestion/API failure-control paths; full model integration separately tested in active repository"
+}
