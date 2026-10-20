@@ -1,0 +1,34 @@
+{
+  "rubric_preserved": true,
+  "independent_failed_answered_ids": [
+    "H06",
+    "H12",
+    "H13",
+    "H14"
+  ],
+  "confirmed_semantically_unsuitable_independent_ids": [
+    "H06",
+    "H13",
+    "H14"
+  ],
+  "label_limitation": {
+    "id": "H12",
+    "finding": "Required PL-03 is overbroad for a question about combining WELCOME10 and redemption cap. Response includes PL-02, PL-04 and PL-05, all required fact fragments and the requested ordering/cap. No missing business fact is demonstrated here. Original source requirement and official FAIL remain unchanged; not counted as a confirmed semantic false answer in manual analysis."
+  },
+  "confirmed_semantically_unsuitable_all_sets": [
+    "F30",
+    "N21",
+    "H06",
+    "H13",
+    "H14"
+  ],
+  "official_failed_answered_all_sets": [
+    "F30",
+    "N21",
+    "H06",
+    "H12",
+    "H13",
+    "H14"
+  ],
+  "method": "Single engineering review against immutable1.1 sources, not blind independent human judging; no rerun, relabeling or retrospective score improvement."
+}

@@ -1,6 +1,6 @@
 # FastAPI contract0.7
 
-Независимая приёмка: [Блок6 PARTIAL](block-6-results.md), [запуск и реальные примеры](block-6-demo.md). API stateless; выбор context ограничен доменными правилами. Подбор/расчёт используют явные typed fields; полное понимание произвольного русского запроса/продолжения диалога не заявляется. Источники проходят integrity gate, но F10 выявил недостаточную suitability проверку.
+Итоговая приёмка: [Блок6.2 PARTIAL](block-6.2-results.md), [запуск и реальные примеры](block-6-demo.md). API stateless; выбор context ограничен доменными правилами. Подбор/расчёт используют явные typed fields; полное понимание произвольного русского запроса/продолжения диалога не заявляется. Источники проходят integrity gate, но F10 выявил недостаточную suitability проверку.
 
 Реализованы POST /chat, GET /health, GET /ready и защищённый GET /metrics. Это синхронный доменный pipeline за отдельным вычислительным worker; ASGI event loop не выполняет нейросетевой inference. Default provider=disabled, reranker=false. В API нет runtime mock/provider переключателя для клиента.
 
@@ -65,3 +65,10 @@ python infrastructure/evaluate_live_api.py --allow-local-inference --url http://
 ```
 
 Для real Server contract tests: KBEAUTY_API_SERVER_TESTS=1, QDRANT_URL/key и KBEAUTY_MODEL_DIR; выполнить python -m pytest tests/integration/test_api_server.py. Только provider заменён явным test double. Влияние живой модели оценивается отдельно через real HTTP. API container image не собирался: backend проверен нативным Uvicorn, Qdrant — существующим Compose Server. Перед публичным доступом нужны отдельная эксплуатационная оценка, TLS, многопользовательская авторизация, retention/log policy и нагрузочный профиль.
+
+
+## Наблюдаемая граница6.2
+
+Ollama path использует shared BGE semantic prototypes и короткие registered support descriptors. `diagnostics` показывает `semantic`, `context_sections_override`, `claim_bindings`, `support_bundle`, `llm_context_kind`, `llm_role`, `llm_calls_attempted/completed`. Успешная parameter extraction добавляет `request_parameters` (span/type/origin/hash), а `usage.parameter_extraction` — отдельные model timings/tokens. Основной и дополнительный вызов разделяют общий25s budget. Parameter time вложено в LLM, routing — в preparation; не суммировать повторно. Счётчик запросов с usage не равен числу model calls.
+
+`ungrounded_request_parameter` означает502/system_error без источников: модель вернула не буквальный пользовательский параметр. Это safe failure, не успешное обслуживание. В финальном6.2 тесте такой исход возник10 раз на90 запросах, в том числе на корректных вопросах. Семантически неподходящие answered тоже остаются; клиент не должен интерпретировать passed source hash как100% task correctness. API stateless, предыдущие сообщения не сохраняет; personal order data и operator dispatch не подключены.

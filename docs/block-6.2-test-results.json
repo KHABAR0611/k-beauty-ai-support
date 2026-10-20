@@ -1,0 +1,74 @@
+{
+  "unit": {
+    "passed": 259,
+    "failures": 0,
+    "scope": "Active checkout and independent clean clone; includes27 new semantic/binding/provider contract tests"
+  },
+  "real_qdrant_api_contracts": {
+    "passed": 13,
+    "provider": "FAQ explicitly doubled; actual Qdrant Server/BGE"
+  },
+  "real_evaluation": {
+    "known42": 42,
+    "known24": 24,
+    "independent24_once": 24,
+    "provider_doubles": false,
+    "completed_requests_with_published_qwen_usage": 51,
+    "requests_attempting_qwen": 61,
+    "actual_subcalls_attempted": 80,
+    "actual_subcalls_completed": 70,
+    "timeouts": 0
+  },
+  "real_boundary_and_outage_probes": [
+    {
+      "case": "missing_auth",
+      "http_status": 401,
+      "safe": true
+    },
+    {
+      "case": "unknown_field",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "oversized_body",
+      "http_status": 413,
+      "safe": true
+    },
+    {
+      "case": "synthetic_payment_secret",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "blank_question",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "real_qdrant_paused",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true
+    },
+    {
+      "case": "real_qwen_unloaded",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true,
+      "scope": "model missing from memory, Ollama transport alive"
+    }
+  ],
+  "clean_clone": {
+    "real_http_cases": 3,
+    "real_qwen_cases": 1,
+    "fresh_dependency_environment": false,
+    "locked_environment_reused": true,
+    "existing_model_caches_and_server_reused": true
+  },
+  "six_statuses_observed_in_final_suite": true,
+  "persistence": "Actual restart/readback in Block6.1 retained as historical evidence; no new container restart claimed for6.2",
+  "ci": "Publication SHA verified separately; CI does not run real models/Qdrant E2E"
+}

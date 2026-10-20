@@ -146,3 +146,16 @@ Citations и source integrity не гарантируют ответ на воп
 ## ADR-034 — Implemented: smaller CPU budget and reusable evidence prefix
 
 Модель и её digest не меняются. API использует ctx4096/output128 вместо8192/512; LLM25s/API40s, один worker/CPU2, reranker off. Полные units сортируются по section, затем в prompt идут evidence/tools и только потом вопрос, чтобы неизменная часть могла использовать prompt cache. Нет обрезания source text и повторов после read timeout. Целые UUID остаются в публичном контракте, внутренний prompt передаёт компактные aliases/section вместо UUID. Уменьшение timeout не считается успехом без проверки качества и числа ошибок. Небольшой prefix experiment и RAM/latency публикуются отдельно; host RAM может зависеть от чужих приложений, load/SLA не заявлены.
+
+
+## ADR-035 — Implemented, quality not accepted: bounded semantic adapter
+
+Диагностика девяти ошибок6.1 отделила неверные intent/tool/context decisions от двух CPU deadlines. Уже загруженный BGE-M3 используется для prototypes операций/тем без новой модели/framework; операция отделена от retrieved source fallback и typed tool eligibility. Lexical path сохранён. Разрешение fallback через top3 и margins зафиксировано до нового набора. General Qwen multi-label/named router и binary answerability отвергнуты на известных component checks: лишние темы и путаница отрицательного правила с отсутствием знаний. Не заявляется универсальная классификация или вероятность уверенности. Итог16/24 и потеря прежних PASS показывают, что этот adapter не решил обобщение.
+
+## ADR-036 — Implemented with known failures: source claims and user parameters
+
+Snapshot и whole source units сохраняются. Literal anchor/offset/hash и product_id привязывают подтверждённые утверждения к источникам. Компактный support bundle снижает prefill; Qwen выбирает разрешённый bundle, сервер выводит полные исходные sections. Это extractive architecture, без свободного LLM paraphrase/универсального entailment. Доставка извлекается отдельным user-only JSON call, exact span и BGE type проверяются раздельно; общий25s budget. В финальном запуске10 span failures безопасно дали502, но обычные вопросы перестали обслуживаться; «дронам» классифицировано pickup. Дословный параметр не доказывает правильность роли. Эти ограничения сохранены после freeze, а не исправлены по holdout.
+
+## ADR-037 — Accepted evaluation boundary: preserve negative final evidence
+
+Известные42/24 остаются regression; новые24 заранее размечены и исполнены один раз после runtime0fb3183 freeze. Требования ≥85%, zero false answered и не более двух потерь прежних PASS не выполнены. Деньги7/7, real Server/Qwen и safe boundary checks подтверждены отдельно. MVP PARTIAL; неподходящие source quotes не объявляются grounded answer только из-за100% quote integrity. H12 имеет избыточный required source, но официальный FAIL и16/24 не пересчитаны. Новых функций, смены модели, ещё одного tuning cycle или автоматического deployment не разрешается выводить из этого результата.

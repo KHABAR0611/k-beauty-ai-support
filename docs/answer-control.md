@@ -30,3 +30,8 @@
 ## Учёт категорий
 
 Защищённый GET /metrics показывает process-local counters и category_shares отправляемых API responses. Считается одна категория на HTTP-ответ /chat, включая deadline и boundary errors; поздний результат завершившегося worker не считается answered. Health/readiness и метрики исключены из знаменателя. Данные теряются при restart и не объединяются между workers. Это доли технических исходов вызовов, не доля решённых клиентских проблем. Отдельно опубликованы синтетический real-HTTP прогон с настоящей LLM и явно помеченный benchmark с provider double; их знаменатели не смешиваются.
+
+
+## Проверенная граница6.2
+
+Binding source UUID/hash/anchor/offset и literal user span проверяют происхождение. Они не доказывают семантическую достаточность вопросу. Текущий semantic adapter и parameter type могут ошибаться; на новых24 есть три подтверждённых неподходящих answered и ещё один FAIL по избыточному source-level эталону. Статусы/рубрикa сохранены без пересмотра после independent. См. block-6.2-results.md и block-6.2-rubric-audit.json. Извлечение неподтверждённого span безопасно даёт system_error/502, но не считается решённым обращением.

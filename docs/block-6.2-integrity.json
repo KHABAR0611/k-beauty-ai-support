@@ -1,0 +1,23 @@
+{
+  "archive_files_unchanged": 37,
+  "archive_head": "fa83298684ab5a21ef844308ed58d30abb5fa8a8",
+  "original_business_and_labels_lf_sha256": {
+    "data/delivery_and_returns.md": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+    "data/payment_and_loyalty.md": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+    "data/products.json": "a92393fb9b84f50feb2cafdad02ca28c56574076a4714271728c25d94bbaa5a6",
+    "tests/fixtures/block6/development.json": "cea9535cd67500ae592de9206cb6ee4931bd1691adacd734c8462ad904059f64",
+    "tests/fixtures/block6/final.json": "19626f85194487e10918282111a344584630b679e93fceec9c6661f199a2a8d8",
+    "tests/fixtures/block61/holdout.json": "a5e21b2796c45793ce8f96c976a336e18765ec8a6b7bae5e2c73103530ffcd63",
+    "tests/fixtures/business-acceptance-v1.1.json": "14bbc155d6f34eb0345a6dcfa22648f5aa427c7dfdc9dbd731cfafb08d50965d",
+    "tests/fixtures/retrieval-holdout-v1.1.json": "663da585ee0e864a3b3f4b827f68c4a8a53168ed0ece80fbd0ce228225185b44",
+    "tests/fixtures/retrieval-qrels-v1.1.json": "d7b1bbd56f943e1f9e56255b6a7fa822965ec8b480a38c6ec7a4660f848573cd"
+  },
+  "runtime_commit": "0fb3183e8da93b5666ad1f795563f755eb54e912",
+  "frozen_runtime_files_verified": 33,
+  "runtime_tuned_after_independent": false,
+  "holdout_sha256": "e51b8fac238700afd396ca2210f83c0426b7a6b74d8da4435f6ae665dcb1c576",
+  "independent_run_count": 1,
+  "normalization": "LF only, no semantic edits",
+  "all_three_evaluation_runtime_hashes_match_frozen_source": true,
+  "no_runtime_tests_requirements_or_environment_changes_after_freeze": true
+}

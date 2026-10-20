@@ -1,0 +1,250 @@
+{
+  "block-6.1-regression-answers.json": {
+    "main": {
+      "input_tokens": {
+        "samples": 24,
+        "median": 881.0,
+        "max": 1099
+      },
+      "output_tokens": {
+        "samples": 24,
+        "median": 32.0,
+        "max": 38
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 24,
+          "median": 4240.211,
+          "max": 22354.862
+        },
+        "load_duration": {
+          "samples": 24,
+          "median": 2.8395,
+          "max": 31.796
+        },
+        "prompt_eval_duration": {
+          "samples": 24,
+          "median": 1859.393,
+          "max": 19837.541
+        },
+        "eval_duration": {
+          "samples": 24,
+          "median": 2178.2574999999997,
+          "max": 3006.407
+        }
+      }
+    },
+    "successful_parameter_calls": null
+  },
+  "block-6.2-regression-answers.json": {
+    "main": {
+      "input_tokens": {
+        "samples": 20,
+        "median": 380.5,
+        "max": 526
+      },
+      "output_tokens": {
+        "samples": 20,
+        "median": 26.0,
+        "max": 26
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 20,
+          "median": 4562.312,
+          "max": 9335.705
+        },
+        "load_duration": {
+          "samples": 20,
+          "median": 2.442,
+          "max": 56.534
+        },
+        "prompt_eval_duration": {
+          "samples": 20,
+          "median": 3121.0245,
+          "max": 7675.041
+        },
+        "eval_duration": {
+          "samples": 20,
+          "median": 1409.8695,
+          "max": 1661.411
+        }
+      }
+    },
+    "successful_parameter_calls": {
+      "input_tokens": {
+        "samples": 4,
+        "median": 114.5,
+        "max": 127
+      },
+      "output_tokens": {
+        "samples": 4,
+        "median": 16.5,
+        "max": 20
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 4,
+          "median": 1480.1625,
+          "max": 1717.965
+        },
+        "load_duration": {
+          "samples": 4,
+          "median": 2.5835,
+          "max": 2.659
+        },
+        "prompt_eval_duration": {
+          "samples": 4,
+          "median": 727.6545,
+          "max": 993.853
+        },
+        "eval_duration": {
+          "samples": 4,
+          "median": 736.3525,
+          "max": 911.69
+        }
+      }
+    }
+  },
+  "block-6.2-known24-answers.json": {
+    "main": {
+      "input_tokens": {
+        "samples": 16,
+        "median": 371.5,
+        "max": 564
+      },
+      "output_tokens": {
+        "samples": 16,
+        "median": 26.0,
+        "max": 26
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 16,
+          "median": 4640.2105,
+          "max": 10185.285
+        },
+        "load_duration": {
+          "samples": 16,
+          "median": 2.6065,
+          "max": 20.174
+        },
+        "prompt_eval_duration": {
+          "samples": 16,
+          "median": 3145.233,
+          "max": 8570.225
+        },
+        "eval_duration": {
+          "samples": 16,
+          "median": 1413.5015,
+          "max": 1865.961
+        }
+      }
+    },
+    "successful_parameter_calls": {
+      "input_tokens": {
+        "samples": 2,
+        "median": 112.5,
+        "max": 118
+      },
+      "output_tokens": {
+        "samples": 2,
+        "median": 13.0,
+        "max": 15
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 2,
+          "median": 1282.5905,
+          "max": 1446.162
+        },
+        "load_duration": {
+          "samples": 2,
+          "median": 13.0335,
+          "max": 23.337
+        },
+        "prompt_eval_duration": {
+          "samples": 2,
+          "median": 689.731,
+          "max": 799.511
+        },
+        "eval_duration": {
+          "samples": 2,
+          "median": 553.9259999999999,
+          "max": 595.983
+        }
+      }
+    }
+  },
+  "block-6.2-holdout-answers.json": {
+    "main": {
+      "input_tokens": {
+        "samples": 15,
+        "median": 384,
+        "max": 839
+      },
+      "output_tokens": {
+        "samples": 15,
+        "median": 26,
+        "max": 26
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 15,
+          "median": 4702.381,
+          "max": 16453.444
+        },
+        "load_duration": {
+          "samples": 15,
+          "median": 2.287,
+          "max": 33.897
+        },
+        "prompt_eval_duration": {
+          "samples": 15,
+          "median": 3263.724,
+          "max": 14559.737
+        },
+        "eval_duration": {
+          "samples": 15,
+          "median": 1428.777,
+          "max": 1832.328
+        }
+      }
+    },
+    "successful_parameter_calls": {
+      "input_tokens": {
+        "samples": 3,
+        "median": 123,
+        "max": 125
+      },
+      "output_tokens": {
+        "samples": 3,
+        "median": 16,
+        "max": 20
+      },
+      "duration_ms": {
+        "total_duration": {
+          "samples": 3,
+          "median": 1710.296,
+          "max": 1833.344
+        },
+        "load_duration": {
+          "samples": 3,
+          "median": 2.258,
+          "max": 2.299
+        },
+        "prompt_eval_duration": {
+          "samples": 3,
+          "median": 932.816,
+          "max": 999.118
+        },
+        "eval_duration": {
+          "samples": 3,
+          "median": 760.512,
+          "max": 802.991
+        }
+      }
+    }
+  },
+  "scope": "Observed completed usage only, excludes failed parameter calls without published usage. Different success sets/prompt structures, not controlled causal benchmark. Nested model durations must not be summed with HTTP time. Tiny load durations reflect warmed model, not cold startup."
+}

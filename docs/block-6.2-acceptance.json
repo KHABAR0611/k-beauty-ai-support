@@ -1,0 +1,510 @@
+{
+  "status": "PARTIAL",
+  "runtime_commit": "0fb3183e8da93b5666ad1f795563f755eb54e912",
+  "business_version": "1.1",
+  "reports": {
+    "regression": {
+      "metrics": {
+        "scenario_pass_count": 36,
+        "scenario_total": 42,
+        "scenario_pass_rate": 0.8571428571428571,
+        "answer_completeness": 0.8275862068965517,
+        "expected_answer_denominator": 29,
+        "actual_answered": 25,
+        "source_fact_integrity": 1,
+        "refusal_status_accuracy": 0.9230769230769231,
+        "refusal_denominator": 13,
+        "calculation_accuracy": 1,
+        "calculation_denominator": 5,
+        "routing_accuracy": 0.8571428571428571,
+        "real_llm_completed": 20,
+        "critical_failures": 0,
+        "http_latency": {
+          "p50_ms": 4234.017199953087,
+          "p95_ms": 8972.918200073764
+        },
+        "stage_latency": {
+          "retrieval": {
+            "p50_ms": 519.0276999492198,
+            "p95_ms": 627.1886000176892
+          },
+          "llm": {
+            "p50_ms": 2898.249699966982,
+            "p95_ms": 8168.155399966054
+          }
+        },
+        "answer_latency_by_route": {
+          "capability_control": {
+            "samples": 1,
+            "p50_ms": 877.3854000028223,
+            "p95_ms": 877.3854000028223
+          },
+          "deterministic_calculator": {
+            "samples": 5,
+            "p50_ms": 611.7509000468999,
+            "p95_ms": 666.6911999927834
+          },
+          "unreported": {
+            "samples": 16,
+            "p50_ms": 260.7998000457883,
+            "p95_ms": 14496.000200044364
+          },
+          "validated_extractive": {
+            "samples": 20,
+            "p50_ms": 5529.611999983899,
+            "p95_ms": 8972.918200073764
+          }
+        }
+      },
+      "category_counts": {
+        "system_error": 5,
+        "answered": 25,
+        "clarification_needed": 6,
+        "insufficient_context": 1,
+        "requires_external_data": 3,
+        "handoff_required": 2
+      },
+      "false_answered_ids": [
+        "F30"
+      ],
+      "failed_ids": [
+        "F01",
+        "F02",
+        "F04",
+        "F05",
+        "F30",
+        "F35"
+      ],
+      "unwarranted_nonanswer_ids": [
+        "F01",
+        "F02",
+        "F04",
+        "F05",
+        "F35"
+      ],
+      "nonanswered_rate": 0.40476190476190477,
+      "insufficient_context_rate": 0.023809523809523808,
+      "llm_attempted_requests": 25,
+      "llm_subcalls_attempted": 34,
+      "llm_subcalls_completed": 29,
+      "llm_timeout_ids": [],
+      "error_counts": {
+        "ungrounded_request_parameter": 5
+      },
+      "llm_request_http_latency": {
+        "p50_ms": 5678.206700016744,
+        "p95_ms": 11092.203099979088
+      },
+      "groups": {}
+    },
+    "known24": {
+      "metrics": {
+        "scenario_pass_count": 21,
+        "scenario_total": 24,
+        "scenario_pass_rate": 0.875,
+        "answer_completeness": 0.8888888888888888,
+        "expected_answer_denominator": 18,
+        "actual_answered": 17,
+        "source_fact_integrity": 1,
+        "refusal_status_accuracy": 0.8333333333333334,
+        "refusal_denominator": 6,
+        "calculation_accuracy": 1,
+        "calculation_denominator": 1,
+        "routing_accuracy": 0.875,
+        "real_llm_completed": 16,
+        "critical_failures": 0,
+        "http_latency": {
+          "p50_ms": 4561.114999931306,
+          "p95_ms": 10064.44270000793
+        },
+        "stage_latency": {
+          "retrieval": {
+            "p50_ms": 499.2173999780789,
+            "p95_ms": 633.135800017044
+          },
+          "llm": {
+            "p50_ms": 3828.190700034611,
+            "p95_ms": 9188.334899954498
+          }
+        },
+        "answer_latency_by_route": {
+          "deterministic_calculator": {
+            "samples": 1,
+            "p50_ms": 528.0447999248281,
+            "p95_ms": 528.0447999248281
+          },
+          "unreported": {
+            "samples": 7,
+            "p50_ms": 269.8286999948323,
+            "p95_ms": 7490.105799981393
+          },
+          "validated_extractive": {
+            "samples": 16,
+            "p50_ms": 5611.618000082672,
+            "p95_ms": 10992.822300060652
+          }
+        }
+      },
+      "category_counts": {
+        "system_error": 2,
+        "answered": 17,
+        "clarification_needed": 3,
+        "requires_external_data": 1,
+        "handoff_required": 1
+      },
+      "false_answered_ids": [
+        "N21"
+      ],
+      "failed_ids": [
+        "N01",
+        "N02",
+        "N21"
+      ],
+      "unwarranted_nonanswer_ids": [
+        "N01",
+        "N02"
+      ],
+      "nonanswered_rate": 0.29166666666666663,
+      "insufficient_context_rate": 0.0,
+      "llm_attempted_requests": 18,
+      "llm_subcalls_attempted": 22,
+      "llm_subcalls_completed": 20,
+      "llm_timeout_ids": [],
+      "error_counts": {
+        "ungrounded_request_parameter": 2
+      },
+      "llm_request_http_latency": {
+        "p50_ms": 5611.618000082672,
+        "p95_ms": 10992.822300060652
+      },
+      "groups": {}
+    },
+    "holdout": {
+      "metrics": {
+        "scenario_pass_count": 16,
+        "scenario_total": 24,
+        "scenario_pass_rate": 0.6666666666666666,
+        "answer_completeness": 0.6666666666666666,
+        "expected_answer_denominator": 18,
+        "actual_answered": 16,
+        "source_fact_integrity": 1,
+        "refusal_status_accuracy": 0.6666666666666666,
+        "refusal_denominator": 6,
+        "calculation_accuracy": 1,
+        "calculation_denominator": 1,
+        "routing_accuracy": 0.8333333333333334,
+        "real_llm_completed": 15,
+        "critical_failures": 0,
+        "http_latency": {
+          "p50_ms": 5459.000800037757,
+          "p95_ms": 14789.042699965648
+        },
+        "stage_latency": {
+          "retrieval": {
+            "p50_ms": 547.1651999978349,
+            "p95_ms": 597.9484999552369
+          },
+          "llm": {
+            "p50_ms": 4569.662400055677,
+            "p95_ms": 13333.462899900042
+          }
+        },
+        "answer_latency_by_route": {
+          "deterministic_calculator": {
+            "samples": 1,
+            "p50_ms": 543.6633999925107,
+            "p95_ms": 543.6633999925107
+          },
+          "unreported": {
+            "samples": 8,
+            "p50_ms": 623.8491999683902,
+            "p95_ms": 9046.408300055191
+          },
+          "validated_extractive": {
+            "samples": 15,
+            "p50_ms": 5561.432300019078,
+            "p95_ms": 17398.542200098746
+          }
+        }
+      },
+      "category_counts": {
+        "system_error": 3,
+        "answered": 16,
+        "clarification_needed": 1,
+        "insufficient_context": 2,
+        "requires_external_data": 1,
+        "handoff_required": 1
+      },
+      "false_answered_ids": [
+        "H06",
+        "H12",
+        "H13",
+        "H14"
+      ],
+      "failed_ids": [
+        "H01",
+        "H05",
+        "H06",
+        "H12",
+        "H13",
+        "H14",
+        "H18",
+        "H19"
+      ],
+      "unwarranted_nonanswer_ids": [
+        "H01",
+        "H05"
+      ],
+      "nonanswered_rate": 0.33333333333333337,
+      "insufficient_context_rate": 0.08333333333333333,
+      "llm_attempted_requests": 18,
+      "llm_subcalls_attempted": 24,
+      "llm_subcalls_completed": 21,
+      "llm_timeout_ids": [],
+      "error_counts": {
+        "ungrounded_request_parameter": 3
+      },
+      "llm_request_http_latency": {
+        "p50_ms": 5561.432300019078,
+        "p95_ms": 17398.542200098746
+      },
+      "groups": {
+        "adversarial": {
+          "passed": 1,
+          "total": 1
+        },
+        "calculation": {
+          "passed": 1,
+          "total": 1
+        },
+        "compound": {
+          "passed": 2,
+          "total": 3
+        },
+        "external": {
+          "passed": 1,
+          "total": 1
+        },
+        "human": {
+          "passed": 1,
+          "total": 1
+        },
+        "missing_data": {
+          "passed": 1,
+          "total": 3
+        },
+        "paraphrase": {
+          "passed": 8,
+          "total": 13
+        },
+        "safe_refusal": {
+          "passed": 1,
+          "total": 1
+        }
+      }
+    }
+  },
+  "baseline": {
+    "regression": {
+      "metrics": {
+        "scenario_pass_count": 42,
+        "scenario_total": 42,
+        "scenario_pass_rate": 1,
+        "answer_completeness": 1,
+        "expected_answer_denominator": 29,
+        "actual_answered": 29,
+        "source_fact_integrity": 1,
+        "refusal_status_accuracy": 1,
+        "refusal_denominator": 13,
+        "calculation_accuracy": 1,
+        "calculation_denominator": 5,
+        "routing_accuracy": 1,
+        "real_llm_completed": 24,
+        "critical_failures": 0,
+        "http_latency": {
+          "p50_ms": 3323.896899993997,
+          "p95_ms": 21380.170199961867
+        },
+        "stage_latency": {
+          "retrieval": {
+            "p50_ms": 659.8129000049084,
+            "p95_ms": 878.8702000165358
+          },
+          "llm": {
+            "p50_ms": 2547.79070004588,
+            "p95_ms": 20620.282599993516
+          }
+        },
+        "answer_latency_by_route": {
+          "capability_control": {
+            "samples": 3,
+            "p50_ms": 614.2277999897487,
+            "p95_ms": 639.3924999865703
+          },
+          "deterministic_calculator": {
+            "samples": 5,
+            "p50_ms": 683.7602999876253,
+            "p95_ms": 1033.119700034149
+          },
+          "unreported": {
+            "samples": 10,
+            "p50_ms": 2.9233000241219997,
+            "p95_ms": 547.7124000317417
+          },
+          "validated_extractive": {
+            "samples": 24,
+            "p50_ms": 4940.290900005493,
+            "p95_ms": 21469.724000024144
+          }
+        }
+      },
+      "category_counts": {
+        "answered": 29,
+        "clarification_needed": 6,
+        "insufficient_context": 2,
+        "requires_external_data": 3,
+        "handoff_required": 2
+      },
+      "false_answered_ids": [],
+      "failed_ids": [],
+      "unwarranted_nonanswer_ids": [],
+      "nonanswered_rate": 0.30952380952380953,
+      "insufficient_context_rate": 0.047619047619047616,
+      "llm_attempted_requests": 24,
+      "llm_subcalls_attempted": 0,
+      "llm_subcalls_completed": 0,
+      "llm_timeout_ids": [],
+      "error_counts": {},
+      "llm_request_http_latency": {
+        "p50_ms": 4940.290900005493,
+        "p95_ms": 21469.724000024144
+      },
+      "groups": {}
+    },
+    "known24": {
+      "metrics": {
+        "scenario_pass_count": 15,
+        "scenario_total": 24,
+        "scenario_pass_rate": 0.625,
+        "answer_completeness": 0.6666666666666666,
+        "expected_answer_denominator": 18,
+        "actual_answered": 14,
+        "source_fact_integrity": 1,
+        "refusal_status_accuracy": 0.5,
+        "refusal_denominator": 6,
+        "calculation_accuracy": 1,
+        "calculation_denominator": 1,
+        "routing_accuracy": 0.625,
+        "real_llm_completed": 13,
+        "critical_failures": 0,
+        "http_latency": {
+          "p50_ms": 5553.692099987529,
+          "p95_ms": 25574.77960002143
+        },
+        "stage_latency": {
+          "retrieval": {
+            "p50_ms": 685.9518999699503,
+            "p95_ms": 1348.6320999800228
+          },
+          "llm": {
+            "p50_ms": 4220.929900009651,
+            "p95_ms": 25012.994999997318
+          }
+        },
+        "answer_latency_by_route": {
+          "capability_control": {
+            "samples": 1,
+            "p50_ms": 632.0745999692008,
+            "p95_ms": 632.0745999692008
+          },
+          "deterministic_calculator": {
+            "samples": 1,
+            "p50_ms": 607.1127000031993,
+            "p95_ms": 607.1127000031993
+          },
+          "unreported": {
+            "samples": 9,
+            "p50_ms": 731.558799976483,
+            "p95_ms": 25722.60360000655
+          },
+          "validated_extractive": {
+            "samples": 13,
+            "p50_ms": 8536.805099982303,
+            "p95_ms": 23294.845599972177
+          }
+        }
+      },
+      "category_counts": {
+        "insufficient_context": 4,
+        "answered": 14,
+        "clarification_needed": 3,
+        "system_error": 2,
+        "requires_external_data": 1
+      },
+      "false_answered_ids": [
+        "N21",
+        "N23"
+      ],
+      "failed_ids": [
+        "N01",
+        "N05",
+        "N06",
+        "N12",
+        "N14",
+        "N20",
+        "N21",
+        "N22",
+        "N23"
+      ],
+      "unwarranted_nonanswer_ids": [
+        "N01",
+        "N05",
+        "N06",
+        "N12",
+        "N14",
+        "N22"
+      ],
+      "nonanswered_rate": 0.41666666666666663,
+      "insufficient_context_rate": 0.16666666666666666,
+      "llm_attempted_requests": 15,
+      "llm_subcalls_attempted": 0,
+      "llm_subcalls_completed": 0,
+      "llm_timeout_ids": [
+        "N12",
+        "N14"
+      ],
+      "error_counts": {
+        "llm_timeout": 2
+      },
+      "llm_request_http_latency": {
+        "p50_ms": 8966.898299986497,
+        "p95_ms": 25722.60360000655
+      },
+      "groups": {}
+    }
+  },
+  "previous_passes_lost": {
+    "regression": [
+      "F01",
+      "F02",
+      "F04",
+      "F05",
+      "F30",
+      "F35"
+    ],
+    "known24": [
+      "N02"
+    ]
+  },
+  "gates": {
+    "independent_scenarios_at_least_85_percent": false,
+    "no_false_answered": false,
+    "all_exact_money_correct": true,
+    "known_regression_loss_at_most_two": false,
+    "real_server_and_llm": true,
+    "boundary_and_dependency_probes_safe": true
+  },
+  "independent_once_no_tuning": true,
+  "source_groundedness_scope": "Exact source fact/quote integrity only, not proof of semantic task adequacy. False answered counted separately from old critical_failure field.",
+  "refusal_guard": "Nonanswered rate and unwarranted nonanswers reported separately; no blanket refusal accepted as quality gain."
+}

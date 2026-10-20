@@ -1,0 +1,32 @@
+{
+  "own_api_workers": [
+    {
+      "own_worker": "finalsuite",
+      "stopped": true
+    },
+    {
+      "own_worker": "clone",
+      "stopped": true
+    }
+  ],
+  "own_qwen_unloaded": true,
+  "ollama_version": "0.33.2",
+  "docker_engine_version": "29.8.0",
+  "compose_version": "5.5.1",
+  "qdrant_version": "1.15.1",
+  "qdrant_health": {
+    "healthz": 200,
+    "readyz": 200
+  },
+  "container_running": true,
+  "paused": false,
+  "oom_killed": false,
+  "active_alias": "kbeauty_active",
+  "physical_collection": "kbeauty_hybrid_c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+  "full_payload_dense_sparse_points_verified": 20,
+  "business_data_written": false,
+  "containers_images_volumes_deleted": false,
+  "new_restart_in_this_block": false,
+  "persistence_evidence": "block-6.1-qdrant-restart.json; historical actual restart/full readback",
+  "scope": "Read-only full Server readback; final own API worker exit states and model unload verified. Docker preserved."
+}

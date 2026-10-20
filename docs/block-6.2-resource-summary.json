@@ -1,0 +1,86 @@
+{
+  "regression": {
+    "max_host_memory_load_percent": 94,
+    "min_host_available_bytes": 443543552,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1663680512,
+        "max_private_commit_bytes": 1745874944,
+        "observed_seconds": 165.2583966999082,
+        "cpu_seconds_delta": 39.59375,
+        "mean_percent_one_core": 23.95869183694071
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1358532608,
+        "max_private_commit_bytes": 1410404352,
+        "observed_seconds": 165.2583966999082,
+        "cpu_seconds_delta": 267.890625,
+        "mean_percent_one_core": 162.1040929535708
+      },
+      "ollama": {
+        "max_working_set_bytes": 40345600,
+        "max_private_commit_bytes": 73613312,
+        "observed_seconds": 165.2583966999082,
+        "cpu_seconds_delta": 0.9375,
+        "mean_percent_one_core": 0.5672934136607903
+      }
+    }
+  },
+  "known24": {
+    "max_host_memory_load_percent": 94,
+    "min_host_available_bytes": 434311168,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1664823296,
+        "max_private_commit_bytes": 1746673664,
+        "observed_seconds": 100.17659469996579,
+        "cpu_seconds_delta": 22.015625,
+        "mean_percent_one_core": 21.976815109295703
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1328394240,
+        "max_private_commit_bytes": 1559535616,
+        "observed_seconds": 100.17659469996579,
+        "cpu_seconds_delta": 167.765625,
+        "mean_percent_one_core": 167.4698820642356
+      },
+      "ollama": {
+        "max_working_set_bytes": 30461952,
+        "max_private_commit_bytes": 63291392,
+        "observed_seconds": 100.17659469996579,
+        "cpu_seconds_delta": 0.609375,
+        "mean_percent_one_core": 0.6083007730748988
+      }
+    }
+  },
+  "holdout": {
+    "max_host_memory_load_percent": 94,
+    "min_host_available_bytes": 431411200,
+    "processes": {
+      "api_bge_worker": {
+        "max_working_set_bytes": 1665122304,
+        "max_private_commit_bytes": 1747488768,
+        "observed_seconds": 135.2189963000128,
+        "cpu_seconds_delta": 27.59375,
+        "mean_percent_one_core": 20.406711153791772
+      },
+      "llama-server": {
+        "max_working_set_bytes": 1403150336,
+        "max_private_commit_bytes": 1832701952,
+        "observed_seconds": 135.2189963000128,
+        "cpu_seconds_delta": 228.625,
+        "mean_percent_one_core": 169.07757508622947
+      },
+      "ollama": {
+        "max_working_set_bytes": 30490624,
+        "max_private_commit_bytes": 63283200,
+        "observed_seconds": 135.2189963000128,
+        "cpu_seconds_delta": 0.84375,
+        "mean_percent_one_core": 0.6239877702744936
+      }
+    }
+  },
+  "cold_startup_seconds": 100.23897399997804,
+  "cold_scope": "Ollama model unloaded and fresh API/BGE process; OS file cache not flushed",
+  "scope": "One sequential API process. Actual Uvicorn worker PID, not venv launcher. CPU deltas, 5-second sampling; shared process pages not summed; Docker VM not separately measured. No GPU/load test or OS cache flush."
+}

@@ -171,3 +171,28 @@ Before context selection, a finite-domain intent plan distinguishes checkout pay
 After model selection, Answer Control recomputes obligations from the question against actual selected sections, checks abstention, then verifies completeness. It does not trust `context.required_sections` alone. Snapshot identity and source quotation integrity are distinct checks. The intent planner and coverage verifier share a bounded ontology: unknown paraphrases or mixed intents may still evade classification. This is explicitly not a second semantic model or universal entailment proof. New independent evaluation measures that limit separately from regression.
 
 `diagnostics` exposes intent facets, retrieved/context/selected sections, missing obligations and model abstention. Failure paths preserve the available trace. `latency_ms` separates preparation, complete retrieval, embedding, sparse encoding, Qdrant query, context, tools, LLM and final control. Embedding/sparse/Qdrant are nested within retrieval and must not be added again to total. Ollama usage separates model load, prompt processing and output decoding; startup warmup is measured outside query latency. Process-local metrics remain category counts, not customer resolution.
+
+
+## Final bounded semantic adapter — Block6.2
+
+This section supersedes the earlier whole-prompt description for the current Ollama path. The existing BGE encoder also embeds a finite operation/topic prototype set at startup. An action decision remains separate from source-topic fallback and typed tool eligibility. Legacy lexical planning remains the compatibility path. A semantic topic must intersect the first three actual retrieval candidates; fixed similarity/margin gates are development rules, never truth probabilities.
+
+```mermaid
+flowchart TD
+  Q[Question and optional typed inputs] --> P[Lexical plan plus shared BGE prototypes]
+  P --> R[Actual hybrid candidates and immutable snapshot]
+  R --> C[Whole-unit context and literal claim bindings]
+  C --> B[Compile registered support descriptors]
+  B --> L[Pinned Qwen allowlisted bundle selection]
+  Q --> X[User-only literal parameter extraction]
+  X --> T[Exact span plus BGE semantic type]
+  L --> A[Selection and source-integrity control]
+  T --> A
+  A --> O[Whole source response or safe status]
+  P --> D[Typed calculator/catalog and control-only routes]
+  D --> O
+```
+
+The bundle contains approved literal support sentences and exact product fields. The internal ID is deterministic and never becomes a Qdrant record; public sources retain physical UUID/version. Qwen does not read every full paragraph on this path. Final source expansion preserves whole conditions but cannot prove question suitability. Binding hashes prove provenance only. Two provider calls share25s; parameter extraction time is nested in LLM time, semantic routing in preparation. The original40s API deadline remains.
+
+Final independent24 yielded16/24, with unsuitable source families and strict parameter failures. Prototypes confuse drone transport with pickup; shared ontology remains a failure boundary. This is not accepted semantic verification or unrestricted multi-intent decomposition. No runtime/config changes followed the frozen final run. Current acceptance is PARTIAL; the complete evidence and known regressions are in block-6.2-results.md.
