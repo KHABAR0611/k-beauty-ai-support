@@ -1,0 +1,108 @@
+{
+  "runtime_unit": {
+    "tests": "212",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "43.864"
+  },
+  "clean_clone_unit": 212,
+  "real_server_api_contracts": {
+    "passed": 13,
+    "provider": "explicit double for FAQ only; actual Qdrant/BGE"
+  },
+  "final_real_http": {
+    "cases": 42,
+    "contract_passed": 29,
+    "provider_doubles": false,
+    "real_llm_attempts": 21,
+    "real_llm_completed": 18
+  },
+  "development_real_http": {
+    "before": {
+      "passed": 9,
+      "total": 12
+    },
+    "after": {
+      "passed": 12,
+      "total": 12
+    }
+  },
+  "clone_real_http_smoke": 3,
+  "boundary_and_dependency_probes": [
+    {
+      "case": "missing_auth",
+      "http_status": 401,
+      "safe": true
+    },
+    {
+      "case": "unknown_field",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "oversized_body",
+      "http_status": 413,
+      "safe": true
+    },
+    {
+      "case": "synthetic_payment_secret",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "blank_question",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "real_qdrant_paused",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true
+    },
+    {
+      "case": "real_qwen_unloaded",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true,
+      "scope": "model missing from memory, Ollama transport alive"
+    }
+  ],
+  "restart_persistence": {
+    "prior_stop_cli_timeout_seconds": 40,
+    "prior_start_cli_timeout_seconds": 40,
+    "recovery_probes": [
+      {
+        "elapsed_seconds": 0.23101869999663904,
+        "result": 200
+      }
+    ],
+    "container_state": "running 2026-10-20T10:32:06.590058394Z 2026-10-20T10:31:01.565808726Z false",
+    "ready": true,
+    "volumes_deleted": false,
+    "active_alias_unchanged": true,
+    "points": 20,
+    "full_payload_exact_verified": true,
+    "dense_and_sparse_verified_against_immutable_artifact": true,
+    "vector_comparison": "existing publisher tolerance for float storage",
+    "readback_after_actual_restart": "passed",
+    "recovery_probe_is_not_total_downtime": true
+  },
+  "business_version": "1.1",
+  "original_archive_unchanged_files": 37,
+  "not_tested": [
+    "GPU inference",
+    "concurrent production load",
+    "API container build",
+    "dependency vulnerability audit",
+    "real orders/CRM/human connector"
+  ],
+  "warnings": [
+    "Starlette TestClient/AnyIO BlockingPortal deprecation",
+    "Qdrant api-key over loopback HTTP warning"
+  ],
+  "ci_scope": "Source/unit/contracts only; CI success is not independent MVP quality acceptance."
+}

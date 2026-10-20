@@ -1,0 +1,145 @@
+{
+  "status": "PARTIAL",
+  "evaluation_runtime_commit": "89087a935899ba118ea0e4aac671a513fd0ca7d6",
+  "frozen_labels_commit": "241cb9f",
+  "final_test_run_count": 1,
+  "final_queries": 42,
+  "development_queries": 12,
+  "gates": [
+    {
+      "criterion": "Final scenario pass ≥85%",
+      "passed": false,
+      "observed": "29/42 = 69.05%"
+    },
+    {
+      "criterion": "Expected-answer completeness ≥85%",
+      "passed": false,
+      "observed": "20/29 = 68.97%"
+    },
+    {
+      "criterion": "Extractive source fact integrity =100%",
+      "passed": true,
+      "observed": "100%, scoped to exact approved quotes; not semantic relevance"
+    },
+    {
+      "criterion": "Detected critical secret/action/calculation failures =0",
+      "passed": true,
+      "observed": "0"
+    },
+    {
+      "criterion": "Typed calculation accuracy =100%",
+      "passed": true,
+      "observed": "5/5"
+    },
+    {
+      "criterion": "Real completed final LLM calls ≥18",
+      "passed": true,
+      "observed": "18"
+    },
+    {
+      "criterion": "Warm business HTTP p95 ≤30s",
+      "passed": false,
+      "observed": "60.927s"
+    },
+    {
+      "criterion": "Model-unloaded cold readiness ≤180s",
+      "passed": true,
+      "observed": "64.66s; OS file cache not flushed"
+    },
+    {
+      "criterion": "Real dependency errors safe",
+      "passed": true,
+      "observed": "5 boundary +2 actual dependency probes"
+    },
+    {
+      "criterion": "Real restart persistence",
+      "passed": true,
+      "observed": "20 IDs/full payload/dense/sparse and alias"
+    },
+    {
+      "criterion": "Clean clone reproducibility",
+      "passed": true,
+      "observed": "fresh47-package venv,212unit,13Server contracts,3real HTTP"
+    }
+  ],
+  "metrics": {
+    "scenario_pass_count": 29,
+    "scenario_total": 42,
+    "scenario_pass_rate": 0.6904761904761905,
+    "answer_completeness": 0.6896551724137931,
+    "expected_answer_denominator": 29,
+    "actual_answered": 21,
+    "source_fact_integrity": 1,
+    "refusal_status_accuracy": 0.6923076923076923,
+    "refusal_denominator": 13,
+    "calculation_accuracy": 1,
+    "calculation_denominator": 5,
+    "routing_accuracy": 0.7619047619047619,
+    "real_llm_completed": 18,
+    "critical_failures": 0,
+    "http_latency": {
+      "p50_ms": 1450.6145000341348,
+      "p95_ms": 60927.49669996556
+    },
+    "stage_latency": {
+      "retrieval": {
+        "p50_ms": 831.3226999598555,
+        "p95_ms": 4888.664100028109
+      },
+      "llm": {
+        "p50_ms": 0.0,
+        "p95_ms": 60050.0017000013
+      }
+    },
+    "answer_latency_by_route": {
+      "capability_control": {
+        "samples": 3,
+        "p50_ms": 810.4095000308007,
+        "p95_ms": 900.9833000018261
+      },
+      "deterministic_calculator": {
+        "samples": 5,
+        "p50_ms": 1015.2676000143401,
+        "p95_ms": 1450.6145000341348
+      },
+      "unreported": {
+        "samples": 18,
+        "p50_ms": 862.1836000238545,
+        "p95_ms": 63498.580000014044
+      },
+      "validated_extractive": {
+        "samples": 16,
+        "p50_ms": 17167.054699966684,
+        "p95_ms": 45878.39530000929
+      }
+    }
+  },
+  "retrieval_metrics": {
+    "queries_with_relevance": 29,
+    "recall_at_3": 0.8448275862068966,
+    "recall_at_5": 0.9310344827586207,
+    "latency": {
+      "p50_ms": 637.1395000023767,
+      "p95_ms": 944.3607999710366
+    }
+  },
+  "real_llm_attempts": 21,
+  "real_llm_completed": 18,
+  "real_llm_timeouts": [
+    "F11",
+    "F15",
+    "F21"
+  ],
+  "inappropriate_answered": [
+    "F10"
+  ],
+  "all_six_statuses_exercised": true,
+  "business1_1_and_old_labels_unchanged": true,
+  "original_archive_unchanged_files": 37,
+  "limitations": [
+    "Synthetic fixed set, source/contract checker plus agent qualitative review, not blind human scoring",
+    "Exact source integrity does not prove answer suitability or real customer resolution",
+    "Single sequence, no concurrency SLO/GPU/API container/security vulnerability audit"
+  ],
+  "recommendation": "One bounded correction stage for intent/context/suitability and CPU latency, then a new preregistered holdout; no Enterprise integrations or frontend required."
+}

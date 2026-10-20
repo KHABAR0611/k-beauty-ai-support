@@ -1,0 +1,34 @@
+{
+  "processes": {
+    "actual_uvicorn_bge": {
+      "max_observed_working_set_bytes": 1612034048,
+      "max_reported_peak_working_set_bytes": 1667170304,
+      "max_private_commit_bytes": 1744961536,
+      "observed_wall_seconds": 601.3252470999723,
+      "process_cpu_seconds_delta": 25.84375,
+      "process_cpu_percent_single_core_basis": 4.297798924066029
+    },
+    "ollama": {
+      "max_observed_working_set_bytes": 32821248,
+      "max_reported_peak_working_set_bytes": 49201152,
+      "max_private_commit_bytes": 74907648,
+      "observed_wall_seconds": 601.3252470999723,
+      "process_cpu_seconds_delta": 0.5625,
+      "process_cpu_percent_single_core_basis": 0.09354338649720498
+    },
+    "llama-server": {
+      "max_observed_working_set_bytes": 2229149696,
+      "max_reported_peak_working_set_bytes": 2266484736,
+      "max_private_commit_bytes": 4070629376,
+      "observed_wall_seconds": 601.3252470999723,
+      "process_cpu_seconds_delta": 888.125,
+      "process_cpu_percent_single_core_basis": 147.69461356947588
+    }
+  },
+  "host_min_available_bytes": 332419072,
+  "host_max_memory_load_percent": 96,
+  "scope": "Actual Uvicorn PID from own server log + Ollama/llama-server. Sampling begins after readiness; excludes Docker and OS processes, shared pages may overlap. CPU cumulative process time, not whole-host CPU.",
+  "actual_process_sample_count": 121,
+  "coverage": "Actual worker samples begin after readiness, after first several final queries; not whole cold startup. Original api_bge handle was Windows launcher and is excluded.",
+  "host_memory_scope": "GlobalMemoryStatusEx includes whole-host RAM pressure, unlike selected process memory/CPU. Host CPU not measured."
+}

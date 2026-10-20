@@ -1,0 +1,20 @@
+{
+  "prior_stop_cli_timeout_seconds": 40,
+  "prior_start_cli_timeout_seconds": 40,
+  "recovery_probes": [
+    {
+      "elapsed_seconds": 0.23101869999663904,
+      "result": 200
+    }
+  ],
+  "container_state": "running 2026-10-20T10:32:06.590058394Z 2026-10-20T10:31:01.565808726Z false",
+  "ready": true,
+  "volumes_deleted": false,
+  "active_alias_unchanged": true,
+  "points": 20,
+  "full_payload_exact_verified": true,
+  "dense_and_sparse_verified_against_immutable_artifact": true,
+  "vector_comparison": "existing publisher tolerance for float storage",
+  "readback_after_actual_restart": "passed",
+  "recovery_probe_is_not_total_downtime": true
+}

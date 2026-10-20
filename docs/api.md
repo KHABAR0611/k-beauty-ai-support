@@ -1,5 +1,7 @@
 # FastAPI contract0.7
 
+Независимая приёмка: [Блок6 PARTIAL](block-6-results.md), [запуск и реальные примеры](block-6-demo.md). API stateless; выбор context ограничен доменными правилами. Подбор/расчёт используют явные typed fields; полное понимание произвольного русского запроса/продолжения диалога не заявляется. Источники проходят integrity gate, но F10 выявил недостаточную suitability проверку.
+
 Реализованы POST /chat, GET /health, GET /ready и защищённый GET /metrics. Это синхронный доменный pipeline за отдельным вычислительным worker; ASGI event loop не выполняет нейросетевой inference. Default provider=disabled, reranker=false. В API нет runtime mock/provider переключателя для клиента.
 
 ## Запуск

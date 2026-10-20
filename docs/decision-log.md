@@ -124,3 +124,15 @@ Hybrid RRF выдаёт единый pinned candidate pool. Primary10, final5; �
 FastAPI endpoints/chat,/health,/ready заменяют старый нереализованный /v1/answers план. Body32KiB/5s, per-credential/process rate30/min, single worker, request IDs, safe errors and no-access-log. Deadline90s не освобождает ещё работающий native worker. Provider retry только один раз при connect failure, без retry read timeout/HTTP500. Cold LLM startup ограничен120s и вынесен в readiness.
 
 32K контекст потребовал около4.4GB по Ollama и cold load превысил30s. Выбран8192, CPU2/GPU0 и compact E01 aliases; source UUID не теряется. Official tokenizer pinned c1899de289a04d12100db370d81485cdf75e47ca, input budget с резервом и проверкой фактического prompt_eval_count. Медленный начальный денежный путь заменён точным инструментом, не mock-ответом. Неудачные результаты и регрессия отрицания «брака нет» сохранены; разметка/бизнес1.1 не менялись.
+
+## ADR-030 — Implemented: frozen independent MVP evaluation
+
+54 новых вопроса зафиксированы241cb9f до inference:12development/42final. После9/12 development исправлены платёжные словоформы, explicit human request и избыточный context lifetime/отмены;212 unit прошли. Runtime89087a9 зафиксирован до единственного final run:29/42,18completed real LLM/21attempts. Final labels/runtime после результата не настраиваются. Recall, source integrity, completeness, tools, statuses, route class и latency разделены; customer resolution/blind human scoring не заявляются.
+
+## ADR-031 — Accepted limitation: MVP PARTIAL and source suitability gap
+
+Citations и source integrity не гарантируют ответ на вопрос: F10 получилPL-01 вместоDR-05 при наличии нужного источника в retrieval. Context выбирают правила из полного corpus20, LLM выполняет evidence selection. Quality/latency gates не выполнены. Не включаем reranker, не меняем business1.1/модели, не добавляем CRM/Orders/frontend ради формального завершения. Следующее решение — ограниченная коррекция intent/context/suitability и новый preregistered набор по отдельному заданию.
+
+## ADR-032 — Verified scope: actual deployment checks and resources
+
+Новая clone/venv47packages:212unit,13real Server contracts(FAQ double),3real HTTP включая Qwen,7actual boundary/dependency probes. Pause Qdrant/unload Qwen даютhealth200/ready503/chat503. Stop/start CLI превысили40s, фактическое восстановление и сохранность20points/full payload/dense/sparse/alias подтверждены отдельно. Windows venv launcher не выдаётся за Uvicorn RAM: actual PID взят из своего server log. Host memory load до96%, HTTP p95≈61s. GPU/HA/load/API container/security scan не заявлены. После тестов API останавливается, Qwen выгружается; один worker/reranker off сохранены.

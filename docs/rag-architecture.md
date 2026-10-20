@@ -1,5 +1,7 @@
 # Архитектура K-Beauty AI Support
 
+Оценка Блока6: **MVP PARTIAL**. Фактический путь использует полный pool20, rule-based context и Qwen evidence selection; это ограниченный extractive API. Source integrity не гарантирует semantic suitability: F10 ответил неподходящим разделом. [Фактическая схема, независимые метрики и границы](block-6-results.md). Модели/индекс/data1.1 не менялись; дальнейшие исправления требуют отдельного задания.
+
 Статус0.7.0: ingestion, dense/BM25/RRF, optional reranker, FastAPI, versioned tools и локальный Ollama adapter реализованы. Исторические схемы ниже отделены от актуальной API-границы. Default provider disabled; реальная генерация/ошибки и тестовые doubles описаны в отчёте Блока5. Не подключены заказы, платежи и операторская система.
 
 ## Indexing pipeline

@@ -1,0 +1,320 @@
+{
+  "code_commit": "89087a935899ba118ea0e4aac671a513fd0ca7d6",
+  "source": "local git clone --no-hardlinks; publication tree verified separately",
+  "fresh_environment": true,
+  "pinned_packages": 47,
+  "pip_check": "passed",
+  "unit_passed": 212,
+  "real_server_api_contracts": {
+    "passed": 13,
+    "provider": "explicit double for FAQ only; actual Qdrant/BGE"
+  },
+  "actual_boundary_and_dependency_probes": [
+    {
+      "case": "missing_auth",
+      "http_status": 401,
+      "safe": true
+    },
+    {
+      "case": "unknown_field",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "oversized_body",
+      "http_status": 413,
+      "safe": true
+    },
+    {
+      "case": "synthetic_payment_secret",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "blank_question",
+      "http_status": 422,
+      "safe": true
+    },
+    {
+      "case": "real_qdrant_paused",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true
+    },
+    {
+      "case": "real_qwen_unloaded",
+      "health": 200,
+      "ready": 503,
+      "chat_http": 503,
+      "safe": true,
+      "scope": "model missing from memory, Ollama transport alive"
+    }
+  ],
+  "ingestion_chunks": 20,
+  "source_generation_unchanged": true,
+  "warm_api_startup_seconds": 87.06082650000462,
+  "model_initially_loaded": true,
+  "warm_scope": "fresh API/BGE process, Qwen prewarmed, OS file cache not flushed",
+  "real_http_smoke_cases": [
+    {
+      "request": {
+        "question": "Оплата через СБП: есть комиссия магазина?"
+      },
+      "http_status": 200,
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-01. Оплата\n\nЗаказ оплачивается полностью онлайн банковской картой или через СБП. Наличными, при получении и в рассрочку оплатить нельзя. Комиссии магазина нет. Электронный чек направляется на email, указанный при оформлении, после успешной оплаты.\n\nПлатёж ожидается 30 минут с создания заказа; затем неоплаченный заказ автоматически отменяется. Если деньги списаны, а подтверждения нет, не повторяйте оплату сразу: проверьте письмо и кабинет и обратитесь в поддержку. Сервис не может проверить платёж или самостоятельно оформить возврат. Нельзя сообщать ассистенту полный номер карты, CVV/CVC, одноразовые коды или пароль. [c9f37d08-97b1-569e-a98b-80545543d4f1]",
+        "sources": [
+          {
+            "source_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "ee6d0c87-4af5-4fd8-b9db-20fbb9d2970e",
+        "latency_ms": {
+          "retrieval": 1091.5492000058293,
+          "context": 3.3436999656260014,
+          "llm": 14602.420400013216,
+          "answer_control": 0.028499984182417393,
+          "total": 15727.502699999604
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 560,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 8192,
+          "output_limit": 512,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 916,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 14519.381,
+            "load_duration": 28.217,
+            "prompt_eval_duration": 12279.507,
+            "eval_duration": 1522.405
+          }
+        },
+        "diagnostics": {
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "llm_attempted": true,
+          "required_sections": [
+            "PL-01"
+          ],
+          "context_bytes": 1460,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence"
+        },
+        "handoff": null,
+        "external_data": null
+      }
+    },
+    {
+      "request": {
+        "question": "Где заказ 84621?"
+      },
+      "http_status": 200,
+      "response": {
+        "answer": "Нет доступа к реальным заказам. Проверка статуса, перечисление денег и оформление возврата не выполнены.\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-03. Хранение и отслеживание\n\nВ ПВЗ заказ хранится 7 календарных дней с даты поступления; последний день указан в уведомлении службы. После передачи трек-номер появляется в письме и личном кабинете. Ассистент сервиса не имеет доступа к заказам и не может проверить трек или статус. Если срок превышен, предложит обратиться в поддержку с номером заказа через защищённый канал магазина, когда он будет подключён. [3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5]",
+        "sources": [
+          {
+            "source_id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-03",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "requires_external_data",
+        "grounding_status": "insufficient_context",
+        "request_id": "2158a318-3eef-4de3-aa63-3c7e2badc4df",
+        "latency_ms": {
+          "retrieval": 647.6944999885745,
+          "context": 0.13539998326450586,
+          "llm": 0.0,
+          "answer_control": 0.01390004763379693,
+          "total": 654.9691999680363
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": null,
+        "diagnostics": {
+          "generation_performed": false,
+          "answer_mode": "capability_control",
+          "llm_attempted": false,
+          "required_sections": [
+            "DR-03"
+          ],
+          "context_bytes": 1170,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "order_system_unavailable"
+        },
+        "handoff": null,
+        "external_data": {
+          "system": "order_management",
+          "available": false,
+          "action_performed": false,
+          "required_fields": [
+            "order_reference_via_secure_channel"
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "question": "Корзина 2000, WELCOME10, ПВЗ. Итог?",
+        "pricing": {
+          "subtotal_kopecks": 200000,
+          "delivery": "pickup",
+          "pickup_available": true,
+          "registered": true,
+          "first_order": true,
+          "promo_code": "WELCOME10",
+          "bonus_balance": 0,
+          "bonus_requested": 0
+        }
+      },
+      "http_status": 200,
+      "response": {
+        "answer": "Расчётный пример по переданным условиям. Реальный заказ, право на промокод и баланс не проверены.\nТовары: 2 000,00 ₽; скидка: 200,00 ₽; списание: 0 бонусов.\nОплата товаров деньгами: 1 800,00 ₽; доставка: 250,00 ₽; итого: 2 050,00 ₽.\nБудущее начисление: 90 бонусов при соблюдении правил получения и отсутствия возврата.\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-05. Порядок расчёта\n\n1. Сложить цену × количество товаров из актуального каталога.\n2. Если выбран и применим WELCOME10, уменьшить стоимость товаров на 10%, округлив скидку до копеек. Иначе скидка равна нулю.\n3. Списать запрошенные целые бонусы в пределах баланса и лимита 20% стоимости товаров после промокода; предел округляется вниз до целого рубля. Промокод и списание совместимы.\n4. Определить стоимость доставки по зоне, способу и денежной стоимости товаров после промокода и списания бонусов (DR-02).\n5. Денежный итог = товары − скидка − списанные бонусы + доставка.\n6. Будущее начисление = округлённые вниз 5% денежной оплаты товаров; доставка не учитывается.\n\nАссистент может рассчитать расчётный пример по данным пользователя, но не подтверждает баланс, право на промокод, наличие товара или окончательную сумму реального заказа. Не хватает города, способа доставки, количества, статуса первого заказа или баланса — нужно уточнить соответствующие данные. [6f5d0530-8e9f-501c-a763-30712243ed06]\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-02. Промокод\n\nПромокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента. Минимальная стоимость товаров до скидки — 1 500 ₽ включительно. Он действует на весь каталог, один раз на клиента, не применяется к доставке. В текущем наборе данных даты окончания нет; реальная проверка права на промокод требует системы заказов.\n\nВ одном заказе можно применить один промокод. WELCOME10 можно совмещать со списанием бонусов. Сначала применяется промокод, затем списываются бонусы. Начисление бонусов при использовании промокода разрешено. [bd26ea39-cec5-52f2-a437-cab928cb1241]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-01. География и обработка\n\nМагазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки. Если ПВЗ нет, оформление недоступно, нужна помощь поддержки. Самовывоза из магазина нет.\n\nЗаказы собираются 1–2 рабочих дня после успешной оплаты. Рабочие дни — понедельник–пятница, кроме государственных праздников РФ. День оплаты не считается первым днём сборки. Затем заказ передаётся службе доставки; сроки перевозки ниже считаются после передачи и не включают сборку. Точную календарную дату без проверки календаря, населённого пункта и передачи обещать нельзя. [899efa0e-77d7-5026-8b47-f15c3038577a]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки. Списание бонусов уменьшает сумму, по которой определяется право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена. [af2794df-bb9a-5a6b-81de-5ef337117dd5]\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-03. Начисление бонусов\n\nУчастие доступно зарегистрированным клиентам. Начисляется 5% от денежной суммы, фактически оплаченной за товары после скидок и списания бонусов, без доставки. Количество бонусов округляется вниз до целого. Например, денежная оплата товаров 1 998 ₽ даёт 99 бонусов.\n\nБонусы начисляются через 14 календарных дней после получения заказа. День получения — день 0. По отменённым и возвращённым товарам начисления нет; уже начисленные бонусы за них отменяются. Бонусы действуют 180 календарных дней с момента начисления, точное время окончания показывается в кабинете. Для вычисления срока от даты нужны дата и время начисления. [8bdf80a8-9a59-50c8-a42e-eac9ac350d74]\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-04. Списание бонусов\n\n1 бонус = 1 ₽. Можно списать целое количество бонусов в пределах доступного баланса и не более 20% стоимости товаров после применения промокода (если он выбран); предел округляется вниз до целого рубля. Доставку бонусами оплатить нельзя. Минимального количества для списания нет.\n\nПример: товары 2 220 ₽, баланс 600 бонусов — максимум списания 444 бонуса, денежная оплата товаров 1 776 ₽. Начислится 88 бонусов, если заказ получен и не возвращён. Право на бесплатную доставку считается после списания бонусов по DR-02. [cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e]",
+        "sources": [
+          {
+            "source_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-05",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-03",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-04",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "5e22b9be-4537-4d6b-add9-dd6aad54b81b",
+        "latency_ms": {
+          "retrieval": 673.0475000222214,
+          "context": 0.3089999663643539,
+          "llm": 0.0,
+          "answer_control": 0.01780001912266016,
+          "total": 675.4774000146426
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": {
+          "rules_version": "1.1",
+          "input_basis": "user_declared_subtotal",
+          "subtotal_kopecks": 200000,
+          "discount_kopecks": 20000,
+          "after_promo_kopecks": 180000,
+          "bonus_cap": 360,
+          "bonuses_spent": 0,
+          "goods_cash_kopecks": 180000,
+          "delivery_kopecks": 25000,
+          "total_kopecks": 205000,
+          "bonuses_earned": 90,
+          "conditional_estimate": true
+        },
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": null,
+        "diagnostics": {
+          "generation_performed": false,
+          "answer_mode": "deterministic_calculator",
+          "llm_attempted": false,
+          "required_sections": [
+            "DR-01",
+            "DR-02",
+            "PL-02",
+            "PL-03",
+            "PL-04",
+            "PL-05"
+          ],
+          "context_bytes": 9461,
+          "retrieved_sources": 20,
+          "context_sources": 6,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence"
+        },
+        "handoff": null,
+        "external_data": null
+      }
+    }
+  ],
+  "provider_doubles": false,
+  "existing_real_qdrant_reused": true,
+  "pinned_model_caches_reused": true,
+  "fresh_network_model_download_tested": false,
+  "clone_tree_clean": true,
+  "own_api_stopped": true,
+  "own_model_unloaded": true,
+  "scope": "Reproducibility smoke, not additional independent quality cases"
+}

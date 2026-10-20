@@ -1705,6 +1705,7 @@
         "host_memory_load_percent": 93
       }
     ],
-    "scope": "Observed API+BGE/llama-server/Ollama process memory/CPU and host available RAM; process pages may overlap, Docker excluded"
+    "scope": "Observed API+BGE/llama-server/Ollama process memory/CPU and host available RAM; process pages may overlap, Docker excluded",
+    "measurement_correction": "api_bge handle refers to Windows venv launcher, not actual Uvicorn child; exclude it from model/API memory and CPU. Actual worker resource evidence is in block-6-final-process-resources.json. Global host RAM counters remain valid."
   }
 }

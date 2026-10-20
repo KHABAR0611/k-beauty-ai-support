@@ -4,6 +4,8 @@
 
 ## Статус и возможности
 
+Финальная независимая проверка MVP: **PARTIAL — 29/42 сценариев**. На42 новых финальных запросах18 завершённых вызовов настоящей Qwen; пять typed расчётов верны. Найдены ошибки intent/context/suitability, неподдержанные продолжения диалога и CPU p95 около61s. [Отчёт и критерии](docs/block-6-results.md), [все42 результата](docs/block-6-scenario-results.md), [воспроизводимый показ](docs/block-6-demo.md). Подлинность цитаты не гарантирует пригодность ответа вопросу. Требуется ограниченный этап исправлений перед полной MVP-приёмкой.
+
 Версия0.7.0 добавляет FastAPI, детерминированные business tools, локальную LLM generation и отдельный Answer Control к ingestion, dense/BM25/RRF и optional reranking в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
 
 Данные1.1 относятся к вымышленному магазину. Публикация поколения атомарна после проверки всех ID, payload и обоих векторов. Доступны независимые режимы dense-only, BM25-only и hybrid. [Отчёт Блока3](docs/block-3-results.md) содержит baseline, все13 запросов, метрики, latency и регрессии.
@@ -171,4 +173,4 @@ POST /chat, GET /health, GET /ready, Bearer-protected GET /metrics. Полная
 
 [Answer Control](docs/answer-control.md) различает answered, clarification_needed, insufficient_context, requires_external_data, handoff_required, system_error. Никакой retrieval/reranker score не трактуется как вероятность правильности. Handoff только описан контрактом: created=false, внешней операторской системы нет. Модель выбирает целые source evidence units; сервер проверяет actual IDs/тексты/версии, сохраняет цены и запрет silent truncation. Свободный парафраз не объявляется подтверждённым по наличию ссылки.
 
-[Реальный e2e-прогон](docs/block-5-live-e2e.json), [сравнение retrieval и ответов](docs/block-5-results.md), [test results](docs/block-5-test-results.json), [выбор модели](docs/block-5-provider-decision.md). Эксперименты с test doubles помечены отдельно. По умолчанию неподключённый LLM даёт readiness503 и безопасную ошибку FAQ, а не mock-ответ. Следующий этап системной оценки выполняется только после приёмки Блока5.
+[Реальный e2e-прогон](docs/block-5-live-e2e.json), [сравнение retrieval и ответов](docs/block-5-results.md), [test results](docs/block-5-test-results.json), [выбор модели](docs/block-5-provider-decision.md). Эксперименты с test doubles помечены отдельно. По умолчанию неподключённый LLM даёт readiness503 и безопасную ошибку FAQ, а не mock-ответ. Блок5 принят; системная оценка Блока6 имеет статус PARTIAL. Дальнейшая коррекция требует отдельного задания владельца.

@@ -6,7 +6,10 @@
 |2 — Dense/Qdrant | Принят |Server, поколения/alias, persistence, frozen qrels |
 |3 — Hybrid/RRF | Принят |Три режима,13 queries, метрики и регрессии |
 |4 — Optional reranking | Принят |Реальная модель/Server, ablations, fallback |
-|5 — Generation/FastAPI/Answer Control | Реализован, на приёмке |197 unit,13 Server contracts,12 real-HTTP cases и2 adversarial |
-|6 — System evaluation | Не начат; требуется приёмка5 |Независимый holdout, слепая оценка, load/deployment/security |
+|5 — Generation/FastAPI/Answer Control | Функционально принят |197 unit,13 Server contracts,12 real-HTTP cases и2 adversarial |
+|6 — Final evaluation | Выполнен, MVP PARTIAL |54 новых формулировки,12development/42final;29/42,18completed LLM,212unit/13Server,real clone/outages/restart |
+|Короткая коррекция | По отдельному заданию |Intent/context/suitability, CPU latency; новый preregistered holdout |
 
 [Результаты5](block-5-results.md) различают10 answered и2 requires_external_data; это не customer-resolution rate. Live routes:8 deterministic tools,2 capability control,2 настоящая LLM. Corpus мал и синтетичен. Production-ready/SLA или общее качество свободной генерации не заявляются.
+
+[Результаты6](block-6-results.md) выявили quality gaps, несмотря на успешные development и unit/CI. Бизнес1.1 не менялся. Blind human evaluation, concurrent load, dependency vulnerability audit и публичный deploy не выполнены. Enterprise-интеграции и frontend автоматически не добавляются.
