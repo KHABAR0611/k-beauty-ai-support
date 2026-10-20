@@ -1,0 +1,1710 @@
+{
+  "model_initially_unloaded": true,
+  "cold_scope": "Ollama model unloaded and fresh API/BGE process; OS file cache not flushed",
+  "samples": [
+    {
+      "elapsed_seconds": 4.132563300023321,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 6.139860900002532,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 8.143515400006436,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 10.150941600033548,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 12.54190650000237,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 14.545466899988241,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 16.55011920002289,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 18.557491999992635,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 20.561682800005656,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 22.565745200030506,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 24.570791200036183,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 26.575833200011402,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 28.580722599988803,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 30.585151900013443,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 32.589060300029814,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 34.59607119997963,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 36.59961159998784,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 38.604300800012425,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 40.60876199998893,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 42.612453799985815,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 44.91266840003664,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 46.91633640002692,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 48.92053780000424,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 50.92466830002377,
+      "health": 200,
+      "ready": 503
+    },
+    {
+      "elapsed_seconds": 54.59494680003263,
+      "health": 200,
+      "ready": 200
+    }
+  ],
+  "ready_seconds": 54.59495280002011,
+  "ready": {
+    "ready": true,
+    "dependencies": {
+      "retrieval": {
+        "ready": true,
+        "code": "ok",
+        "points": 20
+      },
+      "llm": {
+        "ready": true,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "code": "ok"
+      },
+      "api_access": {
+        "ready": true
+      }
+    },
+    "request_id": "934c23ae-65b7-42bd-a768-79e8f60b5840"
+  },
+  "repeat_same_query": [
+    {
+      "http_status": 200,
+      "http_ms": 10134.240799990948,
+      "status": "answered",
+      "usage": {
+        "input_tokens": 560,
+        "output_tokens": 26,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 8192,
+        "output_limit": 512,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 916,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 9522.204,
+          "load_duration": 13.465,
+          "prompt_eval_duration": 7906.633,
+          "eval_duration": 1539.909
+        }
+      },
+      "stage_ms": {
+        "retrieval": 571.2556000216864,
+        "context": 0.14020001981407404,
+        "llm": 9531.305800017435,
+        "answer_control": 0.02099998528137803,
+        "total": 10108.952999988105
+      }
+    },
+    {
+      "http_status": 200,
+      "http_ms": 2177.4974000290968,
+      "status": "answered",
+      "usage": {
+        "input_tokens": 560,
+        "output_tokens": 26,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 8192,
+        "output_limit": 512,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 916,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 1624.717,
+          "load_duration": 18.642,
+          "prompt_eval_duration": 94.397,
+          "eval_duration": 1502.681
+        }
+      },
+      "stage_ms": {
+        "retrieval": 533.4674000041559,
+        "context": 0.1324999611824751,
+        "llm": 1634.9666000460275,
+        "answer_control": 0.02169999061152339,
+        "total": 2174.721999967005
+      }
+    },
+    {
+      "http_status": 200,
+      "http_ms": 2398.346000001766,
+      "status": "answered",
+      "usage": {
+        "input_tokens": 560,
+        "output_tokens": 26,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "temperature": 0,
+        "seed": 42,
+        "context_limit": 8192,
+        "output_limit": 512,
+        "cpu_threads": 2,
+        "gpu_layers": 0,
+        "input_token_upper_estimate": 916,
+        "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "api_cost": 0,
+        "currency": null,
+        "cost_scope": "local API fee only; compute/electricity not priced",
+        "provider_durations_ms": {
+          "total_duration": 1824.467,
+          "load_duration": 4.76,
+          "prompt_eval_duration": 99.61,
+          "eval_duration": 1707.901
+        }
+      },
+      "stage_ms": {
+        "retrieval": 555.7814000057988,
+        "context": 0.17229997320100665,
+        "llm": 1833.543099986855,
+        "answer_control": 0.021499989088624716,
+        "total": 2395.505599968601
+      }
+    }
+  ],
+  "resources": {
+    "samples": [
+      {
+        "elapsed_seconds": 0.04466140002477914,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 2195456,
+            "peak_working_set_bytes": 2199552,
+            "private_commit_bytes": 524288,
+            "cpu_seconds": 0.0,
+            "page_faults": 573
+          }
+        },
+        "host_available_bytes": 3735109632,
+        "host_memory_load_percent": 56
+      },
+      {
+        "elapsed_seconds": 5.050628800003324,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3530752,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 868352,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 3686821888,
+        "host_memory_load_percent": 56
+      },
+      {
+        "elapsed_seconds": 10.056975300016347,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3530752,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 868352,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 3627429888,
+        "host_memory_load_percent": 57
+      },
+      {
+        "elapsed_seconds": 15.062225200003013,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3530752,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 868352,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 3397177344,
+        "host_memory_load_percent": 60
+      },
+      {
+        "elapsed_seconds": 20.077041700016707,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3530752,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 868352,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 3221561344,
+        "host_memory_load_percent": 62
+      },
+      {
+        "elapsed_seconds": 25.077496899990365,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3530752,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 868352,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 2114015232,
+        "host_memory_load_percent": 75
+      },
+      {
+        "elapsed_seconds": 30.088184799999,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3502080,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 2103107584,
+        "host_memory_load_percent": 75
+      },
+      {
+        "elapsed_seconds": 35.0897369000013,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3502080,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 2119131136,
+        "host_memory_load_percent": 75
+      },
+      {
+        "elapsed_seconds": 40.10303060000297,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3502080,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 2116132864,
+        "host_memory_load_percent": 75
+      },
+      {
+        "elapsed_seconds": 45.10401720000664,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3502080,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 904
+          }
+        },
+        "host_available_bytes": 1840537600,
+        "host_memory_load_percent": 78
+      },
+      {
+        "elapsed_seconds": 50.10972190002212,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3485696,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 923
+          }
+        },
+        "host_available_bytes": 2656804864,
+        "host_memory_load_percent": 68
+      },
+      {
+        "elapsed_seconds": 55.118639199994504,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 28434432,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 71897088,
+            "cpu_seconds": 17.25,
+            "page_faults": 29703
+          },
+          "llama-server": {
+            "working_set_bytes": 572334080,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1632505856,
+            "cpu_seconds": 2.296875,
+            "page_faults": 399624
+          }
+        },
+        "host_available_bytes": 1736032256,
+        "host_memory_load_percent": 79
+      },
+      {
+        "elapsed_seconds": 60.12795230001211,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 28434432,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 71897088,
+            "cpu_seconds": 17.25,
+            "page_faults": 29703
+          },
+          "llama-server": {
+            "working_set_bytes": 572334080,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1632505856,
+            "cpu_seconds": 2.296875,
+            "page_faults": 399624
+          }
+        },
+        "host_available_bytes": 1694978048,
+        "host_memory_load_percent": 80
+      },
+      {
+        "elapsed_seconds": 65.12824140000157,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 28971008,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72110080,
+            "cpu_seconds": 17.25,
+            "page_faults": 29834
+          },
+          "llama-server": {
+            "working_set_bytes": 572338176,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1632505856,
+            "cpu_seconds": 2.3125,
+            "page_faults": 399625
+          }
+        },
+        "host_available_bytes": 1689055232,
+        "host_memory_load_percent": 80
+      },
+      {
+        "elapsed_seconds": 70.13646300003165,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 29302784,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72298496,
+            "cpu_seconds": 17.25,
+            "page_faults": 29916
+          },
+          "llama-server": {
+            "working_set_bytes": 649015296,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1636106240,
+            "cpu_seconds": 10.9375,
+            "page_faults": 418363
+          }
+        },
+        "host_available_bytes": 1588297728,
+        "host_memory_load_percent": 81
+      },
+      {
+        "elapsed_seconds": 75.13663190003717,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 29302784,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72298496,
+            "cpu_seconds": 17.25,
+            "page_faults": 29916
+          },
+          "llama-server": {
+            "working_set_bytes": 674201600,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1636065280,
+            "cpu_seconds": 20.875,
+            "page_faults": 424518
+          }
+        },
+        "host_available_bytes": 1562152960,
+        "host_memory_load_percent": 81
+      },
+      {
+        "elapsed_seconds": 80.1492957000155,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 29302784,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72298496,
+            "cpu_seconds": 17.25,
+            "page_faults": 29916
+          },
+          "llama-server": {
+            "working_set_bytes": 703524864,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1636065280,
+            "cpu_seconds": 30.8125,
+            "page_faults": 431677
+          }
+        },
+        "host_available_bytes": 1508376576,
+        "host_memory_load_percent": 82
+      },
+      {
+        "elapsed_seconds": 85.15660039999057,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 29302784,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72298496,
+            "cpu_seconds": 17.25,
+            "page_faults": 29916
+          },
+          "llama-server": {
+            "working_set_bytes": 728813568,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1636065280,
+            "cpu_seconds": 40.84375,
+            "page_faults": 437851
+          }
+        },
+        "host_available_bytes": 1495326720,
+        "host_memory_load_percent": 82
+      },
+      {
+        "elapsed_seconds": 90.16151549998904,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 29339648,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 72298496,
+            "cpu_seconds": 17.25,
+            "page_faults": 29925
+          },
+          "llama-server": {
+            "working_set_bytes": 748257280,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1638653952,
+            "cpu_seconds": 50.71875,
+            "page_faults": 447492
+          }
+        },
+        "host_available_bytes": 1467318272,
+        "host_memory_load_percent": 82
+      },
+      {
+        "elapsed_seconds": 95.16702779999468,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 870457344,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756196864,
+            "cpu_seconds": 58.359375,
+            "page_faults": 478691
+          }
+        },
+        "host_available_bytes": 1342906368,
+        "host_memory_load_percent": 84
+      },
+      {
+        "elapsed_seconds": 100.17409400001634,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 876498944,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756196864,
+            "cpu_seconds": 68.375,
+            "page_faults": 480166
+          }
+        },
+        "host_available_bytes": 1335730176,
+        "host_memory_load_percent": 84
+      },
+      {
+        "elapsed_seconds": 105.1790482000215,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 882528256,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 78.328125,
+            "page_faults": 481642
+          }
+        },
+        "host_available_bytes": 1322831872,
+        "host_memory_load_percent": 84
+      },
+      {
+        "elapsed_seconds": 110.19062990002567,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 887566336,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 88.28125,
+            "page_faults": 482872
+          }
+        },
+        "host_available_bytes": 1315831808,
+        "host_memory_load_percent": 84
+      },
+      {
+        "elapsed_seconds": 115.19179630000144,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 893612032,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 98.234375,
+            "page_faults": 484348
+          }
+        },
+        "host_available_bytes": 1287880704,
+        "host_memory_load_percent": 84
+      },
+      {
+        "elapsed_seconds": 120.19712159998016,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 910352384,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 108.140625,
+            "page_faults": 488436
+          }
+        },
+        "host_available_bytes": 1256603648,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 125.20688010001322,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 931315712,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 118.171875,
+            "page_faults": 493554
+          }
+        },
+        "host_available_bytes": 1259167744,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 130.21917779999785,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 948097024,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 128.125,
+            "page_faults": 497651
+          }
+        },
+        "host_available_bytes": 1265336320,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 135.229801199981,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 969056256,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 138.03125,
+            "page_faults": 502768
+          }
+        },
+        "host_available_bytes": 1246732288,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 140.23307200003183,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 985841664,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 147.984375,
+            "page_faults": 506866
+          }
+        },
+        "host_available_bytes": 1229717504,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 145.2438914999948,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30322688,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73646080,
+            "cpu_seconds": 17.296875,
+            "page_faults": 30166
+          },
+          "llama-server": {
+            "working_set_bytes": 1006804992,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 157.9375,
+            "page_faults": 511984
+          }
+        },
+        "host_available_bytes": 1221541888,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 150.257758199994,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30892032,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73592832,
+            "cpu_seconds": 17.3125,
+            "page_faults": 30312
+          },
+          "llama-server": {
+            "working_set_bytes": 1015201792,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 1756168192,
+            "cpu_seconds": 167.890625,
+            "page_faults": 514034
+          }
+        },
+        "host_available_bytes": 1194790912,
+        "host_memory_load_percent": 85
+      },
+      {
+        "elapsed_seconds": 155.26906249998137,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31002624,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.3125,
+            "page_faults": 30339
+          },
+          "llama-server": {
+            "working_set_bytes": 1277067264,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2018287616,
+            "cpu_seconds": 176.4375,
+            "page_faults": 583676
+          }
+        },
+        "host_available_bytes": 973275136,
+        "host_memory_load_percent": 88
+      },
+      {
+        "elapsed_seconds": 160.27174460003152,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31002624,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.3125,
+            "page_faults": 30339
+          },
+          "llama-server": {
+            "working_set_bytes": 1277067264,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2018287616,
+            "cpu_seconds": 186.375,
+            "page_faults": 583676
+          }
+        },
+        "host_available_bytes": 959889408,
+        "host_memory_load_percent": 88
+      },
+      {
+        "elapsed_seconds": 165.2839356000186,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31006720,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.34375,
+            "page_faults": 30340
+          },
+          "llama-server": {
+            "working_set_bytes": 1279721472,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2022354944,
+            "cpu_seconds": 194.171875,
+            "page_faults": 589197
+          }
+        },
+        "host_available_bytes": 946888704,
+        "host_memory_load_percent": 88
+      },
+      {
+        "elapsed_seconds": 170.2871686000144,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31031296,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.359375,
+            "page_faults": 30346
+          },
+          "llama-server": {
+            "working_set_bytes": 1352818688,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2095595520,
+            "cpu_seconds": 202.015625,
+            "page_faults": 607525
+          }
+        },
+        "host_available_bytes": 817274880,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 175.29701799998293,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 209.328125,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 775696384,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 180.30510230001528,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 219.296875,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 767131648,
+        "host_memory_load_percent": 91
+      },
+      {
+        "elapsed_seconds": 185.30877350002993,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 229.234375,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 776417280,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 190.31728680001106,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 239.140625,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 772984832,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 195.31759930000408,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 249.078125,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 771379200,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 200.3190517000039,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 259.0,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 777572352,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 205.32784939999692,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3477504,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31117312,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 268.984375,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 769527808,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 210.33530809998047,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30994432,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 278.984375,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 811192320,
+        "host_memory_load_percent": 90
+      },
+      {
+        "elapsed_seconds": 215.33934020000743,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30994432,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.390625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1409585152,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2151923712,
+            "cpu_seconds": 288.859375,
+            "page_faults": 642181
+          }
+        },
+        "host_available_bytes": 956448768,
+        "host_memory_load_percent": 88
+      },
+      {
+        "elapsed_seconds": 220.33989230002044,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 30994432,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.40625,
+            "page_faults": 30367
+          },
+          "llama-server": {
+            "working_set_bytes": 1411424256,
+            "peak_working_set_bytes": 1516683264,
+            "private_commit_bytes": 2153013248,
+            "cpu_seconds": 298.75,
+            "page_faults": 647575
+          }
+        },
+        "host_available_bytes": 948461568,
+        "host_memory_load_percent": 88
+      },
+      {
+        "elapsed_seconds": 225.35355090000667,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31064064,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.4375,
+            "page_faults": 30384
+          },
+          "llama-server": {
+            "working_set_bytes": 1622024192,
+            "peak_working_set_bytes": 1623855104,
+            "private_commit_bytes": 2364022784,
+            "cpu_seconds": 303.6875,
+            "page_faults": 699538
+          }
+        },
+        "host_available_bytes": 739631104,
+        "host_memory_load_percent": 91
+      },
+      {
+        "elapsed_seconds": 230.3638061999809,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31064064,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.4375,
+            "page_faults": 30384
+          },
+          "llama-server": {
+            "working_set_bytes": 1622024192,
+            "peak_working_set_bytes": 1623855104,
+            "private_commit_bytes": 2364022784,
+            "cpu_seconds": 313.59375,
+            "page_faults": 699538
+          }
+        },
+        "host_available_bytes": 707055616,
+        "host_memory_load_percent": 91
+      },
+      {
+        "elapsed_seconds": 235.36965920001967,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31064064,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.4375,
+            "page_faults": 30384
+          },
+          "llama-server": {
+            "working_set_bytes": 1622024192,
+            "peak_working_set_bytes": 1623855104,
+            "private_commit_bytes": 2364022784,
+            "cpu_seconds": 323.578125,
+            "page_faults": 699538
+          }
+        },
+        "host_available_bytes": 703496192,
+        "host_memory_load_percent": 91
+      },
+      {
+        "elapsed_seconds": 240.39700689999154,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31064064,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.4375,
+            "page_faults": 30384
+          },
+          "llama-server": {
+            "working_set_bytes": 1622024192,
+            "peak_working_set_bytes": 1623855104,
+            "private_commit_bytes": 2364022784,
+            "cpu_seconds": 333.421875,
+            "page_faults": 699538
+          }
+        },
+        "host_available_bytes": 695754752,
+        "host_memory_load_percent": 91
+      },
+      {
+        "elapsed_seconds": 245.39850930002285,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 31064064,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 73601024,
+            "cpu_seconds": 17.515625,
+            "page_faults": 30384
+          },
+          "llama-server": {
+            "working_set_bytes": 1622958080,
+            "peak_working_set_bytes": 1643892736,
+            "private_commit_bytes": 2364682240,
+            "cpu_seconds": 343.296875,
+            "page_faults": 704907
+          }
+        },
+        "host_available_bytes": 680247296,
+        "host_memory_load_percent": 92
+      },
+      {
+        "elapsed_seconds": 250.40653650002787,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20557824,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.53125,
+            "page_faults": 30394
+          },
+          "llama-server": {
+            "working_set_bytes": 1738792960,
+            "peak_working_set_bytes": 1740623872,
+            "private_commit_bytes": 2480750592,
+            "cpu_seconds": 351.4375,
+            "page_faults": 733689
+          }
+        },
+        "host_available_bytes": 629317632,
+        "host_memory_load_percent": 92
+      },
+      {
+        "elapsed_seconds": 255.42089150001993,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20557824,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.53125,
+            "page_faults": 30394
+          },
+          "llama-server": {
+            "working_set_bytes": 1738792960,
+            "peak_working_set_bytes": 1740623872,
+            "private_commit_bytes": 2480750592,
+            "cpu_seconds": 361.390625,
+            "page_faults": 733689
+          }
+        },
+        "host_available_bytes": 621899776,
+        "host_memory_load_percent": 92
+      },
+      {
+        "elapsed_seconds": 260.4305759000126,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20557824,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.53125,
+            "page_faults": 30394
+          },
+          "llama-server": {
+            "working_set_bytes": 1738792960,
+            "peak_working_set_bytes": 1740623872,
+            "private_commit_bytes": 2480750592,
+            "cpu_seconds": 371.390625,
+            "page_faults": 733689
+          }
+        },
+        "host_available_bytes": 619249664,
+        "host_memory_load_percent": 92
+      },
+      {
+        "elapsed_seconds": 265.43083949998254,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20557824,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.53125,
+            "page_faults": 30394
+          },
+          "llama-server": {
+            "working_set_bytes": 1759588352,
+            "peak_working_set_bytes": 1759592448,
+            "private_commit_bytes": 2508750848,
+            "cpu_seconds": 381.296875,
+            "page_faults": 738774
+          }
+        },
+        "host_available_bytes": 606822400,
+        "host_memory_load_percent": 92
+      },
+      {
+        "elapsed_seconds": 270.44056780001847,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20570112,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.59375,
+            "page_faults": 30397
+          },
+          "llama-server": {
+            "working_set_bytes": 1857912832,
+            "peak_working_set_bytes": 1861500928,
+            "private_commit_bytes": 2600099840,
+            "cpu_seconds": 389.796875,
+            "page_faults": 768440
+          }
+        },
+        "host_available_bytes": 586584064,
+        "host_memory_load_percent": 93
+      },
+      {
+        "elapsed_seconds": 275.452092099993,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20570112,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62545920,
+            "cpu_seconds": 17.59375,
+            "page_faults": 30397
+          },
+          "llama-server": {
+            "working_set_bytes": 1857912832,
+            "peak_working_set_bytes": 1861500928,
+            "private_commit_bytes": 2600099840,
+            "cpu_seconds": 399.71875,
+            "page_faults": 768440
+          }
+        },
+        "host_available_bytes": 586219520,
+        "host_memory_load_percent": 93
+      },
+      {
+        "elapsed_seconds": 280.4613298000186,
+        "processes": {
+          "api_bge": {
+            "working_set_bytes": 3289088,
+            "peak_working_set_bytes": 3534848,
+            "private_commit_bytes": 811008,
+            "cpu_seconds": 0.015625,
+            "page_faults": 928
+          },
+          "ollama": {
+            "working_set_bytes": 20643840,
+            "peak_working_set_bytes": 49201152,
+            "private_commit_bytes": 62611456,
+            "cpu_seconds": 17.71875,
+            "page_faults": 30415
+          },
+          "llama-server": {
+            "working_set_bytes": 1861320704,
+            "peak_working_set_bytes": 1880735744,
+            "private_commit_bytes": 2604290048,
+            "cpu_seconds": 408.28125,
+            "page_faults": 779227
+          }
+        },
+        "host_available_bytes": 574844928,
+        "host_memory_load_percent": 93
+      }
+    ],
+    "scope": "Observed API+BGE/llama-server/Ollama process memory/CPU and host available RAM; process pages may overlap, Docker excluded"
+  }
+}

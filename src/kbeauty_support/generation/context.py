@@ -65,22 +65,26 @@ class Context:
 def required_sections(request) -> set[str]:
     q=request.question.casefold()
     sections=set(re.findall(r"\bKB-\d{3}\b",request.question.upper()))
-    if request.pricing is not None or re.search(r"итог|заплачу|денег|рассчита|сколько.*бонус|бонус.*сколько",q):
+    bonus_lifetime=(request.pricing is None and bool(re.search(r"бонус",q))
+        and bool(re.search(r"срок|жив|сгор|начисл|появ|действ",q))
+        and not re.search(r"спис|промокод|welcome|достав|итог|рассчит|лимит|процент",q))
+    refund=bool(re.search(r"отмен|возврат|вернут|вернуть",q))
+    if request.pricing is not None or (not bonus_lifetime and re.search(r"итог|заплачу|денег|рассчита|сколько.*бонус|бонус.*сколько",q)):
         sections.update(["DR-01","DR-02","PL-02","PL-03","PL-04","PL-05"])
-    if re.search(r"достав|курьер|пвз|сборк|сколько.*ждать",q):
+    if re.search(r"достав|курьер|пвз|сборк|сколько.*ждать",q) and (not refund or re.search(r"курьер|пвз|сборк|сколько.*ждать|сколько.*стоит",q)):
         sections.update(["DR-01","DR-02"])
     if re.search(r"бонус|welcome10|промокод",q):
-        sections.update(["PL-02","PL-03","PL-04","PL-05"])
+        sections.update(["PL-03"] if bonus_lifetime else ["PL-02","PL-03","PL-04","PL-05"])
     defect_query=re.sub(r"(?:брака|дефекта|повреждений)\s+нет|(?:без|нет)\s+(?:брака|дефектов|повреждений)","",q)
     if re.search(r"брак|поврежд|разбит|дефект|48 час",defect_query):
         sections.add("DR-05")
         if re.search(r"когда.*деньг|срок.*возврат",q):
             sections.add("DR-06")
-    elif re.search(r"возврат|верну|верни|пломб|вскры",q):
+    elif re.search(r"отмен|возврат|верну|верни|пломб|вскры",q):
         sections.update(["DR-04","DR-06"])
         if re.search(r"верни.*деньг|оформи.*возврат",q):
             sections.add("DR-05")
-    if re.search(r"оплат|наличн|cvv|cvc|сбп|карт",q):
+    if re.search(r"оплат|оплач|наличн|наличк|cvv|cvc|сбп|карт",q):
         sections.add("PL-01")
     if re.search(r"трек|статус|где.*заказ|отслед",q):
         sections.add("DR-03")
