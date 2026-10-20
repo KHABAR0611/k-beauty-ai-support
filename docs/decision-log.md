@@ -159,3 +159,8 @@ Snapshot и whole source units сохраняются. Literal anchor/offset/has
 ## ADR-037 — Accepted evaluation boundary: preserve negative final evidence
 
 Известные42/24 остаются regression; новые24 заранее размечены и исполнены один раз после runtime0fb3183 freeze. Требования ≥85%, zero false answered и не более двух потерь прежних PASS не выполнены. Деньги7/7, real Server/Qwen и safe boundary checks подтверждены отдельно. MVP PARTIAL; неподходящие source quotes не объявляются grounded answer только из-за100% quote integrity. H12 имеет избыточный required source, но официальный FAIL и16/24 не пересчитаны. Новых функций, смены модели, ещё одного tuning cycle или автоматического deployment не разрешается выводить из этого результата.
+
+
+## ADR-038 — Accepted: close the current research cycle with PARTIAL acceptance
+
+20.10.2026, explicit owner decision after442c028: stop further corrective sprints in this cycle. Engineering Prototype / MVP PARTIAL preserves working ingestion/indexing/retrieval/tools/API/local inference and all research history. Independent16/24, completeness66.7% and three confirmed unsuitable answered remain unchanged; H12 rubric-only failure remains disclosed. Free customer support is not accepted. No runtime/business/model/config/label/result changes accompany closure. The research-cycle-1-partial tag identifies a fixed research snapshot, not a stable production release. Future architecture or implementation needs a separate owner task. Public documentation links the actual evidence and verified demo scope; it does not convert functional integration into a quality PASS.

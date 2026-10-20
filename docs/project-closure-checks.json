@@ -1,0 +1,20 @@
+{
+  "closure_status": "Engineering Prototype / MVP PARTIAL",
+  "baseline_runtime_commit": "442c028e0c93d94ec070583d839b4ef3dbdf50cd",
+  "documentation_only": true,
+  "existing_tracked_files_unchanged_outside_allowlist": 227,
+  "permitted_existing_document_changes": [
+    "AGENTS.md",
+    "README.md",
+    "docs/decision-log.md"
+  ],
+  "business_version": "1.1",
+  "runtime_tests_config_fixtures_and_independent_results_unchanged": true,
+  "original_archive_files_unchanged": 37,
+  "original_archive_head": "fa83298684ab5a21ef844308ed58d30abb5fa8a8",
+  "new_model_or_server_runs": 0,
+  "new_independent_evaluation_runs": 0,
+  "new_tuning": false,
+  "markdown_local_links_verified": 80,
+  "check_scope": "Static documentation, immutable source/result/history integrity. Prior real model/Server/tests/CI evidence retained; fresh CI checked for publication SHA separately."
+}
