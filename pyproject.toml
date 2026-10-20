@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kbeauty-ai-support"
-version = "0.6.0"
-description = "Source preparation, hybrid retrieval and optional cross-encoder ranking for K-Beauty AI Support"
+version = "0.7.0"
+description = "Grounded support API, controlled generation and verified hybrid retrieval for K-Beauty AI Support"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
@@ -18,6 +18,12 @@ service = [
   "uvicorn==0.35.0",
   "pydantic==2.11.7",
   "qdrant-client==1.15.1",
+  "starlette==0.47.3",
+  "httpx==0.28.1",
+  "onnxruntime==1.31.0",
+  "tokenizers==0.23.3",
+  "numpy==2.5.4",
+  "fastembed==0.7.3",
 ]
 test = ["pytest==8.4.1"]
 retrieval = ["fastembed==0.7.3"]
@@ -35,6 +41,7 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "kbeauty_support.retrieval" = ["bge-m3.lock.json", "reranker.lock.json", "assets/*"]
+"kbeauty_support.generation" = ["qwen3-tokenizer.lock.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests/unit"]
