@@ -28,8 +28,8 @@ class Settings:
     llm_model: str = "qwen3:0.6b"
     llm_digest: str = ""
     llm_tokenizer_dir: Path = Path("model-cache/qwen3-tokenizer")/TOKENIZER_REVISION
-    llm_timeout: float = 60
-    request_timeout: float = 90
+    llm_timeout: float = 25
+    request_timeout: float = 40
     rate_limit: int = 30
     body_limit: int = 32768
 
@@ -54,9 +54,9 @@ class Settings:
             reranker_dir=Path(os.getenv("KBEAUTY_RERANKER_DIR",str(cls.reranker_dir))),
             rerank_enabled=flag=="true",provider=os.getenv("LLM_PROVIDER","disabled"),
             ollama_url=os.getenv("OLLAMA_URL","http://127.0.0.1:11434"),llm_model=os.getenv("LLM_MODEL","qwen3:0.6b"),
-            llm_digest=os.getenv("LLM_MODEL_DIGEST",""),llm_timeout=float(os.getenv("LLM_TIMEOUT_SECONDS","60")),
+            llm_digest=os.getenv("LLM_MODEL_DIGEST",""),llm_timeout=float(os.getenv("LLM_TIMEOUT_SECONDS","25")),
             llm_tokenizer_dir=Path(os.getenv("LLM_TOKENIZER_DIR",str(cls.llm_tokenizer_dir))),
-            request_timeout=float(os.getenv("REQUEST_TIMEOUT_SECONDS","90")),rate_limit=int(os.getenv("API_RATE_PER_MINUTE","30")))
+            request_timeout=float(os.getenv("REQUEST_TIMEOUT_SECONDS","40")),rate_limit=int(os.getenv("API_RATE_PER_MINUTE","30")))
 
 
 class RuntimeRetriever:
@@ -111,7 +111,7 @@ class RuntimeRetriever:
 def build_service(settings: Settings) -> ChatService:
     snapshot=Snapshot(settings.data_dir)
     provider=DisabledProvider() if settings.provider=="disabled" else OllamaProvider(settings.ollama_url,
-        model=settings.llm_model,expected_digest=settings.llm_digest,timeout=settings.llm_timeout,tokenizer_dir=settings.llm_tokenizer_dir)
+        model=settings.llm_model,expected_digest=settings.llm_digest,timeout=settings.llm_timeout,tokenizer_dir=settings.llm_tokenizer_dir,context_tokens=4096,output_tokens=128)
     retriever=RuntimeRetriever(settings,snapshot)
     if isinstance(provider,OllamaProvider):
         provider.warm()

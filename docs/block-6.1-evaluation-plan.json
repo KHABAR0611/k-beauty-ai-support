@@ -1,0 +1,17 @@
+{
+  "baseline": "4e0a462",
+  "frozen_before_runtime_changes": true,
+  "holdout_sha256": "a5e21b2796c45793ce8f96c976a336e18765ec8a6b7bae5e2c73103530ffcd63",
+  "holdout_count": 24,
+  "regression_sha256": "dfa8ccb6201c8d5e7b2c514b8304d0d10bd5bf9b0c37f5906fd9b8f6cb018b79",
+  "gates": {
+    "scenario_pass_rate_min": 0.85,
+    "complete_expected_answers_min": 0.85,
+    "critical_false_answered_max": 0,
+    "calculation_accuracy": 1.0,
+    "previously_passing_regressions_max": 0
+  },
+  "latency_target": "warm LLM p95 <=30s, not SLA; timeouts must be safe; one live holdout run after frozen runtime",
+  "rubric": "Unchanged block6 grade for comparison; source integrity separate from question suitability. False answered = answered while scenario expected other status or essential facts/sources missing. No tuning on holdout.",
+  "resource_policy": "One API worker, CPU2, no reranker, sequential runs, unload Qwen and stop own API after tests."
+}

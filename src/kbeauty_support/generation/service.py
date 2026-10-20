@@ -10,6 +10,7 @@ from .business import pricing_options, catalog_search, calculation_text
 from .context import assemble, SourceConflict
 from .control import AnswerControl, OutcomeMetrics
 from .errors import ServiceError, InsufficientContext
+from .intent import analyze, verify_coverage
 
 
 class ChatService(OutcomeMetrics):
@@ -29,14 +30,16 @@ class ChatService(OutcomeMetrics):
 
     def chat(self, request, request_id: str) -> tuple[int,ChatResponse]:
         started=time.perf_counter()
-        timings={"retrieval":0.0,"context":0.0,"llm":0.0,"answer_control":0.0}
+        timings={"preparation":0.0,"retrieval":0.0,"context":0.0,"tools":0.0,"llm":0.0,"answer_control":0.0}
+        intent=analyze(request.question)
+        trace={"intent_facets":list(intent.facets),"required_sections":[],"retrieved_sections":[],"context_sections":[],"selected_sections":[],"llm_attempted":False}
         generation=None
         llm_attempted=False
         def result(status, answer, *, http=200, sources=None, **kwargs):
             return http,ChatResponse(answer=answer,sources=sources or [],status=status,
                 grounding_status="confirmed" if status=="answered" else "error" if status=="system_error" else "insufficient_context",
                 request_id=request_id,latency_ms={**timings,"total":(time.perf_counter()-started)*1000},
-                index_generation=generation,**kwargs)
+                index_generation=generation,**{**kwargs,"diagnostics":{**trace,**kwargs.get("diagnostics",{})}})
         try:
             pre=self.control.decide(question=request.question)
             if pre.status=="handoff_required":
@@ -46,8 +49,8 @@ class ChatService(OutcomeMetrics):
                 raise ServiceError("payment_secrets_not_accepted",422)
             if request.pricing is None and re.search(r"итог|заплачу|спиш[иу]|спишите|рассчита",request.question,re.I):
                 raise InsufficientContext(["pricing"])
-            if request.catalog_query is None and re.search(r"подбери|порекомендуй",request.question,re.I):
-                raise InsufficientContext(["catalog_query"])
+            if request.catalog_query is None and request.pricing is None and (intent.clarification or re.search(r"подбери|порекомендуй",request.question,re.I)):
+                raise InsufficientContext([intent.clarification or "catalog_query"])
             if request.pricing is None and request.catalog_query is None and not self.provider.ready()["ready"]:
                 if pre.status=="handoff_required":
                     return result(pre.status,"Нужна проверка сотрудником; обращение не передано, операторская система не подключена.",
@@ -57,18 +60,25 @@ class ChatService(OutcomeMetrics):
                                   external_data={"system":"order_management","available":False,"action_performed":False},
                                   diagnostics={"generation_performed":False})
                 raise ServiceError("llm_not_configured_or_unavailable")
+            timings["preparation"]=(time.perf_counter()-started)*1000
             phase=time.perf_counter()
             retrieved=self.retriever.retrieve(request.question)
             timings["retrieval"]=(time.perf_counter()-phase)*1000
             generation=retrieved["generation"]
+            for key,value in retrieved.get("timings_ms",{}).items():
+                timings[key]=value
             hits=self.snapshot.validate(retrieved["hits"])
+            trace["retrieved_sections"]=[h["metadata"]["section"] for h in hits]
             phase=time.perf_counter()
             context=assemble(request,hits,max_sources=self.max_sources,max_bytes=self.max_context_bytes)
+            trace.update(required_sections=sorted(context.required_sections),context_sections=[h["metadata"]["section"] for h in context.records])
             if not context.records:
                 return result("insufficient_context","В базе нет достаточных сведений для такого вопроса.")
+            timings["context"]=(time.perf_counter()-phase)*1000
+            phase=time.perf_counter()
             calculation=pricing_options(request.pricing,self.snapshot.products) if request.pricing else None
             catalog=catalog_search(request.catalog_query,self.snapshot.products) if request.catalog_query else None
-            timings["context"]=(time.perf_counter()-phase)*1000
+            timings["tools"]=(time.perf_counter()-phase)*1000
             phase=time.perf_counter()
             selected={}
             usage=None;generation_performed=False;abstain=False
@@ -78,6 +88,7 @@ class ChatService(OutcomeMetrics):
                 selected={e["source_id"]:e for e in context.evidence.values()}
             else:
                 llm_attempted=True
+                trace["llm_attempted"]=True
                 try:
                     generated=self.provider.generate(request.question,list(context.evidence.values()),{"calculation":calculation,"catalog":catalog})
                 finally:
@@ -90,7 +101,9 @@ class ChatService(OutcomeMetrics):
                     selected[evidence["source_id"]]=evidence
             phase=time.perf_counter()
             covered={e["section"] for e in selected.values()}
-            enough=context.required_sections.issubset(covered)
+            semantic_ok,missing=verify_coverage(request.question,covered,tool=bool(calculation or catalog))
+            enough=context.required_sections.issubset(covered) and semantic_ok
+            trace.update(selected_sections=sorted(covered),model_abstained=abstain,missing_obligation_sections=missing,coverage_verified=semantic_ok)
             decision=self.control.decide(question=request.question,grounded=bool(selected) and not abstain,enough=enough)
             timings["answer_control"]=(time.perf_counter()-phase)*1000
             if decision.status=="insufficient_context":
@@ -105,7 +118,7 @@ class ChatService(OutcomeMetrics):
                     document_version=meta["document_version"],product_id=meta.get("product_id"),usage="quoted"))
                 paragraphs.append(selected[record["id"]]["text"]+" ["+record["id"]+"]")
             intro=[]
-            if re.search(r"секрет|ключ",request.question,re.I):
+            if re.search(r"секрет|\bключ\w*\b|api[_ -]?key",request.question,re.I):
                 intro.append("Сервис не раскрывает секреты и не исполняет команды на изменение правил магазина.")
             if re.search(r"леч|акне|аллерг|гарант",request.question,re.I):
                 intro.append("Сервис не даёт лечебных гарантий и не назначает лечение. Для лечения обратитесь к врачу.")
@@ -138,7 +151,7 @@ class ChatService(OutcomeMetrics):
         except InsufficientContext as exc:
             user_fields=[f for f in exc.fields if not f.startswith(("context_","required_source_"))]
             status="clarification_needed" if user_fields else "insufficient_context"
-            labels={"pricing":"состав корзины или сумма товаров, способ доставки и условия применения скидок/бонусов",
+            labels={"product_reference":"артикул или название товара: предыдущие сообщения не сохраняются", "pricing":"состав корзины или сумма товаров, способ доставки и условия применения скидок/бонусов",
                 "pricing.items_or_subtotal_kopecks":"товары и количество либо сумма товаров","pricing.delivery":"город и способ доставки",
                 "pricing.pickup_available":"есть ли доступный пункт выдачи","pricing.registered":"зарегистрирован ли покупатель",
                 "pricing.first_order":"является ли заказ первым","pricing.bonus_balance":"доступный бонусный баланс",

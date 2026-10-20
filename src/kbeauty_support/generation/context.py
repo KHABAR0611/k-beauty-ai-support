@@ -63,39 +63,16 @@ class Context:
 
 
 def required_sections(request) -> set[str]:
-    q=request.question.casefold()
-    sections=set(re.findall(r"\bKB-\d{3}\b",request.question.upper()))
-    bonus_lifetime=(request.pricing is None and bool(re.search(r"бонус",q))
-        and bool(re.search(r"срок|жив|сгор|начисл|появ|действ",q))
-        and not re.search(r"спис|промокод|welcome|достав|итог|рассчит|лимит|процент",q))
-    refund=bool(re.search(r"отмен|возврат|вернут|вернуть",q))
-    if request.pricing is not None or (not bonus_lifetime and re.search(r"итог|заплачу|денег|рассчита|сколько.*бонус|бонус.*сколько",q)):
-        sections.update(["DR-01","DR-02","PL-02","PL-03","PL-04","PL-05"])
-    if re.search(r"достав|курьер|пвз|сборк|сколько.*ждать",q) and (not refund or re.search(r"курьер|пвз|сборк|сколько.*ждать|сколько.*стоит",q)):
-        sections.update(["DR-01","DR-02"])
-    if re.search(r"бонус|welcome10|промокод",q):
-        sections.update(["PL-03"] if bonus_lifetime else ["PL-02","PL-03","PL-04","PL-05"])
-    defect_query=re.sub(r"(?:брака|дефекта|повреждений)\s+нет|(?:без|нет)\s+(?:брака|дефектов|повреждений)","",q)
-    if re.search(r"брак|поврежд|разбит|дефект|48 час",defect_query):
-        sections.add("DR-05")
-        if re.search(r"когда.*деньг|срок.*возврат",q):
-            sections.add("DR-06")
-    elif re.search(r"отмен|возврат|верну|верни|пломб|вскры",q):
-        sections.update(["DR-04","DR-06"])
-        if re.search(r"верни.*деньг|оформи.*возврат",q):
-            sections.add("DR-05")
-    if re.search(r"оплат|оплач|наличн|наличк|cvv|cvc|сбп|карт",q):
-        sections.add("PL-01")
-    if re.search(r"трек|статус|где.*заказ|отслед",q):
-        sections.add("DR-03")
-    if request.pricing and request.pricing.items:
-        sections.update(p.product_id for p in request.pricing.items)
-    if request.catalog_query:
-        sections.update(f"KB-{n:03d}" for n in range(1,10))
-    elif (not request.pricing and not any(s.startswith("KB-") for s in sections) and not sections.intersection({"DR-04","DR-05","DR-06"})
-          and re.search(r"крем|тонер|сыворот|маск|бальзам|флюид|spf|ретинол|ингредиент|ниацинамид|han river|bomi lab",q)):
+    from .intent import analyze
+    sections=set(analyze(request.question).sections)
+    if request.pricing is not None:
+        sections.update(['DR-01','DR-02','PL-02','PL-03','PL-04','PL-05'])
+        if request.pricing.items:
+            sections.update(p.product_id for p in request.pricing.items)
+    if request.catalog_query is not None:
         sections.update(f"KB-{n:03d}" for n in range(1,10))
     return sections
+
 
 
 def assemble(request, hits: list[dict], *, max_sources: int = 14, max_bytes: int = 24000) -> Context:
@@ -103,7 +80,7 @@ def assemble(request, hits: list[dict], *, max_sources: int = 14, max_bytes: int
     found={h["metadata"]["section"]:h for h in hits}
     if not required.issubset(found) or len(required)>max_sources:
         raise InsufficientContext(["required_source_coverage"])
-    chosen=[h for h in hits if h["metadata"]["section"] in required]
+    chosen=sorted((h for h in hits if h["metadata"]["section"] in required),key=lambda h:h["metadata"]["section"])
     # No guessed universal score threshold: corpus sources are selected by explicit domain requirements.
     if not required:
         return Context([],{},set(),0)

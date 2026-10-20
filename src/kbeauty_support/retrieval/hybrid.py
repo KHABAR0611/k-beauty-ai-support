@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import math
+import time
 
 from .dense import Encoder, RetrievalError, validate_vectors
 from .index import DenseIndex
@@ -71,14 +72,19 @@ class HybridIndex(DenseIndex):
         if analyzer.signature != spec:
             raise RetrievalError("Sparse query analyzer differs from the index")
         dense = None
+        clock=time.perf_counter()
+        embedding_ms=0.0
         if mode != "bm25":
             if encoder is None or encoder.signature != descriptor["model"]:
                 raise RetrievalError("Query encoder differs from the published model")
             vectors = encoder.encode([query])
             validate_vectors(vectors, 1, descriptor["model"]["dimension"])
             dense = vectors[0]
+            embedding_ms=(time.perf_counter()-clock)*1000
+        clock=time.perf_counter()
         sparse = analyzer.query(query) if mode != "dense" else {"indices": [], "values": []}
         validate_sparse(sparse, allow_empty=True)
+        sparse_ms=(time.perf_counter()-clock)*1000
         if mode == "dense":
             kwargs = {"query": dense, "using": "dense"}
         elif mode == "bm25":
@@ -92,12 +98,15 @@ class HybridIndex(DenseIndex):
             kwargs = {"query": m.FusionQuery(fusion=m.Fusion.RRF), "prefetch": branches}
         # Qdrant1.15.1 RRF does not break equal-score ties; request the full union.
         response_limit = 2 * prefetch if mode == "hybrid" else limit
+        clock=time.perf_counter()
         hits = self.client.query_points(collection, limit=response_limit, with_payload=True, **kwargs).points
+        search_ms=(time.perf_counter()-clock)*1000
         if mode == "hybrid":
             hits = stable_fused_hits(hits, limit)
         if any(p.payload["index"] != descriptor for p in hits):
             raise RetrievalError("Mixed hybrid generations")
         return {"collection": collection, "generation": descriptor["generation"], "mode": mode,
+                "timings_ms":{"embedding":embedding_ms,"sparse_encoding":sparse_ms,"qdrant_query":search_ms},
                 "hits": [{"id": str(p.id), "score": p.score, "text": p.payload["text"],
                           "metadata": p.payload["metadata"], "product": p.payload.get("product"),
                           "price_kopecks": p.payload.get("price_kopecks")} for p in hits]}

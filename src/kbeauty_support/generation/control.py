@@ -43,7 +43,8 @@ class AnswerControl:
         q=question.casefold()
         if re.search(r"оператор|переда[йт].*человек|свяжи.*человек|поговор.{0,20}(человек|сотрудник)|(?:хочу|нужен|нужна|позови|можно|соедини).{0,30}(?:человек|сотрудник)|оспарив|бонусы.*потрачен.*возврат",q):
             return Decision("handoff_required", "human_review_requested")
-        if re.search(r"(где|статус|проверь|отслед|найди).{0,50}(заказ|трек)|верни.{0,30}деньг|оформи.{0,30}возврат",q):
+        from .intent import analyze
+        if analyze(question).external:
             return Decision("requires_external_data", "order_system_unavailable")
         if missing:
             return Decision("clarification_needed", "missing_user_information")
