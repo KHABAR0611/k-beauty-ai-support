@@ -94,7 +94,7 @@ docs/                           ADR, спецификации, отчёты, API
 
 [Примеры чанков](docs/chunk-examples.md) · [Результаты повторной проверки](docs/business-review-results.md) · [Спецификация Блока 1](docs/block-1-spec.md) · [Roadmap](docs/roadmap.md) · [Публикация](docs/github-setup.md)
 
-Блоки1–4 реализованы и приняты. Блок5 API/generation/Answer Control представлен на приёмку. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
+Блоки1–5 функционально приняты. Независимая оценка Блока6 завершена; статус полной MVP-приёмки PARTIAL. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
 
 Бизнес-данные версии1.1 пересмотрены по уточнению владельца: [аудит происхождения и зависимостей](docs/business-change-audit.md). Действующие правила определяются data/1.1 и ADR-016, а не историческим отчётом для1.0.
 
