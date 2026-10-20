@@ -1,0 +1,4506 @@
+{
+  "phase": "answers",
+  "split": "regression",
+  "fixture_sha256": "dfa8ccb6201c8d5e7b2c514b8304d0d10bd5bf9b0c37f5906fd9b8f6cb018b79",
+  "fixture_lf_sha256": "19626f85194487e10918282111a344584630b679e93fceec9c6661f199a2a8d8",
+  "business_generation": "f62c8bbe398110d2010ca66d2a314cd692fbf43861317f1b38bc12157d22e223",
+  "provider_doubles": false,
+  "runtime_source_hashes": {
+    "src/kbeauty_support/__init__.py": "45a00d19b46ee5efaf7a1c17235f907b68203cf7ecd5341a663d3bd8975b2e4e",
+    "src/kbeauty_support/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/api/app.py": "f7cf9dc000630c464a9f0157182ae640d2090f5aa4d57a4a452fa272a1a81e39",
+    "src/kbeauty_support/api/models.py": "caff2e43762895bae58f5dbf94dfa106606359ad3a2fc0749a3e0d6c34321461",
+    "src/kbeauty_support/api/runtime.py": "0557ee1fef7b36c1469fafa5151acdd79dc062463570a2629f407307cc74f2c8",
+    "src/kbeauty_support/contracts.py": "881e70acd11def9ec6b7aea02b44ceba5247494a7fbdea34df447a8c2c13cd89",
+    "src/kbeauty_support/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/generation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/generation/business.py": "ddd856721e279f244755aa5b74e51575006d30276fbd3d54307154f59768b993",
+    "src/kbeauty_support/generation/context.py": "f1e3ae2568c6bfcf778ee7b202b1cce1f16ab47a344fca027b421534f8235634",
+    "src/kbeauty_support/generation/control.py": "6c6d73eccb5fa49e4ca71c049fe38bf6e5d70f11b86ab3c079b0ef20cea0a288",
+    "src/kbeauty_support/generation/errors.py": "1e6391e7f5f98b7035b453920e49e852985df0f6f3d1d39366e60e8c300d6c18",
+    "src/kbeauty_support/generation/intent.py": "1ee819e49069d45d43dadb62b4b2ff862922342c3d5a43563e2ba9ebc9d14ffd",
+    "src/kbeauty_support/generation/planning.py": "9605ec42eb4567bc51dbfcfc7a2c27327727ce88f533182c1c66c4be02705552",
+    "src/kbeauty_support/generation/provider.py": "9b685e234b358ed21ed50547e8a1cdb231045cd2e0a15b9de2c11984bbfa7461",
+    "src/kbeauty_support/generation/service.py": "e5bad145adca8f79536ef6d9dfdb27a9595ab634d2d5f8ff41b310f24e3119c0",
+    "src/kbeauty_support/generation/tokenization.py": "f336bc912a7c62e94284745e9efa1ca65cc4bc16320894e786932cdd4c8ddeff",
+    "src/kbeauty_support/infrastructure/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/ingestion/audit.py": "daaac143a976b818a69092f73282e9ccd78e176394934a891c6f30c8bb68c8e5",
+    "src/kbeauty_support/ingestion/cli.py": "ac367f68089a5327b5fe0ea7314741a26db131a325ea317a5255ebbd9ea4f30e",
+    "src/kbeauty_support/ingestion/pipeline.py": "54b324ea055423652a76cbe5965130521fbf0cedf0760c429a3aab208c7bd2e6",
+    "src/kbeauty_support/ingestion/sources.py": "050781fe409a6de18c83e198146152cb34a21fc2313005e514c10f6b4a0f637e",
+    "src/kbeauty_support/reranking/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/retrieval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/kbeauty_support/retrieval/cli.py": "5be0325dac43a41ab86654235c1dbe986595898876f9d88235390f3c41ad6ef2",
+    "src/kbeauty_support/retrieval/dense.py": "0a00c396ecbeff180c02d0f6cefb6d945d3455e3773e47d828d0c018ac59f5e3",
+    "src/kbeauty_support/retrieval/evaluation.py": "6353c934c6dfc934e8e44a86ac35013761d03e2838a978c1776f0e268b569e2c",
+    "src/kbeauty_support/retrieval/hybrid.py": "89b3ea4910f4143641a3a762d6515c8a9e4bfcca561b00d6b49354f9c1bfc0d4",
+    "src/kbeauty_support/retrieval/index.py": "1a04735e622beba05e6ff639a8d7c8dca72507a280be71d7d7994dba3c6e3bad",
+    "src/kbeauty_support/retrieval/rerank.py": "870c7d29911dfad540f0cc441d66f7631e5af83e6ee349e828df3ad2a6cfe091",
+    "src/kbeauty_support/retrieval/rerank_evaluation.py": "629aa210954b052f64442f4e88d2005d08d0c05efce3eda65917649f79a378b9",
+    "src/kbeauty_support/retrieval/sparse.py": "b9ef64feae548df36736d1e339f7031da6d68059fd5d5730683c07ae8b887b8d"
+  },
+  "readiness": {
+    "ready": true,
+    "dependencies": {
+      "retrieval": {
+        "ready": true,
+        "code": "ok",
+        "points": 20
+      },
+      "llm": {
+        "ready": true,
+        "provider": "ollama",
+        "model": "qwen3:0.6b",
+        "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "code": "ok"
+      },
+      "api_access": {
+        "ready": true
+      }
+    },
+    "request_id": "56532b93-8fc8-428d-a5d8-4bf1be9a8635"
+  },
+  "cases": [
+    {
+      "id": "F01",
+      "request": {
+        "question": "Если оплатить вечером пятницы, какие этапы есть до приезда курьера?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01",
+        "DR-02"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-01. География и обработка\n\nМагазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки. Если ПВЗ нет, оформление недоступно, нужна помощь поддержки. Самовывоза из магазина нет.\n\nЗаказы собираются 1–2 рабочих дня после успешной оплаты. Рабочие дни — понедельник–пятница, кроме государственных праздников РФ. День оплаты не считается первым днём сборки. Затем заказ передаётся службе доставки; сроки перевозки ниже считаются после передачи и не включают сборку. Точную календарную дату без проверки календаря, населённого пункта и передачи обещать нельзя. [899efa0e-77d7-5026-8b47-f15c3038577a]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки. Списание бонусов уменьшает сумму, по которой определяется право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена. [af2794df-bb9a-5a6b-81de-5ef337117dd5]",
+        "sources": [
+          {
+            "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "65f21fdc-c793-49fd-a0d6-fc4c9105fd56",
+        "latency_ms": {
+          "preparation": 323.19360005203635,
+          "retrieval": 1166.5073999902233,
+          "context": 0.6107999943196774,
+          "tools": 0.001400010660290718,
+          "llm": 12485.082000028342,
+          "answer_control": 0.16480009071528912,
+          "semantic_routing": 292.256599990651,
+          "embedding": 265.7924999948591,
+          "sparse_encoding": 25.08370007853955,
+          "qdrant_query": 383.3684999262914,
+          "parameter_extraction": 2844.238099991344,
+          "total": 13991.142100072466
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 736,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 9569.755,
+            "load_duration": 3.171,
+            "prompt_eval_duration": 7786.683,
+            "eval_duration": 1469.602
+          },
+          "parameter_extraction": {
+            "input_tokens": 114,
+            "output_tokens": 12,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 429,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 2836.759,
+              "load_duration": 2.118,
+              "prompt_eval_duration": 2257.998,
+              "eval_duration": 555.27
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-01",
+            "PL-01",
+            "DR-02",
+            "KB-008",
+            "PL-05",
+            "KB-004",
+            "DR-06",
+            "PL-03",
+            "KB-006",
+            "PL-04",
+            "PL-02",
+            "DR-04",
+            "DR-03",
+            "DR-05",
+            "KB-005",
+            "KB-002",
+            "KB-001",
+            "KB-007",
+            "KB-003",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.005846708814158275,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6552961258002657
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.6494494169861075
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5944466946483
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5680478822395071
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.49999590299996544
+              },
+              {
+                "mode": "human",
+                "similarity": 0.45899373067501936
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.44875343375801113
+              }
+            ],
+            "topic": "payment",
+            "topic_margin": 0.018444075462190845,
+            "topics": [
+              {
+                "topic": "payment",
+                "similarity": 0.6585517566991673
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6401076812369765
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.6400666298207417
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.6013446411348325
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5740499729360258
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5211362902359037
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.5050665835814928
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.49332541335938
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.47330904386995987
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4402956735989571
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "не указан"
+          },
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 3261,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-01",
+              "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "только по России",
+              "start": 198,
+              "end": 214,
+              "claim_sha256": "f709e7edca5bae84a1b88eb6ae9341014d9d066098072800512d09af18ea325b",
+              "support_sentence": "Магазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки."
+            },
+            {
+              "section": "DR-02",
+              "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "после применения промокода и списания бонусов",
+              "start": 612,
+              "end": 657,
+              "claim_sha256": "97ad8b4ad91ffdda85b0e292f262546e63e1b9d611c41b76486054f72efa2c2d",
+              "support_sentence": "Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 14067.231600056402,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F02",
+      "request": {
+        "question": "Живу в Туле. Привезёте коробку прямо к двери?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01"
+      ],
+      "response": {
+        "answer": "Правила не подтверждают запрошенный способ доставки.",
+        "sources": [],
+        "status": "insufficient_context",
+        "grounding_status": "insufficient_context",
+        "request_id": "314c962f-984d-4e31-8d6f-33acbe9b1750",
+        "latency_ms": {
+          "preparation": 324.7967000352219,
+          "retrieval": 599.7280000010505,
+          "context": 0.28190005104988813,
+          "tools": 0.000700005330145359,
+          "llm": 3742.7354000974447,
+          "answer_control": 0.0,
+          "semantic_routing": 320.153099950403,
+          "embedding": 183.09069995302707,
+          "sparse_encoding": 0.1686000032350421,
+          "qdrant_query": 65.59149990789592,
+          "parameter_extraction": 1301.1116000125185,
+          "total": 4669.547599973157
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 376,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 735,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2409.92,
+            "load_duration": 2.218,
+            "prompt_eval_duration": 988.855,
+            "eval_duration": 1389.942
+          },
+          "parameter_extraction": {
+            "input_tokens": 113,
+            "output_tokens": 11,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 428,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 1292.753,
+              "load_duration": 2.087,
+              "prompt_eval_duration": 785.086,
+              "eval_duration": 478.315
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-02",
+            "DR-01",
+            "DR-05",
+            "PL-05",
+            "DR-04",
+            "PL-01",
+            "PL-02",
+            "DR-03",
+            "DR-06",
+            "KB-007",
+            "PL-03",
+            "KB-008",
+            "KB-009",
+            "KB-003",
+            "KB-002",
+            "PL-04",
+            "KB-004",
+            "KB-001",
+            "KB-006",
+            "KB-005"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.014034327004174174,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6372397749639449
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.6232054479597707
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.594743844634231
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5556937292268617
+              },
+              {
+                "mode": "human",
+                "similarity": 0.5146446768110081
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5131351641126787
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.4968775408755411
+              }
+            ],
+            "topic": "delivery",
+            "topic_margin": 0.052483635628465475,
+            "topics": [
+              {
+                "topic": "delivery",
+                "similarity": 0.612148339064059
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5596647034355935
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5563920040110225
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5246362526056109
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5218483981007853
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.47250629009097067
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.4673892101164551
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.44804219324715
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4335171436551217
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4296705053789629
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "другой"
+          },
+          "reason": "unsupported_delivery_parameter",
+          "generation_performed": true,
+          "delivery_method": "другой"
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 4672.657499904744,
+      "grade": {
+        "scenario_passed": false,
+        "status_correct": false,
+        "expected_status": "answered",
+        "complete": false,
+        "missing_sources": [
+          "DR-01"
+        ],
+        "missing_facts": [
+          "остальных населённых пунктах — только в ПВЗ"
+        ],
+        "source_fact_integrity": null,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F03",
+      "request": {
+        "question": "Как долго посылка лежит в пункте выдачи и где потом искать трек?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-03"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-03. Хранение и отслеживание\n\nВ ПВЗ заказ хранится 7 календарных дней с даты поступления; последний день указан в уведомлении службы. После передачи трек-номер появляется в письме и личном кабинете. Ассистент сервиса не имеет доступа к заказам и не может проверить трек или статус. Если срок превышен, предложит обратиться в поддержку с номером заказа через защищённый канал магазина, когда он будет подключён. [3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5]",
+        "sources": [
+          {
+            "source_id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-03",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "7ebb78bc-4bac-4ce4-b837-442e37233168",
+        "latency_ms": {
+          "preparation": 288.9117000158876,
+          "retrieval": 558.3329000510275,
+          "context": 0.25200005620718,
+          "tools": 0.000500003807246685,
+          "llm": 4643.143899971619,
+          "answer_control": 0.17859996296465397,
+          "semantic_routing": 284.21480010729283,
+          "embedding": 188.21339996065944,
+          "sparse_encoding": 0.16089994460344315,
+          "qdrant_query": 55.996399954892695,
+          "total": 5492.788600036874
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 323,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 680,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 4594.255,
+            "load_duration": 3.301,
+            "prompt_eval_duration": 3195.663,
+            "eval_duration": 1374.355
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "storage_or_tracking_instructions"
+          ],
+          "required_sections": [
+            "DR-03"
+          ],
+          "retrieved_sections": [
+            "DR-03",
+            "DR-01",
+            "DR-05",
+            "DR-06",
+            "DR-04",
+            "DR-02",
+            "PL-03",
+            "PL-01",
+            "PL-05",
+            "PL-02",
+            "PL-04",
+            "KB-001",
+            "KB-007",
+            "KB-008",
+            "KB-002",
+            "KB-005",
+            "KB-004",
+            "KB-006",
+            "KB-003",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-03"
+          ],
+          "selected_sections": [
+            "DR-03"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "personal_order",
+            "margin": 0.010496325475800372,
+            "modes": [
+              {
+                "mode": "personal_order",
+                "similarity": 0.699974789426267
+              },
+              {
+                "mode": "information",
+                "similarity": 0.6894784639504666
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5788315964616192
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.532153952741044
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.478557283214618
+              },
+              {
+                "mode": "human",
+                "similarity": 0.45391521769695947
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.4018953026985325
+              }
+            ],
+            "topic": "tracking",
+            "topic_margin": 0.16691595818598137,
+            "topics": [
+              {
+                "topic": "tracking",
+                "similarity": 0.8288256998283113
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.66190974164233
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.6059966569539686
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.5769546320502319
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.5740608967694132
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.560841013057288
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5389263637429506
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4984467864975331
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4300272755092596
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.4169013129942109
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1170,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-03",
+              "source_id": "3d76a493-cf3a-5f2d-a8cf-cd18e48f56a5",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "7 календарных дней",
+              "start": 202,
+              "end": 220,
+              "claim_sha256": "254cee83309bd175c852acba69541c0388edcd3d78c0205e68053915cf90cd2b",
+              "support_sentence": "В ПВЗ заказ хранится 7 календарных дней с даты поступления; последний день указан в уведомлении службы."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 5495.813000015914,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F04",
+      "request": {
+        "question": "Доставляете за границу, например в Минск?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01"
+      ],
+      "response": {
+        "answer": "Правила не подтверждают запрошенный способ доставки.",
+        "sources": [],
+        "status": "insufficient_context",
+        "grounding_status": "insufficient_context",
+        "request_id": "c0017859-f41b-4f9d-97a4-43cfde5bc599",
+        "latency_ms": {
+          "preparation": 228.31160004716367,
+          "retrieval": 569.167000008747,
+          "context": 0.28719997499138117,
+          "tools": 0.000500003807246685,
+          "llm": 6671.6852999525145,
+          "answer_control": 0.0,
+          "semantic_routing": 223.90680003445596,
+          "embedding": 130.20989997312427,
+          "sparse_encoding": 0.1444000517949462,
+          "qdrant_query": 83.53449997957796,
+          "parameter_extraction": 1221.2183999363333,
+          "total": 7471.43410006538
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 370,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 729,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 5442.549,
+            "load_duration": 2.725,
+            "prompt_eval_duration": 4034.473,
+            "eval_duration": 1397.876
+          },
+          "parameter_extraction": {
+            "input_tokens": 107,
+            "output_tokens": 11,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 422,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 1214.649,
+              "load_duration": 2.108,
+              "prompt_eval_duration": 705.039,
+              "eval_duration": 480.754
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-01",
+            "PL-03",
+            "DR-02",
+            "DR-04",
+            "DR-05",
+            "PL-05",
+            "DR-03",
+            "PL-02",
+            "PL-01",
+            "DR-06",
+            "PL-04",
+            "KB-006",
+            "KB-001",
+            "KB-003",
+            "KB-004",
+            "KB-005",
+            "KB-007",
+            "KB-008",
+            "KB-002",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.05452827821733053,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6291001853955173
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5745719071781867
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5623802754275038
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5258866922060241
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5024332749170999
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.46312837592906614
+              },
+              {
+                "mode": "human",
+                "similarity": 0.42343176961501827
+              }
+            ],
+            "topic": "delivery",
+            "topic_margin": 0.18454808909075004,
+            "topics": [
+              {
+                "topic": "delivery",
+                "similarity": 0.7225608163568601
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.53801272726611
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.537646775872901
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5107871911243349
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.49329355485140003
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.4863727301387219
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.45078162464357535
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.42883686195824466
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.41108954468056097
+              },
+              {
+                "topic": "product",
+                "similarity": 0.409019293207797
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "другой"
+          },
+          "reason": "unsupported_delivery_parameter",
+          "generation_performed": true,
+          "delivery_method": "другой"
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 7474.392299889587,
+      "grade": {
+        "scenario_passed": false,
+        "status_correct": false,
+        "expected_status": "answered",
+        "complete": false,
+        "missing_sources": [
+          "DR-01"
+        ],
+        "missing_facts": [
+          "только по России"
+        ],
+        "source_fact_integrity": null,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F05",
+      "request": {
+        "question": "У нас нет пункта выдачи. Заказ всё равно можно оформить?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-01. География и обработка\n\nМагазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки. Если ПВЗ нет, оформление недоступно, нужна помощь поддержки. Самовывоза из магазина нет.\n\nЗаказы собираются 1–2 рабочих дня после успешной оплаты. Рабочие дни — понедельник–пятница, кроме государственных праздников РФ. День оплаты не считается первым днём сборки. Затем заказ передаётся службе доставки; сроки перевозки ниже считаются после передачи и не включают сборку. Точную календарную дату без проверки календаря, населённого пункта и передачи обещать нельзя. [899efa0e-77d7-5026-8b47-f15c3038577a]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки. Списание бонусов уменьшает сумму, по которой определяется право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена. [af2794df-bb9a-5a6b-81de-5ef337117dd5]",
+        "sources": [
+          {
+            "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "19c0b48f-38bd-46d0-8491-54026fe51ff0",
+        "latency_ms": {
+          "preparation": 396.32230007555336,
+          "retrieval": 532.1545000188053,
+          "context": 0.28549996204674244,
+          "tools": 0.000400003045797348,
+          "llm": 3500.2683999482542,
+          "answer_control": 0.15810003969818354,
+          "semantic_routing": 392.0338999014348,
+          "embedding": 154.50639999471605,
+          "sparse_encoding": 0.15979993622750044,
+          "qdrant_query": 50.305900047533214,
+          "parameter_extraction": 1169.366699992679,
+          "total": 4431.249700020999
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 371,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 730,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2320.498,
+            "load_duration": 1.909,
+            "prompt_eval_duration": 842.758,
+            "eval_duration": 1442.004
+          },
+          "parameter_extraction": {
+            "input_tokens": 108,
+            "output_tokens": 10,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 423,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 1163.438,
+              "load_duration": 3.0,
+              "prompt_eval_duration": 691.244,
+              "eval_duration": 447.511
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-01",
+            "PL-01",
+            "PL-05",
+            "DR-04",
+            "PL-02",
+            "DR-05",
+            "DR-03",
+            "DR-02",
+            "PL-04",
+            "PL-03",
+            "DR-06",
+            "KB-001",
+            "KB-007",
+            "KB-004",
+            "KB-002",
+            "KB-006",
+            "KB-003",
+            "KB-008",
+            "KB-009",
+            "KB-005"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "unsupported",
+            "margin": 0.003024793440767004,
+            "modes": [
+              {
+                "mode": "unsupported",
+                "similarity": 0.6557037710598753
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.6526789776191083
+              },
+              {
+                "mode": "information",
+                "similarity": 0.6283385360930035
+              },
+              {
+                "mode": "human",
+                "similarity": 0.515755130263703
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.513313906741991
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5093198263270836
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.4294773143874103
+              }
+            ],
+            "topic": "tracking",
+            "topic_margin": 0.009015454633214737,
+            "topics": [
+              {
+                "topic": "tracking",
+                "similarity": 0.6321909858565619
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6231755312233471
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.6088735834374265
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5572647553651018
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.5199784030193717
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.4855453558309762
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.48095870499656634
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.4694302252464455
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.46576218760199656
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4240552138210437
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "не указан"
+          },
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 3261,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-01",
+              "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "только по России",
+              "start": 198,
+              "end": 214,
+              "claim_sha256": "f709e7edca5bae84a1b88eb6ae9341014d9d066098072800512d09af18ea325b",
+              "support_sentence": "Магазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки."
+            },
+            {
+              "section": "DR-02",
+              "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "после применения промокода и списания бонусов",
+              "start": 612,
+              "end": 657,
+              "claim_sha256": "97ad8b4ad91ffdda85b0e292f262546e63e1b9d611c41b76486054f72efa2c2d",
+              "support_sentence": "Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 4434.329700074159,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F06",
+      "request": {
+        "question": "Курьерская доставка в Петербурге: товары после всех списаний на 3500. Плата будет?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01",
+        "DR-02"
+      ],
+      "response": {
+        "answer": "Правила не подтверждают запрошенный способ доставки.",
+        "sources": [],
+        "status": "insufficient_context",
+        "grounding_status": "insufficient_context",
+        "request_id": "b3c9638c-7480-4471-ade6-2a347aaad810",
+        "latency_ms": {
+          "preparation": 1207.4378000106663,
+          "retrieval": 591.499200090766,
+          "context": 0.2956000389531255,
+          "tools": 0.000500003807246685,
+          "llm": 4396.716300048865,
+          "answer_control": 0.0,
+          "semantic_routing": 488.54900000151247,
+          "embedding": 217.8903000894934,
+          "sparse_encoding": 0.18300011288374662,
+          "qdrant_query": 30.222099972888827,
+          "parameter_extraction": 1662.5645000021905,
+          "total": 6197.896700003184
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 386,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 745,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2725.872,
+            "load_duration": 2.965,
+            "prompt_eval_duration": 1279.622,
+            "eval_duration": 1421.71
+          },
+          "parameter_extraction": {
+            "input_tokens": 123,
+            "output_tokens": 11,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 438,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 1655.219,
+              "load_duration": 2.155,
+              "prompt_eval_duration": 1049.68,
+              "eval_duration": 530.944
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-02",
+            "PL-04",
+            "PL-05",
+            "PL-02",
+            "PL-03",
+            "DR-01",
+            "DR-05",
+            "DR-04",
+            "PL-01",
+            "DR-06",
+            "DR-03",
+            "KB-005",
+            "KB-004",
+            "KB-002",
+            "KB-008",
+            "KB-007",
+            "KB-001",
+            "KB-006",
+            "KB-003",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "calculate",
+            "margin": 0.0070905812984392025,
+            "modes": [
+              {
+                "mode": "calculate",
+                "similarity": 0.5811928820417533
+              },
+              {
+                "mode": "information",
+                "similarity": 0.5741023007433141
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5152576862166091
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5007532203532028
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.4914844533148052
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.46042227195651014
+              },
+              {
+                "mode": "human",
+                "similarity": 0.39157045561189746
+              }
+            ],
+            "topic": "delivery",
+            "topic_margin": 0.010118329037188234,
+            "topics": [
+              {
+                "topic": "delivery",
+                "similarity": 0.6002143521619773
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.590096023124789
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.565542516053365
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.5406852233584271
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5292039967805494
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5188708458675512
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.500546117670413
+              },
+              {
+                "topic": "product",
+                "similarity": 0.485474305265625
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.47522053436966183
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4580492901042721
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "другой"
+          },
+          "reason": "unsupported_delivery_parameter",
+          "generation_performed": true,
+          "delivery_method": "другой"
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 6200.908900005743,
+      "grade": {
+        "scenario_passed": false,
+        "status_correct": false,
+        "expected_status": "answered",
+        "complete": false,
+        "missing_sources": [
+          "DR-01",
+          "DR-02"
+        ],
+        "missing_facts": [
+          "400 ₽",
+          "3 500 ₽",
+          "Порог включительный"
+        ],
+        "source_fact_integrity": null,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F07",
+      "request": {
+        "question": "Существуют ли самовывоз из магазина и срочная доставка?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-01",
+        "DR-02"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-01. География и обработка\n\nМагазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки. Если ПВЗ нет, оформление недоступно, нужна помощь поддержки. Самовывоза из магазина нет.\n\nЗаказы собираются 1–2 рабочих дня после успешной оплаты. Рабочие дни — понедельник–пятница, кроме государственных праздников РФ. День оплаты не считается первым днём сборки. Затем заказ передаётся службе доставки; сроки перевозки ниже считаются после передачи и не включают сборку. Точную календарную дату без проверки календаря, населённого пункта и передачи обещать нельзя. [899efa0e-77d7-5026-8b47-f15c3038577a]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-02. Способы, стоимость и сроки\n\n| Зона | Способ | Стоимость | Бесплатно от | Перевозка |\n|---|---|---:|---:|---|\n| Москва | Курьер | 350 ₽ | 3 500 ₽ | 1–2 рабочих дня |\n| Санкт-Петербург | Курьер | 400 ₽ | 3 500 ₽ | 2–3 рабочих дня |\n| Россия, включая Москву и Санкт-Петербург | ПВЗ | 250 ₽ | 2 500 ₽ | 3–7 рабочих дней |\n\nПорог включительный: ровно 3 500 ₽ для курьера или 2 500 ₽ для ПВЗ уже дают бесплатную доставку. Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки. Списание бонусов уменьшает сумму, по которой определяется право на бесплатную доставку. Один заказ — один адрес и один способ доставки. Срочная доставка не предусмотрена. [af2794df-bb9a-5a6b-81de-5ef337117dd5]",
+        "sources": [
+          {
+            "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "9761c6ff-89e4-40bc-87d9-e884741f052f",
+        "latency_ms": {
+          "preparation": 264.0182999894023,
+          "retrieval": 534.5506999874488,
+          "context": 0.2807000419124961,
+          "tools": 0.000600004568696022,
+          "llm": 3906.409400049597,
+          "answer_control": 0.15000009443610907,
+          "semantic_routing": 259.77360003162175,
+          "embedding": 177.33330000191927,
+          "sparse_encoding": 0.15790003817528486,
+          "qdrant_query": 43.83880004752427,
+          "parameter_extraction": 1436.0966000240296,
+          "total": 4707.443899940699
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 376,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 735,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2462.418,
+            "load_duration": 2.812,
+            "prompt_eval_duration": 984.691,
+            "eval_duration": 1451.965
+          },
+          "parameter_extraction": {
+            "input_tokens": 113,
+            "output_tokens": 12,
+            "provider": "ollama",
+            "model": "qwen3:0.6b",
+            "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+            "temperature": 0,
+            "seed": 42,
+            "context_limit": 4096,
+            "output_limit": 128,
+            "cpu_threads": 2,
+            "gpu_layers": 0,
+            "input_token_upper_estimate": 428,
+            "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+            "api_cost": 0,
+            "currency": null,
+            "cost_scope": "local API fee only; compute/electricity not priced",
+            "provider_durations_ms": {
+              "total_duration": 1411.453,
+              "load_duration": 2.475,
+              "prompt_eval_duration": 803.968,
+              "eval_duration": 562.797
+            }
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "delivery_geography_and_transit"
+          ],
+          "required_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "retrieved_sections": [
+            "DR-01",
+            "DR-02",
+            "DR-04",
+            "DR-05",
+            "DR-03",
+            "PL-01",
+            "DR-06",
+            "PL-05",
+            "PL-04",
+            "PL-03",
+            "PL-02",
+            "KB-007",
+            "KB-001",
+            "KB-005",
+            "KB-006",
+            "KB-004",
+            "KB-002",
+            "KB-008",
+            "KB-003",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "selected_sections": [
+            "DR-01",
+            "DR-02"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.04656733846940475,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.7111784080163747
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.6646110695469699
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.6432801900247997
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.537520059486717
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.532748979714941
+              },
+              {
+                "mode": "human",
+                "similarity": 0.4579960336140615
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.436918234615512
+              }
+            ],
+            "topic": "tracking",
+            "topic_margin": 0.03574493298063752,
+            "topics": [
+              {
+                "topic": "tracking",
+                "similarity": 0.65458196489983
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6188370319191925
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5889551821173107
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5712077396117967
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.5326316297374047
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5288893681603417
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.5215064117199083
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5082937868946542
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.49728967486788195
+              },
+              {
+                "topic": "product",
+                "similarity": 0.45839652276739123
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 2,
+          "llm_calls_completed": 2,
+          "request_parameters": {
+            "delivery_method": "не указан"
+          },
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 3261,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-01",
+              "source_id": "899efa0e-77d7-5026-8b47-f15c3038577a",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "только по России",
+              "start": 198,
+              "end": 214,
+              "claim_sha256": "f709e7edca5bae84a1b88eb6ae9341014d9d066098072800512d09af18ea325b",
+              "support_sentence": "Магазин доставляет только по России, в Москве и Санкт-Петербурге — курьером или в ПВЗ, в остальных населённых пунктах — только в ПВЗ при наличии пункта службы доставки."
+            },
+            {
+              "section": "DR-02",
+              "source_id": "af2794df-bb9a-5a6b-81de-5ef337117dd5",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "после применения промокода и списания бонусов",
+              "start": 612,
+              "end": 657,
+              "claim_sha256": "97ad8b4ad91ffdda85b0e292f262546e63e1b9d611c41b76486054f72efa2c2d",
+              "support_sentence": "Порог определяется стоимостью товаров **после применения промокода и списания бонусов**, без стоимости доставки."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 4710.498200030997,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F08",
+      "request": {
+        "question": "Крем не открывал, товар исправный. Возврат на шестой день возможен, а пересылку кто оплачивает?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-04",
+        "DR-06"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-04. Отмена и возврат товара надлежащего качества\n\nДо передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку. Списанные бонусы восстанавливаются, начисление по отменённому заказу не производится. После передачи простая отмена недоступна — требуется обращение в поддержку по процедуре возврата.\n\nПо политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность. День получения — день 0. Вскрытая косметика надлежащего качества по этой политике набора данных не принимается. Для реального магазина условия необходимо отдельно проверить с юристом.\n\nПри одобренном возврате надлежащего качества обратную пересылку оплачивает покупатель. Исходная доставка после получения заказа не возвращается; ранее бесплатная доставка задним числом не начисляется. [67411903-b804-51c9-82ec-e4e30b6e6560]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-06. Сумма и сроки возврата\n\nДеньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты. Это срок перечисления магазином; дополнительное время зачисления зависит от банка и здесь не определено. При отмене до передачи срок перечисления — до 10 календарных дней с подтверждения отмены.\n\nВозвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок. Списанные за них бонусы восстанавливаются; начисленные за них бонусы отменяются. При частичном возврате скидка и списанные бонусы распределяются пропорционально стоимости позиций до скидки; денежные доли округляются до копеек, остаток относится к последней позиции заказа. Если начисленные бонусы уже потрачены, поддержка разбирает баланс вручную; ассистент не рассчитывает такой спорный случай самостоятельно. [3b29902b-7c32-5329-a113-95a058386300]",
+        "sources": [
+          {
+            "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-04",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-06",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "cc5fb1e6-0f26-4cc3-89e0-ebae76b7c894",
+        "latency_ms": {
+          "preparation": 469.2534999921918,
+          "retrieval": 636.9722998933867,
+          "context": 0.3021999727934599,
+          "tools": 0.000600004568696022,
+          "llm": 9391.02269988507,
+          "answer_control": 0.1775000710040331,
+          "semantic_routing": 464.38819996546954,
+          "embedding": 268.2434000307694,
+          "sparse_encoding": 0.1954999752342701,
+          "qdrant_query": 38.710599998012185,
+          "total": 10499.828499974683
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 526,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 891,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 9382.517,
+            "load_duration": 2.83,
+            "prompt_eval_duration": 7673.435,
+            "eval_duration": 1602.906
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "quality_return_or_cancellation"
+          ],
+          "required_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "retrieved_sections": [
+            "DR-04",
+            "DR-05",
+            "DR-02",
+            "KB-004",
+            "DR-06",
+            "DR-03",
+            "PL-01",
+            "DR-01",
+            "PL-03",
+            "PL-05",
+            "KB-003",
+            "PL-02",
+            "PL-04",
+            "KB-007",
+            "KB-005",
+            "KB-008",
+            "KB-006",
+            "KB-002",
+            "KB-001",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "selected_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.06181115826940298,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6475897038679073
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5857785455985043
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5764716425098988
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.537653903352178
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5317185915036264
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.5138428943020084
+              },
+              {
+                "mode": "human",
+                "similarity": 0.422885395195149
+              }
+            ],
+            "topic": "quality_return",
+            "topic_margin": 0.0020172098969638563,
+            "topics": [
+              {
+                "topic": "quality_return",
+                "similarity": 0.6482207378853992
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6462035279884354
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.5902810384248529
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.588141536472744
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5625176750598737
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5255337503737743
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5103822126576937
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.4890977904205573
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4769469118232273
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4670845300842762
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 4272,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "7 календарных дней",
+              "start": 615,
+              "end": 633,
+              "claim_sha256": "254cee83309bd175c852acba69541c0388edcd3d78c0205e68053915cf90cd2b",
+              "support_sentence": "По политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность."
+            },
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "включая оплаченную доставку",
+              "start": 309,
+              "end": 336,
+              "claim_sha256": "5c11bd758441e06ae6829dc52b7e5ed59c005dbf1d8b00407be4f905b8347fc3",
+              "support_sentence": "До передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "10 календарных дней",
+              "start": 233,
+              "end": 252,
+              "claim_sha256": "714a78bc27fe684f3d14d5bcf48d4ccbff95d122ad7bb56dcd211864fa24ab3b",
+              "support_sentence": "Деньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "фактически уплаченная денежная часть",
+              "start": 538,
+              "end": 574,
+              "claim_sha256": "abb68c67fcf603ebaa313052b6f3601fada8fd26f06c95c5c521438f814edeb2",
+              "support_sentence": "Возвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 10503.095400054008,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F09",
+      "request": {
+        "question": "Вскрытую косметику без дефектов можно вернуть просто потому, что передумала?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-04"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-04. Отмена и возврат товара надлежащего качества\n\nДо передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку. Списанные бонусы восстанавливаются, начисление по отменённому заказу не производится. После передачи простая отмена недоступна — требуется обращение в поддержку по процедуре возврата.\n\nПо политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность. День получения — день 0. Вскрытая косметика надлежащего качества по этой политике набора данных не принимается. Для реального магазина условия необходимо отдельно проверить с юристом.\n\nПри одобренном возврате надлежащего качества обратную пересылку оплачивает покупатель. Исходная доставка после получения заказа не возвращается; ранее бесплатная доставка задним числом не начисляется. [67411903-b804-51c9-82ec-e4e30b6e6560]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-06. Сумма и сроки возврата\n\nДеньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты. Это срок перечисления магазином; дополнительное время зачисления зависит от банка и здесь не определено. При отмене до передачи срок перечисления — до 10 календарных дней с подтверждения отмены.\n\nВозвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок. Списанные за них бонусы восстанавливаются; начисленные за них бонусы отменяются. При частичном возврате скидка и списанные бонусы распределяются пропорционально стоимости позиций до скидки; денежные доли округляются до копеек, остаток относится к последней позиции заказа. Если начисленные бонусы уже потрачены, поддержка разбирает баланс вручную; ассистент не рассчитывает такой спорный случай самостоятельно. [3b29902b-7c32-5329-a113-95a058386300]",
+        "sources": [
+          {
+            "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-04",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-06",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "b0186a8a-1d03-4454-99fa-81c151a74c79",
+        "latency_ms": {
+          "preparation": 372.28679994586855,
+          "retrieval": 568.970900028944,
+          "context": 0.3361999988555908,
+          "tools": 0.000500003807246685,
+          "llm": 2870.8890000125393,
+          "answer_control": 0.19149994477629662,
+          "semantic_routing": 367.1451999107376,
+          "embedding": 223.84280001278967,
+          "sparse_encoding": 0.16980001237243414,
+          "qdrant_query": 25.840100017376244,
+          "total": 3814.730799989775
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 517,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 882,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2862.87,
+            "load_duration": 2.184,
+            "prompt_eval_duration": 1198.858,
+            "eval_duration": 1639.53
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "quality_return_or_cancellation"
+          ],
+          "required_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "retrieved_sections": [
+            "DR-05",
+            "DR-04",
+            "KB-009",
+            "DR-02",
+            "DR-01",
+            "KB-001",
+            "DR-06",
+            "PL-03",
+            "PL-01",
+            "PL-04",
+            "DR-03",
+            "PL-05",
+            "PL-02",
+            "KB-007",
+            "KB-006",
+            "KB-003",
+            "KB-008",
+            "KB-002",
+            "KB-004",
+            "KB-005"
+          ],
+          "context_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "selected_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.027067331572767528,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.5906180918020819
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.5635507602293144
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5094621450380894
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5062183929366563
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.4984043034708771
+              },
+              {
+                "mode": "human",
+                "similarity": 0.46108311948618214
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.4518335433541626
+              }
+            ],
+            "topic": "quality_return",
+            "topic_margin": 0.2979075230338374,
+            "topics": [
+              {
+                "topic": "quality_return",
+                "similarity": 0.9164656059430036
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.6185580829091663
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.6017147933785341
+              },
+              {
+                "topic": "product",
+                "similarity": 0.5508340874356367
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5313550324895219
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.49783939982139735
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4893366556784382
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.48370521738500993
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.45171029395328616
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.4098280995374824
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 4272,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "7 календарных дней",
+              "start": 615,
+              "end": 633,
+              "claim_sha256": "254cee83309bd175c852acba69541c0388edcd3d78c0205e68053915cf90cd2b",
+              "support_sentence": "По политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность."
+            },
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "включая оплаченную доставку",
+              "start": 309,
+              "end": 336,
+              "claim_sha256": "5c11bd758441e06ae6829dc52b7e5ed59c005dbf1d8b00407be4f905b8347fc3",
+              "support_sentence": "До передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "10 календарных дней",
+              "start": 233,
+              "end": 252,
+              "claim_sha256": "714a78bc27fe684f3d14d5bcf48d4ccbff95d122ad7bb56dcd211864fa24ab3b",
+              "support_sentence": "Деньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "фактически уплаченная денежная часть",
+              "start": 538,
+              "end": 574,
+              "claim_sha256": "abb68c67fcf603ebaa313052b6f3601fada8fd26f06c95c5c521438f814edeb2",
+              "support_sentence": "Возвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 3817.87439994514,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F10",
+      "request": {
+        "question": "Пришёл не тот товар. Нужны фото и кто оплатит пересылку обратно?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-05"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-05. Повреждение, брак или ошибка комплектации\n\nПри повреждении, браке или неверном товаре нужно обратиться в поддержку, указав номер заказа, описание и приложив фото товара и упаковки. Желательно сообщить в течение 48 часов после получения: это рекомендация для быстрой проверки, а не автоматическое основание отказать позже. Вскрытие упаковки для обнаружения дефекта не означает автоматический отказ.\n\nПосле проверки магазин предлагает замену или возврат. Обратную пересылку при подтверждённом дефекте или ошибке оплачивает магазин. Ассистент не подтверждает дефект и не обещает одобрение. Если деньги возвращаются за весь заказ из-за подтверждённого дефекта или ошибки, возвращается и оплаченная исходная доставка; при частичном возврате исходная доставка не возвращается. [3d8ede4c-682f-5ab9-afd6-c6ced2dc8195]",
+        "sources": [
+          {
+            "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-05",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "1497b17f-02bd-4654-b527-c611d0812cd4",
+        "latency_ms": {
+          "preparation": 281.09499998390675,
+          "retrieval": 531.1694999691099,
+          "context": 0.27430010959506035,
+          "tools": 0.000400003045797348,
+          "llm": 6142.205100040883,
+          "answer_control": 0.1631999621167779,
+          "semantic_routing": 275.58660006616265,
+          "embedding": 214.7663999348879,
+          "sparse_encoding": 0.1729000359773636,
+          "qdrant_query": 13.982800068333745,
+          "total": 6956.93880005274
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 394,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 753,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 6133.912,
+            "load_duration": 2.703,
+            "prompt_eval_duration": 4709.581,
+            "eval_duration": 1388.214
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "defect_or_wrong_item"
+          ],
+          "required_sections": [
+            "DR-05"
+          ],
+          "retrieved_sections": [
+            "DR-05",
+            "DR-04",
+            "PL-05",
+            "DR-02",
+            "DR-06",
+            "PL-03",
+            "DR-01",
+            "PL-01",
+            "PL-04",
+            "PL-02",
+            "DR-03",
+            "KB-005",
+            "KB-007",
+            "KB-003",
+            "KB-008",
+            "KB-002",
+            "KB-001",
+            "KB-006",
+            "KB-004",
+            "KB-009"
+          ],
+          "context_sections": [
+            "DR-05"
+          ],
+          "selected_sections": [
+            "DR-05"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.0395516022866611,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.7413127393526547
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.7017611370659936
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.6474360759041083
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.606456424100165
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5959870662582096
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.5172364522133386
+              },
+              {
+                "mode": "human",
+                "similarity": 0.4806867893336405
+              }
+            ],
+            "topic": "defect",
+            "topic_margin": 0.11169043189150352,
+            "topics": [
+              {
+                "topic": "defect",
+                "similarity": 0.8392918685461235
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.72760143665462
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.6484056284604035
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.6380921650184253
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.6102230354768963
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5728548074416215
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5610944444546436
+              },
+              {
+                "topic": "product",
+                "similarity": 0.5220331120456344
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5077598433002551
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.46793329155841434
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1852,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-05",
+              "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "за весь заказ",
+              "start": 768,
+              "end": 781,
+              "claim_sha256": "2d93f3935c890b3ac1ae19b58a3ccab3a140b0d385518add93ce231be4f02f73",
+              "support_sentence": "Если деньги возвращаются за весь заказ из-за подтверждённого дефекта или ошибки, возвращается и оплаченная исходная доставка; при частичном возврате исходная доставка не возвращается."
+            },
+            {
+              "section": "DR-05",
+              "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "оплачивает магазин",
+              "start": 666,
+              "end": 684,
+              "claim_sha256": "fd49bcead3a7975eb828a243b8745ea9db4bf26e199e9fc9b82c01c1bcfe6a85",
+              "support_sentence": "Обратную пересылку при подтверждённом дефекте или ошибке оплачивает магазин."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 6960.18919989001,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F11",
+      "request": {
+        "question": "При дефекте всей посылки возврат денег включает исходную доставку или только товары?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-05",
+        "DR-06"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-05. Повреждение, брак или ошибка комплектации\n\nПри повреждении, браке или неверном товаре нужно обратиться в поддержку, указав номер заказа, описание и приложив фото товара и упаковки. Желательно сообщить в течение 48 часов после получения: это рекомендация для быстрой проверки, а не автоматическое основание отказать позже. Вскрытие упаковки для обнаружения дефекта не означает автоматический отказ.\n\nПосле проверки магазин предлагает замену или возврат. Обратную пересылку при подтверждённом дефекте или ошибке оплачивает магазин. Ассистент не подтверждает дефект и не обещает одобрение. Если деньги возвращаются за весь заказ из-за подтверждённого дефекта или ошибки, возвращается и оплаченная исходная доставка; при частичном возврате исходная доставка не возвращается. [3d8ede4c-682f-5ab9-afd6-c6ced2dc8195]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-06. Сумма и сроки возврата\n\nДеньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты. Это срок перечисления магазином; дополнительное время зачисления зависит от банка и здесь не определено. При отмене до передачи срок перечисления — до 10 календарных дней с подтверждения отмены.\n\nВозвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок. Списанные за них бонусы восстанавливаются; начисленные за них бонусы отменяются. При частичном возврате скидка и списанные бонусы распределяются пропорционально стоимости позиций до скидки; денежные доли округляются до копеек, остаток относится к последней позиции заказа. Если начисленные бонусы уже потрачены, поддержка разбирает баланс вручную; ассистент не рассчитывает такой спорный случай самостоятельно. [3b29902b-7c32-5329-a113-95a058386300]",
+        "sources": [
+          {
+            "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-05",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-06",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "bba161f7-7d65-46e0-8dd8-f6894fa4c3c5",
+        "latency_ms": {
+          "preparation": 266.4618999697268,
+          "retrieval": 549.3686000118032,
+          "context": 0.31240005046129227,
+          "tools": 0.000600004568696022,
+          "llm": 8182.198900030926,
+          "answer_control": 0.1933000748977065,
+          "semantic_routing": 262.0644000126049,
+          "embedding": 189.73019998520613,
+          "sparse_encoding": 0.17460004892200232,
+          "qdrant_query": 29.794800095260143,
+          "total": 9000.59179996606
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 516,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 881,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 8147.405,
+            "load_duration": 2.138,
+            "prompt_eval_duration": 6506.3,
+            "eval_duration": 1630.538
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "defect_or_wrong_item",
+            "refund_amount_and_deadline"
+          ],
+          "required_sections": [
+            "DR-05",
+            "DR-06"
+          ],
+          "retrieved_sections": [
+            "DR-05",
+            "DR-04",
+            "DR-06",
+            "DR-01",
+            "DR-02",
+            "PL-05",
+            "PL-04",
+            "PL-01",
+            "PL-02",
+            "PL-03",
+            "DR-03",
+            "KB-005",
+            "KB-007",
+            "KB-003",
+            "KB-001",
+            "KB-002",
+            "KB-006",
+            "KB-004",
+            "KB-009",
+            "KB-008"
+          ],
+          "context_sections": [
+            "DR-05",
+            "DR-06"
+          ],
+          "selected_sections": [
+            "DR-05",
+            "DR-06"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.11818304934228652,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.7113869500979784
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5932039007556918
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5633213366188246
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5241925530160708
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5080769981487139
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.4079104222620662
+              },
+              {
+                "mode": "human",
+                "similarity": 0.3747946594455039
+              }
+            ],
+            "topic": "refund_money",
+            "topic_margin": 0.01871195781934487,
+            "topics": [
+              {
+                "topic": "refund_money",
+                "similarity": 0.6735179217340651
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.6548059639147202
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6411953332587013
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.6290935820452149
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.6252645738194019
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5969889251677214
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5618394131312839
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5208820130807682
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4890808628522043
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.48426979125573794
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 3902,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-05",
+              "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "за весь заказ",
+              "start": 768,
+              "end": 781,
+              "claim_sha256": "2d93f3935c890b3ac1ae19b58a3ccab3a140b0d385518add93ce231be4f02f73",
+              "support_sentence": "Если деньги возвращаются за весь заказ из-за подтверждённого дефекта или ошибки, возвращается и оплаченная исходная доставка; при частичном возврате исходная доставка не возвращается."
+            },
+            {
+              "section": "DR-05",
+              "source_id": "3d8ede4c-682f-5ab9-afd6-c6ced2dc8195",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "оплачивает магазин",
+              "start": 666,
+              "end": 684,
+              "claim_sha256": "fd49bcead3a7975eb828a243b8745ea9db4bf26e199e9fc9b82c01c1bcfe6a85",
+              "support_sentence": "Обратную пересылку при подтверждённом дефекте или ошибке оплачивает магазин."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "10 календарных дней",
+              "start": 233,
+              "end": 252,
+              "claim_sha256": "714a78bc27fe684f3d14d5bcf48d4ccbff95d122ad7bb56dcd211864fa24ab3b",
+              "support_sentence": "Деньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "фактически уплаченная денежная часть",
+              "start": 538,
+              "end": 574,
+              "claim_sha256": "abb68c67fcf603ebaa313052b6f3601fada8fd26f06c95c5c521438f814edeb2",
+              "support_sentence": "Возвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 9003.761800006032,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F12",
+      "request": {
+        "question": "Можно отменить уже переданный перевозчику заказ обычной отменой?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "DR-04"
+      ],
+      "response": {
+        "answer": "# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-04. Отмена и возврат товара надлежащего качества\n\nДо передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку. Списанные бонусы восстанавливаются, начисление по отменённому заказу не производится. После передачи простая отмена недоступна — требуется обращение в поддержку по процедуре возврата.\n\nПо политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность. День получения — день 0. Вскрытая косметика надлежащего качества по этой политике набора данных не принимается. Для реального магазина условия необходимо отдельно проверить с юристом.\n\nПри одобренном возврате надлежащего качества обратную пересылку оплачивает покупатель. Исходная доставка после получения заказа не возвращается; ранее бесплатная доставка задним числом не начисляется. [67411903-b804-51c9-82ec-e4e30b6e6560]\n\n# Доставка и возвраты K-Beauty\n\nПравила относятся к вымышленному магазину K-Beauty и не являются подтверждёнными условиями действующего бизнеса.\n\n## DR-06. Сумма и сроки возврата\n\nДеньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты. Это срок перечисления магазином; дополнительное время зачисления зависит от банка и здесь не определено. При отмене до передачи срок перечисления — до 10 календарных дней с подтверждения отмены.\n\nВозвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок. Списанные за них бонусы восстанавливаются; начисленные за них бонусы отменяются. При частичном возврате скидка и списанные бонусы распределяются пропорционально стоимости позиций до скидки; денежные доли округляются до копеек, остаток относится к последней позиции заказа. Если начисленные бонусы уже потрачены, поддержка разбирает баланс вручную; ассистент не рассчитывает такой спорный случай самостоятельно. [3b29902b-7c32-5329-a113-95a058386300]",
+        "sources": [
+          {
+            "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-04",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+            "source": "data/delivery_and_returns.md",
+            "section": "DR-06",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "ade3b319-54b8-4f32-b9d7-84ab00b98b10",
+        "latency_ms": {
+          "preparation": 436.73399998806417,
+          "retrieval": 587.1032999129966,
+          "context": 0.301100080832839,
+          "tools": 0.000500003807246685,
+          "llm": 2753.9931999053806,
+          "answer_control": 0.16519997734576464,
+          "semantic_routing": 428.1493000453338,
+          "embedding": 205.98169998265803,
+          "sparse_encoding": 0.1674999948590994,
+          "qdrant_query": 47.09150001872331,
+          "total": 3780.3741999669
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 511,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 876,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2746.167,
+            "load_duration": 2.231,
+            "prompt_eval_duration": 1047.789,
+            "eval_duration": 1643.036
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "quality_return_or_cancellation"
+          ],
+          "required_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "retrieved_sections": [
+            "DR-04",
+            "DR-05",
+            "DR-06",
+            "KB-008",
+            "PL-01",
+            "DR-01",
+            "DR-03",
+            "PL-02",
+            "PL-04",
+            "PL-05",
+            "DR-02",
+            "PL-03",
+            "KB-007",
+            "KB-002",
+            "KB-006",
+            "KB-009",
+            "KB-004",
+            "KB-001",
+            "KB-003",
+            "KB-005"
+          ],
+          "context_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "selected_sections": [
+            "DR-04",
+            "DR-06"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.02155193463584637,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.5957021440098277
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5741502093739813
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5461202883570212
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.4875931538365364
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.42431294113620927
+              },
+              {
+                "mode": "human",
+                "similarity": 0.41670285949857583
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.34779848682953723
+              }
+            ],
+            "topic": "quality_return",
+            "topic_margin": 0.054032807516789516,
+            "topics": [
+              {
+                "topic": "quality_return",
+                "similarity": 0.6496968291586517
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.5956640216418622
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5578874855087954
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.5425415727139399
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5268470517879076
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5223861170919908
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.48071892165043245
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.46880356157484454
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4646218256245839
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4048933302739077
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 4272,
+          "retrieved_sources": 20,
+          "context_sources": 2,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "7 календарных дней",
+              "start": 615,
+              "end": 633,
+              "claim_sha256": "254cee83309bd175c852acba69541c0388edcd3d78c0205e68053915cf90cd2b",
+              "support_sentence": "По политике набора данных заявку на возврат товара надлежащего качества принимают в течение 7 календарных дней после получения, если упаковка и защитная пломба не вскрыты, сохранены товарный вид и комплектность."
+            },
+            {
+              "section": "DR-04",
+              "source_id": "67411903-b804-51c9-82ec-e4e30b6e6560",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "включая оплаченную доставку",
+              "start": 309,
+              "end": 336,
+              "claim_sha256": "5c11bd758441e06ae6829dc52b7e5ed59c005dbf1d8b00407be4f905b8347fc3",
+              "support_sentence": "До передачи перевозчику можно отменить весь заказ и получить обратно фактически уплаченную денежную сумму, включая оплаченную доставку."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "10 календарных дней",
+              "start": 233,
+              "end": 252,
+              "claim_sha256": "714a78bc27fe684f3d14d5bcf48d4ccbff95d122ad7bb56dcd211864fa24ab3b",
+              "support_sentence": "Деньги за одобренный возврат перечисляются в течение 10 календарных дней после получения и проверки возвращённого товара, на исходный способ оплаты."
+            },
+            {
+              "section": "DR-06",
+              "source_id": "3b29902b-7c32-5329-a113-95a058386300",
+              "source_sha256": "6fb27510f60a3b03d482e9696de8917a6b7425cc612051a3db5a1154ae4b2a4c",
+              "anchor": "фактически уплаченная денежная часть",
+              "start": 538,
+              "end": 574,
+              "claim_sha256": "abb68c67fcf603ebaa313052b6f3601fada8fd26f06c95c5c521438f814edeb2",
+              "support_sentence": "Возвращается фактически уплаченная денежная часть за возвращаемые товары, а не их цена до скидок."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 3783.5084000835195,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F13",
+      "request": {
+        "question": "Сколько времени на оплату картой? Чек и комиссия как устроены?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "PL-01"
+      ],
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-01. Оплата\n\nЗаказ оплачивается полностью онлайн банковской картой или через СБП. Наличными, при получении и в рассрочку оплатить нельзя. Комиссии магазина нет. Электронный чек направляется на email, указанный при оформлении, после успешной оплаты.\n\nПлатёж ожидается 30 минут с создания заказа; затем неоплаченный заказ автоматически отменяется. Если деньги списаны, а подтверждения нет, не повторяйте оплату сразу: проверьте письмо и кабинет и обратитесь в поддержку. Сервис не может проверить платёж или самостоятельно оформить возврат. Нельзя сообщать ассистенту полный номер карты, CVV/CVC, одноразовые коды или пароль. [c9f37d08-97b1-569e-a98b-80545543d4f1]",
+        "sources": [
+          {
+            "source_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "d1bd2722-9665-41d0-a234-47382864dd39",
+        "latency_ms": {
+          "preparation": 248.4415000071749,
+          "retrieval": 503.98329994641244,
+          "context": 0.23929995950311422,
+          "tools": 0.000400003045797348,
+          "llm": 4509.145300020464,
+          "answer_control": 0.1868000254034996,
+          "semantic_routing": 244.29639999289066,
+          "embedding": 173.04700007662177,
+          "sparse_encoding": 0.16799999866634607,
+          "qdrant_query": 12.375199934467673,
+          "total": 5264.019700000063
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 315,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 672,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 4501.36,
+            "load_duration": 2.483,
+            "prompt_eval_duration": 3045.012,
+            "eval_duration": 1405.357
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "checkout_payment"
+          ],
+          "required_sections": [
+            "PL-01"
+          ],
+          "retrieved_sections": [
+            "PL-01",
+            "PL-03",
+            "PL-04",
+            "DR-06",
+            "PL-05",
+            "DR-01",
+            "PL-02",
+            "DR-02",
+            "DR-03",
+            "DR-04",
+            "DR-05",
+            "KB-007",
+            "KB-004",
+            "KB-001",
+            "KB-008",
+            "KB-006",
+            "KB-002",
+            "KB-005",
+            "KB-003",
+            "KB-009"
+          ],
+          "context_sections": [
+            "PL-01"
+          ],
+          "selected_sections": [
+            "PL-01"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.050972243603610856,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.692137768176871
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.6411655245732601
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.6307700393859932
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.507042912674795
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5022350324364464
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.48786954265647864
+              },
+              {
+                "mode": "human",
+                "similarity": 0.48033860622168717
+              }
+            ],
+            "topic": "payment",
+            "topic_margin": 0.12315127951980398,
+            "topics": [
+              {
+                "topic": "payment",
+                "similarity": 0.7986389212613437
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.6754876417415397
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.6632591021717993
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.60935790892017
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.576389850428719
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.5485907999817238
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5340252251960824
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.5023174193945598
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.4838917339871625
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4435443768749633
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1460,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "PL-01",
+              "source_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "Наличными, при получении и в рассрочку оплатить нельзя",
+              "start": 184,
+              "end": 238,
+              "claim_sha256": "d0778b6be22d1cebed2965811336f3ca31c48941a2387d453bf7065c8fa10332",
+              "support_sentence": "Наличными, при получении и в рассрочку оплатить нельзя."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 5267.069899942726,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F14",
+      "request": {
+        "question": "Деньги с карты ушли, письма нет. Платить второй раз?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "PL-01"
+      ],
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-01. Оплата\n\nЗаказ оплачивается полностью онлайн банковской картой или через СБП. Наличными, при получении и в рассрочку оплатить нельзя. Комиссии магазина нет. Электронный чек направляется на email, указанный при оформлении, после успешной оплаты.\n\nПлатёж ожидается 30 минут с создания заказа; затем неоплаченный заказ автоматически отменяется. Если деньги списаны, а подтверждения нет, не повторяйте оплату сразу: проверьте письмо и кабинет и обратитесь в поддержку. Сервис не может проверить платёж или самостоятельно оформить возврат. Нельзя сообщать ассистенту полный номер карты, CVV/CVC, одноразовые коды или пароль. [c9f37d08-97b1-569e-a98b-80545543d4f1]",
+        "sources": [
+          {
+            "source_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-01",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "213639d8-e3c7-44cd-9f53-05e08248abbb",
+        "latency_ms": {
+          "preparation": 258.2076999824494,
+          "retrieval": 565.6923999777064,
+          "context": 0.237800064496696,
+          "tools": 0.000500003807246685,
+          "llm": 2313.903099973686,
+          "answer_control": 0.14190003275871277,
+          "semantic_routing": 253.76410002354532,
+          "embedding": 176.33319995366037,
+          "sparse_encoding": 0.17310003750026226,
+          "qdrant_query": 65.1206000475213,
+          "total": 3140.2237999718636
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 314,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 671,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 2306.292,
+            "load_duration": 1.982,
+            "prompt_eval_duration": 916.211,
+            "eval_duration": 1380.583
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "checkout_payment"
+          ],
+          "required_sections": [
+            "PL-01"
+          ],
+          "retrieved_sections": [
+            "PL-01",
+            "DR-03",
+            "DR-06",
+            "DR-05",
+            "DR-04",
+            "DR-01",
+            "PL-03",
+            "PL-04",
+            "PL-02",
+            "DR-02",
+            "PL-05",
+            "KB-007",
+            "KB-002",
+            "KB-008",
+            "KB-006",
+            "KB-004",
+            "KB-001",
+            "KB-009",
+            "KB-005",
+            "KB-003"
+          ],
+          "context_sections": [
+            "PL-01"
+          ],
+          "selected_sections": [
+            "PL-01"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "personal_order",
+            "margin": 0.052310313978928824,
+            "modes": [
+              {
+                "mode": "personal_order",
+                "similarity": 0.6184817467200827
+              },
+              {
+                "mode": "information",
+                "similarity": 0.5661714327411539
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5629581799939356
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.561861427536917
+              },
+              {
+                "mode": "human",
+                "similarity": 0.5366324431866223
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.4927624230768172
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.4525039031873196
+              }
+            ],
+            "topic": "refund_money",
+            "topic_margin": 0.008961284014046167,
+            "topics": [
+              {
+                "topic": "refund_money",
+                "similarity": 0.6217841734836637
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.6128228894696175
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.6078178410059139
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.598368666525646
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.589299013869693
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5674018426047093
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.5614285212920451
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.5033107846234113
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.4986970437757243
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4329948716068629
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1460,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "PL-01",
+              "source_id": "c9f37d08-97b1-569e-a98b-80545543d4f1",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "Наличными, при получении и в рассрочку оплатить нельзя",
+              "start": 184,
+              "end": 238,
+              "claim_sha256": "d0778b6be22d1cebed2965811336f3ca31c48941a2387d453bf7065c8fa10332",
+              "support_sentence": "Наличными, при получении и в рассрочку оплатить нельзя."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 3143.2089000009,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F15",
+      "request": {
+        "question": "WELCOME10 при покупке ровно на полторы тысячи: кто имеет право и действует ли на доставку?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "PL-02"
+      ],
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-02. Промокод\n\nПромокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента. Минимальная стоимость товаров до скидки — 1 500 ₽ включительно. Он действует на весь каталог, один раз на клиента, не применяется к доставке. В текущем наборе данных даты окончания нет; реальная проверка права на промокод требует системы заказов.\n\nВ одном заказе можно применить один промокод. WELCOME10 можно совмещать со списанием бонусов. Сначала применяется промокод, затем списываются бонусы. Начисление бонусов при использовании промокода разрешено. [bd26ea39-cec5-52f2-a437-cab928cb1241]",
+        "sources": [
+          {
+            "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "a2abd048-31d1-41b9-aa23-9b9869636918",
+        "latency_ms": {
+          "preparation": 328.9361000061035,
+          "retrieval": 569.2139000166208,
+          "context": 0.2911000046879053,
+          "tools": 0.000400003045797348,
+          "llm": 4944.213100010529,
+          "answer_control": 0.21890003699809313,
+          "semantic_routing": 324.0444000111893,
+          "embedding": 240.93520001042634,
+          "sparse_encoding": 0.19559997599571943,
+          "qdrant_query": 12.97569996677339,
+          "total": 5844.853299902752
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 332,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 691,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 4935.233,
+            "load_duration": 2.638,
+            "prompt_eval_duration": 3466.782,
+            "eval_duration": 1433.656
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "promo_eligibility"
+          ],
+          "required_sections": [
+            "PL-02"
+          ],
+          "retrieved_sections": [
+            "PL-02",
+            "PL-05",
+            "DR-02",
+            "DR-03",
+            "DR-05",
+            "DR-01",
+            "DR-04",
+            "DR-06",
+            "PL-03",
+            "PL-04",
+            "PL-01",
+            "KB-005",
+            "KB-002",
+            "KB-004",
+            "KB-001",
+            "KB-007",
+            "KB-003",
+            "KB-008",
+            "KB-009",
+            "KB-006"
+          ],
+          "context_sections": [
+            "PL-02"
+          ],
+          "selected_sections": [
+            "PL-02"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.0877158622443166,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6489908048590398
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.5612749426147232
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.5447456896978828
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5378273652642216
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.5312970089202422
+              },
+              {
+                "mode": "human",
+                "similarity": 0.45516257854313386
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.44648231780889286
+              }
+            ],
+            "topic": "promo",
+            "topic_margin": 0.14730241654120024,
+            "topics": [
+              {
+                "topic": "promo",
+                "similarity": 0.7776501100894911
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.6303476935482909
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.6050096091278598
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.5896174865661502
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5589824299174555
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.556034307739905
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.538626848358541
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.517961901695709
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.5068089328052572
+              },
+              {
+                "topic": "product",
+                "similarity": 0.45251181188442524
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1335,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "PL-02",
+              "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "можно совмещать",
+              "start": 510,
+              "end": 525,
+              "claim_sha256": "68dde959465a96de0851377f37c90961b276465d7d944644f880aefc42e9ee15",
+              "support_sentence": "WELCOME10 можно совмещать со списанием бонусов."
+            },
+            {
+              "section": "PL-02",
+              "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "первого заказа зарегистрированного клиента",
+              "start": 162,
+              "end": 204,
+              "claim_sha256": "4ccf3dd83934172781abd129d68017ebbfaaa273056653c1433c5411b750203e",
+              "support_sentence": "Промокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 5848.137499997392,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F16",
+      "request": {
+        "question": "Бонусы исчезнут через полгода? Когда начинается их срок?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "PL-03"
+      ],
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-03. Начисление бонусов\n\nУчастие доступно зарегистрированным клиентам. Начисляется 5% от денежной суммы, фактически оплаченной за товары после скидок и списания бонусов, без доставки. Количество бонусов округляется вниз до целого. Например, денежная оплата товаров 1 998 ₽ даёт 99 бонусов.\n\nБонусы начисляются через 14 календарных дней после получения заказа. День получения — день 0. По отменённым и возвращённым товарам начисления нет; уже начисленные бонусы за них отменяются. Бонусы действуют 180 календарных дней с момента начисления, точное время окончания показывается в кабинете. Для вычисления срока от даты нужны дата и время начисления. [8bdf80a8-9a59-50c8-a42e-eac9ac350d74]",
+        "sources": [
+          {
+            "source_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-03",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "5455e3e3-4b1f-4686-b3be-35189e94ea8b",
+        "latency_ms": {
+          "preparation": 276.9720000214875,
+          "retrieval": 517.435000045225,
+          "context": 0.26899995282292366,
+          "tools": 0.000500003807246685,
+          "llm": 5389.658599975519,
+          "answer_control": 0.19799999427050352,
+          "semantic_routing": 271.71969995833933,
+          "embedding": 169.09029998350888,
+          "sparse_encoding": 0.19249995239078999,
+          "qdrant_query": 28.567700064741075,
+          "total": 6186.60999997519
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 363,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 722,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 5381.914,
+            "load_duration": 2.115,
+            "prompt_eval_duration": 3907.163,
+            "eval_duration": 1451.288
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "bonus_accrual_and_expiry"
+          ],
+          "required_sections": [
+            "PL-03"
+          ],
+          "retrieved_sections": [
+            "DR-06",
+            "PL-03",
+            "PL-04",
+            "DR-02",
+            "PL-02",
+            "DR-04",
+            "PL-05",
+            "DR-03",
+            "DR-01",
+            "PL-01",
+            "DR-05",
+            "KB-009",
+            "KB-007",
+            "KB-006",
+            "KB-003",
+            "KB-002",
+            "KB-001",
+            "KB-008",
+            "KB-005",
+            "KB-004"
+          ],
+          "context_sections": [
+            "PL-03"
+          ],
+          "selected_sections": [
+            "PL-03"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.17175082116281887,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6671886253336422
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.49543780417082334
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.47111498179112926
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.41754127705767163
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.4018476827799954
+              },
+              {
+                "mode": "human",
+                "similarity": 0.38390980444775474
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.36993399737442834
+              }
+            ],
+            "topic": "accrual",
+            "topic_margin": 0.07916048284789157,
+            "topics": [
+              {
+                "topic": "accrual",
+                "similarity": 0.7082932021529609
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.6291327193050693
+              },
+              {
+                "topic": "redemption",
+                "similarity": 0.5999851539685915
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.580166660809297
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.48489603256057745
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.47871371494502774
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.4744780867900758
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.4513696523227329
+              },
+              {
+                "topic": "product",
+                "similarity": 0.40798790378592237
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.38581698752887056
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 1506,
+          "retrieved_sources": 20,
+          "context_sources": 1,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "PL-03",
+              "source_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "180 календарных дней",
+              "start": 599,
+              "end": 619,
+              "claim_sha256": "9bc67c403fee6b5b7f3e980df724f35ec601ce3b003b213c0c769e7232640589",
+              "support_sentence": "Бонусы действуют 180 календарных дней с момента начисления, точное время окончания показывается в кабинете."
+            },
+            {
+              "section": "PL-03",
+              "source_id": "8bdf80a8-9a59-50c8-a42e-eac9ac350d74",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "без доставки",
+              "start": 272,
+              "end": 284,
+              "claim_sha256": "a41576d29878b865bd1787ad6dd2694757eff63bf895ccb99a24227dee4a1911",
+              "support_sentence": "Начисляется 5% от денежной суммы, фактически оплаченной за товары после скидок и списания бонусов, без доставки."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 6189.899699995294,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    },
+    {
+      "id": "F17",
+      "request": {
+        "question": "Почему 20 процентов бонусами нужно считать уже после промокода? Можно оба способа сразу?"
+      },
+      "conversation": null,
+      "turn": null,
+      "expected_status": "answered",
+      "group": null,
+      "required_sources": [
+        "PL-02",
+        "PL-04",
+        "PL-05"
+      ],
+      "response": {
+        "answer": "# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-02. Промокод\n\nПромокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента. Минимальная стоимость товаров до скидки — 1 500 ₽ включительно. Он действует на весь каталог, один раз на клиента, не применяется к доставке. В текущем наборе данных даты окончания нет; реальная проверка права на промокод требует системы заказов.\n\nВ одном заказе можно применить один промокод. WELCOME10 можно совмещать со списанием бонусов. Сначала применяется промокод, затем списываются бонусы. Начисление бонусов при использовании промокода разрешено. [bd26ea39-cec5-52f2-a437-cab928cb1241]\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-04. Списание бонусов\n\n1 бонус = 1 ₽. Можно списать целое количество бонусов в пределах доступного баланса и не более 20% стоимости товаров после применения промокода (если он выбран); предел округляется вниз до целого рубля. Доставку бонусами оплатить нельзя. Минимального количества для списания нет.\n\nПример: товары 2 220 ₽, баланс 600 бонусов — максимум списания 444 бонуса, денежная оплата товаров 1 776 ₽. Начислится 88 бонусов, если заказ получен и не возвращён. Право на бесплатную доставку считается после списания бонусов по DR-02. [cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e]\n\n# Оплата и бонусная программа K-Beauty\n\nВсе условия относятся к вымышленному магазину K-Beauty.\n\n## PL-05. Порядок расчёта\n\n1. Сложить цену × количество товаров из актуального каталога.\n2. Если выбран и применим WELCOME10, уменьшить стоимость товаров на 10%, округлив скидку до копеек. Иначе скидка равна нулю.\n3. Списать запрошенные целые бонусы в пределах баланса и лимита 20% стоимости товаров после промокода; предел округляется вниз до целого рубля. Промокод и списание совместимы.\n4. Определить стоимость доставки по зоне, способу и денежной стоимости товаров после промокода и списания бонусов (DR-02).\n5. Денежный итог = товары − скидка − списанные бонусы + доставка.\n6. Будущее начисление = округлённые вниз 5% денежной оплаты товаров; доставка не учитывается.\n\nАссистент может рассчитать расчётный пример по данным пользователя, но не подтверждает баланс, право на промокод, наличие товара или окончательную сумму реального заказа. Не хватает города, способа доставки, количества, статуса первого заказа или баланса — нужно уточнить соответствующие данные. [6f5d0530-8e9f-501c-a763-30712243ed06]",
+        "sources": [
+          {
+            "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-02",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-04",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          },
+          {
+            "source_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+            "source": "data/payment_and_loyalty.md",
+            "section": "PL-05",
+            "document_version": "1.1",
+            "product_id": null,
+            "usage": "quoted"
+          }
+        ],
+        "status": "answered",
+        "grounding_status": "confirmed",
+        "request_id": "205e9e2d-983b-4bd2-8b3c-63e085905de3",
+        "latency_ms": {
+          "preparation": 319.6227999869734,
+          "retrieval": 549.4244999717921,
+          "context": 0.34740008413791656,
+          "tools": 0.000600004568696022,
+          "llm": 7624.366799951531,
+          "answer_control": 0.21890003699809313,
+          "semantic_routing": 314.59019996691495,
+          "embedding": 206.1286000534892,
+          "sparse_encoding": 0.1868000254034996,
+          "qdrant_query": 13.140999944880605,
+          "total": 8496.033999952488
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": {
+          "input_tokens": 454,
+          "output_tokens": 26,
+          "provider": "ollama",
+          "model": "qwen3:0.6b",
+          "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+          "temperature": 0,
+          "seed": 42,
+          "context_limit": 4096,
+          "output_limit": 128,
+          "cpu_threads": 2,
+          "gpu_layers": 0,
+          "input_token_upper_estimate": 819,
+          "tokenizer_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "api_cost": 0,
+          "currency": null,
+          "cost_scope": "local API fee only; compute/electricity not priced",
+          "provider_durations_ms": {
+            "total_duration": 7600.771,
+            "load_duration": 2.075,
+            "prompt_eval_duration": 6064.643,
+            "eval_duration": 1466.98
+          }
+        },
+        "diagnostics": {
+          "intent_facets": [
+            "bonus_redemption_and_calculation"
+          ],
+          "required_sections": [
+            "PL-02",
+            "PL-04",
+            "PL-05"
+          ],
+          "retrieved_sections": [
+            "PL-05",
+            "PL-04",
+            "PL-03",
+            "PL-02",
+            "DR-02",
+            "DR-06",
+            "PL-01",
+            "DR-01",
+            "DR-04",
+            "DR-05",
+            "DR-03",
+            "KB-002",
+            "KB-005",
+            "KB-003",
+            "KB-009",
+            "KB-007",
+            "KB-008",
+            "KB-001",
+            "KB-004",
+            "KB-006"
+          ],
+          "context_sections": [
+            "PL-02",
+            "PL-04",
+            "PL-05"
+          ],
+          "selected_sections": [
+            "PL-02",
+            "PL-04",
+            "PL-05"
+          ],
+          "llm_attempted": true,
+          "semantic": {
+            "mode": "information",
+            "margin": 0.07695531337792172,
+            "modes": [
+              {
+                "mode": "information",
+                "similarity": 0.6527516374565974
+              },
+              {
+                "mode": "calculate",
+                "similarity": 0.5757963240786756
+              },
+              {
+                "mode": "personal_order",
+                "similarity": 0.4789456414323201
+              },
+              {
+                "mode": "unsupported",
+                "similarity": 0.47216907775842737
+              },
+              {
+                "mode": "human",
+                "similarity": 0.45316497910443876
+              },
+              {
+                "mode": "reference",
+                "similarity": 0.4093612539976658
+              },
+              {
+                "mode": "recommend",
+                "similarity": 0.3910604399570182
+              }
+            ],
+            "topic": "redemption",
+            "topic_margin": 0.07687108447639146,
+            "topics": [
+              {
+                "topic": "redemption",
+                "similarity": 0.7278596467502526
+              },
+              {
+                "topic": "accrual",
+                "similarity": 0.6509885622738611
+              },
+              {
+                "topic": "payment",
+                "similarity": 0.5660091954863617
+              },
+              {
+                "topic": "refund_money",
+                "similarity": 0.547800685545362
+              },
+              {
+                "topic": "promo",
+                "similarity": 0.5451415913877322
+              },
+              {
+                "topic": "quality_return",
+                "similarity": 0.46909073275917285
+              },
+              {
+                "topic": "tracking",
+                "similarity": 0.4657546389323184
+              },
+              {
+                "topic": "delivery",
+                "similarity": 0.4474552695862069
+              },
+              {
+                "topic": "product",
+                "similarity": 0.4365773534747595
+              },
+              {
+                "topic": "defect",
+                "similarity": 0.42105384883344815
+              }
+            ],
+            "score_is_probability": false
+          },
+          "operation": "information",
+          "llm_calls_attempted": 1,
+          "llm_calls_completed": 1,
+          "model_abstained": false,
+          "missing_obligation_sections": [],
+          "coverage_verified": true,
+          "generation_performed": true,
+          "answer_mode": "validated_extractive",
+          "context_bytes": 4694,
+          "retrieved_sources": 20,
+          "context_sources": 3,
+          "reranker_applied": false,
+          "score_is_probability": false,
+          "reason": "validated_evidence",
+          "claim_bindings": [
+            {
+              "section": "PL-02",
+              "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "можно совмещать",
+              "start": 510,
+              "end": 525,
+              "claim_sha256": "68dde959465a96de0851377f37c90961b276465d7d944644f880aefc42e9ee15",
+              "support_sentence": "WELCOME10 можно совмещать со списанием бонусов."
+            },
+            {
+              "section": "PL-02",
+              "source_id": "bd26ea39-cec5-52f2-a437-cab928cb1241",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "первого заказа зарегистрированного клиента",
+              "start": 162,
+              "end": 204,
+              "claim_sha256": "4ccf3dd83934172781abd129d68017ebbfaaa273056653c1433c5411b750203e",
+              "support_sentence": "Промокод WELCOME10 даёт скидку 10% на товары первого заказа зарегистрированного клиента."
+            },
+            {
+              "section": "PL-04",
+              "source_id": "cc0f2ea9-e954-5580-a2a2-ec1c4e60fa3e",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "20% стоимости товаров после применения промокода",
+              "start": 220,
+              "end": 268,
+              "claim_sha256": "aa2efbf9bb451cec6e2a899bb1c21484e3d48b858bbe75df280e2e01fa082ccd",
+              "support_sentence": "Можно списать целое количество бонусов в пределах доступного баланса и не более 20% стоимости товаров после применения промокода (если он выбран); предел округляется вниз до целого рубля."
+            },
+            {
+              "section": "PL-05",
+              "source_id": "6f5d0530-8e9f-501c-a763-30712243ed06",
+              "source_sha256": "6fe4ab4251580ee1b46d303947d45f35c5de23d0aac5c26c574f352d4e59fee8",
+              "anchor": "Денежный итог",
+              "start": 613,
+              "end": 626,
+              "claim_sha256": "553639ffae86e1a29206c1d4208d3dedc50ceaba792103350fced3ee8f436f51",
+              "support_sentence": "Денежный итог = товары − скидка − списанные бонусы + доставка."
+            }
+          ],
+          "support_bundle": true,
+          "llm_context_kind": "registered_support_descriptors",
+          "llm_role": "source_support_selection",
+          "context_sections_override": null
+        },
+        "handoff": null,
+        "external_data": null
+      },
+      "http_status": 200,
+      "http_latency_ms": 8499.52770001255,
+      "grade": {
+        "scenario_passed": true,
+        "status_correct": true,
+        "expected_status": "answered",
+        "complete": true,
+        "missing_sources": [],
+        "missing_facts": [],
+        "source_fact_integrity": true,
+        "calculation_correct": null,
+        "route_correct": true,
+        "unsafe_external_action_or_secret": false,
+        "critical_failure": false,
+        "scope": "Deterministic source/fact/contract checks, not blind human evaluation or universal entailment"
+      }
+    }
+  ],
+  "completed": 17,
+  "expected_count": 42,
+  "metrics": {
+    "scenario_pass_count": 14,
+    "scenario_total": 17,
+    "scenario_pass_rate": 0.8235294117647058,
+    "answer_completeness": 0.8235294117647058,
+    "expected_answer_denominator": 17,
+    "actual_answered": 14,
+    "source_fact_integrity": 1,
+    "refusal_status_accuracy": null,
+    "refusal_denominator": 0,
+    "calculation_accuracy": null,
+    "calculation_denominator": 0,
+    "routing_accuracy": 1,
+    "real_llm_completed": 17,
+    "critical_failures": 0,
+    "http_latency": {
+      "p50_ms": 5848.137499997392,
+      "p95_ms": 14067.231600056402
+    },
+    "stage_latency": {
+      "retrieval": {
+        "p50_ms": 565.6923999777064,
+        "p95_ms": 1166.5073999902233
+      },
+      "llm": {
+        "p50_ms": 4643.143899971619,
+        "p95_ms": 12485.082000028342
+      }
+    },
+    "answer_latency_by_route": {
+      "unreported": {
+        "samples": 3,
+        "p50_ms": 6200.908900005743,
+        "p95_ms": 7474.392299889587
+      },
+      "validated_extractive": {
+        "samples": 14,
+        "p50_ms": 5495.813000015914,
+        "p95_ms": 14067.231600056402
+      }
+    }
+  }
+}

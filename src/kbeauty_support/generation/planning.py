@@ -57,6 +57,26 @@ class SemanticRouter:
         self.encoder=encoder
         self.prototypes=[(kind,key,text) for kind,groups in [('mode',MODE_TEXTS),('topic',TOPIC_TEXTS)] for key,texts in groups.items() for text in texts]
         self.vectors=encoder.encode([text for _,_,text in self.prototypes])
+        self.parameter_types={'courier':'Курьерская доставка курьером до двери покупателя.',
+          'pickup':'Получение в пункте выдачи заказов ПВЗ.',
+          'location':'Географическое название: город, страна, населённый пункт.',
+          'other_transport':'Техническое транспортное средство для перевозки груза: тип транспорта.',
+          'other_attribute':'Цена, скидка, сроки или условие обслуживания.'}
+        self.parameter_vectors=encoder.encode(list(self.parameter_types.values()))
+
+    def delivery_parameter(self,question: str,mention: str) -> dict:
+        if not mention:return {'mention':'','unsupported_verified':False,'origin':'user_text','score_is_probability':False}
+        match=re.search(re.escape(mention),question,re.I)
+        if match is None:raise ServiceError('ungrounded_request_parameter',502)
+        start=match.start()
+        vector=self.encoder.encode([mention])[0]
+        ranked=sorted(((sum(a*b for a,b in zip(vector,p,strict=True)),key)
+          for key,p in zip(self.parameter_types,self.parameter_vectors,strict=True)),reverse=True)
+        margin=ranked[0][0]-ranked[1][0]
+        return {'mention':question[start:start+len(mention)],'start':start,'end':start+len(mention),
+          'mention_sha256':hashlib.sha256(question[start:start+len(mention)].encode()).hexdigest(),
+          'semantic_type':ranked[0][1],'margin':margin,'origin':'user_text','score_is_probability':False,
+          'unsupported_verified':ranked[0][1]=='other_transport' and margin>=.02}
 
     def classify(self, question: str) -> dict:
         query=self.encoder.encode([question])[0]

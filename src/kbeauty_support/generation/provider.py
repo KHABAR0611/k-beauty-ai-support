@@ -118,9 +118,9 @@ class OllamaProvider:
             schema['properties']['delivery_method']={'type':'string','enum':['курьер','ПВЗ','другой','не указан']}
             schema['required'].append('delivery_method')
         if slot_only:
-            messages=[{'role':'system','content':'Извлеки только явно названный способ доставки. Курьер или до двери = курьер. Пункт выдачи = ПВЗ. Иной названный транспорт = другой. Если способ не назван = не указан. Не отвечай на вопрос.'},
+            messages=[{'role':'system','content':'Выпиши дословно короткий фрагмент вопроса, обозначающий явно названный способ или транспорт доставки. Не выписывай город, страну, цену или срок. Если способ не назван, верни пустую строку. Не отвечай на вопрос.'},
                       {'role':'user','content':question}]
-            schema={'type':'object','properties':{'способ':{'type':'string','enum':['курьер','ПВЗ','другой','не указан']}},'required':['способ'],'additionalProperties':False}
+            schema={'type':'object','properties':{'mention':{'type':'string','maxLength':80}},'required':['mention'],'additionalProperties':False}
         if self.counter is None:
             self.counter=QwenTokenCounter(self.tokenizer_dir)
         estimate=self.counter(json.dumps({"messages":messages,"format":schema},ensure_ascii=False))+256
@@ -148,8 +148,11 @@ class OllamaProvider:
                     raise ServiceError("llm_incomplete_response",502)
                 selected=json.loads(value["message"]["content"])
                 if slot_only:
-                    if set(selected)!={'способ'}:raise ServiceError('invalid_delivery_parameter',502)
-                    selected={'abstain':False,'evidence_ids':[],'delivery_method':selected['способ']}
+                    if (set(selected)!={'mention'} or not isinstance(selected['mention'],str) or len(selected['mention'])>80
+                        or (selected['mention'] and selected['mention'].casefold() not in question.casefold())):
+                        raise ServiceError('ungrounded_request_parameter',502)
+                    mention=selected['mention']
+                    selected={'abstain':False,'evidence_ids':[],'delivery_method':'не указан'}
                 expected={'abstain','evidence_ids'} | ({'delivery_method'} if delivery_slot else set())
                 if (set(selected)!=expected or not isinstance(selected["abstain"],bool)
                         or not isinstance(selected["evidence_ids"],list) or len(selected["evidence_ids"])>len(aliases)
@@ -172,7 +175,7 @@ class OllamaProvider:
                        "api_cost":0,"currency":None,"cost_scope":"local API fee only; compute/electricity not priced"}
                 usage["provider_durations_ms"]={k:round(value[k]/1e6,3) for k in ("total_duration","load_duration","prompt_eval_duration","eval_duration")
                     if isinstance(value.get(k),int) and not isinstance(value[k],bool) and value[k]>=0}
-                return Generation(draft,usage,{'delivery_method':selected['delivery_method']} if delivery_slot else {})
+                return Generation(draft,usage,{'delivery_mention':mention} if slot_only else {'delivery_method':selected['delivery_method']} if delivery_slot else {})
             except (httpx.ConnectError,httpx.ConnectTimeout):
                 if attempt==1:
                     raise ServiceError("llm_unavailable") from None

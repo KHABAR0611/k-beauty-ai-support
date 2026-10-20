@@ -77,7 +77,7 @@ def test_partial_or_abstaining_selection_is_not_reported_answered():
     _,r=service.chat(ChatRequest(question='Оплата'),'test')
     assert r.status=='insufficient_context'
 
-@pytest.mark.parametrize('value,valid',[('другой',True),('самолёт',False)])
+@pytest.mark.parametrize('value,valid',[('курьером',True),('поддельный',False)])
 def test_actual_provider_delivery_parameter_schema_and_strict_validation(value,valid):
     import httpx,json
     from kbeauty_support.generation.provider import OllamaProvider
@@ -85,16 +85,16 @@ def test_actual_provider_delivery_parameter_schema_and_strict_validation(value,v
     def handler(request):
         if request.method=='GET':return httpx.Response(200,json={'models':[{'name':'qwen3:0.6b','digest':digest,'context_length':8192}]})
         body=json.loads(request.content)
-        assert body['format']['required']==['способ']
-        assert len(body['messages'])==2 and body['messages'][1]['content']=='Другой способ?'
-        content=json.dumps({'способ':value})
+        assert body['format']['required']==['mention']
+        assert len(body['messages'])==2 and body['messages'][1]['content']=='Доставка курьером?'
+        content=json.dumps({'mention':value})
         return httpx.Response(200,json={'model':'qwen3:0.6b','done':True,'message':{'content':content}})
     provider=OllamaProvider('http://127.0.0.1:11434',model='qwen3:0.6b',expected_digest=digest,token_counter=lambda text:100,
         client=httpx.Client(transport=httpx.MockTransport(handler)))
     evidence=[{'source_id':'bundle','evidence_id':'bundle:support','section':'support','text':'Доставка'}]
-    if valid:assert provider.extract_delivery('Другой способ?',5).attributes['delivery_method']==value
+    if valid:assert provider.extract_delivery('Доставка курьером?',5).attributes['delivery_mention']==value
     else:
-        with pytest.raises(ServiceError,match='invalid_delivery_parameter'):provider.extract_delivery('Другой способ?',5)
+        with pytest.raises(ServiceError,match='ungrounded_request_parameter'):provider.extract_delivery('Доставка курьером?',5)
 
 @pytest.mark.parametrize('product_id',[f'KB-{n:03d}' for n in range(1,10)])
 def test_support_bundle_preserves_exact_product_identity_and_price(product_id):
@@ -102,3 +102,22 @@ def test_support_bundle_preserves_exact_product_identity_and_price(product_id):
     service=make_service();record=service.snapshot.products[product_id]
     bundle=support_bundle([record],bind_claims([record],service.snapshot))
     assert json.loads(bundle['text'])['exact_products']==[record['product']]
+
+def test_semantic_personal_order_action_with_reference_never_becomes_generic_faq():
+    service=make_service();service.semantic=SemanticDouble(mode='personal_order',topic='tracking')
+    _,r=service.chat(ChatRequest(question='Узнайте причину задержки заказа 12345'),'test')
+    assert r.status=='requires_external_data' and not r.external_data['action_performed']
+
+def test_parameter_span_and_semantic_type_are_independent_veto_requirements():
+    from kbeauty_support.generation.planning import SemanticRouter
+    router=SemanticRouter.__new__(SemanticRouter)
+    router.parameter_types={'location':'place','other_transport':'vehicle'}
+    router.parameter_vectors=[[1,0],[0,1]]
+    class Encoder:
+        def encode(self,texts):return [[0,1] if texts[0]=='дирижаблем' else [1,0]]
+    router.encoder=Encoder()
+    actual=router.delivery_parameter('Привезите дирижаблем','дирижаблем')
+    assert actual['unsupported_verified'] and actual['origin']=='user_text'
+    assert actual['start']==10 and actual['end']==20
+    assert not router.delivery_parameter('Привезите в Самару','Самару')['unsupported_verified']
+    with pytest.raises(ServiceError):router.delivery_parameter('Привезите в Самару','отсутствует')

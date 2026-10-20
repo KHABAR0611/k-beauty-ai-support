@@ -14,9 +14,9 @@
     "src/kbeauty_support/generation/control.py": "5606ea3b5a63d5ba829af908fb1f04e2ebd4082e3bbce96b35eccf7228b66c20",
     "src/kbeauty_support/generation/errors.py": "1e6391e7f5f98b7035b453920e49e852985df0f6f3d1d39366e60e8c300d6c18",
     "src/kbeauty_support/generation/intent.py": "bdbf914b014219a52a23602aa8f140c8a2252c83764e3d3b8496aa9b03ad8e5f",
-    "src/kbeauty_support/generation/planning.py": "a02f955a9a79a4ef8cddbc47ef2e20130f77eace816359c09c7b587fe20bb72b",
-    "src/kbeauty_support/generation/provider.py": "9bd4203864c77aefe8bcd986027a32a93ff242135fac5be41481163409275a6d",
-    "src/kbeauty_support/generation/service.py": "e69777ce29867d5a2bd4a51328b4359f67f04a8f37238451263d75360a1d57a2",
+    "src/kbeauty_support/generation/planning.py": "ba4504094458c600a6d4e7284c2916b4457f9227565243bb304ba98477dee90e",
+    "src/kbeauty_support/generation/provider.py": "228797c6d2b7ca05f9bca52070a57be70f75f47c2beb39c3748159a9bcdb6891",
+    "src/kbeauty_support/generation/service.py": "b06bb1648958c24f70d1a153aa77a34b2dba565276b0a9ba77bba860b622debf",
     "src/kbeauty_support/generation/tokenization.py": "f336bc912a7c62e94284745e9efa1ca65cc4bc16320894e786932cdd4c8ddeff",
     "src/kbeauty_support/infrastructure/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "src/kbeauty_support/ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -46,6 +46,9 @@
     "api_deadline_seconds": 40,
     "reranker": false
   },
+  "candidate_revision": 2,
+  "prior_candidate": "f29f054",
+  "independent_started_before_revision": false,
   "independent_run_limit": 1,
   "hash_scope": "UTF8 source normalized LF for platform Git EOL conversion"
 }

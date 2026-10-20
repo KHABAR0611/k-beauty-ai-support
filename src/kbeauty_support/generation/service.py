@@ -65,6 +65,10 @@ class ChatService(OutcomeMetrics):
                 if strong and mode=='human':
                     return result('handoff_required','Нужна проверка сотрудником; обращение ещё не передано.',
                         handoff=self.control.handoff('semantic_human_request',request_id),diagnostics=trace)
+                if (mode=='personal_order' and semantic['margin']>=.04 and
+                    re.search(r'заказ\D{0,10}\d{3,}|(?:мой|моего|моему)\s+заказ',request.question,re.I)):
+                    return result('requires_external_data','Нет доступа к реальным заказам. Статус не проверен, действия не выполнены.',
+                        external_data={'system':'order_management','available':False,'action_performed':False},diagnostics=trace)
             if request.pricing is None and re.search(r"итог|заплачу|спиш[иу]|спишите|рассчита",request.question,re.I):
                 raise InsufficientContext(["pricing"])
             if request.catalog_query is None and request.pricing is None and (intent.clarification or re.search(r"подбери|порекомендуй",request.question,re.I)):
@@ -131,11 +135,13 @@ class ChatService(OutcomeMetrics):
                         timings['parameter_extraction']=(time.perf_counter()-slot_start)*1000
                         generated.attributes.update(slot.attributes)
                         generated.usage['parameter_extraction']=slot.usage
-                        trace['request_parameters']=slot.attributes
+                        parameter=self.semantic.delivery_parameter(request.question,slot.attributes['delivery_mention'])
+                        generated.attributes['unsupported_delivery']=parameter['unsupported_verified']
+                        trace['request_parameters']=parameter
                 finally:
                     timings["llm"]=(time.perf_counter()-phase)*1000
                 generation_performed=True;usage=generated.usage;abstain=generated.draft.abstain
-                if bundle and generated.attributes.get('delivery_method')=='другой':
+                if bundle and (generated.attributes.get('unsupported_delivery') or generated.attributes.get('delivery_method')=='другой'):
                     return result('insufficient_context','Правила не подтверждают запрошенный способ доставки.',usage=usage,
                                   diagnostics={'reason':'unsupported_delivery_parameter','generation_performed':True,'delivery_method':'другой'})
                 for claim in generated.draft.selections:
