@@ -1,6 +1,6 @@
 # Архитектура K-Beauty AI Support
 
-Статус0.6.0: реализованы ingestion, dense BGE-M3, BM25, server-side RRF и optional multilingual cross-encoder reranking. В одном point находятся named vectors dense и bm25 от одного текста. LLM и API на полной схеме ниже — последующие этапы, не текущая реализация.
+Статус0.7.0: ingestion, dense/BM25/RRF, optional reranker, FastAPI, versioned tools и локальный Ollama adapter реализованы. Исторические схемы ниже отделены от актуальной API-границы. Default provider disabled; реальная генерация/ошибки и тестовые doubles описаны в отчёте Блока5. Не подключены заказы, платежи и операторская система.
 
 ## Indexing pipeline
 
@@ -53,11 +53,11 @@ JSON остаётся каноническим источником SKU/цен/�
 
 Неизменный source/analyzer/model manifest — no-op. Изменение данных создаёт staging collection нового поколения. UUIDv5 по логической идентичности chunk обеспечивает повторяемый upsert внутри поколения. Проверка counts, hashes и retrieval-smoke предшествует atomic alias switch. Удалённых chunks в новом поколении нет: одного upsert недостаточно для очистки старых записей.
 
-Сбой до публикации сохраняет прежний active index. Повторный запуск продолжает то же staging-поколение. Единственный publisher защищён файловой блокировкой в однопроцессном режиме; распределённая блокировка — отдельный этап. Прежние поколения хранятся до окончания retention и in-flight запросов. Откат — alias на прошлый проверенный manifest. Этот механизм пока специфицирован, не реализован.
+Сбой до публикации сохраняет прежний active index. Повторный запуск продолжает то же staging-поколение. Единственный publisher защищён файловой блокировкой в однопроцессном режиме; распределённая блокировка — отдельный этап. Прежние поколения хранятся до окончания retention и in-flight запросов. Откат — alias на прошлый проверенный manifest. Staging/readback/atomic alias реализованы; автоматический retention/GC и распределённая блокировка не реализованы.
 
 ## Недостаточные основания
 
-Не хватает города, способа доставки, баланса или статуса первого заказа — `needs_clarification`. Нет подтверждения факта — `insufficient_evidence`. Недоступен Qdrant/provider — 503/504, а не ложный ответ «не найдено». Ссылки обязаны принадлежать переданному context; числовые поля — точному snapshot. Самооценка LLM не является проверкой фактов.
+Не хватает города, способа доставки, баланса или статуса первого заказа — `clarification_needed`. Нет подтверждения факта — `insufficient_context`. Недоступен Qdrant/provider — 503/504, а не ложный ответ «не найдено». Ссылки обязаны принадлежать переданному context; числовые поля — точному snapshot. Самооценка LLM не является проверкой фактов.
 
 ## Границы доверия
 
@@ -65,11 +65,11 @@ Ingestion читает только allowlist трёх файлов, не про
 
 ## Развёртывание
 
-Сейчас Compose содержит Qdrant с persistent volume и одноразовый source-audit. Позже API — отдельный долгоживущий контейнер, ingestion — batch job с write-доступом. Dense/BM25/reranker adapters исполняются в процессе либо выносятся в model services после измерения ресурсов. LLM — внешний endpoint. Пока нет действующих моделей, отдельные фиктивные model/API контейнеры не добавляются.
+Сейчас Compose содержит Qdrant с persistent volume и одноразовый source-audit. Позже API — отдельный долгоживущий контейнер, ingestion — batch job с write-доступом. Dense/BM25/reranker adapters исполняются в процессе либо выносятся в model services после измерения ресурсов. LLM — внешний endpoint. API/модели работают нативно; отдельные model/API контейнеры не добавлены и не проверены.
 
 ## Бизнес-база1.1
 
-По ADR-016 расчёт: promo → bonus (cap20% после promo) → delivery threshold после обоих. KB-004=1890, KB-005=1590. Pricing всё ещё будущий компонент; текущие tests проверяют source/expected consistency, не работающий API.
+По ADR-016 расчёт: promo → bonus (cap20% после promo) → delivery threshold после обоих. KB-004=1890, KB-005=1590. Pricing реализован versioned tool в0.7.0; source consistency и работающий API проверяются раздельно.
 
 ## Реализованная dense-граница 0.4.0
 
@@ -134,3 +134,30 @@ Reranking не меняет коллекцию или её generation. Уже и
 FP32 ONNX выполняется локально через тот же Runtime, CPU2 threads, batch1, без remote code. Hash/size/revision gate предшествует session creation. Предел512 относится к паре query/document вместе со special tokens; silent truncation отсутствует. Неполный набор scores никогда не становится частично отсортированным ответом. Модель не получает qrels или ID ожидаемых источников. [Выбор модели](reranker-model-selection.md), [план](block-4-experiment-plan.json), [результаты](block-4-results.md).
 
 Текущая реализация синхронная и не имеет жёсткого прерывания зависшего native inference. Конкурентная нагрузка, отдельный worker, circuit breaker, request deadline и warm readiness требуют следующего инженерного решения перед HTTP-эксплуатацией. Наличие fallback не доказывает latency SLO. Reranker нельзя применить к источнику, отсутствующему в candidate pool; полнота составного вопроса ограничена final_k.
+
+
+## API/generation boundary0.7
+
+```mermaid
+flowchart TD
+  U[HTTP client] --> B[Body/auth/rate/request ID boundary]
+  B --> W[Single bounded worker]
+  W --> R[Hybrid pool20; pin physical generation]
+  R --> V[Approved snapshot integrity; complete corpus]
+  V --> C[Domain coverage + whole units + budgets]
+  C --> T[Typed Decimal/catalog tools]
+  T --> D{Deterministic or external-data route?}
+  D -->|tools/control| A[Independent Answer Control]
+  D -->|FAQ| L[Local Ollama/Qwen; compact evidence aliases]
+  L --> G[JSON schema, ID mapping, exact source support]
+  G --> A
+  A --> O[Six statuses, answer, sources, timings]
+  A --> H[Handoff description; never a created ticket]
+  O --> M[Outcome counters, not customer resolution]
+```
+
+For this small corpus the retriever returns all20 candidates. Top5 quality is still measured separately and unchanged; full required-source coverage is a context planning strategy, not a new retrieval score. Exact catalog absence is established only after all20 IDs/payload match the approved source snapshot, including9 products. No implicit facts are inserted from arbitrary local files. Query/source/model generations remain checked; API has no indexing endpoint.
+
+A single shared encoder uses CPU2 threads; a single worker prevents concurrent model heaps. Background warmup keeps health available; ready requires index/readback/model/provider/auth. External LLM has local-only URL, digest gate, explicit cold warmup, constrained JSON schema, pinned tokenizer budget and no paid fallback. Source aliases map back to full UUIDs. Confirmed business facts originate from immutable full source units or versioned deterministic tools, not unchecked free paraphrase.
+
+Error mapping, structured logging and status logic are separate. Transport/provider failures cannot become successful answers. Clock-based rate/body/deadline limits are process-local. Native inference cannot be force-stopped safely; deadline does not release the worker until it completes. No HA, distributed limits, real handoff dispatch or production readiness is claimed.

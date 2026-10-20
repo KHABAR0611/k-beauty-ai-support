@@ -1,0 +1,2423 @@
+{
+  "samples": [
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 12.78125,
+          "working_set_bytes": 164528128,
+          "peak_working_set_bytes": 256516096,
+          "private_commit_bytes": 246951936
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1539829760,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 0.3197185
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 12.890625,
+          "working_set_bytes": 164528128,
+          "peak_working_set_bytes": 256516096,
+          "private_commit_bytes": 246951936
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1539829760,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 2.3833692
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 13.671875,
+          "working_set_bytes": 424730624,
+          "peak_working_set_bytes": 441487360,
+          "private_commit_bytes": 512761856
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1539829760,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 4.4010486
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 13.828125,
+          "working_set_bytes": 436170752,
+          "peak_working_set_bytes": 441487360,
+          "private_commit_bytes": 522637312
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 6.4195304
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 15.34375,
+          "working_set_bytes": 442437632,
+          "peak_working_set_bytes": 442441728,
+          "private_commit_bytes": 525946880
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 8.427088
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 17.359375,
+          "working_set_bytes": 442437632,
+          "peak_working_set_bytes": 442441728,
+          "private_commit_bytes": 525946880
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 10.4472147
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 18.203125,
+          "working_set_bytes": 581902336,
+          "peak_working_set_bytes": 581906432,
+          "private_commit_bytes": 664940544
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 12.4560918
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 18.3125,
+          "working_set_bytes": 607195136,
+          "peak_working_set_bytes": 610615296,
+          "private_commit_bytes": 694198272
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 14.4695191
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 18.328125,
+          "working_set_bytes": 628207616,
+          "peak_working_set_bytes": 628211712,
+          "private_commit_bytes": 715206656
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 16.4842197
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 18.484375,
+          "working_set_bytes": 690368512,
+          "peak_working_set_bytes": 690372608,
+          "private_commit_bytes": 765571072
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1481097216,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 18.5033403
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 18.734375,
+          "working_set_bytes": 791375872,
+          "peak_working_set_bytes": 791379968,
+          "private_commit_bytes": 866308096
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1346879488,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 20.8819238
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.015625,
+          "working_set_bytes": 892260352,
+          "peak_working_set_bytes": 892264448,
+          "private_commit_bytes": 967036928
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1346879488,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20692992,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60698624
+        }
+      ],
+      "elapsed_seconds": 22.8993185
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.328125,
+          "working_set_bytes": 992989184,
+          "peak_working_set_bytes": 992993280,
+          "private_commit_bytes": 1067753472
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1346879488,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 24.9126625
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.40625,
+          "working_set_bytes": 1011449856,
+          "peak_working_set_bytes": 1013465088,
+          "private_commit_bytes": 1097101312
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 26.9265928
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.53125,
+          "working_set_bytes": 1058775040,
+          "peak_working_set_bytes": 1058779136,
+          "private_commit_bytes": 1134886912
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 28.9370095
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.765625,
+          "working_set_bytes": 1144651776,
+          "peak_working_set_bytes": 1144655872,
+          "private_commit_bytes": 1218818048
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 30.9499476
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.875,
+          "working_set_bytes": 1206697984,
+          "peak_working_set_bytes": 1206702080,
+          "private_commit_bytes": 1285947392
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 32.9660447
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.90625,
+          "working_set_bytes": 1214038016,
+          "peak_working_set_bytes": 1214042112,
+          "private_commit_bytes": 1285947392
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 34.977583
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 19.96875,
+          "working_set_bytes": 1215102976,
+          "peak_working_set_bytes": 1215107072,
+          "private_commit_bytes": 1302720512
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 36.9925563
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.125,
+          "working_set_bytes": 1282691072,
+          "peak_working_set_bytes": 1282695168,
+          "private_commit_bytes": 1369890816
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1255239680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 39.0178803
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.21875,
+          "working_set_bytes": 1317588992,
+          "peak_working_set_bytes": 1317593088,
+          "private_commit_bytes": 1403445248
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 41.0345845
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.234375,
+          "working_set_bytes": 1333415936,
+          "peak_working_set_bytes": 1333420032,
+          "private_commit_bytes": 1420247040
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 43.0561551
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.328125,
+          "working_set_bytes": 1383309312,
+          "peak_working_set_bytes": 1383313408,
+          "private_commit_bytes": 1470611456
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 45.063269
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.34375,
+          "working_set_bytes": 1391480832,
+          "peak_working_set_bytes": 1391484928,
+          "private_commit_bytes": 1470611456
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 47.0837764
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.5625,
+          "working_set_bytes": 1483550720,
+          "peak_working_set_bytes": 1483554816,
+          "private_commit_bytes": 1571336192
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 49.0931952
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.703125,
+          "working_set_bytes": 1514221568,
+          "peak_working_set_bytes": 1517027328,
+          "private_commit_bytes": 1600700416
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 51.1054216
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 20.765625,
+          "working_set_bytes": 1543172096,
+          "peak_working_set_bytes": 1543176192,
+          "private_commit_bytes": 1621712896
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1121021952,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 53.1261961
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 21.046875,
+          "working_set_bytes": 1657556992,
+          "peak_working_set_bytes": 1657561088,
+          "private_commit_bytes": 1739186176
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1012908032,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20779008,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60731392
+        }
+      ],
+      "elapsed_seconds": 55.1414754
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 21.515625,
+          "working_set_bytes": 1653829632,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1739603968
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1012908032,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20467712,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60346368
+        }
+      ],
+      "elapsed_seconds": 57.1542441
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 23.15625,
+          "working_set_bytes": 1656471552,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1742213120
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1012908032,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20467712,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60346368
+        }
+      ],
+      "elapsed_seconds": 59.1749985
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 25.265625,
+          "working_set_bytes": 1657806848,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743319040
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1012908032,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20467712,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60346368
+        }
+      ],
+      "elapsed_seconds": 61.1832199
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.421875,
+          "working_set_bytes": 1658073088,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743319040
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.0625,
+          "working_set_bytes": 1012908032,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3160199168
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.015625,
+          "working_set_bytes": 20594688,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 60477440
+        }
+      ],
+      "elapsed_seconds": 63.200071
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 784.75,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 65.2183286
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 788.765625,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 67.2274716
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 792.78125,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 69.2433456
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 796.734375,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 71.2549808
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 800.75,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 73.2674896
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 804.703125,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 75.2806158
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 808.734375,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 77.2959032
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 812.765625,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 79.3023783
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 816.625,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 81.3115644
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658335232,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 820.6875,
+          "working_set_bytes": 1239560192,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 83.3302671
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658322944,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743310848
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 824.0625,
+          "working_set_bytes": 1249128448,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 85.3398888
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658306560,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743278080
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 824.265625,
+          "working_set_bytes": 1313861632,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419361280
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 87.3501699
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658306560,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743278080
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 824.625,
+          "working_set_bytes": 1362038784,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3431235584
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 89.3650105
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658306560,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743278080
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 826.21875,
+          "working_set_bytes": 1364430848,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3421048832
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 91.3718062
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 27.765625,
+          "working_set_bytes": 1658306560,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743278080
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 830.109375,
+          "working_set_bytes": 1362903040,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3419344896
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.03125,
+          "working_set_bytes": 21131264,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61181952
+        }
+      ],
+      "elapsed_seconds": 93.3799634
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 831.515625,
+          "working_set_bytes": 1485811712,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3541184512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.078125,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 95.3883468
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 835.5625,
+          "working_set_bytes": 1410170880,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3541184512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.078125,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 97.4077446
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 839.59375,
+          "working_set_bytes": 1410170880,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3541184512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.078125,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 99.4253795
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 843.546875,
+          "working_set_bytes": 1410170880,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3541184512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.078125,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 101.4360842
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 847.578125,
+          "working_set_bytes": 1410170880,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3541184512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.078125,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 103.4496162
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 28.796875,
+          "working_set_bytes": 1658552320,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 851.5,
+          "working_set_bytes": 1412849664,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3544256512
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.109375,
+          "working_set_bytes": 21495808,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61739008
+        }
+      ],
+      "elapsed_seconds": 105.4662666
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.03125,
+          "working_set_bytes": 1658703872,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743343616
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 853.171875,
+          "working_set_bytes": 1412878336,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3544997888
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.109375,
+          "working_set_bytes": 21573632,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 61820928
+        }
+      ],
+      "elapsed_seconds": 107.4797752
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 853.859375,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 109.4902025
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 857.8125,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 111.5118466
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 861.84375,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 113.5193433
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 865.671875,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 115.5289849
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 869.6875,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 117.5444948
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 873.703125,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 119.5582078
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 877.640625,
+          "working_set_bytes": 1488039936,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3619594240
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.125,
+          "working_set_bytes": 22224896,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62574592
+        }
+      ],
+      "elapsed_seconds": 121.56771
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.515625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 881.640625,
+          "working_set_bytes": 1490694144,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3621277696
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.15625,
+          "working_set_bytes": 22233088,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62582784
+        }
+      ],
+      "elapsed_seconds": 123.5801453
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 30.625,
+          "working_set_bytes": 1658761216,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743360000
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 885.40625,
+          "working_set_bytes": 1490894848,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3621277696
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.15625,
+          "working_set_bytes": 22286336,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62640128
+        }
+      ],
+      "elapsed_seconds": 125.5898194
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 886.046875,
+          "working_set_bytes": 1529278464,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 127.7283308
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 890.0625,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 129.7372211
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 894.0625,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 131.7519758
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 898.09375,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 133.7689998
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 902.015625,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 135.7879558
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 906.046875,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 137.8035261
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 910.03125,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 139.8244602
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 914.015625,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 141.8333566
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 918.046875,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 143.8558286
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 922.046875,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 145.8759869
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 926.078125,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 147.8932427
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 930.03125,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 149.9086484
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658920960,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743409152
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 934.03125,
+          "working_set_bytes": 1532231680,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 151.9215384
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.390625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 938.015625,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 153.9349208
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 942.0625,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 155.9612628
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 946.09375,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 157.9814361
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 950.03125,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 159.9878691
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 954.015625,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 161.9990121
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 958.046875,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 164.0204158
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 962.078125,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 166.0396959
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 966.078125,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 168.0436187
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.40625,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 970.109375,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 170.0581569
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 974.140625,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 172.0722452
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 978.125,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 174.0815967
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 982.15625,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 176.0954324
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 986.1875,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 178.1107358
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 990.125,
+          "working_set_bytes": 1534140416,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3716272128
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.21875,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 180.1214683
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 994.109375,
+          "working_set_bytes": 1536241664,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3719606272
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.25,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 182.1301456
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 998.0625,
+          "working_set_bytes": 1536241664,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3719606272
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.265625,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 184.1359195
+    },
+    {
+      "processes": [
+        {
+          "ProcessName": "python",
+          "cpu_seconds": 31.421875,
+          "working_set_bytes": 1658904576,
+          "peak_working_set_bytes": 1667846144,
+          "private_commit_bytes": 1743376384
+        },
+        {
+          "ProcessName": "llama-server",
+          "cpu_seconds": 1002.0625,
+          "working_set_bytes": 1536241664,
+          "peak_working_set_bytes": 2212974592,
+          "private_commit_bytes": 3719606272
+        },
+        {
+          "ProcessName": "ollama",
+          "cpu_seconds": 16.265625,
+          "working_set_bytes": 22269952,
+          "peak_working_set_bytes": 49201152,
+          "private_commit_bytes": 62500864
+        }
+      ],
+      "elapsed_seconds": 186.1457204
+    }
+  ],
+  "scope": "Final real API/Ollama observation, including observed startup and request interval; excludes Docker/OS; shared pages may be counted twice"
+}

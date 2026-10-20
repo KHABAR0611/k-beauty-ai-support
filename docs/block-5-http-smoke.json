@@ -1,0 +1,251 @@
+{
+  "transport": "real loopback TCP, Uvicorn process",
+  "provider": "disabled",
+  "live_llm_verified": false,
+  "generation_success_claimed": false,
+  "paid_calls": 0,
+  "records": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "request": null,
+      "http_status": 200,
+      "latency_ms": 1.7152000218629837,
+      "response": {
+        "status": "ok",
+        "request_id": "5f201b9e-a362-4157-8619-7f0e31ea5101"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ready",
+      "request": null,
+      "http_status": 503,
+      "latency_ms": 19.553799997083843,
+      "response": {
+        "ready": false,
+        "dependencies": {
+          "retrieval": {
+            "ready": false,
+            "code": "encoder_not_warmed",
+            "points": 20
+          },
+          "llm": {
+            "ready": false,
+            "code": "llm_not_configured",
+            "provider": "disabled"
+          },
+          "api_access": {
+            "ready": true
+          }
+        },
+        "request_id": "38fd509f-e131-4360-b209-6cc2cb3017e5"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chat",
+      "request": {
+        "question": "Сколько стоит доставка в Москве?"
+      },
+      "http_status": 503,
+      "latency_ms": 5.355099972803146,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "ecd4c3e1-31c5-47fe-8947-ac1e7d26d6c6",
+        "latency_ms": {
+          "retrieval": 0.0,
+          "context": 0.0,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 1.5169000253081322
+        },
+        "index_generation": null,
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_not_configured_or_unavailable",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chat",
+      "request": {
+        "question": "Где заказ 12345?"
+      },
+      "http_status": 200,
+      "latency_ms": 2.3734999704174697,
+      "response": {
+        "answer": "Нет доступа к внешней системе. Статус не проверен и действия не выполнены.",
+        "sources": [],
+        "status": "requires_external_data",
+        "grounding_status": "insufficient_context",
+        "request_id": "e43f4e7c-bcf5-4c00-a5c0-807acdbe8883",
+        "latency_ms": {
+          "retrieval": 0.0,
+          "context": 0.0,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 0.042199972085654736
+        },
+        "index_generation": null,
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": null,
+        "diagnostics": {
+          "generation_performed": false
+        },
+        "handoff": null,
+        "external_data": {
+          "system": "order_management",
+          "available": false,
+          "action_performed": false
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chat",
+      "request": {
+        "question": "Хочу оператора"
+      },
+      "http_status": 200,
+      "latency_ms": 2.3423999664373696,
+      "response": {
+        "answer": "Нужна проверка сотрудником; обращение не передано, операторская система не подключена.",
+        "sources": [],
+        "status": "handoff_required",
+        "grounding_status": "insufficient_context",
+        "request_id": "7d1e4023-a43c-4208-a2b6-5a33bd53c18b",
+        "latency_ms": {
+          "retrieval": 0.0,
+          "context": 0.0,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 0.022499996703118086
+        },
+        "index_generation": null,
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": null,
+        "usage": null,
+        "diagnostics": {
+          "generation_performed": false
+        },
+        "handoff": {
+          "contract_version": "1.0",
+          "reason": "human_review_requested",
+          "target_queue": "customer_support",
+          "idempotency_key": "7d1e4023-a43c-4208-a2b6-5a33bd53c18b",
+          "source_ids": [],
+          "required_fields": [
+            "secure_contact",
+            "order_reference_if_relevant",
+            "consent"
+          ],
+          "created": false,
+          "external_action_performed": false,
+          "customer_message": "Требуется проверка сотрудником. Обращение ещё не передано; операторская система не подключена."
+        },
+        "external_data": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chat",
+      "request": {
+        "question": "Какой итог?"
+      },
+      "http_status": 200,
+      "latency_ms": 2.2915000445209444,
+      "response": {
+        "answer": "Для ответа требуется уточнение: pricing",
+        "sources": [],
+        "status": "clarification_needed",
+        "grounding_status": "insufficient_context",
+        "request_id": "f75d5f96-3b85-4771-b83e-c361f2d5b4a4",
+        "latency_ms": {
+          "retrieval": 0.0,
+          "context": 0.0,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 0.04640000406652689
+        },
+        "index_generation": null,
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [
+          "pricing"
+        ],
+        "error_code": null,
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/chat",
+      "request": {
+        "question": "Доставка"
+      },
+      "http_status": 401,
+      "latency_ms": 1.400600012857467,
+      "response": {
+        "answer": "Запрос не может быть обработан безопасно.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "98170ecd-8c6c-4529-a53b-9464e1742488",
+        "latency_ms": {},
+        "index_generation": null,
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "unauthorized",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/metrics",
+      "request": null,
+      "http_status": 200,
+      "latency_ms": 1.5585999935865402,
+      "response": {
+        "categories": {
+          "answered": 0,
+          "clarification_needed": 1,
+          "insufficient_context": 0,
+          "requires_external_data": 1,
+          "handoff_required": 1,
+          "system_error": 2
+        },
+        "category_shares": {
+          "answered": 0.0,
+          "clarification_needed": 0.2,
+          "insufficient_context": 0.0,
+          "requires_external_data": 0.2,
+          "handoff_required": 0.2,
+          "system_error": 0.4
+        },
+        "total": 5,
+        "scope": "process API responses; not resolved customer problems"
+      }
+    }
+  ]
+}

@@ -4,17 +4,17 @@
 
 ## Статус и возможности
 
-Версия0.6.0 реализует ingestion, dense embeddings, BM25, hybrid retrieval через RRF и optional multilingual reranking в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
+Версия0.7.0 добавляет FastAPI, детерминированные business tools, локальную LLM generation и отдельный Answer Control к ingestion, dense/BM25/RRF и optional reranking в настоящем Qdrant Server. Один point содержит dense и sparse представления одного исходного чанка. Всего20 points:11 разделов политик и9 товаров, с полными текстами, метаданными и точными характеристиками.
 
 Данные1.1 относятся к вымышленному магазину. Публикация поколения атомарна после проверки всех ID, payload и обоих векторов. Доступны независимые режимы dense-only, BM25-only и hybrid. [Отчёт Блока3](docs/block-3-results.md) содержит baseline, все13 запросов, метрики, latency и регрессии.
 
-Reranker доступен как явно включаемый режим. LLM и HTTP API не реализованы. Retrieval recall не является качеством ответов. Готовность к промышленной эксплуатации не заявляется. Блоки2/3 приняты; результаты Блока4 представлены для инженерной приёмки. Primary rerank pool10 ухудшает полноту@5 на исходном наборе, поэтому рекомендуется сохранять Hybrid до отдельного решения о конфигурации.
+API реализован; default LLM_PROVIDER=disabled, reranker=false. Локальный Ollama/Qwen3 проверяется отдельно от provider doubles. [Отчёт Блока5](docs/block-5-results.md) раскрывает реальные сценарии, неудачные подходы и ограничения CPU. Retrieval recall не является качеством final answers или долей решённых клиентских проблем. Готовность к промышленной эксплуатации не заявляется. Hybrid остаётся рекомендуемым retrieval режимом.
 
 ## Архитектура и стек
 
 Текущий indexing: sources → validation → chunks → tokenizer gate → dense+BM25 → staging Qdrant → readback → atomic alias. Query: resolve alias once → dense/BM25 query → Qdrant search или RRF → texts, scores, sources и точные product fields.
 
-Python 3.12, PyYAML 6.0.2, Pytest 8.4.1, Qdrant client/server 1.15.1. Dense: официальный FP32 ONNX-export BAAI/bge-m3, revision `5617a9f61b028005a4858fdac845db406aefb181`, 1024 измерения, CLS + L2, Cosine, CPU, batch=1. ONNX Runtime 1.31.0, tokenizers 0.23.3, NumPy 2.5.4; проверенные SHA-256 файлов в `src/kbeauty_support/retrieval/bge-m3.lock.json`. FastEmbed0.7.3 реализует Qdrant/bm25 с русским Snowball stemmer и закреплённым UTF-8 stopword asset. BGE-M3 по-прежнему использует отдельный официальный ONNX adapter. FastAPI/LLM пока не запускаются.
+Python 3.12, PyYAML 6.0.2, Pytest 8.4.1, Qdrant client/server 1.15.1. Dense: официальный FP32 ONNX-export BAAI/bge-m3, revision `5617a9f61b028005a4858fdac845db406aefb181`, 1024 измерения, CLS + L2, Cosine, CPU, batch=1. ONNX Runtime 1.31.0, tokenizers 0.23.3, NumPy 2.5.4; проверенные SHA-256 файлов в `src/kbeauty_support/retrieval/bge-m3.lock.json`. FastEmbed0.7.3 реализует Qdrant/bm25 с русским Snowball stemmer и закреплённым UTF-8 stopword asset. BGE-M3 по-прежнему использует отдельный официальный ONNX adapter. Backend: FastAPI0.116.1/Starlette0.47.3, Uvicorn0.35.0; active API/generation contracts описаны отдельно. Платные LLM API не подключены.
 
 [Архитектура](docs/rag-architecture.md) · [ADR](docs/decision-log.md) · [Контракты](docs/component-contracts.md) · [Эксплуатация](docs/operations.md)
 
@@ -62,7 +62,7 @@ CLI: --data-dir, --output-dir, --dry-run. Dry-run ничего не записы
 
 Allowlist — только три файла data/. UTF-8, JSON/YAML duplicate keys, версии, provenance, SKU, цены и характеристики проверяются. Symlinks/junctions и пересечение input/output запрещены. Каждый источник ≤5 MiB. Ошибка записи не переключает CURRENT. После аварийного завершения stale .ingest.lock требует проверки отсутствия writer перед ручным снятием; автоматического захвата lock нет. Папки .tmp-* не читаются как поколения.
 
-.env для ingestion не требуется. В .env.example заданы переменные Compose и Qdrant CLI; реальные ключи не коммитятся. CLI читает environment, а не .env автоматически. HTTP API ещё отсутствует, его [контракт](docs/api.md) описывает будущую границу. Нет реальных заказов, платежей, возвратов денег или медицинских назначений.
+.env для ingestion не требуется. В .env.example заданы переменные Compose и Qdrant CLI; реальные ключи не коммитятся. CLI читает environment, а не .env автоматически. HTTP API реализован; [контракт и запуск](docs/api.md) задают текущую границу. Нет реальных заказов, платежей, возвратов денег или медицинских назначений.
 
 ## Docker
 
@@ -81,9 +81,9 @@ Qdrant слушает loopback; данные в named volume qdrant_storage. Н�
 ```text
 data/                           политики и каталог
 src/kbeauty_support/ingestion/   readers, validation, preparation, export, CLI
-src/kbeauty_support/             contracts; api/retrieval/reranking/generation stubs
+src/kbeauty_support/             api, retrieval, reranking, generation, typed tools
 tests/unit/                     поведенческие проверки и денежные эталоны
-tests/acceptance-tests.md        12 будущих e2e сценариев
+tests/acceptance-tests.md        12 versioned business scenarios
 examples/                       реальные подготовленные chunks и manifest
 requirements/                   lock для ingestion/test
 infrastructure/                 Dockerfile аудита
@@ -92,7 +92,7 @@ docs/                           ADR, спецификации, отчёты, API
 
 [Примеры чанков](docs/chunk-examples.md) · [Результаты повторной проверки](docs/business-review-results.md) · [Спецификация Блока 1](docs/block-1-spec.md) · [Roadmap](docs/roadmap.md) · [Публикация](docs/github-setup.md)
 
-Блоки1–2 приняты. Dense/BM25/RRF реализованы; переход к reranking и LLM требует приёмки Блока3. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
+Блоки1–4 реализованы и приняты. Блок5 API/generation/Answer Control представлен на приёмку. Source export остаётся неизменным; token counts и vectors находятся в отдельном dense artifact.
 
 Бизнес-данные версии1.1 пересмотрены по уточнению владельца: [аудит происхождения и зависимостей](docs/business-change-audit.md). Действующие правила определяются data/1.1 и ADR-016, а не историческим отчётом для1.0.
 
@@ -158,6 +158,17 @@ python -m pytest
 
 Candidate pool1–20, final_k не больше pool, prefetch не меньше pool. По умолчанию pool10/final5/prefetch20; старые dense/BM25/hybrid команды сохранены, default CLI mode=dense не изменён. Режим rerank надо указать явно. Отключение не загружает cross-encoder и сохраняет исходный Hybrid top-k. Ошибка модели или пара больше512 токенов даёт тот же Hybrid top-k с `reranking.applied=false` и категорией fallback; неполная пересортировка не публикуется. Ошибка Qdrant остаётся ошибкой запроса. В stdout — UTF-8 JSON с timings, scores, sources и before/after positions; журналы в stderr не содержат query text.
 
-Веса reranker занимают ещё около471 МБ на диске. CLI search загружает модели заново при каждом процессе; опубликованная warm latency относится к повторным запросам в одном процессе. Отдельный HTTP-процесс и warm readiness пока не реализованы. Память, стоимость rerank и случаи регрессии приведены в отчёте; GPU и конкурентная нагрузка не проверены. Pool5 улучшает ранние позиции на 13 запросах без изменения их состава top5, но не проверен на независимом holdout и не заменяет primary задним числом.
+Веса reranker занимают ещё около471 МБ на диске. CLI search загружает модели заново при каждом процессе; опубликованная warm latency относится к повторным запросам в одном процессе. HTTP-процесс с warm readiness добавлен в0.7.0; его замеры отделены от исторических CLI результатов. Память, стоимость rerank и случаи регрессии приведены в отчёте; GPU и конкурентная нагрузка не проверены. Pool5 улучшает ранние позиции на 13 запросах без изменения их состава top5, но не проверен на независимом holdout и не заменяет primary задним числом.
 
 Unit/regression tests не скачивают модели. Real Server tests требуют явных opt-in переменных и подготовленных pinned caches, описанных в [проверках Блока4](docs/block-4-testing.md). CI проверяет contracts и источники; результаты реальных моделей/Server опубликованы отдельно.
+
+
+## RAG API и Answer Control
+
+POST /chat, GET /health, GET /ready, Bearer-protected GET /metrics. Полная [конфигурация, запуск и schema](docs/api.md). Установка: requirements/service-test.lock. Нужны подготовленный Hybrid index, исходные data1.1 и pinned caches. Команда запуска: `python -m uvicorn kbeauty_support.api.app:app --host 127.0.0.1 --port 8090 --workers 1 --no-access-log --no-proxy-headers`; задать PYTHONPATH=src и приватный API_ACCESS_KEY через окружение. Python не загружает .env автоматически.
+
+Денежные входы передаются структурированно; calculator применяет сначала WELCOME10, затем bonus cap20% от discounted goods, после списания определяет бесплатную доставку и начисление. Catalog tool проверяет все9 товаров. Эти пути не вызывают LLM и явно имеют generation_performed=false. Неподключённые внешние действия не передаются модели для спекуляции о результате. Общие FAQ используют локальную Qwen3:0.6b GGUF Q4_K_M, pinned digest, context8192 и официальный проверенный tokenizer. Model weights не входят в Git; инструкция Ollama/tokenizer и ограничения CPU приведены в API docs.
+
+[Answer Control](docs/answer-control.md) различает answered, clarification_needed, insufficient_context, requires_external_data, handoff_required, system_error. Никакой retrieval/reranker score не трактуется как вероятность правильности. Handoff только описан контрактом: created=false, внешней операторской системы нет. Модель выбирает целые source evidence units; сервер проверяет actual IDs/тексты/версии, сохраняет цены и запрет silent truncation. Свободный парафраз не объявляется подтверждённым по наличию ссылки.
+
+[Реальный e2e-прогон](docs/block-5-live-e2e.json), [сравнение retrieval и ответов](docs/block-5-results.md), [test results](docs/block-5-test-results.json), [выбор модели](docs/block-5-provider-decision.md). Эксперименты с test doubles помечены отдельно. По умолчанию неподключённый LLM даёт readiness503 и безопасную ошибку FAQ, а не mock-ответ. Следующий этап системной оценки выполняется только после приёмки Блока5.

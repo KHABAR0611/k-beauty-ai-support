@@ -1,0 +1,258 @@
+{
+  "scope": "Initial real-LLM diagnostic before deterministic monetary route; deliberately stopped after repeated timeouts",
+  "model_digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+  "llm_timeout_seconds": 60,
+  "context_tokens": 8192,
+  "observed_case_count": 5,
+  "cases": [
+    {
+      "id": "T01",
+      "request": {
+        "question": "Сколько стоит курьер в Москве и сколько ждать? Итог?",
+        "pricing": {
+          "delivery": "moscow_courier",
+          "registered": true,
+          "first_order": true,
+          "pickup_available": true,
+          "bonus_balance": 0,
+          "bonus_requested": 0,
+          "subtotal_kopecks": 340000
+        }
+      },
+      "http_status": 504,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "1b437a00-7b30-466b-8866-1090b5fbb5e5",
+        "latency_ms": {
+          "retrieval": 3066.8936999863945,
+          "context": 3.814099996816367,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 63281.581999966875
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_timeout",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      },
+      "http_latency_ms": 63404.614500002936,
+      "business_contract_passed": false,
+      "failure": "business_contract_not_satisfied",
+      "real_llm_request": false
+    },
+    {
+      "id": "T02",
+      "request": {
+        "question": "Пенка KB-001, масло KB-006 и бальзам KB-009, ПВЗ в Казани. Сколько заплачу?",
+        "pricing": {
+          "delivery": "pickup",
+          "registered": true,
+          "first_order": true,
+          "pickup_available": true,
+          "bonus_balance": 0,
+          "bonus_requested": 0,
+          "items": [
+            {
+              "product_id": "KB-001",
+              "quantity": 1
+            },
+            {
+              "product_id": "KB-006",
+              "quantity": 1
+            },
+            {
+              "product_id": "KB-009",
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      "http_status": 504,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "35d8880f-1a82-422f-b1a6-e6f9d7e76f57",
+        "latency_ms": {
+          "retrieval": 1104.8294000211172,
+          "context": 0.5321000353433192,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 61144.06479999889
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_timeout",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      },
+      "http_latency_ms": 61223.8838999765,
+      "business_contract_passed": false,
+      "failure": "business_contract_not_satisfied",
+      "real_llm_request": false
+    },
+    {
+      "id": "T03",
+      "request": {
+        "question": "Первый заказ: KB-003, KB-004, WELCOME10, курьер Санкт-Петербург. Итог и бонусы?",
+        "pricing": {
+          "delivery": "spb_courier",
+          "registered": true,
+          "first_order": true,
+          "pickup_available": true,
+          "bonus_balance": 0,
+          "bonus_requested": 0,
+          "items": [
+            {
+              "product_id": "KB-003",
+              "quantity": 1
+            },
+            {
+              "product_id": "KB-004",
+              "quantity": 1
+            }
+          ],
+          "promo_code": "WELCOME10"
+        }
+      },
+      "http_status": 504,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "85d59050-6cad-4560-ae92-aa1c808e22de",
+        "latency_ms": {
+          "retrieval": 1446.1728999740444,
+          "context": 0.4314999678172171,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 61530.45169997495
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_timeout",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      },
+      "http_latency_ms": 61534.21850001905,
+      "business_contract_passed": false,
+      "failure": "business_contract_not_satisfied",
+      "real_llm_request": false
+    },
+    {
+      "id": "T04",
+      "request": {
+        "question": "600 бонусов, пенка KB-001 и ночная маска KB-008, ПВЗ. Спишите максимум: итог и бонусы?",
+        "pricing": {
+          "delivery": "pickup",
+          "registered": true,
+          "first_order": true,
+          "pickup_available": true,
+          "bonus_balance": 600,
+          "bonus_requested": 600,
+          "items": [
+            {
+              "product_id": "KB-001",
+              "quantity": 1
+            },
+            {
+              "product_id": "KB-008",
+              "quantity": 1
+            }
+          ]
+        }
+      },
+      "http_status": 504,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "57648f83-ab8d-4084-bcec-932a2d4c7e59",
+        "latency_ms": {
+          "retrieval": 979.0245000040159,
+          "context": 0.34410000080242753,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 61024.15439998731
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_timeout",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      },
+      "http_latency_ms": 61027.76590001304,
+      "business_contract_passed": false,
+      "failure": "business_contract_not_satisfied",
+      "real_llm_request": false
+    },
+    {
+      "id": "T05",
+      "request": {
+        "question": "Первый заказ, WELCOME10 и бонусы, ПВЗ. Какой итог отдельно и вместе?",
+        "pricing": {
+          "delivery": "pickup",
+          "registered": true,
+          "first_order": true,
+          "pickup_available": true,
+          "bonus_balance": 500,
+          "bonus_requested": 500,
+          "subtotal_kopecks": 250000,
+          "promo_code": "WELCOME10",
+          "compare_options": true
+        }
+      },
+      "http_status": 504,
+      "response": {
+        "answer": "Сервис временно не может подтвердить ответ.",
+        "sources": [],
+        "status": "system_error",
+        "grounding_status": "error",
+        "request_id": "4918214e-9091-4ab5-bd02-3d46093c66f6",
+        "latency_ms": {
+          "retrieval": 767.5783999729902,
+          "context": 0.4971000016666949,
+          "llm": 0.0,
+          "answer_control": 0.0,
+          "total": 60801.916100026574
+        },
+        "index_generation": "c21eec8f24a008b9213ef28476fd1d7a6574a34e1e50b56a37a828a511602e1d",
+        "calculation": null,
+        "catalog_result": null,
+        "missing_fields": [],
+        "error_code": "llm_timeout",
+        "usage": null,
+        "diagnostics": {},
+        "handoff": null,
+        "external_data": null
+      },
+      "http_latency_ms": 60805.53880002117,
+      "business_contract_passed": false,
+      "failure": "business_contract_not_satisfied",
+      "real_llm_request": false
+    }
+  ]
+}

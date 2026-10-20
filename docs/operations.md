@@ -1,6 +1,6 @@
 # Надёжность, наблюдаемость и безопасность
 
-Статус0.4.0: source preparation, dense model, Qdrant publishing и CLI поиска реализованы. Проверки ниже, не отмеченные результатами Блока2, остаются требованиями последующих этапов. Конфигурация Qdrant одиночная, без HA и без SLA. Фактический runtime зависит от доступности образа и фиксируется в validation-report.md.
+Статус0.7.0: source preparation, dense/BM25/RRF, optional reranker, controlled generation и FastAPI реализованы. Проверки ниже, не отмеченные результатами Блока2, остаются требованиями последующих этапов. Конфигурация Qdrant одиночная, без HA и без SLA. Фактический runtime зависит от доступности образа и фиксируется в validation-report.md.
 
 ## Compose и хранение
 
@@ -12,7 +12,7 @@ Backup: перед изменением server/schema создать snapshot co
 
 ## Ошибки и deadlines
 
-Начальная политика (требует измерений): connect timeout 2 s, Qdrant query 5 s, rerank 10 s, LLM 30 s, общий HTTP deadline 45 s. Максимум два retry с jitter на transient read errors и 429 с Retry-After в пределах deadline. Невалидные данные не ретраить. Для publishing сначала проверить состояние операции, не повторять alias switch вслепую.
+API: Qdrant query5s, Ollama60s, startup120s, общий HTTP deadline90s. Только connection failure до отправки повторяется один раз; read timeout/HTTP500 не повторяются. Невалидные данные не ретраить. Native inference не имеет hard cancellation: слот удерживается до завершения worker. Для publishing сначала проверить состояние операции, не повторять alias switch вслепую.
 
 Отказ mandatory retriever/reranker/provider по умолчанию завершает запрос явной 503/504; скрытое отключение стадии запрещено. Будущий degraded mode потребует ADR, отдельного статуса ответа и оценки качества. Ingestion failure не должен затронуть active index.
 
@@ -40,7 +40,7 @@ Prompt injection — отдельный набор атак на user и retriev
 
 Фактические проверки и ограничения: [Блок2](block-2-results.md), команды и recovery: [спецификация](block-2-spec.md). Native Docker pull обрывался через Engine CDN/proxy; официальный образ был загружен через прямой Registry API, SHA-256 каждого объекта проверен, затем docker load. Происхождение в block-2-image-provenance.json. Системные DNS/proxy и существующие Docker-данные не изменялись. Python probes Qdrant идут напрямую по loopback; модели скачиваются отдельным downloader с необязательным process-local --direct. Другие deployments должны подтвердить собственную сетевую конфигурацию.
 
-Dense CLI использует Qdrant request timeout30s, без автоматических повторных alias transactions; это отдельный batch CLI, не будущий HTTP deadline45s. JSON logs показывают прогресс encoding/publish и категорию ошибки. Пока нет monitoring service, read-only credentials, load tests и dependency security scan.
+Dense CLI использует Qdrant request timeout30s, без автоматических повторных alias transactions; это отдельный batch CLI, не API deadline90s. JSON logs показывают прогресс encoding/publish и категорию ошибки. Пока нет monitoring service, read-only credentials, load tests и dependency security scan.
 
 ## Hybrid runtime0.5.0
 
@@ -53,3 +53,7 @@ Dense CLI использует Qdrant request timeout30s, без автомат�
 Установка requirements/rerank-test.lock не добавляет пакетов к hybrid stack. Загрузить pinned official checkpoint через infrastructure/download_reranker.py; cache не переносится в Git. Выделить ещё около471MB disk и измеренный дополнительный private commit; на данном CPU выполнять запросы последовательно, не создавать несколько процессов с двумя моделями без оценки RAM. Для current sources все460 query/document pairs в development+holdout укладываются в512, но gate остаётся обязательным для новых документов.
 
 На query path использовать mode=rerank явно; для возврата к Hybrid — mode=hybrid или --disable-rerank в rerank mode. Текущий рекомендуемый режим Hybrid: primary pool10 потерял необходимые источники в отдельных составных вопросах. Модельный failure не должен менять membership исходного top-k: проверяется весь score batch, затем применяется новый порядок. В JSON сохраняются applied/fallback category, source fields и stage timings. Нет автоматического retry native inference, hard deadline или circuit breaker; перед HTTP-нагрузкой нужны отдельный worker/лимиты/наблюдаемость и утверждённый SLO. GPU latency и серверная многопользовательская эксплуатация не проверялись.
+
+## API/Ollama0.7
+
+API проверен нативным Uvicorn на loopback, Qdrant в Compose; API image не собирался. Запуск/секреты/ready описаны в api.md. Один API worker, CPU2 threads; reranker=false, provider=disabled до конфигурации. Qwen8192/output512 с pinned tokenizer/digest. keep_alive=-1 удерживает RAM; после остановки API владелец может явно unload только эту модель. Не завершать чужие процессы/не удалять volumes. Счётчики process-local, не customer-resolution rate. HA/load SLO не заявлены.

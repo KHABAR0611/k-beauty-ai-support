@@ -105,3 +105,22 @@ Hybrid RRF выдаёт единый pinned candidate pool. Primary10, final5; �
 ## ADR-025 — Accepted: независимый holdout и стоимость дополнительного ранжирования
 
 План и десять новых query/source qrels закоммичены `a82a9ee` до первого cross-encoder inference. Исходные 13 labels и результаты Блока3 сохраняются. На development сравниваются pool5/10/15; holdout оценивается только с заранее выбранным pool10. Метрики macro source recall и MRR, а не точность LLM. Warm latency включает encoding/Server/payload/rerank без cache; времена стадий показаны раздельно. Process working set и peak измеряются средствами ОС, размер checkpoint не выдаётся за runtime RAM. Небольшой holdout не доказывает переносимость на другие магазины. Rerank остаётся явно включаемым режимом до продуктового решения о качестве и latency.
+
+
+## ADR-026 — Implemented: local-only provider and transparent boundaries
+
+Сравнены Ollama/Qwen3, Gemini Flash и Groq Llama; без разрешения на оплату облачные adapters не подключаются. Существующая Ollama0.33.2 найдена вне PATH, запущена без переустановки и cloud inference. Выбрана локальная Qwen3:0.6b Q4_K_M, digest7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435. Default disabled и отсутствие runtime mocks сохранены. Test doubles не выдаются за real e2e.
+
+## ADR-027 — Implemented: whole-unit grounding, tool routes and source coverage
+
+Ссылка не доказывает истинность свободного текста. Provider возвращает ограниченный план evidence selection; сервер проверяет полный исходный unit и mapping ID. Полные sections сохраняют отрицания и исключения. Цены/SKU находятся в утверждённом snapshot. Сложные деньги и catalog filters выполняются typed deterministic tools, без неоправданной LLM generation. Полный корпус20 используется для domain coverage, сохраняя честный top5 baseline. Этот extractive MVP не является универсальным semantic entailment/intent solver.
+
+## ADR-028 — Implemented: six-way Answer Control and pending handoff
+
+Дополнение владельца заменяет первоначальный status confirmed/insufficient_context/error шестью business outcomes; legacy grounding_status оставлен отдельно. Неподключённые действия не должны зависеть от спекулятивной LLM. Handoff contract1.0 только описывает передачу, created=false; реальное создание требует отдельной интеграции и согласия. Категории считаются на response boundary, включая timeout/busy, без поздних ложных answered. Это не показатель фактически решённых клиентских проблем.
+
+## ADR-029 — Implemented: bounded CPU service and tested configuration
+
+FastAPI endpoints/chat,/health,/ready заменяют старый нереализованный /v1/answers план. Body32KiB/5s, per-credential/process rate30/min, single worker, request IDs, safe errors and no-access-log. Deadline90s не освобождает ещё работающий native worker. Provider retry только один раз при connect failure, без retry read timeout/HTTP500. Cold LLM startup ограничен120s и вынесен в readiness.
+
+32K контекст потребовал около4.4GB по Ollama и cold load превысил30s. Выбран8192, CPU2/GPU0 и compact E01 aliases; source UUID не теряется. Official tokenizer pinned c1899de289a04d12100db370d81485cdf75e47ca, input budget с резервом и проверкой фактического prompt_eval_count. Медленный начальный денежный путь заменён точным инструментом, не mock-ответом. Неудачные результаты и регрессия отрицания «брака нет» сохранены; разметка/бизнес1.1 не менялись.

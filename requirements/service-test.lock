@@ -1,0 +1,5 @@
+-r rerank-test.lock
+fastapi==0.116.1
+starlette==0.47.3
+uvicorn==0.35.0
+click==8.2.1

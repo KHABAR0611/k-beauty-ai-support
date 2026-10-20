@@ -1,0 +1,48 @@
+{
+  "review_date": "2026-10-20",
+  "base_commit": "32a3ae30ec1f05b96c125ab39e9964efc900d78e",
+  "unit_regression": {
+    "passed": 197,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 49.575
+  },
+  "real_qdrant_api_contracts": {
+    "passed": 13,
+    "failed": 0,
+    "seconds": 96.437,
+    "provider": "explicit test double on FAQ only; tools/control real"
+  },
+  "real_http_e2e": {
+    "business_cases_passed": 12,
+    "business_cases_total": 12,
+    "additional_adversarial_passed": 2,
+    "provider_doubles": false,
+    "routes": {
+      "deterministic_tools": 8,
+      "external_capability_control": 2,
+      "real_llm": 2
+    },
+    "additional_real_llm_injection_cases": 1
+  },
+  "disabled_provider_http_smoke": {
+    "passed": 8,
+    "live_llm_verified": false
+  },
+  "dependencies": "47 pinned packages, fresh Python3.12 Windows environment",
+  "all_six_answer_statuses_tested": true,
+  "business_version": "1.1",
+  "data_and_qrels_unchanged": true,
+  "warnings": [
+    "Starlette TestClient/AnyIO BlockingPortal deprecation",
+    "API key over loopback HTTP Qdrant warning; TLS not tested"
+  ],
+  "not_checked": [
+    "API container build",
+    "GPU inference",
+    "concurrent workload SLO",
+    "dependency vulnerability scan",
+    "live CRM/orders/payment integrations",
+    "semantic entailment for arbitrary free-form answers"
+  ]
+}

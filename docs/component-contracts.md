@@ -1,14 +1,14 @@
 # Границы компонентов
 
-Source preparation реализован; остальные pipeline-интерфейсы — целевые контракты. В коде есть `PreparedBundle`, функции readers/prepare/export и минимальные `Chunk`, `Candidate`, `Answer`, Protocol для retriever/reranker/generator. Последние не заменяют model/Qdrant adapters.
+Source preparation, retrieval, reranking, API и controlled generation реализованы; текущие контракты описаны ниже. В коде есть `PreparedBundle`, функции readers/prepare/export и минимальные `Chunk`, `Candidate`, `Answer`, Protocol для retriever/reranker/generator. Последние не заменяют model/Qdrant adapters.
 
-JSONL boundary: `id` → будущий point_id; metadata.source → source_path, document_version → version. preparation_generation — локальное подготовленное поколение, не опубликованная Qdrant collection. Adapter Блока 2 должен явно преобразовать DTO и закрепить model/analyzer fingerprint. Сейчас embeddings и Qdrant publishing не вызываются.
+JSONL boundary: `id` → point_id; metadata.source → source_path, document_version → version. preparation_generation — локальное подготовленное поколение, не опубликованная Qdrant collection. Index adapters преобразуют DTO и закрепляют model/analyzer fingerprint. API читает опубликованный индекс без publishing.
 
 | Компонент | Вход → выход | Ответственность / ошибка |
 |---|---|---|
 | Source audit (реализован) | allowlisted data directory → counts/hashes | UTF-8/JSON, товары, ID, policy sections; exit 2 при дефекте |
 | Ingestion reader (реализован) | allowlisted data root → validated sources | bounded UTF-8, JSON/YAML, hashes, source versions |
-| Chunker (реализован) | validated sources → целые semantic units | сохраняет условия, UUIDs, hashes; token count ещё не измерен |
+| Chunker (реализован) | validated sources → целые semantic units | сохраняет условия, UUIDs, hashes; token gate выполняется model adapter |
 | Local exporter (реализован) | PreparedBundle → immutable generation + CURRENT | writer lock, integrity check, atomic pointer; без сети |
 | Dense encoder | texts + model revision → vectors | размерность/finite values; timeout или несовместимость — job failed |
 | BM25 encoder | texts + analyzer fingerprint → sparse vectors | russian, одинаковая нормализация query/document, IDF в Qdrant |
@@ -27,7 +27,7 @@ JSONL boundary: `id` → будущий point_id; metadata.source → source_pat
 
 ## Реализованные контракты Блока2
 
-`load_prepared`: pin CURRENT → verify hashes →20 source records. `Encoder`: signature/token_counts/encode. `embed`: model gate → normalized dense vectors + copied exact payload → generation/content SHA-256. `save_artifact`: immutable JSON cache. `DenseIndex.publish`: single writer → staging → verify → atomic alias. `DenseIndex.search`: pin physical generation → compare model signature → dense top-k → texts/metadata/product. Dense metadata содержит реальные token_count/tokenizer_id; source export сохраняется неизменным. Эти контракты реализованы в retrieval/, остальные query/API контракты выше остаются проектируемыми.
+`load_prepared`: pin CURRENT → verify hashes →20 source records. `Encoder`: signature/token_counts/encode. `embed`: model gate → normalized dense vectors + copied exact payload → generation/content SHA-256. `save_artifact`: immutable JSON cache. `DenseIndex.publish`: single writer → staging → verify → atomic alias. `DenseIndex.search`: pin physical generation → compare model signature → dense top-k → texts/metadata/product. Dense metadata содержит реальные token_count/tokenizer_id; source export сохраняется неизменным. Эти контракты реализованы в retrieval/, актуальная API-граница уточнена ниже.
 
 ## Контракты Блока3
 
@@ -38,3 +38,7 @@ RussianBm25.signature/tokens/document/query задают единый versioned 
 `PairScorer.signature/score(query,texts)` возвращает ровно один finite raw logit на каждый исходный текст. `MiniLMCrossEncoder` проверяет approved hashes до session creation и длину всей пары до inference. `RerankConfig` ограничивает final_k≤pool≤20 и pool≤prefetch≤100. `RerankedSearch.search` читает Hybrid pool один раз, сохраняет physical generation и точные payload fields, сортирует по logit со stable original-rank ties. Состояние `reranking.applied` отличает модельный порядок от disabled/fallback; `fallback_reason` содержит safe exception category. Original `score` остаётся RRF score, `rerank_score` добавляется отдельно. `mode=hybrid` описывает источник кандидатов; факт reranking находится в отдельном поле, не смешивается с distance metric.
 
 `timing_ms.retrieval/rerank/total` относится к одному вызову. При cold CLI search сюда входит lazy model load внутри rerank; benchmark предварительно прогревает sessions и отдельно сохраняет startup. Reranker не меняет Qdrant payload/schema или embeddings и не получает qrels. `compare_reranked` применяет labels только после search, проверяет единое поколение и не выдаёт fallback за измеренное качество cross-encoder. Failure retrieval propagates; failure reranker возвращает полный исходный Hybrid top-k. Concurrency и native inference hard deadline не заявлены.
+
+## API0.7
+
+ChatRequest → ChatService → ChatResponse(6 status). RuntimeRetriever возвращает20 candidates одного physical generation. Snapshot проверяет тексты/metadata business1.1. Context сохраняет полные units и проверяет budget/coverage. Typed calculator/catalog независимы от LLM. Provider выбирает allowlisted evidence, сервер рендерит утверждения. AnswerControl проверяет errors/capabilities/coverage до отправки. Счётчики учитывают только отправленный исход, не late worker. Handoff1.0 pending,created=false. [API](api.md), [Answer Control](answer-control.md).
