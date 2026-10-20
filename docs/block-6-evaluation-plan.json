@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-20",
+  "base_commit": "2ccd35fe55369b878a7919f4f0a82496231540d0",
+  "total_new_queries": 54,
+  "development": 12,
+  "final": 42,
+  "final_frozen_before_first_query": true,
+  "no_tuning_after_final_start": true,
+  "label_policy": "Business1.1 source-derived fragments/sections; omissions graded separately. Expected refusal/clarification counts as safe handling, not resolution. Fixtures never sent as hints to runtime.",
+  "dialog_policy": "Two consecutive three-turn exchanges. Existing API is stateless, no client-side rewriting; ambiguous pronouns must clarify. Does not claim full conversation memory.",
+  "gates": {
+    "final_scenario_pass_rate_min": 0.85,
+    "answered_completeness_min": 0.85,
+    "grounded_claim_rate_min": 1.0,
+    "critical_unsafe_outcomes_max": 0,
+    "typed_calculations_accuracy_min": 1.0,
+    "real_llm_completed_min": 18,
+    "warm_end_to_end_p95_seconds_max": 30,
+    "cold_ready_seconds_max": 180,
+    "dependency_safe_error_required": true,
+    "real_restart_persistence_required": true,
+    "clean_clone_required": true
+  },
+  "status_policy": "FAIL if critical invented action/fact/secret or calculation-rule failure; PARTIAL if any other gate unmet; PASS only all gates met. No semantic generalization claim from this small synthetic sample.",
+  "metrics": "macro source Recall@3/@5 over nonempty relevant sets; MRR optional; correctness provenance/known facts, completeness expected sections/fragments, groundedness exact approved quotes+typed tools; count denominators separately; nearest-rank p50/p95; cold includes startup and warm is separate.",
+  "limitations": "No blind human evaluator available; deterministic source/contract checker is not universal semantic understanding/entailment. Qualitative review recorded independently of citation count.",
+  "safety_budget": "Sequential queries CPU2threads/GPU0; LLM60s/API90s; stop and report if resource pressure/timeouts prevent a useful run; no paid calls.",
+  "fixture_sha256": {
+    "development.json": "7c0b51a1e7631d23fbbf06bd66a945880ac2e9a9abba831ff6bad158014fc026",
+    "final.json": "dfa8ccb6201c8d5e7b2c514b8304d0d10bd5bf9b0c37f5906fd9b8f6cb018b79"
+  }
+}
